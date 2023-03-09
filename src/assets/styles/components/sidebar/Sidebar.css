@@ -1,0 +1,99 @@
+a {
+  text-decoration: none;
+}
+
+.main-container {
+  display: flex;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10px 0 10px;
+  background-image: url(../../../img/forest.jpg);
+  background-size: cover;
+  width: 100vw;
+}
+
+.mainTitle {
+  font-size: 30px;
+}
+
+.sidebar {
+  background: #1C1D3B;
+  color : white;
+  height: 100vh;
+}
+
+.routes {
+  color: white;
+  padding: 20px 0 20px 0;
+}
+
+.top_section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 10px;
+}
+
+.logo {
+  font-size: 22px;
+}
+
+.icon {
+  width: 25px;
+}
+
+.link {
+  display: flex;
+  color: white;
+  gap: 20px;
+  padding: 5px 10px;
+  margin: 25px 0 25px 0;
+  transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+.link_text {
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.link:hover {
+  border-right: 4px solid white;
+  transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  background: rgb(45, 51, 89);
+}
+
+.active {
+  border-right: 4px solid white;
+  background: rgb(45, 51, 89);
+}
+
+.utilisateur {
+  display: flex;
+  padding: 5px 10px;
+  gap: 20px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #d9d9d9;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #e3061589;
+  border-radius: 0 5px 5px 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #b0b0b0;
+}
