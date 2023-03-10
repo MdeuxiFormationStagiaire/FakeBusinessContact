@@ -32,14 +32,17 @@ const FormateurList: React.FC<FormateurListProps> = ({ formateurs, currentPage }
 
   const renderFormateursList = () => {
 
-    formateurs = formateurs.filter((formateur: Formateur) => {
+    formateurs.filter((formateur: Formateur) => {
       const name = `${formateur.first_name.toLocaleLowerCase()} ${formateur.last_name.toLocaleLowerCase()} ${formateur.email} ${formateur.createdAt.toString().slice(0, 10)}`;
       return search === '' ? formateur : name.includes(search);
     });
 
     return formateurs.map((formateur: Formateur) => {
       return (
-        <FormateurListContainer key={formateur.id} formateur={formateur} onFormateurSelected={handleFormateurSelected} />
+        <FormateurListContainer
+          key={formateur.id} 
+          formateur={formateur} 
+          onFormateurSelected={handleFormateurSelected} />
       );
     });
     

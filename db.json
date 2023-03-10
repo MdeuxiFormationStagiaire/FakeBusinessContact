@@ -22,13 +22,6 @@
       "createdAt": "2023-10-24T20:38:13Z"
     },
     {
-      "id": 7,
-      "first_name": "Fred",
-      "last_name": "Cecere",
-      "email": "fcecere6@capgemini.com",
-      "createdAt": "2023-11-26T15:31:17Z"
-    },
-    {
       "id": 9,
       "first_name": "Bern",
       "last_name": "Burnip",
@@ -202,6 +195,13 @@
       "last_name": "Constantin",
       "email": "c.maillard@m2iformation.com",
       "createdAt": "2023-03-10T15:04:20.595Z"
+    },
+    {
+      "id": 39,
+      "first_name": "Fredy",
+      "last_name": "Fredy",
+      "email": "fredy.fredy@fredy.com",
+      "createdAt": "2023-03-10T16:34:47.403Z"
     }
   ],
   "stagiaires": [
@@ -389,7 +389,7 @@
     },
     {
       "id": 27,
-      "first_name": "Kessiah",
+      "first_name": "Kess",
       "last_name": "Alvy",
       "email": "kalvyq@wikispaces.com",
       "createdAt": "2022-01-01T13:23:23Z"
