@@ -20,8 +20,9 @@ const AddFormateur = (props : any) => {
     event.preventDefault();
     const formateurCapitalized : Formateur = {
       ...formateur,
-      first_name: formateur.first_name.charAt(0).toUpperCase() + formateur.first_name.slice(1),
-      last_name: formateur.last_name.charAt(0).toUpperCase() + formateur.last_name.slice(1)
+      first_name: formateur.first_name.charAt(0).toUpperCase() + formateur.first_name.toLocaleLowerCase().slice(1),
+      last_name: formateur.last_name.charAt(0).toUpperCase() + formateur.last_name.toLocaleLowerCase().slice(1),
+      email: formateur.email.toLocaleLowerCase()
     };
     const response = await fetch('http://localhost:3000/formateurs')
     const data = await response.json();
@@ -45,7 +46,7 @@ const AddFormateur = (props : any) => {
         <section className="addFicheSection">
           <div className="inputDivBox">
             <div className='inputDiv'>
-              <label htmlFor="first_name" className='addInputTitle'>First Name:</label>
+              <label htmlFor="first_name" className='addInputTitle'>Nom :</label>
               <input
                 type="text"
                 name="first_name"
@@ -57,7 +58,7 @@ const AddFormateur = (props : any) => {
               />
             </div>
             <div className='inputDiv'>
-              <label htmlFor="last_name" className='addInputTitle'>Last Name:</label>
+              <label htmlFor="last_name" className='addInputTitle'>Prénom :</label>
               <input
                 type="text"
                 name="last_name"

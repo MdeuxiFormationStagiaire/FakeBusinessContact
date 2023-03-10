@@ -14,11 +14,9 @@
 .itemsContainerSelected {
     display: grid;
     grid-template-columns: 20% 20% 40% 20%;
-    background-color: #22bb2546;
+    background-color: #e3061546;
     border-top: 2px solid #1C1D3B;
     border-bottom: 1px solid #1C1D3B;
-    border-left: 3px solid #1C1D3B;
-    border-right: 3px solid #1C1D3B;
     font-weight:800;
 }
 

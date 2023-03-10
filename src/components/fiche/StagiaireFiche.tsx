@@ -61,7 +61,7 @@ const StagiaireFiche : React.FC<stagiaireFicheProps> = ({stagiaires, onUpdateSta
     }
   }
 
-  const handleEditMode = () => {
+  const handleEditMode = (className: string) => {
     if (editMode == false) {
       setBackupStagiaire(stagiaire)
       setEditMode(true)
@@ -78,7 +78,8 @@ const StagiaireFiche : React.FC<stagiaireFicheProps> = ({stagiaires, onUpdateSta
     } else if (name === 'email') {
       setStagiaire(prevState => Object.assign({}, prevState, { [name]: value.toLocaleLowerCase() }));
     } else {
-      setStagiaire(prevState => Object.assign({}, prevState, { [name]: value }));
+      const capitalizedValue = value.charAt(0).toUpperCase() + value.slice(1);
+      setStagiaire(prevState => Object.assign({}, prevState, { [name]: capitalizedValue}));
     }
   };
 
@@ -88,6 +89,13 @@ const StagiaireFiche : React.FC<stagiaireFicheProps> = ({stagiaires, onUpdateSta
     if (!stagiaire) {
       return;
     }
+
+    setBackupStagiaire(prevStagiaire => ({
+      ...prevStagiaire,
+      last_name: stagiaire.last_name,
+      first_name: stagiaire.first_name,
+      email: stagiaire.email
+    }));
 
     stagiaireService.updateStagiaire(stagiaire.id, stagiaire)
       .then(() => {
@@ -116,7 +124,7 @@ const StagiaireFiche : React.FC<stagiaireFicheProps> = ({stagiaires, onUpdateSta
   return (
     <>
       <section className='buttonSection'>
-        <button type='button' className='updateButtonBox' onClick={handleEditMode} onMouseEnter={() => handleButtonHover('hoveredUpdate', true)} onMouseLeave={() => handleButtonHover('hoveredUpdate', false)}>
+        <button type='button' className='updateButtonBox' onClick={() => handleEditMode('hoveredUpdate')} onMouseEnter={() => handleButtonHover('hoveredUpdate', true)} onMouseLeave={() => handleButtonHover('hoveredUpdate', false)}>
           M
         </button>
         <button type='button' className='deleteButtonBox' onClick={handleDelete} onMouseEnter={() => handleButtonHover('hoveredDelete', true)} onMouseLeave={() => handleButtonHover('hoveredDelete', false)}>
@@ -135,85 +143,87 @@ const StagiaireFiche : React.FC<stagiaireFicheProps> = ({stagiaires, onUpdateSta
           onCancel={handleCancelDelete} 
         />
       </Modal>
-      <section className='ficheSection'>
-        {editMode ? (
-          <form className='formSection' onSubmit={handleFormSubmit}>
-            <section className='inputSection'>
+      {editMode ? (
+          <section className='ficheSectionUpdate'>
+            <form className='formSection' onSubmit={handleFormSubmit}>
+              <section className='inputSection'>
+                <div className="titleInputBox">
+                  <h3 className='inputTitle'>Nom :</h3>
+                  <div className="inputBox">
+                    <input
+                      type="text"
+                      name="last_name"
+                      value={stagiaire.last_name}
+                      onChange={handleInputChange}
+                      className='lastNameInputText'
+                    />
+                  </div>
+                </div>
+                <div className="titleInputBox">
+                  <h3 className='inputTitle'>Prénom :</h3>
+                  <div className="inputBox">
+                    <input
+                      type="text"
+                      name="first_name"
+                      value={stagiaire.first_name}
+                      onChange={handleInputChange}
+                      className='firstNameInputText'
+                    />
+                  </div>
+                </div>
+                <div className="titleInputBox">
+                  <h3 className='inputTitle'>Email :</h3>
+                  <div className="inputBox">
+                    <input
+                      type="email"
+                      name="email"
+                      value={stagiaire.email}
+                      onChange={handleInputChange}
+                      className='emailInputText'
+                    />
+                  </div>
+                </div>
+              </section>
+              <section className='updateButtonsSection'>
+                <button type="submit" className='formSaveButton'>Enregistrer</button>
+                <button type="button" className='formCancelButton' onClick={handleCancel}>Annuler</button>
+              </section>
+            </form>
+          </section>  
+        ) : (
+          <>
+            <section className='ficheSection'>
               <div className="titleInputBox">
                 <h3 className='inputTitle'>Nom :</h3>
                 <div className="inputBox">
-                  <input
-                    type="text"
-                    name="last_name"
-                    value={stagiaire.last_name}
-                    onChange={handleInputChange}
-                    className='lastNameInputText'
-                  />
+                  <p className='lastNameInputText'>{backupStagiaire.last_name}</p>
                 </div>
               </div>
               <div className="titleInputBox">
                 <h3 className='inputTitle'>Prénom :</h3>
                 <div className="inputBox">
-                  <input
-                    type="text"
-                    name="first_name"
-                    value={stagiaire.first_name}
-                    onChange={handleInputChange}
-                    className='firstNameInputText'
-                  />
+                  <p className='firstNameInputText'>{backupStagiaire.first_name}</p>
                 </div>
               </div>
               <div className="titleInputBox">
                 <h3 className='inputTitle'>Email :</h3>
                 <div className="inputBox">
-                  <input
-                    type="email"
-                    name="email"
-                    value={stagiaire.email}
-                    onChange={handleInputChange}
-                    className='emailInputText'
-                  />
+                  <p className='emailInputText'>{backupStagiaire.email}</p>
+                </div>
+              </div>
+              <div className="titleInputBox">
+                <h3 className='inputTitle'>DC :</h3>
+                <div className="inputBox">
+                  <p className='createdAtInputText'>
+                    {backupStagiaire.createdAt.toLocaleString("fr-FR").slice(8,10) + "/"
+                    + backupStagiaire.createdAt.toLocaleString("fr-FR").slice(5,7) + "/"
+                    + backupStagiaire.createdAt.toLocaleString("fr-FR").slice(0,4)}
+                  </p>
                 </div>
               </div>
             </section>
-            <section className='updateButtonsSection'>
-              <button type="submit" className='formSaveButton'>Enregistrer</button>
-              <button type="button" className='formCancelButton' onClick={handleCancel}>Annuler</button>
-            </section>
-          </form>
-        ) : (
-          <>
-            <div className="titleInputBox">
-              <h3 className='inputTitle'>Nom :</h3>
-              <div className="inputBox">
-                <p className='lastNameInputText'>{backupStagiaire.last_name}</p>
-              </div>
-            </div>
-            <div className="titleInputBox">
-              <h3 className='inputTitle'>Prénom :</h3>
-              <div className="inputBox">
-                <p className='firstNameInputText'>{backupStagiaire.first_name}</p>
-              </div>
-            </div>
-            <div className="titleInputBox">
-              <h3 className='inputTitle'>Email :</h3>
-              <div className="inputBox">
-                <p className='emailInputText'>{backupStagiaire.email}</p>
-              </div>
-            </div>
-            <div className="titleInputBox">
-              <h3 className='inputTitle'>DC :</h3>
-              <div className="inputBox">
-                <p className='createdAtInputText'>
-                  {backupStagiaire.createdAt.toLocaleString("fr-FR").slice(8,10) + "/"
-                  + backupStagiaire.createdAt.toLocaleString("fr-FR").slice(5,7) + "/"
-                  + backupStagiaire.createdAt.toLocaleString("fr-FR").slice(0,4)}
-                </p>
-              </div>
-            </div>
           </>
         )}
-      </section>
     </>
   )
 }

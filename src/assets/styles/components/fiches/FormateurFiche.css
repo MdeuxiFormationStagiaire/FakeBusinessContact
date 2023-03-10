@@ -38,7 +38,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #e30613;
+    background-color: #d30513;
     border: none;
     border-radius: 15px;
     width: 50px;
@@ -88,9 +88,21 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #1c1d3bb9;
+    background-color: #e306158d;
     border-radius: 10px;
     border: 3px solid white;
+    width: 80%;
+    height: 120px;
+    margin-bottom: 40px;
+}
+
+.ficheSectionUpdate {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #e306158d;
+    border-radius: 10px;
+    border: 4px dashed #e9b826;
     width: 80%;
     height: 120px;
     margin-bottom: 40px;
@@ -101,7 +113,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #1c1d3b;
+    background-color: #e306158d;
     border-radius: 10px;
     width: 80%;
     height: 120px;
@@ -114,12 +126,12 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #1c1d3b;
+    background-color: #e306158d;
     border-radius: 10px;
     width: 80%;
     height: 120px;
     margin-bottom: 40px;
-    border: 4px dashed #e30615;
+    border: 4px dashed #f71e2c;
 }
 
 .titleInputBox {

@@ -31,24 +31,18 @@ const FormateurList: React.FC<FormateurListProps> = ({ formateurs, currentPage }
   };
 
   const renderFormateursList = () => {
-    const filteredFormateurs = formateurs.filter((formateur: Formateur) => {
-      const name = `${formateur.first_name} ${formateur.last_name} ${formateur.email} ${formateur.createdAt.toString().slice(0, 10)}`;
+
+    formateurs = formateurs.filter((formateur: Formateur) => {
+      const name = `${formateur.first_name.toLocaleLowerCase()} ${formateur.last_name.toLocaleLowerCase()} ${formateur.email} ${formateur.createdAt.toString().slice(0, 10)}`;
       return search === '' ? formateur : name.includes(search);
     });
 
-    if (selectedFormateur) {
-      const formateurIndex = filteredFormateurs.findIndex((formateur) => formateur.id === selectedFormateur.id);
-      if (formateurIndex !== -1) {
-        filteredFormateurs.splice(formateurIndex, 1);
-        filteredFormateurs.unshift(selectedFormateur);
-      }
-    }
-
-    return filteredFormateurs.map((formateur: Formateur) => {
+    return formateurs.map((formateur: Formateur) => {
       return (
         <FormateurListContainer key={formateur.id} formateur={formateur} onFormateurSelected={handleFormateurSelected} />
       );
     });
+    
   };
 
   return (

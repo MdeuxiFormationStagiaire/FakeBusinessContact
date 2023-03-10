@@ -64,19 +64,11 @@ const FormateurFiche : React.FC<formateurFicheProps> = ({formateurs, onUpdateFor
   }
 
   const handleEditMode = (className: string) => {
-    const fiche = document.querySelector('.ficheSection') as HTMLDivElement | null;
     if (editMode == false) {
       setBackupFormateur(formateur)
       setEditMode(true)
-      if (fiche) {
-        console.log(fiche);
-        fiche.classList.add(className);
-      }
     } else {
       setEditMode(false)
-      if (fiche) {
-        fiche.classList.remove(className);
-      }
     }
   }
 
@@ -100,26 +92,27 @@ const FormateurFiche : React.FC<formateurFicheProps> = ({formateurs, onUpdateFor
       return;
     }
 
-    const response = await fetch('http://localhost:3000/formateurs')
-    const data = await response.json();
-    const duplicateFormateur = data.find((f : Formateur) => f.email === formateur.email)
-    if (duplicateFormateur) {
-      alert('Ce formateur existe déjà !')
-    } else {
-      setBackupFormateur(prevFormateur => ({
-        ...prevFormateur,
-        last_name: formateur.last_name,
-        first_name: formateur.first_name,
-        email: formateur.email
-      }));
-      formateurService.updateFormateur(formateur.id, formateur)
-        .then(() => {
-          setEditMode(false)
-        })
-        .catch((error) => console.error(error)
-        );
-      onUpdateFormateur(formateur)
-    }
+    // const response = await fetch('http://localhost:3000/formateurs')
+    // const data = await response.json();
+    // const duplicateFormateur = data.find((f : Formateur) => f.email === formateur.email)
+    // if (duplicateFormateur) {
+    //   alert('Ce formateur existe déjà !')
+    // } else {
+      
+    setBackupFormateur(prevFormateur => ({
+      ...prevFormateur,
+      last_name: formateur.last_name,
+      first_name: formateur.first_name,
+      email: formateur.email
+    }));
+
+    formateurService.updateFormateur(formateur.id, formateur)
+      .then(() => {
+        setEditMode(false)
+      })
+      .catch((error) => console.error(error)
+      );
+    onUpdateFormateur(formateur)
   }
 
   const handleCancel = () => {
@@ -159,85 +152,87 @@ const FormateurFiche : React.FC<formateurFicheProps> = ({formateurs, onUpdateFor
           onCancel={handleCancelDelete} 
         />
       </Modal>
-      <section className='ficheSection'>
         {editMode ? (
-          <form className='formSection' onSubmit={handleFormSubmit}>
-            <section className='inputSection'>
+          <section className='ficheSectionUpdate'>
+            <form className='formSection' onSubmit={handleFormSubmit}>
+              <section className='inputSection'>
+                <div className="titleInputBox">
+                  <h3 className='inputTitle'>Nom :</h3>
+                  <div className="inputBox">
+                    <input
+                      type="text"
+                      name="last_name"
+                      value={formateur.last_name}
+                      onChange={handleInputChange}
+                      className='lastNameInputText'
+                    />
+                  </div>
+                </div>
+                <div className="titleInputBox">
+                  <h3 className='inputTitle'>Prénom :</h3>
+                  <div className="inputBox">
+                    <input
+                      type="text"
+                      name="first_name"
+                      value={formateur.first_name}
+                      onChange={handleInputChange}
+                      className='firstNameInputText'
+                    />
+                  </div>
+                </div>
+                <div className="titleInputBox">
+                  <h3 className='inputTitle'>Email :</h3>
+                  <div className="inputBox">
+                    <input
+                      type="email"
+                      name="email"
+                      value={formateur.email}
+                      onChange={handleInputChange}
+                      className='emailInputText'
+                    />
+                  </div>
+                </div>
+              </section>
+              <section className='updateButtonsSection'>
+                <button type="submit" className='formSaveButton'>Enregistrer</button>
+                <button type="button" className='formCancelButton' onClick={handleCancel}>Annuler</button>
+              </section>
+            </form>
+          </section>  
+        ) : (
+          <>
+            <section className='ficheSection'>
               <div className="titleInputBox">
                 <h3 className='inputTitle'>Nom :</h3>
                 <div className="inputBox">
-                  <input
-                    type="text"
-                    name="last_name"
-                    value={formateur.last_name}
-                    onChange={handleInputChange}
-                    className='lastNameInputText'
-                  />
+                  <p className='lastNameInputText'>{backupFormateur.last_name}</p>
                 </div>
               </div>
               <div className="titleInputBox">
                 <h3 className='inputTitle'>Prénom :</h3>
                 <div className="inputBox">
-                  <input
-                    type="text"
-                    name="first_name"
-                    value={formateur.first_name}
-                    onChange={handleInputChange}
-                    className='firstNameInputText'
-                  />
+                  <p className='firstNameInputText'>{backupFormateur.first_name}</p>
                 </div>
               </div>
               <div className="titleInputBox">
                 <h3 className='inputTitle'>Email :</h3>
                 <div className="inputBox">
-                  <input
-                    type="email"
-                    name="email"
-                    value={formateur.email}
-                    onChange={handleInputChange}
-                    className='emailInputText'
-                  />
+                  <p className='emailInputText'>{backupFormateur.email}</p>
+                </div>
+              </div>
+              <div className="titleInputBox">
+                <h3 className='inputTitle'>DC :</h3>
+                <div className="inputBox">
+                  <p className='createdAtInputText'>
+                    {backupFormateur.createdAt.toLocaleString("fr-FR").slice(8,10) + "/"
+                    + backupFormateur.createdAt.toLocaleString("fr-FR").slice(5,7) + "/"
+                    + backupFormateur.createdAt.toLocaleString("fr-FR").slice(0,4)}
+                  </p>
                 </div>
               </div>
             </section>
-            <section className='updateButtonsSection'>
-              <button type="submit" className='formSaveButton'>Enregistrer</button>
-              <button type="button" className='formCancelButton' onClick={handleCancel}>Annuler</button>
-            </section>
-          </form>
-        ) : (
-          <>
-            <div className="titleInputBox">
-              <h3 className='inputTitle'>Nom :</h3>
-              <div className="inputBox">
-                <p className='lastNameInputText'>{backupFormateur.last_name}</p>
-              </div>
-            </div>
-            <div className="titleInputBox">
-              <h3 className='inputTitle'>Prénom :</h3>
-              <div className="inputBox">
-                <p className='firstNameInputText'>{backupFormateur.first_name}</p>
-              </div>
-            </div>
-            <div className="titleInputBox">
-              <h3 className='inputTitle'>Email :</h3>
-              <div className="inputBox">
-                <p className='emailInputText'>{backupFormateur.email}</p>
-              </div>
-            </div>
-            <div className="titleInputBox">
-              <h3 className='inputTitle'>DC :</h3>
-              <div className="inputBox">
-                <p className='createdAtInputText'>
-                  {backupFormateur.createdAt.toLocaleString("fr-FR").slice(8,10) + "/"
-                  + backupFormateur.createdAt.toLocaleString("fr-FR").slice(5,7) + "/"
-                  + backupFormateur.createdAt.toLocaleString("fr-FR").slice(0,4)}
-                </p>
-              </div>
-            </div>
           </>
         )}
-      </section>
     </>
   )
 }

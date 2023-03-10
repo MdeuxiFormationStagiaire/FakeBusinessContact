@@ -34,7 +34,7 @@ class FormateurService {
 
     updateFormateur = async (id : number, formateur : Formateur) => {
         const res = await fetch(`${URL}/${id}`, {
-            method: "PUT",
+            method: "PATCH",
             body: JSON.stringify(formateur),
             headers: { "content-type": "application/json" }
         });
