@@ -3,41 +3,45 @@ import { useNavigate } from 'react-router-dom';
 import { Stagiaire } from '../../models/Stagiaire';
 import '../../assets/styles/components/add/AddStagiaire.css'
 
-
 type addStagiaireProps = {
   addNewStagiaire : Function
 }
 
 const AddStagiaire : React.FC<addStagiaireProps> = ({addNewStagiaire}) => {
+
   const navigate = useNavigate();
   const [stagiaire, setStagiaire] = useState<Stagiaire>({ id: 0, first_name: '', last_name: '', email: '', createdAt: new Date() });
 
   useEffect(() => {
-    setStagiaire((stagiaire) => ({...stagiaire, createdAt: new Date()}))
+    setStagiaire((stagiaire) => ({...stagiaire, createdAt: new Date()}));
   }, []);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setStagiaire((stagiaire) => ({...stagiaire, [event.target.name]: event.target.value}))
+    const { name, value } = event.target;
+    setStagiaire((stagiaire) => ({...stagiaire, [name]: value}));
   };
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
     const stagiaireCapitalized : Stagiaire = {
       ...stagiaire,
       first_name: stagiaire.first_name.charAt(0).toUpperCase() + stagiaire.first_name.toLocaleLowerCase().slice(1),
       last_name: stagiaire.last_name.charAt(0).toUpperCase() + stagiaire.last_name.toLocaleLowerCase().slice(1),
       email: stagiaire.email.toLocaleLowerCase()
     };
-    const response = await fetch('http://localhost:3000/stagiaires')
+
+    const response = await fetch('http://localhost:3000/stagiaires');
     const data = await response.json();
-    const duplicateStagiaire = data.find((s : Stagiaire) => s.email === stagiaireCapitalized.email)
+    const duplicateStagiaire = data.find((s : Stagiaire) => s.email === stagiaireCapitalized.email);
+
     if (duplicateStagiaire) {
-      alert('Ce stagiaire existe déjà !')
+      alert('Ce stagiaire existe déjà !');
     } else {
       addNewStagiaire(stagiaireCapitalized);
-      const newStagiaire : Stagiaire = { id: 0, first_name: '', last_name: '', email: '', createdAt: new Date() }
+      const newStagiaire : Stagiaire = { id: 0, first_name: '', last_name: '', email: '', createdAt: new Date() };
       setStagiaire(newStagiaire);
-    }
+    };
   };
 
   return (
@@ -74,7 +78,7 @@ const AddStagiaire : React.FC<addStagiaireProps> = ({addNewStagiaire}) => {
               />
             </div>
             <div className='inputDivStagiaires'>
-              <label htmlFor="email" className='addInputTitleStagiaires'>Email:</label>
+              <label htmlFor="email" className='addInputTitleStagiaires'>Email :</label>
               <input
                 type="email"
                 name="email"

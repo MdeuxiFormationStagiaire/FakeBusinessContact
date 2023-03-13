@@ -408,6 +408,14 @@
       "floor": "1er",
       "indication": "optimize customized networks",
       "createdAt": "2022-03-06T20:10:49Z"
+    },
+    {
+      "id": 21,
+      "name": "Vauban",
+      "capacity": "25",
+      "indication": "Au fond à gauche",
+      "floor": "2ème",
+      "createdAt": "2023-03-13T18:14:06.131Z"
     }
   ]
 }
