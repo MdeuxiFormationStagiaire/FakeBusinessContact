@@ -5,6 +5,7 @@ import { Salle } from '../../models/Salle'
 import { salleService } from '../../services/SalleService'
 import { ModalStyle } from '../../assets/styles/components/modals/ModalStyle.css'
 import DeleteConfirmation from '../modals/DeleteConfirmation'
+import '../../assets/styles/components/fiches/SalleFiche.css'
 
 type SalleFicheProps = {
     salles : Salle[],
@@ -178,7 +179,7 @@ const SalleFiche : React.FC<SalleFicheProps> = ({salles, onUpdateSalle}) => {
                   </div>
                 </div>
                 <div className="titleInputBoxSalles">
-                  <h3 className='inputTitle'>Indications :</h3>
+                  <h3 className='inputTitleSalles'>Indications :</h3>
                   <div className="inputBoxSalles">
                     <input
                       type="text"
@@ -190,13 +191,13 @@ const SalleFiche : React.FC<SalleFicheProps> = ({salles, onUpdateSalle}) => {
                   </div>
                 </div>
                 <div className="titleInputBoxSalles">
-                  <h3 className='inputTitle'>Etage :</h3>
+                  <h3 className='inputTitleSalles'>Etage :</h3>
                   <div className="inputBoxSalles">
                     <select
                       name="floor"
                       value={salle.floor}
                       onChange={handleFloorChange}
-                      className='floorSelectSalles'
+                      className='floorInputTextSalles'
                     >
                       <option value="RDC">RDC</option>
                       <option value="1er">1er</option>
@@ -221,7 +222,7 @@ const SalleFiche : React.FC<SalleFicheProps> = ({salles, onUpdateSalle}) => {
                 </div>
               </div>
               <div className="titleInputBoxSalles">
-                <h3 className='inputTitleSalles'>Prénom :</h3>
+                <h3 className='inputTitleSalles'>Capacité :</h3>
                 <div className="inputBoxSalles">
                   <p className='capacityInputSalles'>{backupSalle.capacity}</p>
                 </div>
@@ -229,7 +230,7 @@ const SalleFiche : React.FC<SalleFicheProps> = ({salles, onUpdateSalle}) => {
               <div className="titleInputBoxSalles">
                 <h3 className='inputTitleSalles'>Indications :</h3>
                 <div className="inputBoxSalles">
-                  <p className='indiacationInputTextSalles'>{backupSalle.indication}</p>
+                  <p className='indicationInputTextSalles'>{backupSalle.indication}</p>
                 </div>
               </div>
               <div className="titleInputBoxSalles">
