@@ -1,4 +1,4 @@
-.addFormSectionFormateurs {
+.addFormSectionStagiaires {
     width: 100%;
     height: 300px;
     display: flex;
@@ -8,13 +8,13 @@
     gap: 10px;
 }
 
-.buttonDivBoxFormateurs {
+.buttonDivBoxStagiaires {
     display: flex;
     justify-content: space-around;
     width: 80%;
 }
 
-.addFormButtonFormateurs {
+.addFormButtonStagiaires {
     border: none;
     border-radius: 15px;
     height: 50px;
@@ -25,7 +25,7 @@
     font-weight: bold;
 }
 
-.addFormButtonFormateurs:hover {
+.addFormButtonStagiaires:hover {
     border: 2px solid white;
     border-radius: 15px;
     height: 50px;
@@ -36,7 +36,7 @@
     font-weight: bold;
 }
 
-.cancelButtonFormateurs {
+.cancelButtonStagiaires {
     border: none;
     border-radius: 15px;
     height: 50px;
@@ -47,7 +47,7 @@
     font-weight: bold;
 }
 
-.cancelButtonFormateurs:hover {
+.cancelButtonStagiaires:hover {
     border: 2px solid white;
     border-radius: 15px;
     height: 50px;
@@ -58,36 +58,36 @@
     font-weight: bold;
 }
 
-.addFicheSectionFormateurs {
+.addFicheSectionStagiaires {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #007700a8;
+    background-color: #0099b1b1;
     border-radius: 10px;
     border: 3px solid white;
     width: 80%;
     height: 120px;
 }
 
-.inputDivBoxFormateurs {
+.inputDivBoxStagiaires {
     width: 100%;
     display: flex;
     justify-content: space-around;
     color: white;
 }
 
-.inputDivFormateurs {
+.inputDivStagiaires {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.addInputTitleFormateurs {
+.addInputTitleStagiaires {
     font-weight: bold;
     font-size: 20px;
 }
 
-.firstNameInputFormateurs {
+.firstNameInputStagiaires {
     border: none;
     border-radius: 5px;
     font-size: 18px;
@@ -97,7 +97,7 @@
     text-align: center;
 }
 
-.lastNameInputFormateurs {
+.lastNameInputStagiaires {
     border: none;
     border-radius: 5px;
     font-size: 18px;
@@ -107,7 +107,7 @@
     text-align: center;
 }
 
-.emailInputFormateurs {
+.emailInputStagiaires {
     border: none;
     border-radius: 5px;
     font-size: 18px;

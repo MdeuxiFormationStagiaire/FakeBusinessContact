@@ -421,6 +421,13 @@
       "last_name": "Gheorghescu",
       "email": "cgheorghescut@lulu.com",
       "createdAt": "2022-03-11T14:32:01Z"
+    },
+    {
+      "id": 31,
+      "first_name": "Nara",
+      "last_name": "Tanier",
+      "email": "nara.tanier@gmail.com",
+      "createdAt": "2023-03-13T13:50:12.820Z"
     }
   ]
 }

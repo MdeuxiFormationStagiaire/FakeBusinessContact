@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Formateur } from '../../models/Formateur';
 import '../../assets/styles/components/add/AddFormateur.css'
 
@@ -42,44 +42,44 @@ const AddFormateur : React.FC<addFormateurProps> = ({addNewFormateur}) => {
 
   return (
     <>
-      <form className='addFormSection' onSubmit={(event) => handleSubmit(event)}>
-        <div className="buttonDivBox">
-          <button type="submit" className='addFormButton'>Ajouter</button>
-          <button type='button' className='cancelButton' onClick={() => navigate(-1)}>Annuler</button>
+      <form className='addFormSectionFormateurs' onSubmit={(event) => handleSubmit(event)}>
+        <div className="buttonDivBoxFormateurs">
+          <button type="submit" className='addFormButtonFormateurs'>Ajouter</button>
+          <button type='button' className='cancelButtonFormateurs' onClick={() => navigate(-1)}>Annuler</button>
         </div>
-        <section className="addFicheSection">
-          <div className="inputDivBox">
-            <div className='inputDiv'>
-              <label htmlFor="first_name" className='addInputTitle'>Nom :</label>
+        <section className="addFicheSectionFormateurs">
+          <div className="inputDivBoxFormateurs">
+            <div className='inputDivFormateurs'>
+              <label htmlFor="first_name" className='addInputTitleFormateurs'>Nom :</label>
               <input
                 type="text"
                 name="first_name"
                 id="first_name"
-                className='firstNameInput'
+                className='firstNameInputFormateurs'
                 value={formateur.first_name}
                 onChange={handleInputChange}
                 required
               />
             </div>
-            <div className='inputDiv'>
-              <label htmlFor="last_name" className='addInputTitle'>Prénom :</label>
+            <div className='inputDivFormateurs'>
+              <label htmlFor="last_name" className='addInputTitleFormateurs'>Prénom :</label>
               <input
                 type="text"
                 name="last_name"
                 id="last_name"
-                className='lastNameInput'
+                className='lastNameInputFormateurs'
                 value={formateur.last_name}
                 onChange={handleInputChange}
                 required
               />
             </div>
-            <div className='inputDiv'>
-              <label htmlFor="email" className='addInputTitle'>Email:</label>
+            <div className='inputDivFormateurs'>
+              <label htmlFor="email" className='addInputTitleFormateurs'>Email:</label>
               <input
                 type="email"
                 name="email"
                 id="email"
-                className='emailInput'
+                className='emailInputFormateurs'
                 value={formateur.email}
                 onChange={handleInputChange}
                 required
