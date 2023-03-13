@@ -34,7 +34,7 @@ const StagiaireFiche : React.FC<stagiaireFicheProps> = ({stagiaires, onUpdateSta
 
   const handleDelete = () => {
     setShowDeleteConfirmation(true)
-  }
+  };
 
   const handleConfirmDelete = () => {
     if (!stagiaire) {
@@ -45,11 +45,11 @@ const StagiaireFiche : React.FC<stagiaireFicheProps> = ({stagiaires, onUpdateSta
       .then(() => navigate('/stagiaires'))
       .catch((error) => console.error(error))
     setShowDeleteConfirmation(false);
-  }
+  };
 
   const handleCancelDelete = () => {
     setShowDeleteConfirmation(false)
-  }
+  };
 
   const handleButtonHover = (className: string, hover: boolean) : any => {
     const fiche = document.querySelector('.ficheSectionStagiaires') as HTMLDivElement | null;
@@ -60,7 +60,7 @@ const StagiaireFiche : React.FC<stagiaireFicheProps> = ({stagiaires, onUpdateSta
         fiche.classList.remove(className);
       }
     }
-  }
+  };
 
   const handleEditMode = () => {
     if (editMode == false) {
@@ -69,7 +69,7 @@ const StagiaireFiche : React.FC<stagiaireFicheProps> = ({stagiaires, onUpdateSta
     } else {
       setEditMode(false)
     }
-  }
+  };
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
     const { name, value } = event.target;
@@ -105,22 +105,22 @@ const StagiaireFiche : React.FC<stagiaireFicheProps> = ({stagiaires, onUpdateSta
       .catch((error) => console.error(error)
       );
     onUpdateStagiaire(stagiaire)
-  }
+  };
 
   const handleCancel = () => {
     setEditMode(false)
     if (backupStagiaire != undefined) {
       setStagiaire(backupStagiaire)
     }
-  }
+  };
 
   const handleAddButtonNav = () => {
     navigate('/stagiaires/add')
-  }
+  };
 
   if (!stagiaire) {
     return <div>Loading...</div>;
-  }
+  };
   
   return (
     <>
