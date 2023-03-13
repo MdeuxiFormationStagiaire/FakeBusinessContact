@@ -1,0 +1,123 @@
+.sallesList {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #1C1D3B;
+    border-radius: 10px 10px 10px 10px;
+    background-color: white;
+    width: 80%;
+    max-height: 600px;
+    overflow-y: scroll;
+    margin: 0 100px;
+}
+
+.sallesListFiche {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #1C1D3B;
+    border-radius: 10px 10px 10px 10px;
+    background-color: white;
+    width: 80%;
+    max-height: 450px;
+    overflow-y: scroll;
+    margin: 0 100px;
+}
+
+.sallesListAdd {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #1C1D3B;
+    border-radius: 10px 10px 10px 10px;
+    background-color: white;
+    width: 80%;
+    max-height: 450px;
+    overflow-y: scroll;
+    margin: 0 100px;
+}
+
+.sallesFilterBar {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 15% 10% 55% 20%;
+    grid-template-areas: 
+        "all name . search";
+    background-color: #0098b1;
+    border-radius: 10px 0 0 0;
+    border-bottom: 1px solid #1C1D3B;
+    position: sticky;
+    top: 0px;
+}
+
+.sallesFilterAllButton {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    grid-area: all;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    padding: 15px 0;
+    background-color: #0098b1;
+    border: none;
+    border-right: 1px solid #1C1D3B;
+    border-radius: 10px 0 0 0;
+}
+
+.sallesFilterNameButton {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    grid-area: name;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    padding: 15px 0;
+    background-color: #0098b1;
+    border: none;
+    border-right: 1px solid #1C1D3B;
+}
+
+.sallesFilterNameButton:hover {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    grid-area: name;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    padding: 15px 0;
+    background-color: #007b8e;
+    border: none;
+    border-right: 1px solid #1C1D3B;
+    text-decoration: underline;
+}
+
+.sallesSearchInput {
+    grid-area: search;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.sallesGrid {
+    display: grid;
+    grid-template-columns: 20% 10% 45% 10% 15%;
+    padding: 15px 0 15px 0;
+    background-color: #D9D9D9;
+    color: #1C1D3B;
+    position: sticky;
+    top: 53px;
+}
+
+.sallesListContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.sallesGridTitle {
+    text-align: center;
+    font-size: 20px;
+}

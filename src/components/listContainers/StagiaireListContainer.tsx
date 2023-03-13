@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Stagiaire } from '../../models/Stagiaire'
-import '../../assets/styles/components/listContainer/ListContainer.css'
+import '../../assets/styles/components/listContainer/FormStagListContainer.css'
 import { useEffect, useRef, useState } from 'react';
 
 type StagiaireListContainerProps = {
@@ -9,6 +9,7 @@ type StagiaireListContainerProps = {
 };
 
 const FormateurListContainer: React.FC<StagiaireListContainerProps> = ({ stagiaire, onStagiaireSelected }) => {
+  
   const [isSelected, setIsSelected] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
