@@ -19,7 +19,7 @@ const SallesPage = () => {
   
   return (
     <>
-      <a href="/stagiaires/add" className='addButtonBox'>
+      <a href="/salles/add" className='addButtonBox'>
         <button className='addButton'>Ajouter</button>
       </a>
       <SalleList salles={salles} currentPage={currentPage}/>
