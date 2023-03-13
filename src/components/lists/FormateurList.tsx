@@ -32,12 +32,12 @@ const FormateurList: React.FC<FormateurListProps> = ({ formateurs, currentPage }
 
   const renderFormateursList = () => {
 
-    formateurs.filter((formateur: Formateur) => {
+    const filteredFormateurs = formateurs.filter((formateur: Formateur) => {
       const name = `${formateur.first_name.toLocaleLowerCase()} ${formateur.last_name.toLocaleLowerCase()} ${formateur.email} ${formateur.createdAt.toString().slice(0, 10)}`;
       return search === '' ? formateur : name.includes(search);
     });
 
-    return formateurs.map((formateur: Formateur) => {
+    return filteredFormateurs.map((formateur: Formateur) => {
       return (
         <FormateurListContainer
           key={formateur.id} 
@@ -51,25 +51,25 @@ const FormateurList: React.FC<FormateurListProps> = ({ formateurs, currentPage }
   return (
     <>
       <section className={'formateursList' + `${currentPage}`}>
-        <div className="filterBar">
-          <button className="filterAllButton">{formateurs.length} Formateurs</button>
-          <button onClick={filterByName} className="filterNameButton">
+        <div className="formateursFilterBar">
+          <button className="formateursFilterAllButton">{formateurs.length} Formateurs</button>
+          <button onClick={filterByName} className="formateursFilterNameButton">
             By Name
           </button>
           <input
-            className="searchInput"
+            className="formateursSearchInput"
             type="search"
             placeholder="   Recherche ..."
             onChange={(e) => setSearch(e.target.value)}
           />
         </div>
-        <div className="grid">
-          <h3 className="gridTitle">Nom</h3>
-          <h3 className="gridTitle">Prénom</h3>
-          <h3 className="gridTitle">Email</h3>
-          <h3 className="gridTitle">DC</h3>
+        <div className="formateursGrid">
+          <h3 className="formateursGridTitle">Nom</h3>
+          <h3 className="formateursGridTitle">Prénom</h3>
+          <h3 className="formateursGridTitle">Email</h3>
+          <h3 className="formateursGridTitle">DC</h3>
         </div>
-        <div className="listContainer">{renderFormateursList()}</div>
+        <div className="formateursListContainer">{renderFormateursList()}</div>
       </section>
     </>
   );

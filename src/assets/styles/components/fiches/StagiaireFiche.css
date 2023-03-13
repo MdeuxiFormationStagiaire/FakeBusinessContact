@@ -1,4 +1,4 @@
-.buttonSectionFormateurs {
+.buttonSectionStagiaires {
     display: grid;
     grid-template-columns: 10% 10% 80%;
     gap: 10px;
@@ -8,7 +8,7 @@
     margin-bottom: 40px;
 }
 
-.updateButtonBoxFormateurs {
+.updateButtonBoxStagiaires {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,7 +21,7 @@
     font-weight: bold;
 }
 
-.updateButtonBoxFormateurs:hover {
+.updateButtonBoxStagiaires:hover {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -34,7 +34,7 @@
     font-weight: bold;
 }
 
-.deleteButtonBoxFormateurs {
+.deleteButtonBoxStagiaires {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -47,7 +47,7 @@
     font-weight: bold;
 }
 
-.deleteButtonBoxFormateurs:hover { 
+.deleteButtonBoxStagiaires:hover { 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -60,7 +60,7 @@
     font-weight: bold;
 }
 
-.addButtonBoxFicheFormateurs {
+.addButtonBoxFicheStagiaires {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -72,7 +72,7 @@
     font-weight: bold;
 }
 
-.addButtonBoxFicheFormateurs:hover {
+.addButtonBoxFicheStagiaires:hover {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -84,11 +84,11 @@
     font-weight: bold;
 }
 
-.ficheSectionFormateurs {
+.ficheSectionStagiaires {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #007700a8;
+    background-color: #0099b1b1;
     border-radius: 10px;
     border: 3px solid white;
     width: 80%;
@@ -96,11 +96,11 @@
     margin-bottom: 40px;
 }
 
-.ficheSectionUpdateFormateurs {
+.ficheSectionUpdateStagiaires {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #007700a8;
+    background-color: #0099b1b1;
     border-radius: 10px;
     border: 4px dashed #e9b826;
     width: 80%;
@@ -108,12 +108,12 @@
     margin-bottom: 40px;
 }
 
-.updateButtonBoxFormateurs:hover + .ficheSectionFormateurs,
-.hoveredUpdateFormateurs {
+.updateButtonBoxStagiaires:hover + .ficheSectionStagiaires,
+.hoveredUpdateStagiaires {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #007700a8;
+    background-color: #0099b1b1;
     border-radius: 10px;
     width: 80%;
     height: 120px;
@@ -121,12 +121,12 @@
     border: 4px dashed #e9b826;
 }
 
-.deleteButtonBoxFormateurs:hover + .ficheSectionFormateurs,
-.hoveredDeleteFormateurs {
+.deleteButtonBoxStagiaires:hover + .ficheSectionStagiaires,
+.hoveredDeleteStagiaires {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #007700a8;
+    background-color: #0099b1b1;
     border-radius: 10px;
     width: 80%;
     height: 120px;
@@ -134,37 +134,37 @@
     border: 4px dashed #f71e2c;
 }
 
-.titleInputBoxFormateurs {
+.titleInputBoxStagiaires {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 10px;
 }
 
-.inputBoxFormateurs {
+.inputBoxStagiaires {
     background-color: white;
     border-radius: 5px;
     padding: 10px 5px;
 }
 
-.formSectionFormateurs {
+.formSectionStagiaires {
     display: flex;
     flex-direction: column;
     width: 100%;
     gap: 15px;
 }
 
-.inputSectionFormateurs {
+.inputSectionStagiaires {
     display: flex;
     justify-content: space-around;
 }
 
-.updateButtonsSectionFormateurs {
+.updateButtonsSectionStagiaires {
     display: flex;
     justify-content: space-evenly;
 }
 
-.formSaveButtonFormateurs {
+.formSaveButtonStagiaires{
     border: none;
     border-radius: 15px;
     height: 30px;
@@ -174,7 +174,7 @@
     font-weight: bold;
 }
 
-.formSaveButtonFormateurs:hover {
+.formSaveButtonStagiaires:hover {
     border: 2px solid white;
     border-radius: 15px;
     height: 30px;
@@ -184,7 +184,7 @@
     font-weight: bold;
 }
 
-.formCancelButtonFormateurs {
+.formCancelButtonStagiaires {
     border: none;
     border-radius: 15px;
     height: 30px;
@@ -194,7 +194,7 @@
     font-weight: bold;
 }
 
-.formCancelButtonFormateurs:hover {
+.formCancelButtonStagiaires:hover {
     border: 2px solid white;
     border-radius: 15px;
     height: 30px;
@@ -204,12 +204,12 @@
     font-weight: bold;
 }
 
-.inputTitleFormateurs {
+.inputTitleStagiaires {
     color: white;
     font-size: 20px;
 }
 
-.lastNameInputTextFormateurs {
+.lastNameInputTextStagiaires {
     border: none;
     height: 20px;
     min-width: 100px;
@@ -219,7 +219,7 @@
     text-align: center;
 }
 
-.firstNameInputTextFormateurs {
+.firstNameInputTextStagiaires {
     border: none;
     height: 20px;
     min-width: 100px;
@@ -229,7 +229,7 @@
     text-align: center;
 }
 
-.emailInputTextFormateurs {
+.emailInputTextStagiaires {
     border: none;
     height: 20px;
     width: fit-content;
@@ -239,7 +239,7 @@
     text-align: center;
 }
 
-.createdAtInputTextFormateurs {
+.createdAtInputTextStagiaires {
     border: none;
     height: 20px;
     min-width: 100px;

@@ -3,7 +3,11 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Formateur } from '../../models/Formateur';
 import '../../assets/styles/components/add/AddFormateur.css'
 
-const AddFormateur = (props : any) => {
+type addFormateurProps = {
+  addNewFormateur : Function
+}
+
+const AddFormateur : React.FC<addFormateurProps> = ({addNewFormateur}) => {
 
   const navigate = useNavigate();
   const [formateur, setFormateur] = useState<Formateur>({ id: 0, first_name: '', last_name: '', email: '', createdAt: new Date() });
@@ -30,7 +34,7 @@ const AddFormateur = (props : any) => {
     if (duplicateFormateur) {
       alert('Ce formateur existe déjà !')
     } else {
-      props.addNewFormateur(formateurCapitalized);
+      addNewFormateur(formateurCapitalized);
       const newFormateur : Formateur = { id: 0, first_name: '', last_name: '', email: '', createdAt: new Date() }
       setFormateur(newFormateur);
     }

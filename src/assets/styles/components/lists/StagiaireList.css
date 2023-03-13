@@ -34,20 +34,20 @@
     margin: 0 100px;
 }
 
-.filterBar {
+.stagiairesFilterBar {
     display: grid;
     align-items: center;
     grid-template-columns: 15% 10% 10% 45% 20%;
     grid-template-areas: 
         "all name dc . search";
-    background-color: #e30613;
+    background-color: #0098b1;
     border-radius: 10px 0 0 0;
     border-bottom: 1px solid #1C1D3B;
     position: sticky;
     top: 0px;
 }
 
-.filterAllButton {
+.stagiairesFilterAllButton {
     font-weight: bold;
     display: flex;
     align-items: center;
@@ -57,13 +57,13 @@
     color: white;
     font-size: 18px;
     padding: 15px 0;
-    background-color: #e30613;
+    background-color: #0098b1;
     border: none;
     border-right: 1px solid #1C1D3B;
     border-radius: 10px 0 0 0;
 }
 
-.filterNameButton {
+.stagiairesFilterNameButton {
     font-weight: bold;
     display: flex;
     align-items: center;
@@ -73,12 +73,12 @@
     color: white;
     font-size: 18px;
     padding: 15px 0;
-    background-color: #e30613;
+    background-color: #0098b1;
     border: none;
     border-right: 1px solid #1C1D3B;
 }
 
-.filterNameButton:hover {
+.stagiairesFilterNameButton:hover {
     font-weight: bold;
     display: flex;
     align-items: center;
@@ -88,44 +88,13 @@
     color: white;
     font-size: 18px;
     padding: 15px 0;
-    background-color: #c30512;
+    background-color: #007b8e;
     border: none;
     border-right: 1px solid #1C1D3B;
     text-decoration: underline;
 }
 
-.filterDcButton {
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    grid-area: dc;
-    text-align: center;
-    color: white;
-    font-size: 18px;
-    padding: 15px 0;
-    background-color: #e30613;
-    border: none;
-    border-right: 1px solid #1C1D3B;
-}
-
-.filterDcButton:hover {
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    grid-area: dc;
-    text-align: center;
-    color: white;
-    font-size: 18px;
-    padding: 15px 0;
-    background-color: #c30512;
-    border: none;
-    border-right: 1px solid #1C1D3B;
-    text-decoration: underline;
-}
-
-.searchInput {
+.stagiairesSearchInput {
     grid-area: search;
     border: none;
     border-radius: 5px;
@@ -133,7 +102,7 @@
     margin-right: 10px;
 }
 
-.grid {
+.stagiairesGrid {
     display: grid;
     grid-template-columns: 20% 20% 40% 20%;
     padding: 15px 0 15px 0;
@@ -143,12 +112,12 @@
     top: 53px;
 }
 
-.listContainer {
+.stagiairesListContainer {
     display: flex;
     flex-direction: column;
 }
 
-.gridTitle {
+.stagiairesGridTitle {
     text-align: center;
     font-size: 20px;
 }

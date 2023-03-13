@@ -163,7 +163,7 @@
     },
     {
       "id": 29,
-      "first_name": "Tommy",
+      "first_name": "Tom",
       "last_name": "Abbott",
       "email": "tabbotts@nationalgeographic.com",
       "createdAt": "2023-04-19T08:00:08Z"
@@ -202,6 +202,13 @@
       "last_name": "Fredy",
       "email": "fredy.fredy@fredy.com",
       "createdAt": "2023-03-10T16:34:47.403Z"
+    },
+    {
+      "id": 40,
+      "first_name": "Nara",
+      "last_name": "Tanier",
+      "email": "nara.tanier@gmail.com",
+      "createdAt": "2023-03-13T12:54:23.273Z"
     }
   ],
   "stagiaires": [

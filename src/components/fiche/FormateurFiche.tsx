@@ -53,7 +53,7 @@ const FormateurFiche : React.FC<formateurFicheProps> = ({formateurs, onUpdateFor
   }
 
   const handleButtonHover = (className: string, hover: boolean) : any => {
-    const fiche = document.querySelector('.ficheSection') as HTMLDivElement | null;
+    const fiche = document.querySelector('.ficheSectionFormateurs') as HTMLDivElement | null;
     if (fiche) {
       if (hover) {
         fiche.classList.add(className);
@@ -63,7 +63,7 @@ const FormateurFiche : React.FC<formateurFicheProps> = ({formateurs, onUpdateFor
     }
   }
 
-  const handleEditMode = (className: string) => {
+  const handleEditMode = () => {
     if (editMode == false) {
       setBackupFormateur(formateur)
       setEditMode(true)
@@ -91,13 +91,6 @@ const FormateurFiche : React.FC<formateurFicheProps> = ({formateurs, onUpdateFor
     if (!formateur) {
       return;
     }
-
-    // const response = await fetch('http://localhost:3000/formateurs')
-    // const data = await response.json();
-    // const duplicateFormateur = data.find((f : Formateur) => f.email === formateur.email)
-    // if (duplicateFormateur) {
-    //   alert('Ce formateur existe déjà !')
-    // } else {
       
     setBackupFormateur(prevFormateur => ({
       ...prevFormateur,
@@ -132,14 +125,14 @@ const FormateurFiche : React.FC<formateurFicheProps> = ({formateurs, onUpdateFor
   
   return (
     <>
-      <section className='buttonSection'>
-        <button type='button' className='updateButtonBox' onClick={() => handleEditMode('hoveredUpdate')} onMouseEnter={() => handleButtonHover('hoveredUpdate', true)} onMouseLeave={() => handleButtonHover('hoveredUpdate', false)}>
+      <section className='buttonSectionFormateurs'>
+        <button type='button' className='updateButtonBoxFormateurs' onClick={handleEditMode} onMouseEnter={() => handleButtonHover('hoveredUpdateFormateurs', true)} onMouseLeave={() => handleButtonHover('hoveredUpdateFormateurs', false)}>
           M
         </button>
-        <button type='button' className='deleteButtonBox' onClick={handleDelete} onMouseEnter={() => handleButtonHover('hoveredDelete', true)} onMouseLeave={() => handleButtonHover('hoveredDelete', false)}>
+        <button type='button' className='deleteButtonBoxFormateurs' onClick={handleDelete} onMouseEnter={() => handleButtonHover('hoveredDeleteFormateurs', true)} onMouseLeave={() => handleButtonHover('hoveredDeleteFormateurs', false)}>
           X
         </button>
-        <button type='button' className='addButtonBoxFiche' onClick={handleAddButtonNav}>Ajouter</button>
+        <button type='button' className='addButtonBoxFicheFormateurs' onClick={handleAddButtonNav}>Ajouter</button>
       </section>
       <Modal
         isOpen={showDeleteConfirmation}
@@ -153,77 +146,77 @@ const FormateurFiche : React.FC<formateurFicheProps> = ({formateurs, onUpdateFor
         />
       </Modal>
         {editMode ? (
-          <section className='ficheSectionUpdate'>
-            <form className='formSection' onSubmit={handleFormSubmit}>
-              <section className='inputSection'>
-                <div className="titleInputBox">
-                  <h3 className='inputTitle'>Nom :</h3>
-                  <div className="inputBox">
+          <section className='ficheSectionUpdateFormateurs'>
+            <form className='formSectionFormateurs' onSubmit={handleFormSubmit}>
+              <section className='inputSectionFormateurs'>
+                <div className="titleInputBoxFormateurs">
+                  <h3 className='inputTitleFormateurs'>Nom :</h3>
+                  <div className="inputBoxFormateurs">
                     <input
                       type="text"
                       name="last_name"
                       value={formateur.last_name}
                       onChange={handleInputChange}
-                      className='lastNameInputText'
+                      className='lastNameInputTextFormateurs'
                     />
                   </div>
                 </div>
-                <div className="titleInputBox">
-                  <h3 className='inputTitle'>Prénom :</h3>
-                  <div className="inputBox">
+                <div className="titleInputBoxFormateurs">
+                  <h3 className='inputTitleFormateurs'>Prénom :</h3>
+                  <div className="inputBoxFormateurs">
                     <input
                       type="text"
                       name="first_name"
                       value={formateur.first_name}
                       onChange={handleInputChange}
-                      className='firstNameInputText'
+                      className='firstNameInputTextFormateurs'
                     />
                   </div>
                 </div>
-                <div className="titleInputBox">
-                  <h3 className='inputTitle'>Email :</h3>
-                  <div className="inputBox">
+                <div className="titleInputBoxFormateurs">
+                  <h3 className='inputTitleFormateurs'>Email :</h3>
+                  <div className="inputBoxFormateurs">
                     <input
                       type="email"
                       name="email"
                       value={formateur.email}
                       onChange={handleInputChange}
-                      className='emailInputText'
+                      className='emailInputTextFormateurs'
                     />
                   </div>
                 </div>
               </section>
-              <section className='updateButtonsSection'>
-                <button type="submit" className='formSaveButton'>Enregistrer</button>
-                <button type="button" className='formCancelButton' onClick={handleCancel}>Annuler</button>
+              <section className='updateButtonsSectionFormateurs'>
+                <button type="submit" className='formSaveButtonFormateurs'>Enregistrer</button>
+                <button type="button" className='formCancelButtonFormateurs' onClick={handleCancel}>Annuler</button>
               </section>
             </form>
           </section>  
         ) : (
           <>
-            <section className='ficheSection'>
-              <div className="titleInputBox">
-                <h3 className='inputTitle'>Nom :</h3>
-                <div className="inputBox">
-                  <p className='lastNameInputText'>{backupFormateur.last_name}</p>
+            <section className='ficheSectionFormateurs'>
+              <div className="titleInputBoxFormateurs">
+                <h3 className='inputTitleFormateurs'>Nom :</h3>
+                <div className="inputBoxFormateurs">
+                  <p className='lastNameInputTextFormateurs'>{backupFormateur.last_name}</p>
                 </div>
               </div>
-              <div className="titleInputBox">
-                <h3 className='inputTitle'>Prénom :</h3>
-                <div className="inputBox">
-                  <p className='firstNameInputText'>{backupFormateur.first_name}</p>
+              <div className="titleInputBoxFormateurs">
+                <h3 className='inputTitleFormateurs'>Prénom :</h3>
+                <div className="inputBoxFormateurs">
+                  <p className='firstNameInputTextFormateurs'>{backupFormateur.first_name}</p>
                 </div>
               </div>
-              <div className="titleInputBox">
-                <h3 className='inputTitle'>Email :</h3>
-                <div className="inputBox">
-                  <p className='emailInputText'>{backupFormateur.email}</p>
+              <div className="titleInputBoxFormateurs">
+                <h3 className='inputTitleFormateurs'>Email :</h3>
+                <div className="inputBoxFormateurs">
+                  <p className='emailInputTextFormateurs'>{backupFormateur.email}</p>
                 </div>
               </div>
-              <div className="titleInputBox">
-                <h3 className='inputTitle'>DC :</h3>
-                <div className="inputBox">
-                  <p className='createdAtInputText'>
+              <div className="titleInputBoxFormateurs">
+                <h3 className='inputTitleFormateurs'>DC :</h3>
+                <div className="inputBoxFormateurs">
+                  <p className='createdAtInputTextFormateurs'>
                     {backupFormateur.createdAt.toLocaleString("fr-FR").slice(8,10) + "/"
                     + backupFormateur.createdAt.toLocaleString("fr-FR").slice(5,7) + "/"
                     + backupFormateur.createdAt.toLocaleString("fr-FR").slice(0,4)}

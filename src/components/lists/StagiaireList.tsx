@@ -33,44 +33,44 @@ const StagiaireList : React.FC<StagiaireListProps> = ({stagiaires, currentPage})
     
     const renderStagiairesList = () => {
     
-        stagiaires.filter((stagiaire: Stagiaire) => {
-          const name = `${stagiaire.first_name.toLocaleLowerCase()} ${stagiaire.last_name.toLocaleLowerCase()} ${stagiaire.email} ${stagiaire.createdAt.toString().slice(0, 10)}`;
-          return search === '' ? stagiaire : name.includes(search);
-        });
-    
-        return stagiaires.map((stagiaire: Stagiaire) => {
-          return (
-            <StagiaireListContainer
-              key={stagiaire.id} 
-              stagiaire={stagiaire} 
-              onStagiaireSelected={handleStagiaireSelected} />
-          );
-        });
+      const filteredStagiaires = stagiaires.filter((stagiaire: Stagiaire) => {
+        const name = `${stagiaire.first_name.toLocaleLowerCase()} ${stagiaire.last_name.toLocaleLowerCase()} ${stagiaire.email} ${stagiaire.createdAt.toString().slice(0, 10)}`;
+        return search === '' ? stagiaire : name.includes(search);
+      });
+  
+      return filteredStagiaires.map((stagiaire: Stagiaire) => {
+        return (
+          <StagiaireListContainer
+            key={stagiaire.id} 
+            stagiaire={stagiaire} 
+            onStagiaireSelected={handleStagiaireSelected} />
+        );
+      });
         
     };
 
     return (
         <>
-          <section className={'stagiaresList' + `${currentPage}`}>
-            <div className="filterBar">
-              <button className="filterAllButton">{stagiaires.length} Stagiaires</button>
-              <button onClick={filterByName} className="filterNameButton">
+          <section className={'stagiairesList' + `${currentPage}`}>
+            <div className="stagiairesFilterBar">
+              <button className="stagiairesFilterAllButton">{stagiaires.length} Stagiaires</button>
+              <button onClick={filterByName} className="stagiairesFilterNameButton">
                 By Name
               </button>
               <input
-                className="searchInput"
+                className="stagiairesSearchInput"
                 type="search"
                 placeholder="   Recherche ..."
                 onChange={(e) => setSearch(e.target.value)}
               />
             </div>
-            <div className="grid">
-              <h3 className="gridTitle">Nom</h3>
-              <h3 className="gridTitle">Prénom</h3>
-              <h3 className="gridTitle">Email</h3>
-              <h3 className="gridTitle">DC</h3>
+            <div className="stagiairesGrid">
+              <h3 className="stagiairesGridTitle">Nom</h3>
+              <h3 className="stagiairesGridTitle">Prénom</h3>
+              <h3 className="stagiairesGridTitle">Email</h3>
+              <h3 className="stagiairesGridTitle">DC</h3>
             </div>
-            <div className="listContainer">{renderStagiairesList()}</div>
+            <div className="stagiairesListContainer">{renderStagiairesList()}</div>
           </section>
         </>
     );
