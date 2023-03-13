@@ -251,9 +251,9 @@
   "salles": [
     {
       "id": 1,
-      "capacity": 29,
+      "capacity": "40",
       "name": "La Laja",
-      "floor": "1er",
+      "floor": "2ème",
       "indication": "visualize intuitive action-items",
       "createdAt": "2022-03-24T05:17:01Z"
     },
