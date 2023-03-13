@@ -248,7 +248,7 @@
       "createdAt": "2022-01-26T17:46:11Z"
     }
   ],
-  "Salles" : [
+  "salles" : [
     {
       "id": 1,
       "capacity": 15,
