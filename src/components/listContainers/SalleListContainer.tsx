@@ -32,7 +32,7 @@ const SalleListContainer : React.FC<SalleListContainerProps> = ({salle, onSalleS
       }, []);
   
     return (
-        <Link to={`/stagiaires/${salle.id}`} className="ficheLink">
+        <Link to={`/salles/${salle.id}`} className="ficheLink">
             <div
                 className={`itemsContainerSalles ${isSelected ? 'itemsContainerSelectedSalles' : ''}`}
                 onClick={handleSalleSelected}
