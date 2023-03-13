@@ -28,7 +28,7 @@ main {
 
 .routes {
   color: white;
-  padding: 20px 0 20px 0;
+  padding: 25px 0 30px 0;
 }
 
 .top_section {
@@ -50,8 +50,8 @@ main {
   display: flex;
   color: white;
   gap: 20px;
-  padding: 5px 10px;
-  margin: 25px 0 25px 0;
+  padding: 15px 10px;
+  margin-bottom: 5px;
   transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
 }
 
