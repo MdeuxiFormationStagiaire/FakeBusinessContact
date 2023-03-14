@@ -91,6 +91,7 @@ const UtilisateurList : React.FC<UtilisateurListProps> = ({utilisateurs, current
         <h3 className="gridTitleUtilisateurs">Email</h3>
         <h3 className="gridTitleUtilisateurs">Fonction</h3>
         <h3 className="gridTitleUtilisateurs">DC</h3>
+        <h3 className="gridTitleUtilisateurs">Admin</h3>
       </div>
       <div className="listContainerUtilisateurs">{renderUtilisateursList()}</div>
     </section>

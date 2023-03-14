@@ -48,6 +48,7 @@ const UtilisateurListContainer : React.FC<UtilisateurListContainerProps> = ({uti
           '/' +
           utilisateur.createdAt.toLocaleString('fr-FR').slice(0, 4)}
       </span>
+      <span className="items">{`${utilisateur.adminRight}`}</span>
     </div>
     </Link>
   )
