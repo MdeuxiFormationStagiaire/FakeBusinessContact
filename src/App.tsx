@@ -13,6 +13,8 @@ import SalleFichePage from './pages/Salles/SalleFichePage';
 import SalleAddPage from './pages/Salles/SalleAddPage';
 import UtilisateurPage from './pages/Utilisateurs/UtilisateurPage';
 import AffichagePage from './pages/Affichage/AffichagePage';
+import UtilisateurFichePage from './pages/Utilisateurs/UtilisateurFichePage';
+import UtilisateurAddPage from './pages/Utilisateurs/UtilisateurAddPage';
 import Modal from 'react-modal';
 import './App.css';
 
@@ -37,6 +39,8 @@ function App() {
             <Route path='/stagiaires/add' element={<StagiaireAddPage/>}/>
             <Route path='/affichage' element={<AffichagePage/>}/>
             <Route path='/utilisateurs' element={<UtilisateurPage/>}/>
+            <Route path='/utilisateurs/:id' element={<UtilisateurFichePage/>}/>
+            <Route path='/utilisateurs/add' element={<UtilisateurAddPage/>}/>
             <Route path='*' element={<>not found</>}/>
           </Routes>
         </SideBar>
