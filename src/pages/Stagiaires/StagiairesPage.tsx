@@ -3,8 +3,11 @@ import { Stagiaire } from '../../models/Stagiaire';
 import { stagiaireService } from '../../services/StagiaireService';
 import StagiaireList from '../../components/lists/StagiaireList';
 import '../../assets/styles/pages/Stagiaire.css'
+import { useNavigate } from 'react-router-dom';
 
 const StagiairesPage = () => {
+
+  const navigate = useNavigate();
 
   const [stagiaires, setStagiaires] = useState<Stagiaire[]>([]);
 
@@ -18,11 +21,15 @@ const StagiairesPage = () => {
     stagiaireService.findAllStagiaires().then(data => setStagiaires(data))
   }
 
+  const handleAddButtonNav = () => {
+    navigate('/stagiaires/add')
+  };
+
   return (
     <>
-      <a href="/stagiaires/add" className='addButtonBox'>
-        <button className='addButton'>Ajouter</button>
-      </a>
+      <div className='addButtonBox'>
+        <button className='addButton' onClick={handleAddButtonNav}>Ajouter</button>
+      </div>
       <StagiaireList stagiaires={stagiaires} currentPage={currentPage}/>
     </>
   )
