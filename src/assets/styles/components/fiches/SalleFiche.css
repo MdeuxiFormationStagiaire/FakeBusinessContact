@@ -217,11 +217,15 @@
     font-weight: 700;
     color: #1C1D3B;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .capacityInputSalles {
     border: none;
     height: 20px;
+    min-width: 35px;
     font-size: 18px;
     font-weight: 700;
     color: #1C1D3B;
@@ -231,6 +235,7 @@
 .indicationInputTextSalles {
     border: none;
     height: 20px;
+    min-width: 300px;
     width: fit-content;
     font-size: 16px;
     font-weight: 700;
@@ -241,6 +246,7 @@
 .floorInputTextSalles {
     border: none;
     height: 20px;
+    min-width: 70px;
     font-size: 18px;
     font-weight: 700;
     color: #1C1D3B;
@@ -250,7 +256,7 @@
 .createdAtInputTextSalles {
     border: none;
     height: 20px;
-    min-width: 100px;
+    min-width: 120px;
     font-size: 16px;
     font-weight: 700;
     color: #1C1D3B;
