@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { Utilisateur } from '../../models/Utilisateur'
+import '../../assets/styles/components/listContainer/UtilisateurListContainer.css'
 
 type UtilisateurListContainerProps = {
     utilisateur: Utilisateur,
@@ -33,22 +34,22 @@ const UtilisateurListContainer : React.FC<UtilisateurListContainerProps> = ({uti
   return (
     <Link to={`/utilisateurs/${utilisateur.id}`} className="ficheLink">
     <div
-      className={`itemsContainer ${isSelected ? 'itemsContainerSelected' : ''}`}
+      className={`itemsContainerUtilisateurs ${isSelected ? 'itemsContainerSelectedUtilisateurs' : ''}`}
       onClick={handleUtilisateurSelected}
       ref={containerRef}
     >
-      <span className="items">{utilisateur.last_name}</span>
-      <span className="items">{utilisateur.first_name}</span>
-      <span className="items">{utilisateur.email}</span>
-      <span className="items">{utilisateur.position}</span>
-      <span className="items2">
+      <span className="itemsUtilisateurs">{utilisateur.last_name}</span>
+      <span className="itemsUtilisateurs">{utilisateur.first_name}</span>
+      <span className="itemsUtilisateurs">{utilisateur.email}</span>
+      <span className="itemsUtilisateurs">{utilisateur.position}</span>
+      <span className="items2Utilisateurs">
         {utilisateur.createdAt.toLocaleString('fr-FR').slice(8, 10) +
           '/' +
           utilisateur.createdAt.toLocaleString('fr-FR').slice(5, 7) +
           '/' +
           utilisateur.createdAt.toLocaleString('fr-FR').slice(0, 4)}
       </span>
-      <span className="items">{`${utilisateur.adminRight}`}</span>
+      <span className="itemsUtilisateurs">{`${utilisateur.adminRight}`}</span>
     </div>
     </Link>
   )

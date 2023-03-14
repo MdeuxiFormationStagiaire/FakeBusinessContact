@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Utilisateur } from '../../models/Utilisateur'
 import UtilisateurListContainer from '../listContainers/UtilisateurListContainer'
+import '../../assets/styles/components/lists/UtilisateurList.css'
 
 type UtilisateurListProps = {
     utilisateurs: Utilisateur[],
@@ -69,9 +70,9 @@ const UtilisateurList : React.FC<UtilisateurListProps> = ({utilisateurs, current
     <>
     <section className={'listUtilisateurs' + `${currentPage}`}>
       <div className="filterBarUtilisateurs">
-        <button className="filterAllButtonUtilisateurs">
+        <div className="allUtilisateurs">
           {utilisateurs.length} Utilisateurs
-        </button>
+        </div>
         <button onClick={filterByName} className="filterNameButtonUtilisateurs">
           By Name
         </button>

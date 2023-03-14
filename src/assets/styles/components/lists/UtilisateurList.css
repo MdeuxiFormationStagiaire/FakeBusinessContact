@@ -1,0 +1,154 @@
+.listUtilisateurs {
+    display: flex;
+    flex-direction: column;
+    border: 3px solid #1C1D3B;
+    border-radius: 10px 10px 10px 10px;
+    background-color: white;
+    width: 80%;
+    max-height: 600px;
+    overflow-y: scroll;
+    margin: 0 100px;
+}
+
+.listFicheUtilisateurs {
+    display: flex;
+    flex-direction: column;
+    border: 3px solid #1C1D3B;
+    border-radius: 10px 10px 10px 10px;
+    background-color: white;
+    width: 80%;
+    max-height: 450px;
+    overflow-y: scroll;
+    margin: 0 100px;
+}
+
+.listAddUtilisateurs {
+    display: flex;
+    flex-direction: column;
+    border: 3px solid #1C1D3B;
+    border-radius: 10px 10px 10px 10px;
+    background-color: white;
+    width: 80%;
+    max-height: 450px;
+    overflow-y: scroll;
+    margin: 0 100px;
+}
+
+.filterBarUtilisateurs {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 20% 12% 13% 35% 20%;
+    grid-template-areas: 
+        "all name admin . search";
+    background-color: #0098b1;
+    border-radius: 10px 0 0 0;
+    border-bottom: 1px solid #1C1D3B;
+    position: sticky;
+    top: 0px;
+}
+
+.allUtilisateurs {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    grid-area: all;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    padding: 15px 0;
+    background-color: #0098b1;
+    border: none;
+    border-right: 1px solid #1C1D3B;
+}
+
+.filterNameButtonUtilisateurs {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    grid-area: name;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    padding: 15px 0;
+    background-color: #0098b1;
+    border: none;
+    border-right: 1px solid #1C1D3B;
+}
+
+.filterNameButtonUtilisateurs:hover {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    grid-area: name;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    padding: 15px 0;
+    background-color: #007b8e;
+    border: none;
+    border-right: 1px solid #1C1D3B;
+    text-decoration: underline;
+}
+
+.filterAdminRightButtonUtilisateurs {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    grid-area: admin;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    padding: 15px 0;
+    background-color: #0098b1;
+    border: none;
+    border-right: 1px solid #1C1D3B;
+}
+
+.filterAdminRightButtonUtilisateurs:hover {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    grid-area: admin;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    padding: 15px 0;
+    background-color: #007b8e;
+    border: none;
+    border-right: 1px solid #1C1D3B;
+    text-decoration: underline;
+}
+
+
+.searchInputUtilisateurs {
+    grid-area: search;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.gridUtilisateurs {
+    display: grid;
+    grid-template-columns: 15% 15% 30% 20% 12% 8%;
+    padding: 15px 0 15px 0;
+    background-color: #D9D9D9;
+    color: #1C1D3B;
+    position: sticky;
+    top: 53px;
+}
+
+.listContainerUtilisateurs {
+    display: flex;
+    flex-direction: column;
+}
+
+.gridTitleUtilisateurs {
+    text-align: center;
+    font-size: 20px;
+}
