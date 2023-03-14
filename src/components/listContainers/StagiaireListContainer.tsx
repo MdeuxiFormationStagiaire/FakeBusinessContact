@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Stagiaire } from '../../models/Stagiaire'
-import '../../assets/styles/components/listContainer/FormStagListContainer.css'
+import '../../assets/styles/components/listContainer/StagiaireListContainer.css'
 import { useEffect, useRef, useState } from 'react';
 
 type StagiaireListContainerProps = {
@@ -34,14 +34,14 @@ const FormateurListContainer: React.FC<StagiaireListContainerProps> = ({ stagiai
   return (
     <Link to={`/stagiaires/${stagiaire.id}`} className="ficheLink">
       <div
-        className={`itemsContainer ${isSelected ? 'itemsContainerSelected' : ''}`}
+        className={`itemsContainerStagiaires ${isSelected ? 'itemsContainerSelectedStagiaires' : ''}`}
         onClick={handleStagiaireSelected}
         ref={containerRef}
       >
-        <span className="items">{stagiaire.last_name}</span>
-        <span className="items">{stagiaire.first_name}</span>
-        <span className="items">{stagiaire.email}</span>
-        <span className="items2">
+        <span className="itemsStagiaires">{stagiaire.last_name}</span>
+        <span className="itemsStagiaires">{stagiaire.first_name}</span>
+        <span className="itemsStagiaires">{stagiaire.email}</span>
+        <span className="items2Stagiaires">
           {stagiaire.createdAt.toLocaleString('fr-FR').slice(8, 10) +
             '/' +
             stagiaire.createdAt.toLocaleString('fr-FR').slice(5, 7) +

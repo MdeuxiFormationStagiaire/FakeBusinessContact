@@ -1,26 +1,26 @@
-.itemsContainerSalles {
+.itemsContainerFormateurs {
     display: grid;
-    grid-template-columns: 20% 10% 45% 10% 15%;
+    grid-template-columns: 20% 20% 40% 20%;
     border-top: 1px solid #1C1D3B;
     font-weight: 500;
 }
 
-.itemsContainerSalles:hover {
+.itemsContainerFormateurs:hover {
     display: grid;
-    grid-template-columns: 20% 10% 45% 10% 15%;
-    background-color: #ef9b524e;
+    grid-template-columns: 20% 20% 40% 20%;
+    background-color: #00770042;
 }
 
-.itemsContainerSelectedSalles {
+.itemsContainerSelectedFormateurs {
     display: grid;
-    grid-template-columns: 20% 10% 45% 10% 15%;
-    background-color: #ef9b524e;
+    grid-template-columns: 20% 20% 40% 20%;
+    background-color: #00770042;
     border-top: 2px solid #1C1D3B;
     border-bottom: 1px solid #1C1D3B;
     font-weight:800;
 }
 
-.itemsSalles {
+.itemsFormateurs {
     text-align: center;
     color: #1C1D3B;
     font-size: 18px;
@@ -28,7 +28,7 @@
     padding: 15px 10px;
 }
 
-.items2Salles {
+.items2Formateurs {
     text-align: center;
     color: #1C1D3B;
     font-size: 18px;

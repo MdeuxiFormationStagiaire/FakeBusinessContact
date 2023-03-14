@@ -1,7 +1,7 @@
 import { Formateur } from '../../models/Formateur';
 import { Link } from 'react-router-dom';
-import '../../assets/styles/components/listContainer/FormStagListContainer.css';
 import { useEffect, useRef, useState } from 'react';
+import '../../assets/styles/components/listContainer/FormateurListContainer.css';
 
 type FormateurListContainerProps = {
   formateur: Formateur;
@@ -33,14 +33,14 @@ const FormateurListContainer: React.FC<FormateurListContainerProps> = ({ formate
   return (
     <Link to={`/formateurs/${formateur.id}`} className="ficheLink">
       <div
-        className={`itemsContainer ${isSelected ? 'itemsContainerSelected' : ''}`}
+        className={`itemsContainerFormateurs ${isSelected ? 'itemsContainerSelectedFormateurs' : ''}`}
         onClick={handleFormateurSelected}
         ref={containerRef}
       >
-        <span className="items">{formateur.last_name}</span>
-        <span className="items">{formateur.first_name}</span>
-        <span className="items">{formateur.email}</span>
-        <span className="items2">
+        <span className="itemsFormateurs">{formateur.last_name}</span>
+        <span className="itemsFormateurs">{formateur.first_name}</span>
+        <span className="itemsFormateurs">{formateur.email}</span>
+        <span className="items2Formateurs">
           {formateur.createdAt.toLocaleString('fr-FR').slice(8, 10) +
             '/' +
             formateur.createdAt.toLocaleString('fr-FR').slice(5, 7) +

@@ -90,7 +90,7 @@ main {
 
 .link-formateurs-active {
   display: flex;
-  color: white;
+  color: #007700;
   gap: 20px;
   padding: 15px 10px;
   margin-bottom: 5px;
@@ -116,7 +116,7 @@ main {
 
 .link-salles-active {
   display: flex;
-  color: white;
+  color: #ef9b52;
   gap: 20px;
   padding: 15px 10px;
   margin-bottom: 5px;
@@ -142,7 +142,7 @@ main {
 
 .link-stagiaires-active {
   display: flex;
-  color: white;
+  color: #0098b1;
   gap: 20px;
   padding: 15px 10px;
   margin-bottom: 5px;
@@ -168,7 +168,7 @@ main {
 
 .link-utilisateurs-active {
   display: flex;
-  color: white;
+  color: #e30613;
   gap: 20px;
   padding: 15px 10px;
   margin-bottom: 5px;

@@ -1,26 +1,26 @@
-.itemsContainer {
+.itemsContainerStagiaires {
     display: grid;
     grid-template-columns: 20% 20% 40% 20%;
     border-top: 1px solid #1C1D3B;
     font-weight: 500;
 }
 
-.itemsContainer:hover {
+.itemsContainerStagiaires:hover {
     display: grid;
     grid-template-columns: 20% 20% 40% 20%;
-    background-color: #e3061546;
+    background-color: #0099b146;
 }
 
-.itemsContainerSelected {
+.itemsContainerSelectedStagiaires {
     display: grid;
     grid-template-columns: 20% 20% 40% 20%;
-    background-color: #e3061546;
+    background-color: #0099b146;
     border-top: 2px solid #1C1D3B;
     border-bottom: 1px solid #1C1D3B;
     font-weight:800;
 }
 
-.items {
+.itemsStagiaires {
     text-align: center;
     color: #1C1D3B;
     font-size: 18px;
@@ -28,7 +28,7 @@
     padding: 15px 10px;
 }
 
-.items2 {
+.items2Stagiaires {
     text-align: center;
     color: #1C1D3B;
     font-size: 18px;
