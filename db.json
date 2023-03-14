@@ -417,5 +417,88 @@
       "floor": "2ème",
       "createdAt": "2023-03-13T18:14:06.131Z"
     }
+  ],
+  "utilisateurs" : [
+    {
+      "id": 1,
+      "first_name": "Adrianna",
+      "last_name": "Gannicott",
+      "email": "agannicott0@slashdot.org",
+      "position": "Information Systems Manager",
+      "createdAt": "2022-02-05T17:23:24Z",
+      "adminRight": false
+    }, {
+      "id": 2,
+      "first_name": "Desi",
+      "last_name": "Delves",
+      "email": "ddelves1@addthis.com",
+      "position": "Speech Pathologist",
+      "createdAt": "2022-01-07T03:18:47Z",
+      "adminRight": true
+    }, {
+      "id": 3,
+      "first_name": "Marylou",
+      "last_name": "Horrell",
+      "email": "mhorrell2@deliciousdays.com",
+      "position": "Quality Engineer",
+      "createdAt": "2022-07-10T00:59:17Z",
+      "adminRight": true
+    }, {
+      "id": 4,
+      "first_name": "Onfroi",
+      "last_name": "Javes",
+      "email": "ojaves3@booking.com",
+      "position": "Project Manager",
+      "createdAt": "2022-08-13T05:56:26Z",
+      "adminRight": true
+    }, {
+      "id": 5,
+      "first_name": "Mary",
+      "last_name": "Fitzsymonds",
+      "email": "mfitzsymonds4@squidoo.com",
+      "position": "Recruiting Manager",
+      "createdAt": "2022-09-18T21:23:02Z",
+      "adminRight": false
+    }, {
+      "id": 6,
+      "first_name": "Carlyle",
+      "last_name": "Blackett",
+      "email": "cblackett5@freewebs.com",
+      "position": "Recruiter",
+      "createdAt": "2022-01-26T14:26:51Z",
+      "adminRight": true
+    }, {
+      "id": 7,
+      "first_name": "Ulric",
+      "last_name": "Arkin",
+      "email": "uarkin6@sciencedaily.com",
+      "position": "Dental Hygienist",
+      "createdAt": "2022-03-11T21:08:21Z",
+      "adminRight": false
+    }, {
+      "id": 8,
+      "first_name": "Betty",
+      "last_name": "Ranstead",
+      "email": "branstead7@examiner.com",
+      "position": "Executive Secretary",
+      "createdAt": "2022-03-23T10:08:11Z",
+      "adminRight": true
+    }, {
+      "id": 9,
+      "first_name": "Alard",
+      "last_name": "Merredy",
+      "email": "amerredy8@squarespace.com",
+      "position": "Recruiter",
+      "createdAt": "2022-10-29T23:06:38Z",
+      "adminRight": false
+    }, {
+      "id": 10,
+      "first_name": "Iris",
+      "last_name": "Flute",
+      "email": "iflute9@purevolume.com",
+      "position": "Junior Executive",
+      "createdAt": "2022-07-27T05:09:46Z",
+      "adminRight": false
+    }
   ]
 }
