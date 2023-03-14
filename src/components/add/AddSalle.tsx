@@ -64,7 +64,7 @@ const AddSalle : React.FC<addSalleProps> = ({addNewSalle}) => {
                     type="text"
                     name="name"
                     id="name"
-                    className='nameInputTextSalles'
+                    className='nameAddInputTextSalles'
                     value={salle.name}
                     onChange={handleInputChange}
                     required
@@ -76,7 +76,7 @@ const AddSalle : React.FC<addSalleProps> = ({addNewSalle}) => {
                     type="number"
                     name="capacity"
                     id="capacity"
-                    className='capacityInputSalles'
+                    className='capacityAddInputSalles'
                     value={salle.capacity}
                     onChange={handleInputChange}
                     min="1"
@@ -90,7 +90,7 @@ const AddSalle : React.FC<addSalleProps> = ({addNewSalle}) => {
                     type="text"
                     name="indication"
                     id="indication"
-                    className='indicationInputTextSalles'
+                    className='indicationAddInputTextSalles'
                     value={salle.indication}
                     onChange={handleInputChange}
                     required
@@ -102,7 +102,7 @@ const AddSalle : React.FC<addSalleProps> = ({addNewSalle}) => {
                       name="floor"
                       value={salle.floor}
                       onChange={handleSelectChange}
-                      className='floorInputTextSalles'
+                      className='floorAddInputTextSalles'
                       required
                     >
                       <option value="RDC">RDC</option>
