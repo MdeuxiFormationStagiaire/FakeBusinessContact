@@ -6,7 +6,7 @@ import { SiGoogleclassroom } from "react-icons/si";
 import { ImProfile } from "react-icons/im";
 import { TbScreenShare } from "react-icons/tb";
 import { FiLogOut } from "react-icons/fi";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { IconContext } from "react-icons";
 import "../../assets/styles/components/sidebar/Sidebar.css";
@@ -54,6 +54,8 @@ const SideBar = ({children} : any) => {
 
     const toggle = () => setIsOpen(!isOpen);
 
+    const location = useLocation();
+
     const showAnimation = {
         hidden: {
             width: 0,
@@ -90,18 +92,55 @@ const SideBar = ({children} : any) => {
                     </motion.h1>}
                 </div>
                 <section className="routes">
-                    {routes.map((route) => (
-                        <NavLink to={route.path} key={route.name} className='link'>
-                            <div className="icon">{route.icon}</div>
-                            <AnimatePresence>
-                                {isOpen && <motion.div variants={showAnimation}
-                                initial="hidden"
-                                animate="show"
-                                exit="hidden"
-                                className="link_text">{route.name}</motion.div>}
-                            </AnimatePresence>
-                        </NavLink>
-                    ))}
+                    <>
+                        {routes.map((route) => {
+                            let className = 'link';
+                            switch (route.name) {
+                              case 'Home':
+                                className += '-home';
+                                break;
+                              case 'Réservations':
+                                className += '-home';
+                                break;
+                              case 'Formateurs':
+                                className += '-formateurs';
+                                break;
+                              case 'Salles':
+                                className += '-salles';
+                                break;
+                              case 'Stagiaires':
+                                className += '-stagiaires';
+                                break;
+                              case 'Affichage':
+                                className += '-home';
+                                break;
+                              case 'Utilisateurs':
+                                className += '-utilisateurs';
+                                break;
+                              default:
+                                break;
+                            }
+                            const isActive = location.pathname === route.path;
+                            return (
+                              <NavLink to={route.path} className={`${className}${isActive ? '-active' : ''}`}>
+                                <div className="icon">{route.icon}</div>
+                                <AnimatePresence>
+                                  {isOpen && (
+                                    <motion.div
+                                      variants={showAnimation}
+                                      initial="hidden"
+                                      animate="show"
+                                      exit="hidden"
+                                      className="link_text"
+                                    >
+                                      {route.name}
+                                    </motion.div>
+                                  )}
+                                </AnimatePresence>
+                              </NavLink>
+                            );
+                        })}
+                    </>
                 </section>
                 <div className="utilisateur">
                     <div className="logout"><FiLogOut/></div>

@@ -47,13 +47,134 @@ main {
   width: 25px;
 }
 
-.link {
+.link-home {
   display: flex;
   color: white;
   gap: 20px;
   padding: 15px 10px;
   margin-bottom: 5px;
   transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+.link-home:hover {
+  border-right: 4px solid white;
+  transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  background: rgb(45, 51, 89);
+}
+
+.link-home-active {
+  display: flex;
+  color: white;
+  gap: 20px;
+  padding: 15px 10px;
+  margin-bottom: 5px;
+  transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  border-right: 4px solid white;
+  background: rgb(45, 51, 89);
+}
+
+.link-formateurs {
+  display: flex;
+  color: white;
+  gap: 20px;
+  padding: 15px 10px;
+  margin-bottom: 5px;
+  transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+.link-formateurs:hover {
+  border-right: 4px solid #007700;
+  transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  background: rgb(45, 51, 89);
+}
+
+.link-formateurs-active {
+  display: flex;
+  color: white;
+  gap: 20px;
+  padding: 15px 10px;
+  margin-bottom: 5px;
+  transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  border-right: 4px solid #007700;
+  background: rgb(45, 51, 89);
+}
+
+.link-salles {
+  display: flex;
+  color: white;
+  gap: 20px;
+  padding: 15px 10px;
+  margin-bottom: 5px;
+  transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+.link-salles:hover {
+  border-right: 4px solid #ef9b52;
+  transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  background: rgb(45, 51, 89);
+}
+
+.link-salles-active {
+  display: flex;
+  color: white;
+  gap: 20px;
+  padding: 15px 10px;
+  margin-bottom: 5px;
+  transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  border-right: 4px solid #ef9b52;
+  background: rgb(45, 51, 89);
+}
+
+.link-stagiaires {
+  display: flex;
+  color: white;
+  gap: 20px;
+  padding: 15px 10px;
+  margin-bottom: 5px;
+  transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+.link-stagiaires:hover {
+  border-right: 4px solid #0098b1;
+  transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  background: rgb(45, 51, 89);
+}
+
+.link-stagiaires-active {
+  display: flex;
+  color: white;
+  gap: 20px;
+  padding: 15px 10px;
+  margin-bottom: 5px;
+  transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  border-right: 4px solid #0098b1;
+  background: rgb(45, 51, 89);
+}
+
+.link-utilisateurs {
+  display: flex;
+  color: white;
+  gap: 20px;
+  padding: 15px 10px;
+  margin-bottom: 5px;
+  transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+.link-utilisateurs:hover {
+  border-right: 4px solid #e30613;
+  transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  background: rgb(45, 51, 89);
+}
+
+.link-utilisateurs-active {
+  display: flex;
+  color: white;
+  gap: 20px;
+  padding: 15px 10px;
+  margin-bottom: 5px;
+  transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  border-right: 4px solid #e30613;
+  background: rgb(45, 51, 89);
 }
 
 .link_text {
@@ -64,16 +185,11 @@ main {
   white-space: nowrap;
 }
 
-.link:hover {
-  border-right: 4px solid white;
-  transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
-  background: rgb(45, 51, 89);
-}
-
+/* 
 .active {
   border-right: 4px solid white;
   background: rgb(45, 51, 89);
-}
+} */
 
 .utilisateur {
   display: flex;
