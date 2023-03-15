@@ -18,7 +18,7 @@ const StagiaireFichePage = () => {
     stagiaireService.findAllStagiaires().then(data => setStagiaires(data))
   }
 
-  const handleUpdateStagaire = (stagiaire : Stagiaire) => {
+  const handleUpdateStagiaire = (stagiaire : Stagiaire) => {
     setStagiaires(stagiaires.map((s) => (s.id === stagiaire.id ? stagiaire : s)));
   }
 
@@ -26,7 +26,7 @@ const StagiaireFichePage = () => {
     <>
       {stagiaires &&
         <>
-          <StagiaireFiche stagiaires={stagiaires} onUpdateStagiaire={handleUpdateStagaire}/>
+          <StagiaireFiche stagiaires={stagiaires} onUpdateStagiaire={handleUpdateStagiaire}/>
           <StagiaireList stagiaires={stagiaires} currentPage={currentPage}/>
         </>
       }
