@@ -1,0 +1,138 @@
+.addFormSectionUtilisateurs {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px;
+}
+
+.buttonDivBoxUtilisateurs {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+}
+
+.addFormButtonUtilisateurs {
+    border: none;
+    border-radius: 15px;
+    height: 50px;
+    width: 400px;
+    background-color: #90C99B;
+    color: #1C1D3B;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.addFormButtonUtilisateurs:hover {
+    border: 2px solid white;
+    border-radius: 15px;
+    height: 50px;
+    width: 400px;
+    background-color: #90C99B;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.cancelButtonUtilisateurs {
+    border: none;
+    border-radius: 15px;
+    height: 50px;
+    width: 400px;
+    background-color: #828282;
+    color: #1C1D3B;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.cancelButtonUtilisateurs:hover {
+    border: 2px solid white;
+    border-radius: 15px;
+    height: 50px;
+    width: 400px;
+    background-color: #828282;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.addFicheSectionUtilisateurs {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #e30615be;
+    border-radius: 10px;
+    border: 3px solid #1C1D3B;
+    width: 80%;
+    height: 120px;
+}
+
+.inputDivBoxUtilisateurs {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    color: white;
+}
+
+.inputDivUtilisateurs {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.addInputTitleUtilisateurs {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.firstNameInputUtilisateurs {
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    max-width: 150px;
+    min-height: 40px;
+    text-align: center;
+}
+
+.lastNameInputUtilisateurs {
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    max-width: 150px;
+    min-height: 40px;
+    text-align: center;
+}
+
+.emailInputUtilisateurs {
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    width: 250px;
+    min-height: 40px;
+    text-align: center;
+}
+
+.positionInputUtilisateurs {
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    width: 250px;
+    min-height: 40px;
+    text-align: center;
+}
+
+.adminRightInputUtilisateurs {
+    border: none;
+    height: 20px;
+    width: fit-content;
+    font-size: 16px;
+    font-weight: 700;
+    color: #1C1D3B;
+    text-align: center;
+}
