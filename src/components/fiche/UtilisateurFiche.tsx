@@ -5,6 +5,8 @@ import { Utilisateur } from '../../models/Utilisateur';
 import { utilisateurService } from '../../services/UtilisateurService';
 import { ModalStyle } from '../../assets/styles/components/modals/ModalStyle.css';
 import DeleteConfirmation from '../modals/DeleteConfirmation';
+import trueLogo from '../../assets/img/accept.png'
+import falseLogo from '../../assets/img/multiply.png'
 import '../../assets/styles/components/fiches/UtilisateurFiche.css'
 
 type UtilisateurFicheProps = {
@@ -259,8 +261,16 @@ const UtilisateurFiche : React.FC<UtilisateurFicheProps> = ({utilisateurs, onUpd
               </div>
               <div className="titleInputBoxUtilisateurs">
                 <h3 className='inputTitleUtilisateurs'>Admin :</h3>
-                <div className="inputBoxUtilisateurs">
-                  <p className='adminInputCheckboxUtilisateurs'>{(backupUtilisateur.adminRight).toString()}</p>
+                <div className="inputBoxAdminUtilisateurs">
+                  {utilisateur.adminRight ? (
+                    <span className="items2Utilisateurs">
+                      <img src={trueLogo} alt="Admin Right" className="logo" />
+                    </span>
+                  ) : (
+                    <span className="items2Utilisateurs">
+                      <img src={falseLogo} alt="No Admin Right" className="logo" />
+                    </span>
+                  )}
                 </div>
               </div>
             </section>

@@ -147,6 +147,12 @@
     padding: 10px 5px;
 }
 
+.inputBoxAdminUtilisateurs {
+    background-color: white;
+    border-radius: 5px;
+    padding: 3px 3px;
+}
+
 .formSectionUtilisateurs {
     display: flex;
     flex-direction: column;

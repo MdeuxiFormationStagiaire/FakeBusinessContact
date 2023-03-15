@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { Utilisateur } from '../../models/Utilisateur'
+import trueLogo from '../../assets/img/accept.png'
+import falseLogo from '../../assets/img/multiply.png'
 import '../../assets/styles/components/listContainer/UtilisateurListContainer.css'
 
 type UtilisateurListContainerProps = {
@@ -49,7 +51,15 @@ const UtilisateurListContainer : React.FC<UtilisateurListContainerProps> = ({uti
           '/' +
           utilisateur.createdAt.toLocaleString('fr-FR').slice(0, 4)}
       </span>
-      <span className="items2Utilisateurs">{`${utilisateur.adminRight}`}</span>
+      {utilisateur.adminRight ? (
+        <span className="items2Utilisateurs">
+          <img src={trueLogo} alt="Admin Right" className="logo" />
+        </span>
+      ) : (
+        <span className="items2Utilisateurs">
+          <img src={falseLogo} alt="No Admin Right" className="logo" />
+        </span>
+      )}
     </div>
     </Link>
   )

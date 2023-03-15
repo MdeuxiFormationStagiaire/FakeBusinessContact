@@ -443,7 +443,7 @@
       "email": "ddelves1@addthis.com",
       "position": "Speech Pathologist",
       "createdAt": "2022-01-07T03:18:47Z",
-      "adminRight": true
+      "adminRight": false
     },
     {
       "id": 3,
@@ -461,7 +461,7 @@
       "email": "ojaves3@booking.com",
       "position": "Project Manager",
       "createdAt": "2022-08-13T05:56:26Z",
-      "adminRight": true
+      "adminRight": false
     },
     {
       "id": 5,
