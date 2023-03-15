@@ -22,7 +22,7 @@
     margin: 0 100px;
 }
 
-.listAddUtilisateurs {
+.listUtilisateursAdd {
     display: flex;
     flex-direction: column;
     border: 3px solid #1C1D3B;

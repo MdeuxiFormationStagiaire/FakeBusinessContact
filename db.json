@@ -516,6 +516,15 @@
       "position": "Junior Executive",
       "createdAt": "2022-07-27T05:09:46Z",
       "adminRight": false
+    },
+    {
+      "id": 11,
+      "first_name": "Nara",
+      "last_name": "Tanier",
+      "email": "nara.tanier@gmail.com",
+      "position": "Cheffe de projet",
+      "createdAt": "2023-03-15T13:21:58.584Z",
+      "adminRight": true
     }
   ]
 }
