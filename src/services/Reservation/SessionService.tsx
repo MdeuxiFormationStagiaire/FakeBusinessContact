@@ -1,11 +1,11 @@
 import { Session } from "../../models/Reservation/Session";
 
-const URL : string = "http://localhost:3000/sessions"
-
 class SessionService {
 
+    private URL = process.env.FBC_APP_DB_SESSION;
+
     findAllSessions = async () => {
-        const res = await fetch(URL);
+        const res = await fetch(`${URL}`);
         return await res.json();
     }
 
@@ -17,7 +17,7 @@ class SessionService {
     }
 
     createSession = async (session : Session) => {
-        const res = await fetch(URL, {
+        const res = await fetch(`${URL}`, {
             method: "POST",
             body: JSON.stringify(session),
             headers: { "content-type": "application/json" }

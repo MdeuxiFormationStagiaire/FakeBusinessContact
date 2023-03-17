@@ -1,11 +1,11 @@
 import { Formateur } from "../models/Formateur";
 
-const URL : string = "http://localhost:3000/formateurs"
-
 class FormateurService {
 
+    private URL = process.env.FBC_APP_DB_FORMATEUR;
+
     findAllFormateurs = async () => {
-        const res = await fetch(URL);
+        const res = await fetch(`${URL}`);
         return await res.json();
     }
 
@@ -17,7 +17,7 @@ class FormateurService {
     }
 
     createFormateur = async (formateur : Formateur) => {
-        const res = await fetch(URL, {
+        const res = await fetch(`${URL}`, {
             method: "POST",
             body: JSON.stringify(formateur),
             headers: { "content-type": "application/json" }

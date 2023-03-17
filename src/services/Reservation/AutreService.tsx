@@ -1,11 +1,11 @@
 import { Autre } from "../../models/Reservation/Autre";
 
-const URL : string = "http://localhost:3000/autres"
-
 class AutreService {
 
+    private URL = process.env.FBC_APP_DB_AUTRE;
+
     findAllAutres = async () => {
-        const res = await fetch(URL);
+        const res = await fetch(`${URL}`);
         return await res.json();
     }
 
@@ -17,7 +17,7 @@ class AutreService {
     }
 
     createAutre = async (autre : Autre) => {
-        const res = await fetch(URL, {
+        const res = await fetch(`${URL}`, {
             method: "POST",
             body: JSON.stringify(autre),
             headers: { "content-type": "application/json" }

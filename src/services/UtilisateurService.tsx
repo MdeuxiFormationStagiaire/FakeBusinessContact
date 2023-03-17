@@ -1,11 +1,11 @@
 import { Utilisateur } from "../models/Utilisateur";
 
-const URL : string = "http://localhost:3000/utilisateurs"
-
 class UtilisateurService {
 
+    private URL = process.env.FBC_APP_DB_USER;
+
     findAllUtilisateurs = async () => {
-        const res = await fetch(URL);
+        const res = await fetch(`${URL}`);
         return await res.json();
     }
 
@@ -17,7 +17,7 @@ class UtilisateurService {
     }
 
     createUtilisateur = async (utilisateur : Utilisateur) => {
-        const res = await fetch(URL, {
+        const res = await fetch(`${URL}`, {
             method: "POST",
             body: JSON.stringify(utilisateur),
             headers: { "content-type": "application/json" }

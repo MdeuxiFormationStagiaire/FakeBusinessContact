@@ -1,11 +1,11 @@
 import { Stagiaire } from "../models/Stagiaire";
 
-const URL : string = "http://localhost:3000/stagiaires"
-
 class StagiaireService {
 
+    private URL = process.env.FBC_APP_DB_STAGIAIRE;
+
     findAllStagiaires = async () => {
-        const res = await fetch(URL);
+        const res = await fetch(`${URL}`);
         return await res.json();
     }
 
@@ -17,7 +17,7 @@ class StagiaireService {
     }
 
     createStagiaire = async (stagiaire : Stagiaire) => {
-        const res = await fetch(URL, {
+        const res = await fetch(`${URL}`, {
             method: "POST",
             body: JSON.stringify(stagiaire),
             headers: { "content-type": "application/json" }

@@ -1,11 +1,11 @@
 import { Promotion } from "../../models/Reservation/Promotion";
 
-const URL : string = "http://localhost:3000/promotions"
-
 class PromotionService {
 
+    private URL = process.env.FBC_APP_DB_PROMOTION;
+
     findAllPromotions = async () => {
-        const res = await fetch(URL);
+        const res = await fetch(`${URL}`);
         return await res.json();
     }
 
@@ -17,7 +17,7 @@ class PromotionService {
     }
 
     createPromotion = async (promotion : Promotion) => {
-        const res = await fetch(URL, {
+        const res = await fetch(`${URL}`, {
             method: "POST",
             body: JSON.stringify(promotion),
             headers: { "content-type": "application/json" }
