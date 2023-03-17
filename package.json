@@ -52,6 +52,7 @@
     ]
   },
   "devDependencies": {
-    "@types/react-modal": "^3.13.1"
+    "@types/react-modal": "^3.13.1",
+    "dotenv": "^16.0.3"
   }
 }
