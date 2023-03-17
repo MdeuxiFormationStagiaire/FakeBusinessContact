@@ -1,7 +1,9 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import SideBar from './components/sidebar/SideBar';
 import HomePage from './pages/Accueil/Home';
-import ReservationPage from './pages/Reservations/Reservations';
+import ReservationPage from './pages/Reservations/ReservationsPage';
+import ReservationsPromotionsPage from './pages/Reservations/ReservationsPromotionsPage';
+import ReservationsAutresPage from './pages/Reservations/ReservationsAutresPage';
 import FormateursPage from './pages/Formateur/FormateursPage';
 import FormateurFichePage from './pages/Formateur/FormateurFichePage';
 import FormateurAddPage from './pages/Formateur/FormateurAddPage';
@@ -28,6 +30,8 @@ function App() {
           <Routes>
             <Route path='/' element={<HomePage/>}/>
             <Route path='/reservations' element={<ReservationPage/>}/>
+            <Route path='/reservations/promotions' element={<ReservationsPromotionsPage/>}/>
+            <Route path='/reservations/autres' element={<ReservationsAutresPage/>}/>
             <Route path='/formateurs' element={<FormateursPage/>}/>
             <Route path='/formateurs/:id' element={<FormateurFichePage/>}/>
             <Route path='/formateurs/add' element={<FormateurAddPage/>}/>
