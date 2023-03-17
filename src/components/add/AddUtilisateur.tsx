@@ -59,25 +59,25 @@ const AddUtilisateur : React.FC<AddUtilisateurProps> = ({addNewUtilisateur}) => 
         <section className="addFicheSectionUtilisateurs">
           <div className="inputDivBoxUtilisateurs">
             <div className='inputDivUtilisateurs'>
-              <label htmlFor="first_name" className='addInputTitleUtilisateurs'>Nom :</label>
-              <input
-                type="text"
-                name="first_name"
-                id="first_name"
-                className='firstNameInputUtilisateurs'
-                value={utilisateur.first_name}
-                onChange={handleInputChange}
-                required
-              />
-            </div>
-            <div className='inputDivUtilisateurs'>
-              <label htmlFor="last_name" className='addInputTitleUtilisateurs'>Prénom :</label>
+              <label htmlFor="last_name" className='addInputTitleUtilisateurs'>Nom :</label>
               <input
                 type="text"
                 name="last_name"
                 id="last_name"
                 className='lastNameInputUtilisateurs'
                 value={utilisateur.last_name}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+            <div className='inputDivUtilisateurs'>
+              <label htmlFor="first_name" className='addInputTitleUtilisateurs'>Prénom :</label>
+              <input
+                type="text"
+                name="first_name"
+                id="first_name"
+                className='firstNameInputUtilisateurs'
+                value={utilisateur.first_name}
                 onChange={handleInputChange}
                 required
               />

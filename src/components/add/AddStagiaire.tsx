@@ -54,25 +54,25 @@ const AddStagiaire : React.FC<addStagiaireProps> = ({addNewStagiaire}) => {
         <section className="addFicheSectionStagiaires">
           <div className="inputDivBoxStagiaires">
             <div className='inputDivStagiaires'>
-              <label htmlFor="first_name" className='addInputTitleStagiaires'>Nom :</label>
-              <input
-                type="text"
-                name="first_name"
-                id="first_name"
-                className='firstNameInputStagiaires'
-                value={stagiaire.first_name}
-                onChange={handleInputChange}
-                required
-              />
-            </div>
-            <div className='inputDivStagiaires'>
-              <label htmlFor="last_name" className='addInputTitleStagiaires'>Prénom :</label>
+              <label htmlFor="last_name" className='addInputTitleStagiaires'>Nom :</label>
               <input
                 type="text"
                 name="last_name"
                 id="last_name"
                 className='lastNameInputStagiaires'
                 value={stagiaire.last_name}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+            <div className='inputDivStagiaires'>
+              <label htmlFor="first_name" className='addInputTitleStagiaires'>Prénom :</label>
+              <input
+                type="text"
+                name="first_name"
+                id="first_name"
+                className='firstNameInputStagiaires'
+                value={stagiaire.first_name}
                 onChange={handleInputChange}
                 required
               />

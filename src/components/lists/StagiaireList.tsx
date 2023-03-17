@@ -14,21 +14,21 @@ const StagiaireList : React.FC<StagiaireListProps> = ({stagiaires, currentPage})
   const [search, setSearch] = useState<string>('')
   const [selectedStagiaire, setSelectedStagiaire] = useState<Stagiaire | null>(null);
   
-  function filterByName() {
-      stagiaires.sort((a, b) => {
-          const nameA : any = `${a.last_name} ${a.first_name} ${a.createdAt}`;
-          const nameB : any = `${b.last_name} ${b.first_name} ${b.createdAt}`;
-          if (filterOrder === 'ascendant' ) {
-              return nameA.localeCompare(nameB);
-          } else {
-              return nameB.localeCompare(nameA);
-          }
-      });
-      setFilterOrder(filterOrder === 'ascendant' ? 'descendant' : 'ascendant');
+  const filterByName = () => {
+    stagiaires.sort((a, b) => {
+        const nameA : any = `${a.last_name} ${a.first_name} ${a.createdAt}`;
+        const nameB : any = `${b.last_name} ${b.first_name} ${b.createdAt}`;
+        if (filterOrder === 'ascendant' ) {
+            return nameA.localeCompare(nameB);
+        } else {
+            return nameB.localeCompare(nameA);
+        }
+    });
+    setFilterOrder(filterOrder === 'ascendant' ? 'descendant' : 'ascendant');
   }
 
   const handleStagiaireSelected = (stagiaire: Stagiaire) => {
-      setSelectedStagiaire(stagiaire);
+    setSelectedStagiaire(stagiaire);
   };
   
   const renderStagiairesList = () => {

@@ -14,7 +14,7 @@ const SalleList : React.FC<SalleListProps> = ({salles, currentPage}) => {
   const [search, setSearch] = useState<string>('')
   const [selectedSalle, setSelectedSalle] = useState<Salle | null>(null);
 
-  function filterByName() {
+  const filterByName = () => {
       salles.sort((a, b) => {
           const nameA : any = `${a.name} ${a.capacity} ${a.indication} ${a.floor}`;
           const nameB : any = `${b.name} ${b.capacity} ${b.indication} ${b.floor}`;

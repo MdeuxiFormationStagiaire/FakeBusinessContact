@@ -54,25 +54,25 @@ const AddFormateur : React.FC<addFormateurProps> = ({addNewFormateur}) => {
         <section className="addFicheSectionFormateurs">
           <div className="inputDivBoxFormateurs">
             <div className='inputDivFormateurs'>
-              <label htmlFor="first_name" className='addInputTitleFormateurs'>Nom :</label>
-              <input
-                type="text"
-                name="first_name"
-                id="first_name"
-                className='firstNameInputFormateurs'
-                value={formateur.first_name}
-                onChange={handleInputChange}
-                required
-              />
-            </div>
-            <div className='inputDivFormateurs'>
-              <label htmlFor="last_name" className='addInputTitleFormateurs'>Prénom :</label>
+              <label htmlFor="last_name" className='addInputTitleFormateurs'>Nom :</label>
               <input
                 type="text"
                 name="last_name"
                 id="last_name"
                 className='lastNameInputFormateurs'
                 value={formateur.last_name}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+            <div className='inputDivFormateurs'>
+              <label htmlFor="first_name" className='addInputTitleFormateurs'>Prénom :</label>
+              <input
+                type="text"
+                name="first_name"
+                id="first_name"
+                className='firstNameInputFormateurs'
+                value={formateur.first_name}
                 onChange={handleInputChange}
                 required
               />
