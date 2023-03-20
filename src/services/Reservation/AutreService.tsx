@@ -1,12 +1,16 @@
 import { Autre } from "../../models/Reservation/Autre";
 
+const URL = process.env.REACT_APP_DB_AUTRE_URL
+
 class AutreService {
 
-    private URL = process.env.FBC_APP_DB_AUTRE;
-
     findAllAutres = async () => {
-        const res = await fetch(`${URL}`);
-        return await res.json();
+        if (URL) {
+            const res = await fetch(URL);
+            return await res.json();
+        } else {
+            throw console.error("URL not defined");
+        }
     }
 
     getAutreById = async (id : number) => {
@@ -17,12 +21,16 @@ class AutreService {
     }
 
     createAutre = async (autre : Autre) => {
-        const res = await fetch(`${URL}`, {
-            method: "POST",
-            body: JSON.stringify(autre),
-            headers: { "content-type": "application/json" }
-        });
-        return await res.json();
+        if (URL) {
+            const res = await fetch(URL, {
+                method: "POST",
+                body: JSON.stringify(autre),
+                headers: { "content-type": "application/json" }
+            });
+            return await res.json();
+        } else {
+            throw console.error("URL not defined");
+        }
     }
 
     deleteAutre = async (id : number) => {

@@ -1,12 +1,16 @@
 import { Formateur } from "../models/Formateur";
 
+const URL = process.env.REACT_APP_DB_FORMATEUR_URL;
+
 class FormateurService {
 
-    private URL = process.env.FBC_APP_DB_FORMATEUR;
-
     findAllFormateurs = async () => {
-        const res = await fetch(`${URL}`);
-        return await res.json();
+        if (URL) {
+            const res = await fetch(URL);
+            return await res.json();
+        } else {
+            throw console.error("URL not defined");
+        }
     }
 
     getFormateurById = async (id : number) => {
@@ -17,12 +21,16 @@ class FormateurService {
     }
 
     createFormateur = async (formateur : Formateur) => {
-        const res = await fetch(`${URL}`, {
-            method: "POST",
-            body: JSON.stringify(formateur),
-            headers: { "content-type": "application/json" }
-        });
-        return await res.json();
+        if (URL) {
+            const res = await fetch(URL, {
+                method: "POST",
+                body: JSON.stringify(formateur),
+                headers: { "content-type": "application/json" }
+            });
+            return await res.json();
+        } else {
+            throw console.error("URL not defined");
+        }
     }
 
     deleteFormateur = async (id : number) => {

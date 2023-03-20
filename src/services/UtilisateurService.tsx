@@ -1,12 +1,16 @@
 import { Utilisateur } from "../models/Utilisateur";
 
+const URL = process.env.REACT_APP_DB_USER_URL;
+
 class UtilisateurService {
 
-    private URL = process.env.FBC_APP_DB_USER;
-
     findAllUtilisateurs = async () => {
-        const res = await fetch(`${URL}`);
-        return await res.json();
+        if (URL) {
+            const res = await fetch(URL);
+            return await res.json();
+        } else {
+            throw console.error("URL not defined");
+        }
     }
 
     getUtilisateurById = async (id : number) => {
@@ -17,12 +21,16 @@ class UtilisateurService {
     }
 
     createUtilisateur = async (utilisateur : Utilisateur) => {
-        const res = await fetch(`${URL}`, {
-            method: "POST",
-            body: JSON.stringify(utilisateur),
-            headers: { "content-type": "application/json" }
-        });
-        return await res.json();
+        if (URL) {
+            const res = await fetch(URL, {
+                method: "POST",
+                body: JSON.stringify(utilisateur),
+                headers: { "content-type": "application/json" }
+            });
+            return await res.json();
+        } else {
+            throw console.error("URL not defined");
+        }
     }
 
     deleteUtilisateur = async (id : number) => {

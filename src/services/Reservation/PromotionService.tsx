@@ -1,12 +1,16 @@
 import { Promotion } from "../../models/Reservation/Promotion";
 
+const URL = process.env.REACT_APP_DB_PROMOTION_URL;
+
 class PromotionService {
 
-    private URL = process.env.FBC_APP_DB_PROMOTION;
-
     findAllPromotions = async () => {
-        const res = await fetch(`${URL}`);
-        return await res.json();
+        if (URL) {
+            const res = await fetch(URL);
+            return await res.json();
+        } else {
+            throw console.error("URL not defined");
+        }
     }
 
     getPromotionById = async (id : number) => {
@@ -17,12 +21,16 @@ class PromotionService {
     }
 
     createPromotion = async (promotion : Promotion) => {
-        const res = await fetch(`${URL}`, {
-            method: "POST",
-            body: JSON.stringify(promotion),
-            headers: { "content-type": "application/json" }
-        });
-        return await res.json();
+        if (URL) {
+            const res = await fetch(URL, {
+                method: "POST",
+                body: JSON.stringify(promotion),
+                headers: { "content-type": "application/json" }
+            });
+            return await res.json();
+        } else {
+            throw console.error("URL not defined");
+        }
     }
 
     deletePromotion = async (id : number) => {

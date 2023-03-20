@@ -1,12 +1,16 @@
 import { Session } from "../../models/Reservation/Session";
 
+const URL = process.env.REACT_APP_DB_SESSION_URL;
+
 class SessionService {
 
-    private URL = process.env.FBC_APP_DB_SESSION;
-
     findAllSessions = async () => {
-        const res = await fetch(`${URL}`);
-        return await res.json();
+        if (URL) {
+            const res = await fetch(URL);
+            return await res.json();
+        } else {
+            throw console.error("URL not defined");
+        }
     }
 
     getSessionById = async (id : number) => {
@@ -17,12 +21,16 @@ class SessionService {
     }
 
     createSession = async (session : Session) => {
-        const res = await fetch(`${URL}`, {
-            method: "POST",
-            body: JSON.stringify(session),
-            headers: { "content-type": "application/json" }
-        });
-        return await res.json();
+        if (URL) {
+            const res = await fetch(URL, {
+                method: "POST",
+                body: JSON.stringify(session),
+                headers: { "content-type": "application/json" }
+            });
+            return await res.json();
+        } else {
+            throw console.error("URL not defined");
+        }
     }
 
     deleteSession = async (id : number) => {

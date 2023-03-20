@@ -1,12 +1,16 @@
 import { Stagiaire } from "../models/Stagiaire";
 
+const URL = process.env.REACT_APP_DB_STAGIAIRE_URL;
+
 class StagiaireService {
 
-    private URL = process.env.FBC_APP_DB_STAGIAIRE;
-
     findAllStagiaires = async () => {
-        const res = await fetch(`${URL}`);
-        return await res.json();
+        if (URL) {
+            const res = await fetch(URL);
+            return await res.json();
+        } else {
+            throw console.error("URL not defined");
+        }
     }
 
     getStagiaireById = async (id : number) => {
@@ -17,12 +21,16 @@ class StagiaireService {
     }
 
     createStagiaire = async (stagiaire : Stagiaire) => {
-        const res = await fetch(`${URL}`, {
-            method: "POST",
-            body: JSON.stringify(stagiaire),
-            headers: { "content-type": "application/json" }
-        });
-        return await res.json();
+        if (URL) {
+            const res = await fetch(URL, {
+                method: "POST",
+                body: JSON.stringify(stagiaire),
+                headers: { "content-type": "application/json" }
+            });
+            return await res.json();
+        } else {
+            throw console.error("URL not defined");
+        }
     }
 
     deleteStagiaire = async (id : number) => {
