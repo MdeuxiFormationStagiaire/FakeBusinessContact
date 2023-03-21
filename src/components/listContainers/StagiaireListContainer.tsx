@@ -31,6 +31,15 @@ const FormateurListContainer: React.FC<StagiaireListContainerProps> = ({ stagiai
     };
   }, []);
 
+  const formateDate = (date : Date) => {
+    const formatedDate : string = 
+        date.toLocaleString('fr-FR').slice(8, 10) + '/' +
+        date.toLocaleString('fr-FR').slice(5, 7) + '/' +
+        date.toLocaleString('fr-FR').slice(0, 4)
+    ;
+    return formatedDate;
+  }
+
   return (
     <Link to={`/stagiaires/${stagiaire.id}`} className="ficheLink">
       <div
@@ -41,13 +50,7 @@ const FormateurListContainer: React.FC<StagiaireListContainerProps> = ({ stagiai
         <span className="itemsStagiaires">{stagiaire.last_name}</span>
         <span className="itemsStagiaires">{stagiaire.first_name}</span>
         <span className="itemsStagiaires">{stagiaire.email}</span>
-        <span className="items2Stagiaires">
-          {stagiaire.createdAt.toLocaleString('fr-FR').slice(8, 10) +
-            '/' +
-            stagiaire.createdAt.toLocaleString('fr-FR').slice(5, 7) +
-            '/' +
-            stagiaire.createdAt.toLocaleString('fr-FR').slice(0, 4)}
-        </span>
+        <span className="items2Stagiaires">{formateDate(stagiaire.createdAt)}</span>
       </div>
     </Link>
   );

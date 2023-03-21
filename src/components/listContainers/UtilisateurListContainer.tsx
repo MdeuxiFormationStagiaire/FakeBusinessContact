@@ -33,6 +33,15 @@ const UtilisateurListContainer : React.FC<UtilisateurListContainerProps> = ({uti
     };
   }, []);
 
+  const formateDate = (date : Date) => {
+    const formatedDate : string = 
+        date.toLocaleString('fr-FR').slice(8, 10) + '/' +
+        date.toLocaleString('fr-FR').slice(5, 7) + '/' +
+        date.toLocaleString('fr-FR').slice(0, 4)
+    ;
+    return formatedDate;
+  } 
+
   return (
     <Link to={`/utilisateurs/${utilisateur.id}`} className="ficheLink">
     <div
@@ -44,13 +53,7 @@ const UtilisateurListContainer : React.FC<UtilisateurListContainerProps> = ({uti
       <span className="itemsUtilisateurs">{utilisateur.first_name}</span>
       <span className="itemsUtilisateurs">{utilisateur.email}</span>
       <span className="itemsUtilisateurs">{utilisateur.position}</span>
-      <span className="itemsUtilisateurs">
-        {utilisateur.createdAt.toLocaleString('fr-FR').slice(8, 10) +
-          '/' +
-          utilisateur.createdAt.toLocaleString('fr-FR').slice(5, 7) +
-          '/' +
-          utilisateur.createdAt.toLocaleString('fr-FR').slice(0, 4)}
-      </span>
+      <span className="itemsUtilisateurs">{formateDate(utilisateur.createdAt)}</span>
       {utilisateur.adminRight ? (
         <span className="items2Utilisateurs">
           <img src={trueLogo} alt="Admin Right" className="logo" />

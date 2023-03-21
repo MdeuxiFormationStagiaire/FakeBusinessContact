@@ -19,17 +19,26 @@ const SalleListContainer : React.FC<SalleListContainerProps> = ({salle, onSalleS
     };
 
     useEffect(() => {
-        const handleClickOutside = (event: MouseEvent) => {
-          if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
-            setIsSelected(false);
-          }
-        };
-        document.addEventListener('mousedown', handleClickOutside);
-    
-        return () => {
-          document.removeEventListener('mousedown', handleClickOutside);
-        };
-      }, []);
+      const handleClickOutside = (event: MouseEvent) => {
+        if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
+          setIsSelected(false);
+        }
+      };
+      document.addEventListener('mousedown', handleClickOutside);
+  
+      return () => {
+        document.removeEventListener('mousedown', handleClickOutside);
+      };
+    }, []);
+
+    const formateDate = (date : Date) => {
+      const formatedDate : string = 
+          date.toLocaleString('fr-FR').slice(8, 10) + '/' +
+          date.toLocaleString('fr-FR').slice(5, 7) + '/' +
+          date.toLocaleString('fr-FR').slice(0, 4)
+      ;
+      return formatedDate;
+    }
   
     return (
         <Link to={`/salles/${salle.id}`} className="ficheLink">
@@ -42,13 +51,7 @@ const SalleListContainer : React.FC<SalleListContainerProps> = ({salle, onSalleS
         <span className="itemsSalles">{salle.capacity}</span>
         <span className="itemsSalles">{salle.indication}</span>
         <span className="itemsSalles">{salle.floor}</span>
-        <span className="items2Salles">
-          {salle.createdAt.toLocaleString('fr-FR').slice(8, 10) +
-            '/' +
-            salle.createdAt.toLocaleString('fr-FR').slice(5, 7) +
-            '/' +
-            salle.createdAt.toLocaleString('fr-FR').slice(0, 4)}
-        </span>
+        <span className="items2Salles">{formateDate(salle.createdAt)}</span>
       </div>
     </Link>
   )
