@@ -2,7 +2,7 @@
   "formateurs": [
     {
       "id": 1,
-      "first_name": "David",
+      "first_name": "Davidoff",
       "last_name": "Brim",
       "email": "dbrim3@sourceforge.net",
       "createdAt": "2022-02-15T04:41:21Z"
@@ -104,6 +104,27 @@
       "last_name": "Mattschas",
       "email": "rmattschasj@instagram.com",
       "createdAt": "2023-07-02T15:01:02Z"
+    },
+    {
+      "id": 16,
+      "first_name": "Théo",
+      "last_name": "Tres Gros zizi",
+      "email": "theo.groszizi@grossteub.org",
+      "createdAt": "2023-03-17T10:29:06.869Z"
+    },
+    {
+      "id": 17,
+      "first_name": "Patrick",
+      "last_name": "Clément",
+      "email": "patrick.gabin@gmail.com",
+      "createdAt": "2023-03-17T15:18:29.295Z"
+    },
+    {
+      "id": 18,
+      "first_name": "Pat",
+      "last_name": "Clément",
+      "email": "test@test.com",
+      "createdAt": "2023-03-21T13:04:32.775Z"
     }
   ],
   "stagiaires": [
@@ -253,7 +274,7 @@
       "id": 1,
       "capacity": "40",
       "name": "La Laja",
-      "floor": "2ème",
+      "floor": "RDC",
       "indication": "visualize intuitive action-items",
       "createdAt": "2022-03-24T05:17:01Z"
     },
@@ -424,6 +445,38 @@
       "indication": "Au fond à gauche",
       "floor": "1er",
       "createdAt": "2023-03-14T16:40:44.327Z"
+    },
+    {
+      "id": 23,
+      "name": "Vauban",
+      "capacity": "10",
+      "indication": "Au fond à gauche",
+      "createdAt": "2023-03-17T10:58:04.966Z",
+      "floor": "1er"
+    },
+    {
+      "id": 25,
+      "name": "Vauban",
+      "capacity": "50",
+      "indication": "Au fond à gauche",
+      "floor": "RDC",
+      "createdAt": "2023-03-17T10:59:40.280Z"
+    },
+    {
+      "id": 26,
+      "name": "Pdp",
+      "capacity": "16",
+      "indication": "Dans la cave sur le toit",
+      "floor": "RDC",
+      "createdAt": "2023-03-17T11:00:44.391Z"
+    },
+    {
+      "id": 27,
+      "name": "Vaubantest",
+      "capacity": "10",
+      "indication": "Au fond à gauche",
+      "floor": "1er",
+      "createdAt": "2023-03-21T13:03:07.596Z"
     }
   ],
   "utilisateurs": [
@@ -525,6 +578,167 @@
       "position": "Cheffe de projet",
       "createdAt": "2023-03-15T13:21:58.584Z",
       "adminRight": true
+    },
+    {
+      "id": 12,
+      "first_name": "Sophie",
+      "last_name": "Pacala",
+      "email": "s.pacala@2itechacademy.com",
+      "position": "Pdg of the universe",
+      "createdAt": "2023-03-15T14:18:39.678Z",
+      "adminRight": true
+    }
+  ],
+  "promotions": [
+    {
+      "id": 1,
+      "description": "CDA",
+      "salle": {
+        "id": 1,
+        "capacity": "40",
+        "name": "La Laja",
+        "floor": "RDC",
+        "indication": "visualize intuitive action-items",
+        "createdAt": "2022-03-24T05:17:01Z"
+      },
+      "formateur": {
+        "id": 1,
+        "first_name": "David",
+        "last_name": "Brim",
+        "email": "dbrim3@sourceforge.net",
+        "createdAt": "2022-02-15T04:41:21Z"
+      },
+      "startAt": "2022-03-24T05:17:01Z",
+      "endAt": "2022-03-24T05:17:01Z",
+      "sessions": [
+        {
+          "id": 1,
+          "desc": "HTML/CSS",
+          "startAt": "2022-03-24T05:17:01Z",
+          "endAt": "2022-03-29T05:17:01Z",
+          "formateur": {
+            "id": 2,
+            "first_name": "Leila",
+            "last_name": "Sandell",
+            "email": "lsandell4@independent.co",
+            "createdAt": "2022-02-17T18:03:26Z"
+          }
+        },
+        {
+          "id": 2,
+          "desc": "HTML/CSS",
+          "startAt": "2022-03-24T05:17:01Z",
+          "endAt": "2022-03-29T05:17:01Z",
+          "formateur": {
+            "id": 2,
+            "first_name": "Leila",
+            "last_name": "Sandell",
+            "email": "lsandell4@independent.co",
+            "createdAt": "2022-02-17T18:03:26Z"
+          }
+        }
+      ],
+      "stagiaires": [
+        {
+          "id": 1,
+          "first_name": "Morie",
+          "last_name": "Derr",
+          "email": "mderr0@npr.org",
+          "createdAt": "2022-06-22T11:58:04Z"
+        },
+        {
+          "id": 2,
+          "first_name": "Glyn",
+          "last_name": "Grandin",
+          "email": "ggrandin1@statcounter.com",
+          "createdAt": "2023-10-26T13:58:40Z"
+        }
+      ],
+      "utilisateur": {
+        "id": 11,
+        "first_name": "Nara",
+        "last_name": "Tanier",
+        "email": "nara.tanier@gmail.com",
+        "position": "Cheffe de projet",
+        "createdAt": "2023-03-15T13:21:58.584Z",
+        "adminRight": true
+      },
+      "createdAt": "2023-03-15T13:21:58.584Z"
+    },
+    {
+      "id": 1,
+      "description": "CDA",
+      "salle": {
+        "id": 1,
+        "capacity": "40",
+        "name": "La Laja",
+        "floor": "RDC",
+        "indication": "visualize intuitive action-items",
+        "createdAt": "2022-03-24T05:17:01Z"
+      },
+      "formateur": {
+        "id": 1,
+        "first_name": "David",
+        "last_name": "Brim",
+        "email": "dbrim3@sourceforge.net",
+        "createdAt": "2022-02-15T04:41:21Z"
+      },
+      "startAt": "2022-03-24T05:17:01Z",
+      "endAt": "2022-03-24T05:17:01Z",
+      "sessions": [
+        {
+          "id": 1,
+          "desc": "HTML/CSS",
+          "startAt": "2022-03-24T05:17:01Z",
+          "endAt": "2022-03-29T05:17:01Z",
+          "formateur": {
+            "id": 2,
+            "first_name": "Leila",
+            "last_name": "Sandell",
+            "email": "lsandell4@independent.co",
+            "createdAt": "2022-02-17T18:03:26Z"
+          }
+        },
+        {
+          "id": 2,
+          "desc": "HTML/CSS",
+          "startAt": "2022-03-24T05:17:01Z",
+          "endAt": "2022-03-29T05:17:01Z",
+          "formateur": {
+            "id": 2,
+            "first_name": "Leila",
+            "last_name": "Sandell",
+            "email": "lsandell4@independent.co",
+            "createdAt": "2022-02-17T18:03:26Z"
+          }
+        }
+      ],
+      "stagiaires": [
+        {
+          "id": 1,
+          "first_name": "Morie",
+          "last_name": "Derr",
+          "email": "mderr0@npr.org",
+          "createdAt": "2022-06-22T11:58:04Z"
+        },
+        {
+          "id": 2,
+          "first_name": "Glyn",
+          "last_name": "Grandin",
+          "email": "ggrandin1@statcounter.com",
+          "createdAt": "2023-10-26T13:58:40Z"
+        }
+      ],
+      "utilisateur": {
+        "id": 11,
+        "first_name": "Nara",
+        "last_name": "Tanier",
+        "email": "nara.tanier@gmail.com",
+        "position": "Cheffe de projet",
+        "createdAt": "2023-03-15T13:21:58.584Z",
+        "adminRight": true
+      },
+      "createdAt": "2023-03-15T13:21:58.584Z"
     }
   ]
 }
