@@ -48,13 +48,13 @@ const PromotionListContainer : React.FC<PromotionListContainerProsp> = ({promoti
           ref={containerRef}
         >
           <span className="itemsPromotions">{promotion.description}</span>
-          <span className="items2Promotions">{formateDate(promotion.createdAt)}</span>
-          <span className="items2Promotions">{formateDate(promotion.startAt)}</span>
-          <span className="items2Promotions">{formateDate(promotion.endAt)}</span>
+          <span className="itemsPromotions">{formateDate(promotion.createdAt)}</span>
+          <span className="itemsPromotions">{formateDate(promotion.startAt)}</span>
+          <span className="itemsPromotions">{formateDate(promotion.endAt)}</span>
           <span className="itemsPromotions">{`${promotion.formateur.first_name} ${promotion.formateur.last_name}`}</span>
           <span className="itemsPromotions">{promotion.stagiaires.length}</span>
           <span className="itemsPromotions">{promotion.salle.name}</span>
-          <span className="itemsPromotions">{`${promotion.utilisateur.first_name} ${promotion.utilisateur.last_name}`}</span>
+          <span className="items2Promotions">{`${promotion.utilisateur.first_name} ${promotion.utilisateur.last_name}`}</span>
         </div>
       </Link>
     )
