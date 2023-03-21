@@ -122,6 +122,15 @@ const SalleFiche : React.FC<SalleFicheProps> = ({salles, onUpdateSalle}) => {
     navigate('/salles/add');
   };
 
+  const formateDate = (date : Date) => {
+    const formatedDate : string = 
+        date.toLocaleString('fr-FR').slice(8, 10) + '/' +
+        date.toLocaleString('fr-FR').slice(5, 7) + '/' +
+        date.toLocaleString('fr-FR').slice(0, 4)
+    ;
+    return formatedDate;
+  }
+
   if (!salle) {
     return <div>Loading...</div>;
   };
@@ -242,11 +251,7 @@ const SalleFiche : React.FC<SalleFicheProps> = ({salles, onUpdateSalle}) => {
               <div className="titleInputBoxSalles">
                 <h3 className='inputTitleSalles'>DC :</h3>
                 <div className="inputBoxSalles">
-                  <p className='createdAtInputTextSalles'>
-                    {backupSalle.createdAt.toLocaleString("fr-FR").slice(8,10) + "/"
-                    + backupSalle.createdAt.toLocaleString("fr-FR").slice(5,7) + "/"
-                    + backupSalle.createdAt.toLocaleString("fr-FR").slice(0,4)}
-                  </p>
+                  <p className='createdAtInputTextSalles'>{formateDate(backupSalle.createdAt)}</p>
                 </div>
               </div>
             </section>

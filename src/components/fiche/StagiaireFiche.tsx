@@ -118,6 +118,15 @@ const StagiaireFiche : React.FC<stagiaireFicheProps> = ({stagiaires, onUpdateSta
     navigate('/stagiaires/add')
   };
 
+  const formateDate = (date : Date) => {
+    const formatedDate : string = 
+        date.toLocaleString('fr-FR').slice(8, 10) + '/' +
+        date.toLocaleString('fr-FR').slice(5, 7) + '/' +
+        date.toLocaleString('fr-FR').slice(0, 4)
+    ;
+    return formatedDate;
+  }
+
   if (!stagiaire) {
     return <div>Loading...</div>;
   };
@@ -215,11 +224,7 @@ const StagiaireFiche : React.FC<stagiaireFicheProps> = ({stagiaires, onUpdateSta
               <div className="titleInputBoxStagiaires">
                 <h3 className='inputTitleStagiaires'>DC :</h3>
                 <div className="inputBoxStagiaires">
-                  <p className='createdAtInputTextStagiaires'>
-                    {backupStagiaire.createdAt.toLocaleString("fr-FR").slice(8,10) + "/"
-                    + backupStagiaire.createdAt.toLocaleString("fr-FR").slice(5,7) + "/"
-                    + backupStagiaire.createdAt.toLocaleString("fr-FR").slice(0,4)}
-                  </p>
+                  <p className='createdAtInputTextStagiaires'>{formateDate(backupStagiaire.createdAt)}</p>
                 </div>
               </div>
             </section>

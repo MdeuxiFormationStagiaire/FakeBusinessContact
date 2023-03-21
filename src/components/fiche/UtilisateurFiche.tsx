@@ -10,127 +10,137 @@ import falseLogo from '../../assets/img/multiply.png'
 import '../../assets/styles/components/fiches/UtilisateurFiche.css'
 
 type UtilisateurFicheProps = {
-    utilisateurs: Utilisateur[];
-    onUpdateUtilisateur: Function;
+  utilisateurs: Utilisateur[];
+  onUpdateUtilisateur: Function;
 }
 
 const UtilisateurFiche : React.FC<UtilisateurFicheProps> = ({utilisateurs, onUpdateUtilisateur}) => {
     
-    const navigate = useNavigate();
-    const { id } = useParams<{id : string}>();
-  
-    const [utilisateur, setUtilisateur] = useState<Utilisateur>(utilisateurs[0])
-  
-    const [backupUtilisateur, setBackupUtilisateur] = useState(utilisateurs[0])
-  
-    const [editMode, setEditMode] = useState(false)
-  
-    const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false)
-  
-    useEffect(() => {
-      const utilisateurId = id ? parseInt(id) : 0;
-      utilisateurService.getUtilisateurById(utilisateurId)
-        .then((data) => {setUtilisateur(data); setBackupUtilisateur(data)})
-        .catch((error) => console.log(error));
-    }, [id]);
-  
-    const handleDelete = () => {
-      setShowDeleteConfirmation(true)
-    };
-  
-    const handleConfirmDelete = () => {
-      if (!utilisateur) {
-        return;
-      }
-      utilisateurService
-        .deleteUtilisateur(utilisateur.id)
-        .then(() => navigate('/utilisateurs'))
-        .catch((error) => console.error(error))
-      setShowDeleteConfirmation(false);
-    };
-  
-    const handleCancelDelete = () => {
-      setShowDeleteConfirmation(false)
-    };
-  
-    const handleButtonHover = (className: string, hover: boolean) : any => {
-      const fiche = document.querySelector('.ficheSectionUtilisateurs') as HTMLDivElement | null;
-      if (fiche) {
-        if (hover) {
-          fiche.classList.add(className);
-        } else {
-          fiche.classList.remove(className);
-        }
-      }
-    };
-  
-    const handleEditMode = () => {
-      if (editMode == false) {
-        setBackupUtilisateur(utilisateur)
-        setEditMode(true)
-      } else {
-        setEditMode(false)
-      }
-    };
-  
-    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
-      const { name, value, checked } = event.target;
-      if (name === 'createdAt') {
-        const date = new Date(value);
-        setUtilisateur(prevState => Object.assign({}, prevState, { [name]: date.toISOString() }));
-      } else if (name === 'email') {
-        setUtilisateur(prevState => Object.assign({}, prevState, { [name]: value.toLocaleLowerCase() }));
-      } else if (name === 'last_name' || name === 'first_name' || name === 'position') {
-        const capitalizedValue = value.charAt(0).toUpperCase() + value.slice(1);
-        setUtilisateur(prevState => Object.assign({}, prevState, { [name]: capitalizedValue}));
-      } else if (name === 'adminRight') {
-        setUtilisateur(prevState => Object.assign({}, prevState, { [name]: checked}));
-      } else {
-        setUtilisateur(prevState => Object.assign({}, prevState, { [name]: value}));
-      }
-    };
-  
-    const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-      event.preventDefault();
-  
-      if (!utilisateur) {
-        return;
-      }
-  
-      setBackupUtilisateur(prevUtilisateur => ({
-        ...prevUtilisateur,
-        last_name: utilisateur.last_name,
-        first_name: utilisateur.first_name,
-        email: utilisateur.email,
-        position: utilisateur.position,
-        adminRight: utilisateur.adminRight
-      }));
-  
-      utilisateurService.updateUtilisateur(utilisateur.id, utilisateur)
-        .then(() => {
-          setEditMode(false)
-        })
-        .catch((error) => console.error(error)
-        );
-      onUpdateUtilisateur(utilisateur)
-    };
-  
-    const handleCancel = () => {
-      setEditMode(false)
-      if (backupUtilisateur != undefined) {
-        setUtilisateur(backupUtilisateur)
-      }
-    };
-  
-    const handleAddButtonNav = () => {
-      navigate('/utilisateurs/add')
-    };
-  
+  const navigate = useNavigate();
+  const { id } = useParams<{id : string}>();
+
+  const [utilisateur, setUtilisateur] = useState<Utilisateur>(utilisateurs[0])
+
+  const [backupUtilisateur, setBackupUtilisateur] = useState(utilisateurs[0])
+
+  const [editMode, setEditMode] = useState(false)
+
+  const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false)
+
+  useEffect(() => {
+    const utilisateurId = id ? parseInt(id) : 0;
+    utilisateurService.getUtilisateurById(utilisateurId)
+      .then((data) => {setUtilisateur(data); setBackupUtilisateur(data)})
+      .catch((error) => console.log(error));
+  }, [id]);
+
+  const handleDelete = () => {
+    setShowDeleteConfirmation(true)
+  };
+
+  const handleConfirmDelete = () => {
     if (!utilisateur) {
-      return <div>Loading...</div>;
-    };
+      return;
+    }
+    utilisateurService
+      .deleteUtilisateur(utilisateur.id)
+      .then(() => navigate('/utilisateurs'))
+      .catch((error) => console.error(error))
+    setShowDeleteConfirmation(false);
+  };
+
+  const handleCancelDelete = () => {
+    setShowDeleteConfirmation(false)
+  };
+
+  const handleButtonHover = (className: string, hover: boolean) : any => {
+    const fiche = document.querySelector('.ficheSectionUtilisateurs') as HTMLDivElement | null;
+    if (fiche) {
+      if (hover) {
+        fiche.classList.add(className);
+      } else {
+        fiche.classList.remove(className);
+      }
+    }
+  };
+
+  const handleEditMode = () => {
+    if (editMode == false) {
+      setBackupUtilisateur(utilisateur)
+      setEditMode(true)
+    } else {
+      setEditMode(false)
+    }
+  };
+
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
+    const { name, value, checked } = event.target;
+    if (name === 'createdAt') {
+      const date = new Date(value);
+      setUtilisateur(prevState => Object.assign({}, prevState, { [name]: date.toISOString() }));
+    } else if (name === 'email') {
+      setUtilisateur(prevState => Object.assign({}, prevState, { [name]: value.toLocaleLowerCase() }));
+    } else if (name === 'last_name' || name === 'first_name' || name === 'position') {
+      const capitalizedValue = value.charAt(0).toUpperCase() + value.slice(1);
+      setUtilisateur(prevState => Object.assign({}, prevState, { [name]: capitalizedValue}));
+    } else if (name === 'adminRight') {
+      setUtilisateur(prevState => Object.assign({}, prevState, { [name]: checked}));
+    } else {
+      setUtilisateur(prevState => Object.assign({}, prevState, { [name]: value}));
+    }
+  };
+
+  const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    if (!utilisateur) {
+      return;
+    }
+
+    setBackupUtilisateur(prevUtilisateur => ({
+      ...prevUtilisateur,
+      last_name: utilisateur.last_name,
+      first_name: utilisateur.first_name,
+      email: utilisateur.email,
+      position: utilisateur.position,
+      adminRight: utilisateur.adminRight
+    }));
+
+    utilisateurService.updateUtilisateur(utilisateur.id, utilisateur)
+      .then(() => {
+        setEditMode(false)
+      })
+      .catch((error) => console.error(error)
+      );
+    onUpdateUtilisateur(utilisateur)
+  };
+
+  const handleCancel = () => {
+    setEditMode(false)
+    if (backupUtilisateur != undefined) {
+      setUtilisateur(backupUtilisateur)
+    }
+  };
+
+  const handleAddButtonNav = () => {
+    navigate('/utilisateurs/add')
+  };
+
+  const formateDate = (date : Date) => {
+    const formatedDate : string = 
+        date.toLocaleString('fr-FR').slice(8, 10) + '/' +
+        date.toLocaleString('fr-FR').slice(5, 7) + '/' +
+        date.toLocaleString('fr-FR').slice(0, 4)
+    ;
+    return formatedDate;
+  }
+
+  if (!utilisateur) {
+    return <div>Loading...</div>;
+  };
+
   return (
-<>
+    <>
       <section className='buttonSectionUtilisateurs'>
         <button type='button' className='updateButtonBoxUtilisateurs' onClick={handleEditMode} onMouseEnter={() => handleButtonHover('hoveredUpdateUtilisateurs', true)} onMouseLeave={() => handleButtonHover('hoveredUpdateUtilisateurs', false)}>
           M
@@ -252,11 +262,7 @@ const UtilisateurFiche : React.FC<UtilisateurFicheProps> = ({utilisateurs, onUpd
               <div className="titleInputBoxUtilisateurs">
                 <h3 className='inputTitleUtilisateurs'>DC :</h3>
                 <div className="inputBoxUtilisateurs">
-                  <p className='createdAtInputTextUtilisateurs'>
-                    {backupUtilisateur.createdAt.toLocaleString("fr-FR").slice(8,10) + "/"
-                    + backupUtilisateur.createdAt.toLocaleString("fr-FR").slice(5,7) + "/"
-                    + backupUtilisateur.createdAt.toLocaleString("fr-FR").slice(0,4)}
-                  </p>
+                  <p className='createdAtInputTextUtilisateurs'>{formateDate(backupUtilisateur.createdAt)}</p>
                 </div>
               </div>
               <div className="titleInputBoxUtilisateurs">

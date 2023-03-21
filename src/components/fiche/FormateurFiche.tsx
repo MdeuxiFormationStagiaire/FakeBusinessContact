@@ -119,6 +119,15 @@ const FormateurFiche : React.FC<formateurFicheProps> = ({formateurs, onUpdateFor
     navigate('/formateurs/add')
   }
 
+  const formateDate = (date : Date) => {
+    const formatedDate : string = 
+        date.toLocaleString('fr-FR').slice(8, 10) + '/' +
+        date.toLocaleString('fr-FR').slice(5, 7) + '/' +
+        date.toLocaleString('fr-FR').slice(0, 4)
+    ;
+    return formatedDate;
+  }
+
   if (!formateur) {
     return <div></div>;
   }
@@ -216,11 +225,7 @@ const FormateurFiche : React.FC<formateurFicheProps> = ({formateurs, onUpdateFor
               <div className="titleInputBoxFormateurs">
                 <h3 className='inputTitleFormateurs'>DC :</h3>
                 <div className="inputBoxFormateurs">
-                  <p className='createdAtInputTextFormateurs'>
-                    {backupFormateur.createdAt.toLocaleString("fr-FR").slice(8,10) + "/"
-                    + backupFormateur.createdAt.toLocaleString("fr-FR").slice(5,7) + "/"
-                    + backupFormateur.createdAt.toLocaleString("fr-FR").slice(0,4)}
-                  </p>
+                  <p className='createdAtInputTextFormateurs'>{formateDate(backupFormateur.createdAt)}</p>
                 </div>
               </div>
             </section>
