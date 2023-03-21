@@ -1,4 +1,4 @@
-.formateursList {
+.listFormateurs {
     display: flex;
     flex-direction: column;
     border: 3px solid #1C1D3B;
@@ -10,7 +10,7 @@
     margin: 0 100px;
 }
 
-.formateursListFiche {
+.listFicheFormateurs {
     display: flex;
     flex-direction: column;
     border: 3px solid #1C1D3B;
@@ -22,7 +22,7 @@
     margin: 0 100px;
 }
 
-.formateursListAdd {
+.listAddFormateurs {
     display: flex;
     flex-direction: column;
     border: 3px solid #1C1D3B;
@@ -34,7 +34,7 @@
     margin: 0 100px;
 }
 
-.formateursFilterBar {
+.filterBarFormateurs {
     display: grid;
     align-items: center;
     grid-template-columns: 15% 10% 10% 45% 20%;
@@ -47,7 +47,7 @@
     top: 0px;
 }
 
-.formateursFilterAllButton {
+.allFormateurs {
     font-weight: bold;
     display: flex;
     align-items: center;
@@ -62,7 +62,7 @@
     border-right: 1px solid #1C1D3B;
 }
 
-.formateursFilterNameButton {
+.filterNameButtonFormateurs {
     font-weight: bold;
     display: flex;
     align-items: center;
@@ -77,7 +77,7 @@
     border-right: 1px solid #1C1D3B;
 }
 
-.formateursFilterNameButton:hover {
+.filterNameButtonFormateurs:hover {
     font-weight: bold;
     display: flex;
     align-items: center;
@@ -93,7 +93,7 @@
     text-decoration: underline;
 }
 
-.formateursSearchInput {
+.searchInputFormateurs {
     grid-area: search;
     border: none;
     border-radius: 5px;
@@ -101,7 +101,7 @@
     margin-right: 10px;
 }
 
-.formateursGrid {
+.gridFormateurs {
     display: grid;
     grid-template-columns: 20% 20% 40% 20%;
     padding: 15px 0 15px 0;
@@ -111,12 +111,12 @@
     top: 53px;
 }
 
-.formateursListContainer {
+.listContainerFormateurs {
     display: flex;
     flex-direction: column;
 }
 
-.formateursGridTitle {
+.gridTitleFormateurs {
     text-align: center;
     font-size: 20px;
 }

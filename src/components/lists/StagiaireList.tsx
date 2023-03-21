@@ -51,26 +51,26 @@ const StagiaireList : React.FC<StagiaireListProps> = ({stagiaires, currentPage})
   
   return (
       <>
-        <section className={'stagiairesList' + `${currentPage}`}>
-          <div className="stagiairesFilterBar">
-            <button className="stagiairesFilterAllButton">{stagiaires.length} Stagiaires</button>
-            <button onClick={filterByName} className="stagiairesFilterNameButton">
+        <section className={'list' + `${currentPage}` + 'Stagiaires'}>
+          <div className="filterBarStagiaires">
+            <div className="allStagiaires">{stagiaires.length} Stagiaires</div>
+            <button onClick={filterByName} className="filterNameButtonStagiaires">
               By Name
             </button>
             <input
-              className="stagiairesSearchInput"
+              className="searchInputStagiaires"
               type="search"
               placeholder="   Recherche ..."
               onChange={(e) => setSearch(e.target.value)}
             />
           </div>
-          <div className="stagiairesGrid">
-            <h3 className="stagiairesGridTitle">Nom</h3>
-            <h3 className="stagiairesGridTitle">Prénom</h3>
-            <h3 className="stagiairesGridTitle">Email</h3>
-            <h3 className="stagiairesGridTitle">DC</h3>
+          <div className="gridStagiaires">
+            <h3 className="gridTitleStagiaires">Nom</h3>
+            <h3 className="gridTitleStagiaires">Prénom</h3>
+            <h3 className="gridTitleStagiaires">Email</h3>
+            <h3 className="gridTitleStagiaires">DC</h3>
           </div>
-          <div className="stagiairesListContainer">{renderStagiairesList()}</div>
+          <div className="listContainerStagiaires">{renderStagiairesList()}</div>
         </section>
       </>
   );

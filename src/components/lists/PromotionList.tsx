@@ -72,9 +72,9 @@ const PromotionList : React.FC<PromotionListProps> = ({promotions, currentPage})
   
   return (
     <>
-    <section className={'listPromotions' + `${currentPage}`}>
-      <div className="filterBarpromotions">
-        <button className="filterAllButtonPromotions">{promotions.length} Promotions</button>
+    <section className={'list' + `${currentPage}` + 'Promotions'}>
+      <div className="filterBarPromotions">
+        <div className="allPromotions">{promotions.length} Promotions</div>
         <button onClick={filterBySalle} className="filterNameButtonPromotions">
           By Salle
         </button>
@@ -94,11 +94,11 @@ const PromotionList : React.FC<PromotionListProps> = ({promotions, currentPage})
         <h3 className="gridTitlePromotions">DD</h3>
         <h3 className="gridTitlePromotions">DF</h3>
         <h3 className="gridTitlePromotions">Formateur</h3>
-        <h3 className="gridTitlePromotions">Effectifs</h3>
+        <h3 className="gridTitlePromotions">Eff.</h3>
         <h3 className="gridTitlePromotions">Salle</h3>
         <h3 className="gridTitlePromotions">Collaborateurs</h3>
       </div>
-      <div className="promotionsListContainer">{renderPromotionsList()}</div>
+      <div className="listContainerPromotions">{renderPromotionsList()}</div>
     </section>
   </>
   )

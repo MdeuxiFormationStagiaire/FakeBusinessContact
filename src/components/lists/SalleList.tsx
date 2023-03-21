@@ -50,27 +50,27 @@ const SalleList : React.FC<SalleListProps> = ({salles, currentPage}) => {
 
   return (
     <>
-      <section className={'sallesList' + `${currentPage}`}>
-        <div className="sallesFilterBar">
-          <button className="sallesFilterAllButton">{salles.length} Salles</button>
-          <button onClick={filterByName} className="sallesFilterNameButton">
+      <section className={'list' + `${currentPage}` + 'Salles'}>
+        <div className="filterBarSalles">
+          <div className="allSalles">{salles.length} Salles</div>
+          <button onClick={filterByName} className="filterNameButtonSalles">
             By Name
           </button>
           <input
-            className="sallesSearchInput"
+            className="searchInputSalles"
             type="search"
             placeholder="   Recherche ..."
             onChange={(e) => setSearch(e.target.value)}
           />
         </div>
-        <div className="sallesGrid">
-          <h3 className="sallesGridTitle">Nom</h3>
-          <h3 className="sallesGridTitle">Capacité</h3>
-          <h3 className="sallesGridTitle">Indication</h3>
-          <h3 className="sallesGridTitle">Etage</h3>
-          <h3 className="sallesGridTitle">DC</h3>
+        <div className="gridSalles">
+          <h3 className="gridTitleSalles">Nom</h3>
+          <h3 className="gridTitleSalles">Capacité</h3>
+          <h3 className="gridTitleSalles">Indication</h3>
+          <h3 className="gridTitleSalles">Etage</h3>
+          <h3 className="gridTitleSalles">DC</h3>
         </div>
-        <div className="sallesListContainer">{renderSallesList()}</div>
+        <div className="listContainerSalles">{renderSallesList()}</div>
       </section>
     </>
   );

@@ -19,9 +19,9 @@ const UtilisateurList : React.FC<UtilisateurListProps> = ({utilisateurs, current
         const nameA : any = `${a.last_name} ${a.first_name} ${a.email} ${a.position} ${a.createdAt}`;
         const nameB : any = `${b.last_name} ${b.first_name} ${b.email} ${b.position} ${b.createdAt}`;
         if (filterOrder === 'ascendant' ) {
-            return nameA.localeCompare(nameB);
+          return nameA.localeCompare(nameB);
         } else {
-            return nameB.localeCompare(nameA);
+          return nameB.localeCompare(nameA);
         }
     });
     setFilterOrder(filterOrder === 'ascendant' ? 'descendant' : 'ascendant');
@@ -71,11 +71,9 @@ const UtilisateurList : React.FC<UtilisateurListProps> = ({utilisateurs, current
   
   return (
     <>
-    <section className={'listUtilisateurs' + `${currentPage}`}>
+    <section className={'list' + `${currentPage}` + 'Utilisateurs'}>
       <div className="filterBarUtilisateurs">
-        <div className="allUtilisateurs">
-          {utilisateurs.length} Utilisateurs
-        </div>
+        <div className="allUtilisateurs">{utilisateurs.length} Utilisateurs</div>
         <button onClick={filterByName} className="filterNameButtonUtilisateurs">
           By Name
         </button>

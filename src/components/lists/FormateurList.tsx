@@ -50,26 +50,26 @@ const FormateurList: React.FC<FormateurListProps> = ({ formateurs, currentPage }
 
   return (
     <>
-      <section className={'formateursList' + `${currentPage}`}>
-        <div className="formateursFilterBar">
-          <button className="formateursFilterAllButton">{formateurs.length} Formateurs</button>
-          <button onClick={filterByName} className="formateursFilterNameButton">
+      <section className={'list' + `${currentPage}` + 'Formateurs'}>
+        <div className="filterBarFormateurs">
+          <div className="allFormateurs">{formateurs.length} Formateurs</div>
+          <button onClick={filterByName} className="filterNameButtonFormateurs">
             By Name
           </button>
           <input
-            className="formateursSearchInput"
+            className="searchInputFormateurs"
             type="search"
             placeholder="   Recherche ..."
             onChange={(e) => setSearch(e.target.value)}
           />
         </div>
-        <div className="formateursGrid">
-          <h3 className="formateursGridTitle">Nom</h3>
-          <h3 className="formateursGridTitle">Prénom</h3>
-          <h3 className="formateursGridTitle">Email</h3>
-          <h3 className="formateursGridTitle">DC</h3>
+        <div className="gridFormateurs">
+          <h3 className="gridTitleFormateurs">Nom</h3>
+          <h3 className="gridTitleFormateurs">Prénom</h3>
+          <h3 className="gridTitleFormateurs">Email</h3>
+          <h3 className="gridTitleFormateurs">DC</h3>
         </div>
-        <div className="formateursListContainer">{renderFormateursList()}</div>
+        <div className="listContainerFormateurs">{renderFormateursList()}</div>
       </section>
     </>
   );
