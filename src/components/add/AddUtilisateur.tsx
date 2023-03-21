@@ -9,6 +9,8 @@ type AddUtilisateurProps = {
 
 const AddUtilisateur : React.FC<AddUtilisateurProps> = ({addNewUtilisateur}) => {
 
+  const URL = process.env.REACT_APP_DB_USER_URL;
+
   const navigate = useNavigate();
   const [utilisateur, setUtilisateur] = useState<Utilisateur>({ id: 0, first_name: '', last_name: '', email: '', position: '', createdAt: new Date(), adminRight: false });
 
@@ -36,12 +38,12 @@ const AddUtilisateur : React.FC<AddUtilisateurProps> = ({addNewUtilisateur}) => 
       position: utilisateur.position.charAt(0).toUpperCase() + utilisateur.position.toLocaleLowerCase().slice(1)
     };
 
-    const response = await fetch('http://localhost:3000/utilisateurs');
+    const response = await fetch(`${URL}`);
     const data = await response.json();
-    const duplicateUtilisateur = data.find((u : Utilisateur) => u.email === utilisateurCapitalized.email);
+    const duplicateUtilisateur = data.find((utilisateur : Utilisateur) => utilisateur.email === utilisateurCapitalized.email);
 
     if (duplicateUtilisateur) {
-      alert('Ce stagiaire existe déjà !');
+      alert('Cet utilisateur existe déjà !');
     } else {
       addNewUtilisateur(utilisateurCapitalized);
       const newUtilisateur : Utilisateur = { id: 0, first_name: '', last_name: '', email: '', position: '', createdAt: new Date(), adminRight: false };

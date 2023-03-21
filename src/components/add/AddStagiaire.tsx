@@ -9,6 +9,8 @@ type addStagiaireProps = {
 
 const AddStagiaire : React.FC<addStagiaireProps> = ({addNewStagiaire}) => {
 
+  const URL = process.env.REACT_APP_DB_STAGIAIRE_URL;
+
   const navigate = useNavigate();
   const [stagiaire, setStagiaire] = useState<Stagiaire>({ id: 0, first_name: '', last_name: '', email: '', createdAt: new Date() });
 
@@ -31,9 +33,9 @@ const AddStagiaire : React.FC<addStagiaireProps> = ({addNewStagiaire}) => {
       email: stagiaire.email.toLocaleLowerCase()
     };
 
-    const response = await fetch('http://localhost:3000/stagiaires');
+    const response = await fetch(`${URL}`);
     const data = await response.json();
-    const duplicateStagiaire = data.find((s : Stagiaire) => s.email === stagiaireCapitalized.email);
+    const duplicateStagiaire = data.find((stagiaire : Stagiaire) => stagiaire.email === stagiaireCapitalized.email);
 
     if (duplicateStagiaire) {
       alert('Ce stagiaire existe déjà !');

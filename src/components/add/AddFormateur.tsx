@@ -9,6 +9,8 @@ type addFormateurProps = {
 
 const AddFormateur : React.FC<addFormateurProps> = ({addNewFormateur}) => {
 
+  const URL = process.env.REACT_APP_DB_FORMATEUR_URL;
+
   const navigate = useNavigate();
   const [formateur, setFormateur] = useState<Formateur>({ id: 0, first_name: '', last_name: '', email: '', createdAt: new Date() });
 
@@ -31,7 +33,7 @@ const AddFormateur : React.FC<addFormateurProps> = ({addNewFormateur}) => {
       email: formateur.email.toLocaleLowerCase()
     };
 
-    const response = await fetch('http://localhost:3000/formateurs');
+    const response = await fetch(`${URL}`);
     const data = await response.json();
     const duplicateFormateur = data.find((f : Formateur) => f.email === formateurCapitalized.email);
 
