@@ -26,6 +26,9 @@
     font-size: 18px;
     border-right: 1px solid #1C1D3B;
     padding: 15px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .items2Salles {
@@ -33,4 +36,7 @@
     color: #1C1D3B;
     font-size: 18px;
     padding: 15px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

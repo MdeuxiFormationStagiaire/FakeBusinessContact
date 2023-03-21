@@ -26,13 +26,16 @@
     font-size: 16px;
     border-right: 1px solid #1C1D3B;
     padding: 15px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .items2Promotions {
-    display: flex;
     text-align: center;
     color: #1C1D3B;
     font-size: 16px;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
