@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import AddStagiaire from '../../components/add/AddStagiaire'
-import StagiaireList from '../../components/lists/StagiaireList'
+import StagiaireList from '../../components/lists/Stagiaire/StagiaireList'
 import { Stagiaire } from '../../models/Stagiaire'
 import { stagiaireService } from '../../services/StagiaireService'
 

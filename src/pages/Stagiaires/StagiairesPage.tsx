@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Stagiaire } from '../../models/Stagiaire';
 import { stagiaireService } from '../../services/StagiaireService';
-import StagiaireList from '../../components/lists/StagiaireList';
+import StagiaireList from '../../components/lists/Stagiaire/StagiaireList';
 import '../../assets/styles/pages/Stagiaire.css'
 import { useNavigate } from 'react-router-dom';
 

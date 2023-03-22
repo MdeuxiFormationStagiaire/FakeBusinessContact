@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import AddFormateur from '../../components/add/AddFormateur'
-import FormateurList from '../../components/lists/FormateurList'
+import FormateurList from '../../components/lists/Formateur/FormateurList'
 import { Formateur } from '../../models/Formateur'
 import { formateurService } from '../../services/FormateurService'
 

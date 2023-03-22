@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import PromotionList from '../../../components/lists/PromotionList';
+import PromotionList from '../../../components/lists/Promotion/PromotionList';
 import { Promotion } from '../../../models/Reservation/Promotion';
 import { promotionService } from '../../../services/Reservation/PromotionService';
 

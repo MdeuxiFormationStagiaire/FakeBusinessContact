@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Formateur } from '../../models/Formateur';
 import { formateurService } from '../../services/FormateurService';
-import FormateurList from '../../components/lists/FormateurList'
+import FormateurList from '../../components/lists/Formateur/FormateurList'
 import '../../assets/styles/pages/Formateur.css'
 import { useNavigate } from 'react-router-dom';
 

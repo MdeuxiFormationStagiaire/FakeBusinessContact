@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import SalleFiche from '../../components/fiche/SalleFiche'
-import SalleList from '../../components/lists/SalleList'
+import SalleList from '../../components/lists/Salle/SalleList'
 import { Salle } from '../../models/Salle'
 import { salleService } from '../../services/SalleService'
 

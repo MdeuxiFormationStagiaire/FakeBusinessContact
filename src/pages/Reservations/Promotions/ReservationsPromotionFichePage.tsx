@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import PromotionFiche from '../../../components/fiche/PromotionFiche'
-import PromotionList from '../../../components/lists/PromotionList'
+import PromotionList from '../../../components/lists/Promotion/PromotionList'
 import { Formateur } from '../../../models/Formateur'
 import { Promotion } from '../../../models/Reservation/Promotion'
 import { Session } from '../../../models/Reservation/Session'

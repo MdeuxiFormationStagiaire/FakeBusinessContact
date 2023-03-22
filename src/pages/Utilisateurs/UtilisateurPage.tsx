@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import UtilisateurList from '../../components/lists/UtilisateurList';
+import UtilisateurList from '../../components/lists/Utilisateur/UtilisateurList';
 import { Utilisateur } from '../../models/Utilisateur';
 import { utilisateurService } from '../../services/UtilisateurService';
 import '../../assets/styles/pages/Utilisateur.css'

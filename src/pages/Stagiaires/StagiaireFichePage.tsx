@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Stagiaire } from '../../models/Stagiaire'
 import { stagiaireService } from '../../services/StagiaireService'
 import StagiaireFiche from '../../components/fiche/StagiaireFiche'
-import StagiaireList from '../../components/lists/StagiaireList'
+import StagiaireList from '../../components/lists/Stagiaire/StagiaireList'
 
 const StagiaireFichePage = () => {
 
