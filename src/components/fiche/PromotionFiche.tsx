@@ -11,6 +11,7 @@ import { Stagiaire } from '../../models/Stagiaire';
 import { Session } from '../../models/Reservation/Session';
 import PromotionStagiairesList from '../lists/Promotion/PromotionStagiairesList';
 import PromotionSessionsList from '../lists/Promotion/PromotionSessionsList';
+import '../../assets/styles/components/fiches/PromotionFiche.css'
 
 type PromotionFicheProps = {
   promotions: Promotion[]
@@ -280,51 +281,55 @@ const PromotionFiche : React.FC<PromotionFicheProps> = ({promotions, salles, for
         ) : (
           <>
             <section className='ficheSectionPromotions'>
-              <div className="titleInputBoxPromotions">
-                <h3 className='inputTitlePromotions'>Type :</h3>
-                <div className="inputBoxPromotions">
-                  <p className='typeInputTextPromotions'>{backupPromotion.type}</p>
+              <div className="topRow">
+                <div className="titleInputBoxPromotions">
+                  <h3 className='inputTitlePromotions'>Type :</h3>
+                  <div className="inputBoxPromotions">
+                    <p className='typeInputTextPromotions'>{backupPromotion.type}</p>
+                  </div>
+                </div>
+                <div className="titleInputBoxPromotions">
+                  <h3 className='inputTitlePromotions'>DC :</h3>
+                  <div className="inputBoxPromotions">
+                    <p className='dateInputPromotions'>{formateDate(backupPromotion.createdAt)}</p>
+                  </div>
+                </div>
+                <div className="titleInputBoxPromotions">
+                  <h3 className='inputTitlePromotions'>DD :</h3>
+                  <div className="inputBoxPromotions">
+                    <p className='dateInputPromotions'>{formateDate(backupPromotion.startAt)}</p>
+                  </div>
+                </div>
+                <div className="titleInputBoxPromotions">
+                  <h3 className='inputTitlePromotions'>DF :</h3>
+                  <div className="inputBoxPromotions">
+                    <p className='dateInputPromotions'>{formateDate(backupPromotion.endAt)}</p>
+                  </div>
                 </div>
               </div>
-              <div className="titleInputBoxPromotions">
-                <h3 className='inputTitlePromotions'>DC :</h3>
-                <div className="inputBoxPromotions">
-                  <p className='createdAtInputDatePromotions'>{formateDate(backupPromotion.createdAt)}</p>
+              <div className="botRow">
+                <div className="titleInputBoxPromotions">
+                  <h3 className='inputTitlePromotions'>Description :</h3>
+                  <div className="inputBoxPromotions">
+                    <p className='descriptionInputTextPromotions'>{backupPromotion.description}</p>
+                  </div>
+                </div>
+                <div className="titleInputBoxPromotions">
+                  <h3 className='inputTitlePromotions'>Salle :</h3>
+                  <div className="inputBoxPromotions">
+                    <p className='salleInputTextPromotions'>{backupPromotion.salle.name}</p>
+                  </div>
+                </div>
+                <div className="titleInputBoxPromotions">
+                  <h3 className='inputTitlePromotions'>Formateur :</h3>
+                  <div className="inputBoxPromotions">
+                    <p className='formateurInputTextPromotions'>
+                      {`${backupPromotion.formateur.first_name} ${backupPromotion.formateur.last_name}`}
+                    </p>
+                  </div>
                 </div>
               </div>
-              <div className="titleInputBoxPromotions">
-                <h3 className='inputTitlePromotions'>DD :</h3>
-                <div className="inputBoxPromotions">
-                  <p className='startAtInputDatePromotions'>{formateDate(backupPromotion.startAt)}</p>
-                </div>
-              </div>
-              <div className="titleInputBoxPromotions">
-                <h3 className='inputTitlePromotions'>DF :</h3>
-                <div className="inputBoxPromotions">
-                  <p className='endAtInputDatePromotions'>{formateDate(backupPromotion.endAt)}</p>
-                </div>
-              </div>
-              <div className="titleInputBoxPromotions">
-                <h3 className='inputTitlePromotions'>Description :</h3>
-                <div className="inputBoxPromotions">
-                  <p className='descriptionInputTextPromotions'>{backupPromotion.description}</p>
-                </div>
-              </div>
-              <div className="titleInputBoxPromotions">
-                <h3 className='inputTitlePromotions'>Salle :</h3>
-                <div className="inputBoxPromotions">
-                  <p className='salleInputTextPromotions'>{backupPromotion.salle.name}</p>
-                </div>
-              </div>
-              <div className="titleInputBoxPromotions">
-                <h3 className='inputTitlePromotions'>Formateur :</h3>
-                <div className="inputBoxPromotions">
-                  <p className='formateurInputTextPromotions'>
-                    {`${backupPromotion.formateur.first_name} ${backupPromotion.formateur.last_name}`}
-                  </p>
-                </div>
-              </div>
-              <div className="stagiairesSessionsDiv">
+              <div className="stagiairesSessionsTabs">
                 <PromotionStagiairesList stagiaires={backupPromotion.stagiaires}/>
                 <PromotionSessionsList sessions={backupPromotion.sessions}/>
               </div>

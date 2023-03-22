@@ -1,16 +1,17 @@
 import React, { useState } from 'react'
 import { Stagiaire } from '../../../models/Stagiaire'
 import PromotionStagiaireListContainer from '../../listContainers/Promotion/PromotionStagiaireListContainer'
+import '../../../assets/styles/components/lists/PromotionFicheList.css'
 
 type PromotionStagiairesListProps = {
-    stagiaires: Stagiaire[]
+  stagiaires: Stagiaire[]
 }
 
 const PromotionStagiairesList : React.FC<PromotionStagiairesListProps> = ({stagiaires}) => {
   
-const [search, setSearch] = useState<string>('')
+  const [search, setSearch] = useState<string>('')
 
-const renderPromotionStagiairesList = () => {
+  const renderPromotionStagiairesList = () => {
 
     const filteredStagiaires = stagiaires.filter((stagiaire: Stagiaire) => {
       const name = `${stagiaire.first_name.toLocaleLowerCase()} ${stagiaire.last_name.toLocaleLowerCase()} ${stagiaire.email} ${stagiaire.createdAt.toString().slice(0, 10)}`;
@@ -25,30 +26,31 @@ const renderPromotionStagiairesList = () => {
         />
       );
     });
-};
-  
-return (
-  <>
-    <section className={'listStagiairesPromotion'}>
-      <div className="filterBarStagiairesPromotion">
-        <div className="allStagiairesPromotion">Stagiaires</div>
-        <input
-          className="searchInputStagiairesPromotion"
-          type="search"
-          placeholder="   Recherche ..."
-          onChange={(e) => setSearch(e.target.value)}
-        />
-        <div className='sumStagiairesPromotion'>{stagiaires.length}</div>
-      </div>
-      <div className="gridStagiairesPromotion">
-        <h3 className="gridTitleStagiairesPromotion">Nom</h3>
-        <h3 className="gridTitleStagiairesPromotion">Prénom</h3>
-        <h3 className="gridTitleStagiairesPromotion">Email</h3>
-      </div>
-      <div className="listContainerStagiairesPromotion">{renderPromotionStagiairesList()}</div>
-    </section>
-  </>
-)
+    
+  };
+
+  return (
+    <>
+      <section className={'listPromotionFiche'}>
+        <div className="filterBarPromotionFiche">
+          <div className="allPromotionFiche">Stagiaires</div>
+          <input
+            className="searchInputPromotionFiche"
+            type="search"
+            placeholder="   Recherche ..."
+            onChange={(e) => setSearch(e.target.value)}
+          />
+          <div className='sumPromotionFiche'>{stagiaires.length}</div>
+        </div>
+        <div className="gridStagiairePromotionFiche">
+          <h3 className="gridTitlePromotionFiche">Nom</h3>
+          <h3 className="gridTitlePromotionFiche">Prénom</h3>
+          <h3 className="gridTitlePromotionFiche">Email</h3>
+        </div>
+        <div className="listContainerPromotionFiche">{renderPromotionStagiairesList()}</div>
+      </section>
+    </>
+  )
 }
 
 export default PromotionStagiairesList

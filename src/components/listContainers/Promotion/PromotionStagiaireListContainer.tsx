@@ -1,5 +1,6 @@
 import React from 'react'
 import { Stagiaire } from '../../../models/Stagiaire'
+import '../../../assets/styles/components/listContainer/PromotionFicheListContainer.css'
 
 type PromotionStagiaireListContainerProps = {
     stagiaire: Stagiaire
@@ -8,10 +9,10 @@ type PromotionStagiaireListContainerProps = {
 const PromotionStagiaireListContainer : React.FC<PromotionStagiaireListContainerProps> = ({stagiaire}) => {
   
 return (
-<div>
+<div  className='itemsContainerStagiairesPromotion'>
     <span className="itemsStagiairesPromotion">{stagiaire.last_name}</span>
     <span className="itemsStagiairesPromotion">{stagiaire.first_name}</span>
-    <span className="itemsStagiairesPromotion">{stagiaire.email}</span>
+    <span className="items2StagiairesPromotion">{stagiaire.email}</span>
 </div>
 )
 }
