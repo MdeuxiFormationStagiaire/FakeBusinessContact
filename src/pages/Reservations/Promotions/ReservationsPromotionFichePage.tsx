@@ -3,10 +3,14 @@ import PromotionFiche from '../../../components/fiche/PromotionFiche'
 import PromotionList from '../../../components/lists/PromotionList'
 import { Formateur } from '../../../models/Formateur'
 import { Promotion } from '../../../models/Reservation/Promotion'
+import { Session } from '../../../models/Reservation/Session'
 import { Salle } from '../../../models/Salle'
+import { Stagiaire } from '../../../models/Stagiaire'
 import { formateurService } from '../../../services/FormateurService'
 import { promotionService } from '../../../services/Reservation/PromotionService'
+import { sessionService } from '../../../services/Reservation/SessionService'
 import { salleService } from '../../../services/SalleService'
+import { stagiaireService } from '../../../services/StagiaireService'
 
 const ReservationsPromotionFichePage = () => {
 
@@ -16,12 +20,18 @@ const ReservationsPromotionFichePage = () => {
 
   const [formateurs, setFormateurs] = useState<Formateur[]>([])
 
+  const [stagiaires, setStagiaires] = useState<Stagiaire[]>([])
+
+  const [sessions, setSessions] = useState<Session[]>([])
+
   const [currentPage, setCurrentPage] = useState('Fiche')
 
   useEffect(() => {
     getAllPromotions()
     getAllSalles()
     getAllFormateurs()
+    getAllStagiaires()
+    getAllSessions()
   }, [])
 
   const getAllPromotions = () => {
@@ -36,6 +46,14 @@ const ReservationsPromotionFichePage = () => {
     formateurService.findAllFormateurs().then(data => setFormateurs(data))
   }
 
+  const getAllStagiaires = () => {
+    stagiaireService.findAllStagiaires().then(data => setStagiaires(data))
+  }
+
+  const getAllSessions = () => {
+    sessionService.findAllSessions().then(data => setSessions(data))
+  }
+
   const handleUpdatePromotion = (promotion : Promotion) => {
     setPromotions(promotions.map((p) => (p.id === promotion.id ? promotion : p)));
   }
@@ -44,7 +62,14 @@ const ReservationsPromotionFichePage = () => {
     <>
       {promotions &&
         <>
-          <PromotionFiche promotions={promotions} salles={salles} formateurs={formateurs} onUpdatePromotion={handleUpdatePromotion}/>
+          <PromotionFiche 
+            promotions={promotions} 
+            salles={salles} 
+            formateurs={formateurs}
+            stagiaires={stagiaires}
+            sessions={sessions}
+            onUpdatePromotion={handleUpdatePromotion}
+          />
           <PromotionList promotions={promotions} currentPage={currentPage}/>
         </>
       }
