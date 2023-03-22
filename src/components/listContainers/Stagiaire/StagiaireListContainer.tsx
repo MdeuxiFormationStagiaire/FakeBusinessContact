@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
-import { Stagiaire } from '../../models/Stagiaire'
-import '../../assets/styles/components/listContainer/StagiaireListContainer.css'
+import { Stagiaire } from '../../../models/Stagiaire'
+import '../../../assets/styles/components/listContainer/StagiaireListContainer.css'
 import { useEffect, useRef, useState } from 'react';
 
 type StagiaireListContainerProps = {

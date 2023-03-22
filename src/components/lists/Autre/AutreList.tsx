@@ -1,5 +1,5 @@
 import React from 'react'
-import { Autre } from '../../models/Reservation/Autre'
+import { Autre } from '../../../models/Reservation/Autre'
 
 type AutreListProps = {
     autres: Autre[];

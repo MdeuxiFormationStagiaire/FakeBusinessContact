@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Formateur } from '../../models/Formateur';
-import FormateurListContainer from '../listContainers/FormateurListContainer';
-import '../../assets/styles/components/lists/FormateurList.css';
+import { Formateur } from '../../../models/Formateur';
+import FormateurListContainer from '../../listContainers/Formateur/FormateurListContainer';
+import '../../../assets/styles/components/lists/FormateurList.css';
 
 type FormateurListProps = {
   formateurs: Formateur[];

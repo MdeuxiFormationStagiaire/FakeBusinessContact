@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { Salle } from '../../models/Salle';
-import SalleListContainer from '../listContainers/SalleListContainer';
-import '../../assets/styles/components/lists/SalleList.css'
+import { Salle } from '../../../models/Salle';
+import SalleListContainer from '../../listContainers/Salle/SalleListContainer';
+import '../../../assets/styles/components/lists/SalleList.css'
 
 type SalleListProps = {
   salles: Salle[];

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { Utilisateur } from '../../models/Utilisateur'
-import UtilisateurListContainer from '../listContainers/UtilisateurListContainer'
-import '../../assets/styles/components/lists/UtilisateurList.css'
+import { Utilisateur } from '../../../models/Utilisateur'
+import UtilisateurListContainer from '../../listContainers/Utilisateur/UtilisateurListContainer'
+import '../../../assets/styles/components/lists/UtilisateurList.css'
 
 type UtilisateurListProps = {
     utilisateurs: Utilisateur[],

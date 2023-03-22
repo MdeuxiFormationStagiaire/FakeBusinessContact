@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom';
-import { Salle } from '../../models/Salle';
-import '../../assets/styles/components/listContainer/SalleListContainer.css'
+import { Salle } from '../../../models/Salle';
+import '../../../assets/styles/components/listContainer/SalleListContainer.css'
 
 type SalleListContainerProps = {
     salle: Salle;

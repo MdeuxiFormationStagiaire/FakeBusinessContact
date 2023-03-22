@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom';
-import { Utilisateur } from '../../models/Utilisateur'
-import trueLogo from '../../assets/img/accept.png'
-import falseLogo from '../../assets/img/multiply.png'
-import '../../assets/styles/components/listContainer/UtilisateurListContainer.css'
+import { Utilisateur } from '../../../models/Utilisateur'
+import trueLogo from '../../../assets/img/accept.png'
+import falseLogo from '../../../assets/img/multiply.png'
+import '../../../assets/styles/components/listContainer/UtilisateurListContainer.css'
 
 type UtilisateurListContainerProps = {
     utilisateur: Utilisateur,

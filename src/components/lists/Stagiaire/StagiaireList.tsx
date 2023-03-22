@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { Stagiaire } from '../../models/Stagiaire'
-import StagiaireListContainer from '../listContainers/StagiaireListContainer';
-import '../../assets/styles/components/lists/StagiaireList.css'
+import { Stagiaire } from '../../../models/Stagiaire'
+import StagiaireListContainer from '../../listContainers/Stagiaire/StagiaireListContainer';
+import '../../../assets/styles/components/lists/StagiaireList.css'
 
 type StagiaireListProps = {
   stagiaires: Stagiaire[];

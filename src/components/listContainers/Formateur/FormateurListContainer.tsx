@@ -1,7 +1,7 @@
-import { Formateur } from '../../models/Formateur';
+import { Formateur } from '../../../models/Formateur';
 import { Link } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
-import '../../assets/styles/components/listContainer/FormateurListContainer.css';
+import '../../../assets/styles/components/listContainer/FormateurListContainer.css';
 
 type FormateurListContainerProps = {
   formateur: Formateur;
