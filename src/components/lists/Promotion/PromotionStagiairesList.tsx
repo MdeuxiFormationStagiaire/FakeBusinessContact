@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { Stagiaire } from '../../models/Stagiaire'
-import PromotionStagiaireListContainer from '../listContainers/PromotionStagiaireListContainer'
+import { Stagiaire } from '../../../models/Stagiaire'
+import PromotionStagiaireListContainer from '../../listContainers/Promotion/PromotionStagiaireListContainer'
 
 type PromotionStagiairesListProps = {
     stagiaires: Stagiaire[]

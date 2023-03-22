@@ -1,5 +1,5 @@
 import React from 'react'
-import { Session } from '../../models/Reservation/Session'
+import { Session } from '../../../models/Reservation/Session'
 
 type PromotionSessionListContainerProps = {
     session: Session

@@ -9,8 +9,8 @@ import { Salle } from '../../models/Salle';
 import { Formateur } from '../../models/Formateur';
 import { Stagiaire } from '../../models/Stagiaire';
 import { Session } from '../../models/Reservation/Session';
-import PromotionStagiairesList from '../lists/PromotionStagiairesList';
-import PromotionSessionsList from '../lists/PromotionSessionsList';
+import PromotionStagiairesList from '../lists/Promotion/PromotionStagiairesList';
+import PromotionSessionsList from '../lists/Promotion/PromotionSessionsList';
 
 type PromotionFicheProps = {
   promotions: Promotion[]

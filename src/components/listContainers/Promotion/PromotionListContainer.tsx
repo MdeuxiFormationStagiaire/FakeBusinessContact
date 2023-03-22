@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom';
-import { Promotion } from '../../models/Reservation/Promotion'
-import '../../assets/styles/components/listContainer/PromotionListContainer.css'
+import { Promotion } from '../../../models/Reservation/Promotion'
+import '../../../assets/styles/components/listContainer/PromotionListContainer.css'
 
 type PromotionListContainerProsp = {
     promotion: Promotion;

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { Session } from '../../models/Reservation/Session'
-import PromotionSessionListContainer from '../listContainers/PromotionSessionListContainer'
+import { Session } from '../../../models/Reservation/Session'
+import PromotionSessionListContainer from '../../listContainers/Promotion/PromotionSessionListContainer'
 
 type PromotionSessionsListProps = {
     sessions: Session[]

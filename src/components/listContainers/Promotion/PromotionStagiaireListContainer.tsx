@@ -1,5 +1,5 @@
 import React from 'react'
-import { Stagiaire } from '../../models/Stagiaire'
+import { Stagiaire } from '../../../models/Stagiaire'
 
 type PromotionStagiaireListContainerProps = {
     stagiaire: Stagiaire

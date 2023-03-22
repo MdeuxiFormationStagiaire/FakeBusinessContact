@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { Promotion } from '../../models/Reservation/Promotion'
-import PromotionListContainer from '../listContainers/PromotionListContainer';
-import '../../assets/styles/components/lists/PromotionList.css'
+import { Promotion } from '../../../models/Reservation/Promotion'
+import '../../../assets/styles/components/lists/PromotionList.css'
+import PromotionListContainer from '../../listContainers/Promotion/PromotionListContainer';
 
 type PromotionListProps = {
     promotions: Promotion[];
