@@ -1,0 +1,61 @@
+.itemsContainerStagiairesPromotion {
+    display: grid;
+    grid-template-columns: 25% 25% 50%;
+    border-bottom: 1px solid #1C1D3B;
+    font-weight: 500;
+}
+
+.itemsContainerStagiairesPromotion:nth-child(even) {
+    background-color: #D9D9D9;
+}
+
+.itemsStagiairesPromotion {
+    text-align: center;
+    color: #1C1D3B;
+    font-size: 16px;
+    border-right: 1px solid #1C1D3B;
+    padding: 10px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.items2StagiairesPromotion {
+    text-align: center;
+    color: #1C1D3B;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.itemsContainerSessionsPromotion {
+    display: grid;
+    grid-template-columns: 30% 20% 20% 30%;
+    border-bottom: 1px solid #1C1D3B;
+    font-weight: 500;
+}
+
+.itemsContainerSessionsPromotion:nth-child(even) {
+    background-color: #D9D9D9;
+}
+
+.itemsSessionsPromotion {
+    text-align: center;
+    color: #1C1D3B;
+    font-size: 16px;
+    border-right: 1px solid #1C1D3B;
+    padding: 10px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.items2SessionsPromotion {
+    text-align: center;
+    color: #1C1D3B;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

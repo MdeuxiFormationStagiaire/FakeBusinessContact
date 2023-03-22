@@ -1,4 +1,4 @@
-.buttonSectionFormateurs {
+.buttonSectionPromotions {
     display: grid;
     grid-template-columns: 10% 10% 80%;
     gap: 10px;
@@ -8,7 +8,7 @@
     margin-bottom: 40px;
 }
 
-.updateButtonBoxFormateurs {
+.updateButtonBoxPromotions {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,7 +21,7 @@
     font-weight: bold;
 }
 
-.updateButtonBoxFormateurs:hover {
+.updateButtonBoxPromotions:hover {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -34,7 +34,7 @@
     font-weight: bold;
 }
 
-.deleteButtonBoxFormateurs {
+.deleteButtonBoxPromotions {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -47,7 +47,7 @@
     font-weight: bold;
 }
 
-.deleteButtonBoxFormateurs:hover { 
+.deleteButtonBoxPromotions:hover { 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -60,7 +60,7 @@
     font-weight: bold;
 }
 
-.addButtonBoxFicheFormateurs {
+.addButtonBoxFichePromotions {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -72,7 +72,7 @@
     font-weight: bold;
 }
 
-.addButtonBoxFicheFormateurs:hover {
+.addButtonBoxFichePromotions:hover {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -84,23 +84,44 @@
     font-weight: bold;
 }
 
-.ficheSectionFormateurs {
+.ficheSectionPromotions {
+    width: 95%;
+    height: auto;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
     align-items: center;
-    background-color: #007700a8;
+    gap: 30px;
+    background-color: #d9d9d9e5;
     border-radius: 10px;
     border: 3px solid #1C1D3B;
-    width: 95%;
-    height: 120px;
     margin-bottom: 40px;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
-.ficheSectionUpdateFormateurs {
+.topRow {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.botRow {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.stagiairesSessionsTabs {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.ficheSectionUpdatePromotions {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #007700a8;
+    background-color: #d9d9d9e5;
     border-radius: 10px;
     border: 4px dashed #e9b826;
     width: 95%;
@@ -108,12 +129,12 @@
     margin-bottom: 40px;
 }
 
-.updateButtonBoxFormateurs:hover + .ficheSectionFormateurs,
-.hoveredUpdateFormateurs {
+.updateButtonBoxPromotions:hover + .ficheSectionPromotions,
+.hoveredUpdatePromotions {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #007700a8;
+    background-color: #d9d9d9e5;
     border-radius: 10px;
     width: 95%;
     height: 120px;
@@ -121,8 +142,8 @@
     border: 4px dashed #e9b826;
 }
 
-.deleteButtonBoxFormateurs:hover + .ficheSectionFormateurs,
-.hoveredDeleteFormateurs {
+.deleteButtonBoxPromotions:hover + .ficheSectionPromotions,
+.hoveredDeletePromotions {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -134,37 +155,37 @@
     border: 4px dashed #f71e2c;
 }
 
-.titleInputBoxFormateurs {
+.titleInputBoxPromotions {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 10px;
 }
 
-.inputBoxFormateurs {
+.inputBoxPromotions {
     background-color: white;
     border-radius: 5px;
     padding: 10px 5px;
 }
 
-.formSectionFormateurs {
+.formSectionPromotions {
     display: flex;
     flex-direction: column;
     width: 100%;
     gap: 15px;
 }
 
-.inputSectionFormateurs {
+.inputSectionPromotions {
     display: flex;
     justify-content: space-around;
 }
 
-.updateButtonsSectionFormateurs {
+.updateButtonsSectionPromotions {
     display: flex;
     justify-content: space-evenly;
 }
 
-.formSaveButtonFormateurs {
+.formSaveButtonPromotions {
     border: none;
     border-radius: 15px;
     height: 30px;
@@ -174,7 +195,7 @@
     font-weight: bold;
 }
 
-.formSaveButtonFormateurs:hover {
+.formSaveButtonPromotions:hover {
     border: 2px solid white;
     border-radius: 15px;
     height: 30px;
@@ -184,7 +205,7 @@
     font-weight: bold;
 }
 
-.formCancelButtonFormateurs {
+.formCancelButtonPromotions {
     border: none;
     border-radius: 15px;
     height: 30px;
@@ -194,7 +215,7 @@
     font-weight: bold;
 }
 
-.formCancelButtonFormateurs:hover {
+.formCancelButtonPromotions:hover {
     border: 2px solid white;
     border-radius: 15px;
     height: 30px;
@@ -204,42 +225,52 @@
     font-weight: bold;
 }
 
-.inputTitleFormateurs {
-    color: white;
+.inputTitlePromotions {
+    color: #1C1D3B;
     font-size: 20px;
 }
 
-.lastNameInputTextFormateurs {
+.typeInputTextPromotions {
     border: none;
     height: 20px;
     min-width: 100px;
-    font-size: 18px;
-    font-weight: 700;
-    color: #1C1D3B;
-    text-align: center;
-}
-
-.firstNameInputTextFormateurs {
-    border: none;
-    height: 20px;
-    min-width: 100px;
-    font-size: 18px;
-    font-weight: 700;
-    color: #1C1D3B;
-    text-align: center;
-}
-
-.emailInputTextFormateurs {
-    border: none;
-    height: 20px;
-    width: fit-content;
     font-size: 16px;
     font-weight: 700;
     color: #1C1D3B;
     text-align: center;
 }
 
-.createdAtInputTextFormateurs {
+.descriptionInputTextPromotions {
+    border: none;
+    height: 20px;
+    min-width: 100px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #1C1D3B;
+    text-align: center;
+}
+
+.salleInputTextPromotions {
+    border: none;
+    height: 20px;
+    min-width: 100px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #1C1D3B;
+    text-align: center;
+}
+
+.formateurInputTextPromotions {
+    border: none;
+    height: 20px;
+    min-width: 100px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #1C1D3B;
+    text-align: center;
+}
+
+.dateInputPromotions {
     border: none;
     height: 20px;
     min-width: 100px;
