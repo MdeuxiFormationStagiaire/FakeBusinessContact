@@ -41,7 +41,7 @@ const PromotionListContainer : React.FC<PromotionListContainerProsp> = ({promoti
     }
 
     return (
-        <Link to={`/promotions/${promotion.id}`} className="ficheLink">
+        <Link to={`/reservations/promotions/${promotion.id}`} className="ficheLink">
         <div
           className={`itemsContainerPromotions ${isSelected ? 'itemsContainerSelectedPromotions' : ''}`}
           onClick={handlePromotionSelected}
