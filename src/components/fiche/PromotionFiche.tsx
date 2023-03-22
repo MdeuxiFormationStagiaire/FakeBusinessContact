@@ -10,6 +10,7 @@ import { Formateur } from '../../models/Formateur';
 import { Stagiaire } from '../../models/Stagiaire';
 import { Session } from '../../models/Reservation/Session';
 import PromotionStagiairesList from '../lists/PromotionStagiairesList';
+import PromotionSessionsList from '../lists/PromotionSessionsList';
 
 type PromotionFicheProps = {
   promotions: Promotion[]
@@ -149,12 +150,8 @@ const PromotionFiche : React.FC<PromotionFicheProps> = ({promotions, salles, for
     navigate('/promotions/add')
   };
 
-  const formateDate = (date : Date) => {
-    const formatedDate : string = 
-        date.toLocaleString('fr-FR').slice(8, 10) + '/' +
-        date.toLocaleString('fr-FR').slice(5, 7) + '/' +
-        date.toLocaleString('fr-FR').slice(0, 4)
-    ;
+  const formateDate = (date : Date): string => {
+    const formatedDate : string = date.toLocaleString('fr-FR').slice(0, 10);
     return formatedDate;
   }
 
@@ -201,7 +198,7 @@ const PromotionFiche : React.FC<PromotionFicheProps> = ({promotions, salles, for
                     />
                   </div>
                 </div>
-                {/* <div className="titleInputBoxPromotions">
+                <div className="titleInputBoxPromotions">
                   <h3 className='inputTitlePromotions'>DD :</h3>
                   <div className="inputBoxPromotions">
                     <input
@@ -224,7 +221,7 @@ const PromotionFiche : React.FC<PromotionFicheProps> = ({promotions, salles, for
                       className='endAtInputDatePromotions'
                     />
                   </div>
-                </div> */}
+                </div>
                 <div className="titleInputBoxPromotions">
                   <h3 className='inputTitle'>Description :</h3>
                   <div className="inputBoxPromotions">
@@ -275,6 +272,10 @@ const PromotionFiche : React.FC<PromotionFicheProps> = ({promotions, salles, for
                 <button type="button" className='formCancelButtonPromotions' onClick={handleCancel}>Annuler</button>
               </section>
             </form>
+            <div className="stagiairesSessionsDiv">
+              <PromotionStagiairesList stagiaires={promotion.stagiaires}/>
+              <PromotionSessionsList sessions={promotion.sessions}/>
+            </div>
           </section>  
         ) : (
           <>
@@ -323,7 +324,10 @@ const PromotionFiche : React.FC<PromotionFicheProps> = ({promotions, salles, for
                   </p>
                 </div>
               </div>
-              <PromotionStagiairesList stagiaires={stagiaires} />
+              <div className="stagiairesSessionsDiv">
+                <PromotionStagiairesList stagiaires={backupPromotion.stagiaires}/>
+                <PromotionSessionsList sessions={backupPromotion.sessions}/>
+              </div>
             </section>
           </>
         )}
