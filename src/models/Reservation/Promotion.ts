@@ -6,6 +6,7 @@ import { Utilisateur } from "../Utilisateur"
 
 export type Promotion = {
     id: number,
+    type: "Promotion",
     description: string,
     salle : Salle,
     formateur: Formateur,
