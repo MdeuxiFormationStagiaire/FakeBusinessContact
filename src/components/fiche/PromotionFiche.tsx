@@ -151,8 +151,17 @@ const PromotionFiche : React.FC<PromotionFicheProps> = ({promotions, salles, for
     navigate('/promotions/add')
   };
 
-  const formateDate = (date : Date): string => {
+  const formateDateForm = (date : Date): string => {
     const formatedDate : string = date.toLocaleString('fr-FR').slice(0, 10);
+    return formatedDate;
+  }
+
+  const formateDate = (date : Date) => {
+    const formatedDate : string = 
+        date.toLocaleString('fr-FR').slice(8, 10) + '/' +
+        date.toLocaleString('fr-FR').slice(5, 7) + '/' +
+        date.toLocaleString('fr-FR').slice(0, 4)
+    ;
     return formatedDate;
   }
 
@@ -186,85 +195,89 @@ const PromotionFiche : React.FC<PromotionFicheProps> = ({promotions, salles, for
           <section className='ficheSectionUpdatePromotions'>
             <form className='formSectionPromotions' onSubmit={handleFormSubmit}>
               <section className='inputSectionPromotions'>
-                <div className="titleInputBoxPromotions">
-                  <h3 className='inputTitlePromotions'>Type :</h3>
-                  <div className="inputBoxPromotions">
-                    <input
-                      type="text"
-                      name="type"
-                      value={promotion.type}
-                      onChange={handleInputChange}
-                      className='typeInputPromotions'
-                      disabled
-                    />
+                <div className="topRow">
+                  <div className="titleInputBoxPromotions">
+                    <h3 className='inputTitlePromotions'>Type :</h3>
+                    <div className="inputBoxPromotions">
+                      <input
+                        type="text"
+                        name="type"
+                        value={promotion.type}
+                        onChange={handleInputChange}
+                        className='typeInputTextPromotions'
+                        disabled
+                      />
+                    </div>
+                  </div>
+                  <div className="titleInputBoxPromotions">
+                    <h3 className='inputTitlePromotions'>DD :</h3>
+                    <div className="inputBoxPromotions">
+                      <input
+                        type="date"
+                        name="startAt"
+                        value={formateDateForm(promotion.startAt)}
+                        onChange={handleInputChange}
+                        className='startAtInputDatePromotions'
+                      />
+                    </div>
+                  </div>
+                  <div className="titleInputBoxPromotions">
+                    <h3 className='inputTitlePromotions'>DF :</h3>
+                    <div className="inputBoxPromotions">
+                      <input
+                        type="date"
+                        name="endAt"
+                        value={formateDateForm(promotion.endAt)}
+                        onChange={handleInputChange}
+                        className='endAtInputDatePromotions'
+                      />
+                    </div>
                   </div>
                 </div>
-                <div className="titleInputBoxPromotions">
-                  <h3 className='inputTitlePromotions'>DD :</h3>
-                  <div className="inputBoxPromotions">
-                    <input
-                      type="date"
-                      name="startAt"
-                      value={formateDate(promotion.startAt)}
-                      onChange={handleInputChange}
-                      className='startAtInputDatePromotions'
-                    />
+                <div className="botRow">
+                  <div className="titleInputBoxPromotions">
+                    <h3 className='inputTitle'>Description :</h3>
+                    <div className="inputBoxPromotions">
+                      <input
+                        type="text"
+                        name="description"
+                        value={promotion.description}
+                        onChange={handleInputChange}
+                        className='descriptionInputTextPromotions'
+                      />
+                    </div>
                   </div>
-                </div>
-                <div className="titleInputBoxPromotions">
-                  <h3 className='inputTitlePromotions'>DF :</h3>
-                  <div className="inputBoxPromotions">
-                    <input
-                      type="date"
-                      name="endAt"
-                      value={formateDate(promotion.endAt)}
-                      onChange={handleInputChange}
-                      className='endAtInputDatePromotions'
-                    />
+                  <div className="titleInputBoxPromotions">
+                    <h3 className='inputTitle'>Salle :</h3>
+                    <div className="inputBoxPromotions">
+                      <select
+                        name="salle"
+                        value={promotion.salle.name}
+                        onChange={handleSelectChange}
+                        className='salleInputPromotions'
+                      >
+                        {salles.map((salle) => (
+                          <option key={salle.id} value={salle.name}>{salle.name}</option>
+                        ))}
+                      </select>
+                    </div>
                   </div>
-                </div>
-                <div className="titleInputBoxPromotions">
-                  <h3 className='inputTitle'>Description :</h3>
-                  <div className="inputBoxPromotions">
-                    <input
-                      type="text"
-                      name="description"
-                      value={promotion.description}
-                      onChange={handleInputChange}
-                      className='descriptionInputTextPromotions'
-                    />
-                  </div>
-                </div>
-                <div className="titleInputBoxPromotions">
-                  <h3 className='inputTitle'>Salle :</h3>
-                  <div className="inputBoxPromotions">
+                  <div className="titleInputBoxPromotions">
+                    <h3 className='inputTitle'>Formateur :</h3>
+                    <div className="inputBoxPromotions">
                     <select
-                      name="salle"
-                      value={promotion.salle.name}
+                      name="formateur"
+                      value={promotion.formateur.last_name}
                       onChange={handleSelectChange}
-                      className='salleInputPromotions'
+                      className='formateurInputPromotions'
                     >
-                      {salles.map((salle) => (
-                        <option key={salle.id} value={salle.name}>{salle.name}</option>
+                      {formateurs.map((formateur) => (
+                        <option key={formateur.id} value={formateur.last_name}>
+                          {`${formateur.first_name} ${formateur.last_name}`}
+                        </option>
                       ))}
                     </select>
-                  </div>
-                </div>
-                <div className="titleInputBoxPromotions">
-                  <h3 className='inputTitle'>Formateur :</h3>
-                  <div className="inputBoxPromotions">
-                  <select
-                    name="formateur"
-                    value={promotion.formateur.last_name}
-                    onChange={handleSelectChange}
-                    className='formateurInputPromotions'
-                  >
-                    {formateurs.map((formateur) => (
-                      <option key={formateur.id} value={formateur.last_name}>
-                        {`${formateur.first_name} ${formateur.last_name}`}
-                      </option>
-                    ))}
-                  </select>
+                    </div>
                   </div>
                 </div>
               </section>
@@ -273,7 +286,7 @@ const PromotionFiche : React.FC<PromotionFicheProps> = ({promotions, salles, for
                 <button type="button" className='formCancelButtonPromotions' onClick={handleCancel}>Annuler</button>
               </section>
             </form>
-            <div className="stagiairesSessionsDiv">
+            <div className="stagiairesSessionsTabs">
               <PromotionStagiairesList stagiaires={promotion.stagiaires}/>
               <PromotionSessionsList sessions={promotion.sessions}/>
             </div>

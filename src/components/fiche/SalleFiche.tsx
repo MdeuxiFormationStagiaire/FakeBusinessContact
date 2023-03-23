@@ -5,6 +5,8 @@ import { Salle } from '../../models/Salle'
 import { salleService } from '../../services/SalleService'
 import { ModalStyle } from '../../assets/styles/components/modals/ModalStyle.css'
 import DeleteConfirmation from '../modals/DeleteConfirmation'
+import updateLogo from '../../assets/img/modify.png'
+import deleteLogo from '../../assets/img/remove.png'
 import '../../assets/styles/components/fiches/SalleFiche.css'
 
 type SalleFicheProps = {
@@ -138,12 +140,8 @@ const SalleFiche : React.FC<SalleFicheProps> = ({salles, onUpdateSalle}) => {
   return (
     <>
       <section className='buttonSectionSalles'>
-        <button type='button' className='updateButtonBoxSalles' onClick={handleEditMode} onMouseEnter={() => handleButtonHover('hoveredUpdateSalles', true)} onMouseLeave={() => handleButtonHover('hoveredUpdateSalles', false)}>
-          M
-        </button>
-        <button type='button' className='deleteButtonBoxSalles' onClick={handleDelete} onMouseEnter={() => handleButtonHover('hoveredDeleteSalles', true)} onMouseLeave={() => handleButtonHover('hoveredDeleteSalles', false)}>
-          X
-        </button>
+        <img src={updateLogo} alt="update" className='updateLogoFiche'  onClick={handleEditMode} onMouseEnter={() => handleButtonHover('hoveredUpdateSalles', true)} onMouseLeave={() => handleButtonHover('hoveredUpdateSalles', false)}/>
+        <img src={deleteLogo} alt="delete" className='deleteLogoFiche'  onClick={handleDelete} onMouseEnter={() => handleButtonHover('hoveredDeleteSalles', true)} onMouseLeave={() => handleButtonHover('hoveredDeleteSalles', false)}/>
         <button type='button' className='addButtonBoxFicheSalles' onClick={handleAddButtonNav}>Ajouter</button>
       </section>
       <Modal

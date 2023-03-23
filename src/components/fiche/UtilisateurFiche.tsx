@@ -7,6 +7,8 @@ import { ModalStyle } from '../../assets/styles/components/modals/ModalStyle.css
 import DeleteConfirmation from '../modals/DeleteConfirmation';
 import trueLogo from '../../assets/img/accept.png'
 import falseLogo from '../../assets/img/multiply.png'
+import updateLogo from '../../assets/img/modify.png'
+import deleteLogo from '../../assets/img/remove.png'
 import '../../assets/styles/components/fiches/UtilisateurFiche.css'
 
 type UtilisateurFicheProps = {
@@ -142,12 +144,8 @@ const UtilisateurFiche : React.FC<UtilisateurFicheProps> = ({utilisateurs, onUpd
   return (
     <>
       <section className='buttonSectionUtilisateurs'>
-        <button type='button' className='updateButtonBoxUtilisateurs' onClick={handleEditMode} onMouseEnter={() => handleButtonHover('hoveredUpdateUtilisateurs', true)} onMouseLeave={() => handleButtonHover('hoveredUpdateUtilisateurs', false)}>
-          M
-        </button>
-        <button type='button' className='deleteButtonBoxUtilisateurs' onClick={handleDelete} onMouseEnter={() => handleButtonHover('hoveredDeleteUtilisateurs', true)} onMouseLeave={() => handleButtonHover('hoveredDeleteUtilisateurs', false)}>
-          X
-        </button>
+        <img src={updateLogo} alt="update" className='updateLogoFiche'  onClick={handleEditMode} onMouseEnter={() => handleButtonHover('hoveredUpdateUtilisateurs', true)} onMouseLeave={() => handleButtonHover('hoveredUpdateUtilisateurs', false)}/>
+        <img src={deleteLogo} alt="delete" className='deleteLogoFiche'  onClick={handleDelete} onMouseEnter={() => handleButtonHover('hoveredDeleteUtilisateurs', true)} onMouseLeave={() => handleButtonHover('hoveredDeleteUtilisateurs', false)}/>
         <button type='button' className='addButtonBoxFicheUtilisateurs' onClick={handleAddButtonNav}>Ajouter</button>
       </section>
       <Modal

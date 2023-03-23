@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Stagiaire } from '../../../models/Stagiaire'
 import PromotionStagiaireListContainer from '../../listContainers/Promotion/PromotionStagiaireListContainer'
 import '../../../assets/styles/components/lists/PromotionFicheList.css'
+import updateLogo from '../../../assets/img/modify.png'
 
 type PromotionStagiairesListProps = {
   stagiaires: Stagiaire[]
@@ -40,6 +41,9 @@ const PromotionStagiairesList : React.FC<PromotionStagiairesListProps> = ({stagi
             placeholder="   Recherche ..."
             onChange={(e) => setSearch(e.target.value)}
           />
+          <button className='udpateStagaireListButton'>
+            <img src={updateLogo} alt="update" className='updatelogo'/>
+          </button>
           <div className='sumPromotionFiche'>{stagiaires.length}</div>
         </div>
         <div className="gridStagiairePromotionFiche">
