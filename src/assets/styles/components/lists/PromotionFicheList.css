@@ -14,9 +14,9 @@
 .filterBarPromotionFiche {
     display: grid;
     align-items: center;
-    grid-template-columns: 25% 40% 25% 10%;
+    grid-template-columns: 25% 35% 20% 10% 10%;
     grid-template-areas: 
-        "name search . length";
+        "name search . update length";
     background-color: #0098b1;
     border-radius: 10px 0 0 0;
     border-bottom: 1px solid #1C1D3B;
@@ -44,6 +44,33 @@
     border-radius: 5px;
     height: 30px;
     margin-right: 10px;
+}
+
+.udpateStagaireListButton {
+    grid-area: update;
+    width: 35px;
+    height: 35px;
+    border-radius: 10px;
+    background-color: #0098b1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.udpateStagaireListButton:hover {
+    grid-area: update;
+    width: 35px;
+    height: 35px;
+    border-radius: 10px;
+    background-color: #1C1D3B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.updatelogo {
+    width: 40px;
+    height: 40px;
 }
 
 .sumPromotionFiche {

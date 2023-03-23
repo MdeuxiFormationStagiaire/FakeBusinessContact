@@ -24,7 +24,8 @@ main {
 .sidebar {
   background: #1C1D3B;
   color : white;
-  height: 100vh;
+  max-height: 200vh;
+  min-height:100vh;
 }
 
 .routes {
