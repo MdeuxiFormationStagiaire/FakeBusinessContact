@@ -1,16 +1,20 @@
 import React, { useState } from 'react'
 import { Stagiaire } from '../../../models/Stagiaire'
 import PromotionStagiaireListContainer from '../../listContainers/Promotion/PromotionStagiaireListContainer'
-import '../../../assets/styles/components/lists/PromotionFicheList.css'
 import updateLogo from '../../../assets/img/modify.png'
+import '../../../assets/styles/components/lists/PromotionFicheList.css'
+import { Promotion } from '../../../models/Reservation/Promotion'
 
 type PromotionStagiairesListProps = {
+  promotion: Promotion
   stagiaires: Stagiaire[]
 }
 
-const PromotionStagiairesList : React.FC<PromotionStagiairesListProps> = ({stagiaires}) => {
+const PromotionStagiairesList : React.FC<PromotionStagiairesListProps> = ({promotion, stagiaires}) => {
   
   const [search, setSearch] = useState<string>('')
+
+  const [editMode, setEditMode] = useState<boolean>(false)
 
   const renderPromotionStagiairesList = () => {
 
@@ -23,12 +27,22 @@ const PromotionStagiairesList : React.FC<PromotionStagiairesListProps> = ({stagi
       return (
         <PromotionStagiaireListContainer
           key={stagiaire.id} 
+          promotion={promotion}
           stagiaire={stagiaire}
+          editMode={editMode}
         />
       );
     });
     
   };
+
+  const handleEditMode = () => {
+    if (editMode == false) {
+      setEditMode(true)
+    } else {
+      setEditMode(false)
+    }
+  }
 
   return (
     <>
@@ -41,7 +55,7 @@ const PromotionStagiairesList : React.FC<PromotionStagiairesListProps> = ({stagi
             placeholder="   Recherche ..."
             onChange={(e) => setSearch(e.target.value)}
           />
-          <button className='udpateStagaireListButton'>
+          <button className='udpateStagaireListButton' onClick={handleEditMode}>
             <img src={updateLogo} alt="update" className='updatelogo'/>
           </button>
           <div className='sumPromotionFiche'>{stagiaires.length}</div>
