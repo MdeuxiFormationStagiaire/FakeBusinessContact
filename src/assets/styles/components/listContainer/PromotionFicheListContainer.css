@@ -1,6 +1,6 @@
 .itemsContainerStagiairesPromotion {
     display: grid;
-    grid-template-columns: 25% 25% 50%;
+    grid-template-columns: 25% 25% 46% 4%;
     border-bottom: 1px solid #1C1D3B;
     font-weight: 500;
 }
