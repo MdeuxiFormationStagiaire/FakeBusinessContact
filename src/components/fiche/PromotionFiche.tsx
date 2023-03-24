@@ -287,7 +287,7 @@ const PromotionFiche : React.FC<PromotionFicheProps> = ({promotions, salles, for
               </section>
             </form>
             <div className="stagiairesSessionsTabs">
-              <PromotionStagiairesList promotion={promotion} stagiaires={promotion.stagiaires}/>
+              <PromotionStagiairesList promotion={promotion}/>
               <PromotionSessionsList sessions={promotion.sessions}/>
             </div>
           </section>  
@@ -343,7 +343,7 @@ const PromotionFiche : React.FC<PromotionFicheProps> = ({promotions, salles, for
                 </div>
               </div>
               <div className="stagiairesSessionsTabs">
-                <PromotionStagiairesList promotion={backupPromotion} stagiaires={backupPromotion.stagiaires}/>
+                <PromotionStagiairesList promotion={backupPromotion}/>
                 <PromotionSessionsList sessions={backupPromotion.sessions}/>
               </div>
             </section>
