@@ -66,7 +66,7 @@ const ReservationsPromotionFichePage = () => {
             promotions={promotions} 
             salles={salles} 
             formateurs={formateurs}
-            stagiaires={stagiaires}
+            stagiairesList={stagiaires}
             sessions={sessions}
             onUpdatePromotion={handleUpdatePromotion}
           />
