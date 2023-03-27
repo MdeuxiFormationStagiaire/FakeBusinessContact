@@ -7,12 +7,14 @@ import addUserLogo from '../../../assets/img/ajouter-un-utilisateur.png'
 import '../../../assets/styles/components/lists/PromotionFicheList.css'
 import { Promotion } from '../../../models/Reservation/Promotion'
 import { promotionService } from '../../../services/Reservation/PromotionService'
+import { log } from 'console'
 
 type PromotionStagiairesListProps = {
   promotion: Promotion
+  stagiairesList: Stagiaire[]
 }
 
-const PromotionStagiairesList : React.FC<PromotionStagiairesListProps> = ({promotion}) => {
+const PromotionStagiairesList : React.FC<PromotionStagiairesListProps> = ({promotion, stagiairesList}) => {
   
   const [search, setSearch] = useState<string>('')
 
@@ -23,6 +25,8 @@ const PromotionStagiairesList : React.FC<PromotionStagiairesListProps> = ({promo
   const [validate, setValidate] = useState<boolean>(false)
 
   const [promotionUpdated, setPromotionUpdated] = useState<Promotion>(promotion)
+
+  const [stagiaireSelected, setStagiaireSelected] = useState<Stagiaire>()
 
   const handleEditMode = () => {
     if (editMode == false) {
@@ -48,15 +52,41 @@ const PromotionStagiairesList : React.FC<PromotionStagiairesListProps> = ({promo
     promotionService
       .deleteStagiairePromotion(promotion.id, idStagiaire)
       .then(async () => {
-        const promoTest = await promotionService.getPromotionById(promotion.id);
-        console.log(promoTest);
-        return promoTest;
+        const newPromotion = await promotionService.getPromotionById(promotion.id);
+        return newPromotion;
       })
       .then((res) => {
         setPromotionUpdated(res);
       })
       .catch((error) => console.error(error));
   };
+
+  const handleSelectChange = (event : React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedValue = event.target.value;
+    const selectedStagiaire = stagiairesList.find((stagiaire) => stagiaire.id.toString() === selectedValue);
+    const stagiairesCurrentPromotion : Stagiaire[] = promotion.stagiaires;
+    if (selectedStagiaire) {
+      if (stagiairesCurrentPromotion.some(stagiaire => stagiaire.id === selectedStagiaire.id)) {
+        alert("Ce stagiaire existe déjà dans cette liste.")
+        return;
+      } else {
+        const newStagiaireList : Stagiaire[] = promotion.stagiaires.concat(selectedStagiaire)
+        setPromotionUpdated((prevState) => ({
+          ...prevState,
+          stagiaires: newStagiaireList !== undefined ? newStagiaireList : prevState.stagiaires,
+        }));
+        promotionService.addStagiaireToPromotion(promotion.id, selectedStagiaire)
+        .then(async () => {
+          const newPromotion = await promotionService.getPromotionById(promotion.id);
+          return newPromotion;
+        })
+        .then((res) => {
+          setPromotionUpdated(res);
+        })
+        .catch((error) => console.error(error));
+      }
+    }
+  }
 
   const renderPromotionStagiairesList = () => {
 
@@ -69,7 +99,6 @@ const PromotionStagiairesList : React.FC<PromotionStagiairesListProps> = ({promo
       return (
         <PromotionStagiaireListContainer
           key={stagiaire.id} 
-          promotion={promotionUpdated}
           stagiaire={stagiaire}
           editMode={editMode}
           addMode={addMode}
@@ -85,27 +114,68 @@ const PromotionStagiairesList : React.FC<PromotionStagiairesListProps> = ({promo
     <>
       {editMode ? (
         <>
-          <section className={'listPromotionFiche'}>
-            <div className="filterBarPromotionFiche">
-              <div className="allPromotionFiche">Stagiaires</div>
-              <input
-                className="searchInputPromotionFiche"
-                type="search"
-                placeholder="   Recherche ..."
-                onChange={(e) => setSearch(e.target.value)}
-              />
-              <img src={validateLogo} alt="validate" className='validateLogo' onClick={handleValidate}/>
-              <img src={updateLogo} alt="update" className='updatelogo' onClick={handleEditMode}/>
-              <div className='sumPromotionFiche'>{promotion.stagiaires.length}</div>
-            </div>
-            <div className="gridStagiairePromotionFicheUpdate">
-              <h3 className="gridTitlePromotionFiche">Nom</h3>
-              <h3 className="gridTitlePromotionFiche">Prénom</h3>
-              <h3 className="gridTitlePromotionFiche">Email</h3>
-              <img src={addUserLogo} alt="addStagiaire" className='addLogo' onClick={handleAddUser}/>
-            </div>
-            <div className="listContainerPromotionFiche">{renderPromotionStagiairesList()}</div>
-          </section>
+          {addMode ? (
+            <>
+              <section className={'listPromotionFiche'}>
+                <div className="filterBarPromotionFiche">
+                  <div className="allPromotionFiche">Stagiaires</div>
+                  <input
+                    className="searchInputPromotionFiche"
+                    type="search"
+                    placeholder="   Recherche ..."
+                    onChange={(e) => setSearch(e.target.value)}
+                  />
+                  <img src={validateLogo} alt="validate" className='validateLogo' onClick={handleValidate}/>
+                  <img src={updateLogo} alt="update" className='updatelogo' onClick={handleEditMode}/>
+                  <div className='sumPromotionFiche'>{promotionUpdated.stagiaires.length}</div>
+                </div>
+                <div className="gridStagiairePromotionFicheUpdate">
+                  <h3 className="gridTitlePromotionFiche">Nom</h3>
+                  <h3 className="gridTitlePromotionFiche">Prénom</h3>
+                  <h3 className="gridTitlePromotionFiche">Email</h3>
+                  <img src={addUserLogo} alt="addStagiaire" className='addLogo' onClick={handleAddUser}/>
+                </div>
+                <div>
+                  <select
+                      name="stagiaire"
+                      onChange={handleSelectChange}
+                      className='stagiaireInputPromotions'
+                    >
+                      {stagiairesList.map((stagiaire) => (
+                        <option key={stagiaire.id} value={stagiaire.id} className="stagiaireInputContainer">
+                          {stagiaire.last_name} {stagiaire.first_name}
+                        </option>
+                      ))}
+                  </select>
+                </div>
+                <div className="listContainerPromotionFiche">{renderPromotionStagiairesList()}</div>
+              </section>
+            </>
+          ) : (
+            <>
+              <section className={'listPromotionFiche'}>
+                <div className="filterBarPromotionFiche">
+                  <div className="allPromotionFiche">Stagiaires</div>
+                  <input
+                    className="searchInputPromotionFiche"
+                    type="search"
+                    placeholder="   Recherche ..."
+                    onChange={(e) => setSearch(e.target.value)}
+                  />
+                  <img src={validateLogo} alt="validate" className='validateLogo' onClick={handleValidate}/>
+                  <img src={updateLogo} alt="update" className='updatelogo' onClick={handleEditMode}/>
+                  <div className='sumPromotionFiche'>{promotion.stagiaires.length}</div>
+                </div>
+                <div className="gridStagiairePromotionFicheUpdate">
+                  <h3 className="gridTitlePromotionFiche">Nom</h3>
+                  <h3 className="gridTitlePromotionFiche">Prénom</h3>
+                  <h3 className="gridTitlePromotionFiche">Email</h3>
+                  <img src={addUserLogo} alt="addStagiaire" className='addLogo' onClick={handleAddUser}/>
+                </div>
+                <div className="listContainerPromotionFiche">{renderPromotionStagiairesList()}</div>
+              </section>
+            </>
+          )}
         </>
       ) : (
         <>
