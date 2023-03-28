@@ -4,17 +4,16 @@ import '../../../assets/styles/components/listContainer/PromotionFicheListContai
 import Modal from 'react-modal'
 import { ModalStyle } from '../../../assets/styles/components/modals/ModalStyle.css'
 import DeleteConfirmation from '../../modals/DeleteConfirmation'
+import removeLogo from '../../../assets/img/remove.png'
 
 type PromotionStagiaireListContainerProps = {
     stagiaire: Stagiaire
     editMode: boolean
-    addMode: boolean
-    validate: boolean
     onDeleteStagiaire: Function
 }
 
-const PromotionStagiaireListContainer : React.FC<PromotionStagiaireListContainerProps> = ({stagiaire, editMode, addMode, validate, onDeleteStagiaire}) => {
-    
+const PromotionStagiaireListContainer : React.FC<PromotionStagiaireListContainerProps> = ({stagiaire, editMode, onDeleteStagiaire}) => {
+
     const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false)
 
     const handleDelete = () => {
@@ -35,7 +34,7 @@ const PromotionStagiaireListContainer : React.FC<PromotionStagiaireListContainer
                 style={ModalStyle}
             >
                 <DeleteConfirmation
-                  onConfirm={() => onDeleteStagiaire(stagiaire.id)}
+                  onConfirm={() => {onDeleteStagiaire(stagiaire.id); setShowDeleteConfirmation(false)}}
                   onCancel={handleCancelDelete} 
             />
             </Modal>
@@ -44,7 +43,7 @@ const PromotionStagiaireListContainer : React.FC<PromotionStagiaireListContainer
                     <span className="itemsStagiairesPromotion">{stagiaire.last_name}</span>
                     <span className="itemsStagiairesPromotion">{stagiaire.first_name}</span>
                     <span className="items2StagiairesPromotion">{stagiaire.email}</span>
-                    <button onClick={handleDelete}>X</button>
+                    <img src={removeLogo} onClick={handleDelete} className="removeLogo"/>
                 </div>
             ) : (
                 <div  className='itemsContainerStagiairesPromotion'>
