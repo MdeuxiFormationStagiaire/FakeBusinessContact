@@ -39,7 +39,7 @@ const PromotionStagiaireListContainer : React.FC<PromotionStagiaireListContainer
             />
             </Modal>
             {editMode ? (
-                <div  className='itemsContainerStagiairesPromotion'>
+                <div  className='itemsContainerStagiairesPromotionUpdate'>
                     <span className="itemsStagiairesPromotion">{stagiaire.last_name}</span>
                     <span className="itemsStagiairesPromotion">{stagiaire.first_name}</span>
                     <span className="items2StagiairesPromotion">{stagiaire.email}</span>
