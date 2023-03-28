@@ -17,13 +17,25 @@ type PromotionFicheProps = {
   promotions: Promotion[]
   salles: Salle[]
   formateurs: Formateur[]
-  stagiairesList: Stagiaire[]
+  allStagiairesList: Stagiaire[]
   sessions: Session[]
   onUpdatePromotion: Function
+  onDeleteStagiaire : (idPromotion : number, idStagiaire : number) => void
+  onAddStagiaire: (stagiaire : Stagiaire, promotion : Promotion) => void
 }
 
-const PromotionFiche : React.FC<PromotionFicheProps> = ({promotions, salles, formateurs, stagiairesList, sessions, onUpdatePromotion}) => {
-  
+const PromotionFiche : React.FC<PromotionFicheProps> = 
+({
+  promotions, 
+  salles, 
+  formateurs, 
+  allStagiairesList, 
+  sessions, 
+  onUpdatePromotion, 
+  onDeleteStagiaire,
+  onAddStagiaire
+}) => {
+
   const navigate = useNavigate();
   const { id } = useParams<{id : string}>();
 
@@ -61,6 +73,14 @@ const PromotionFiche : React.FC<PromotionFicheProps> = ({promotions, salles, for
     setShowDeleteConfirmation(false);
   };
 
+  const handleDeleteStagiaire = async (idStagiaire : number) => {
+    onDeleteStagiaire(promotion.id, idStagiaire)
+  }
+
+  const handleAddStagiaire = async (stagiaire : Stagiaire) => {
+    onAddStagiaire(stagiaire, promotion)
+  }
+
   const handleButtonHover = (className: string, hover: boolean) : any => {
     const fiche = document.querySelector('.ficheSectionPromotions') as HTMLDivElement | null;
     if (fiche) {
@@ -76,8 +96,6 @@ const PromotionFiche : React.FC<PromotionFicheProps> = ({promotions, salles, for
     if (editMode == false) {
       setBackupPromotion(promotion)
       setEditMode(true)
-    } else {
-      setEditMode(false)
     }
   };
 
@@ -287,7 +305,13 @@ const PromotionFiche : React.FC<PromotionFicheProps> = ({promotions, salles, for
               </section>
             </form>
             <div className="stagiairesSessionsTabs">
-              <PromotionStagiairesList promotion={promotion} stagiairesList={stagiairesList}/>
+              <PromotionStagiairesList 
+                promotion={promotion} 
+                allStagiairesList={allStagiairesList}
+                onUpdatePromotion={onUpdatePromotion}
+                onDeleteStagiaire={handleDeleteStagiaire}
+                onAddStagiaire={handleAddStagiaire}
+              />
               <PromotionSessionsList sessions={promotion.sessions}/>
             </div>
           </section>  
@@ -343,7 +367,13 @@ const PromotionFiche : React.FC<PromotionFicheProps> = ({promotions, salles, for
                 </div>
               </div>
               <div className="stagiairesSessionsTabs">
-                <PromotionStagiairesList promotion={backupPromotion} stagiairesList={stagiairesList}/>
+                <PromotionStagiairesList 
+                  promotion={backupPromotion} 
+                  allStagiairesList={allStagiairesList}
+                  onUpdatePromotion={onUpdatePromotion}
+                  onDeleteStagiaire={handleDeleteStagiaire}
+                  onAddStagiaire={handleAddStagiaire}
+                />
                 <PromotionSessionsList sessions={backupPromotion.sessions}/>
               </div>
             </section>
