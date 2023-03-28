@@ -67,7 +67,6 @@ const PromotionList : React.FC<PromotionListProps> = ({promotions, currentPage})
           onPromotionSelected={handlePromotionSelected}/>
       );
     });
-
   }
   
   return (
