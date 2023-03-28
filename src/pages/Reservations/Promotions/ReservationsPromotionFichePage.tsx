@@ -1,3 +1,4 @@
+import { error } from 'console'
 import React, { useEffect, useState } from 'react'
 import PromotionFiche from '../../../components/fiche/PromotionFiche'
 import PromotionList from '../../../components/lists/Promotion/PromotionList'
@@ -58,6 +59,33 @@ const ReservationsPromotionFichePage = () => {
     setPromotions(promotions.map((p) => (p.id === promotion.id ? promotion : p)));
   }
 
+  const handleDeleteStagiaireFromPromotion = (idPromotion : number, idStagiaire : number) => {
+    promotionService.deleteStagiairePromotion(idPromotion, idStagiaire)
+    .then(() => 
+      window.location.reload()
+    )
+    .catch((error) => console.error(error))
+  }
+
+  const handleAddStagiaireToPromotion = (selectedStagiaire : Stagiaire, promotion : Promotion) => {
+    if (selectedStagiaire) {
+      if (promotion.stagiaires.some(stagiaire => stagiaire.id === selectedStagiaire.id)) {
+        alert("Ce stagiaire existe déjà dans cette liste.")
+        return;
+      } else {
+        promotionService.addStagiaireToPromotion(promotion.id, selectedStagiaire)
+        .then(async () => {
+          const newPromotion = await promotionService.getPromotionById(promotion.id);
+          return newPromotion;
+        })
+        .then(() =>
+          window.location.reload()
+        )
+        .catch((error) => console.error(error));
+      }
+    }
+  }
+
   return (
     <>
       {promotions &&
@@ -66,11 +94,16 @@ const ReservationsPromotionFichePage = () => {
             promotions={promotions} 
             salles={salles} 
             formateurs={formateurs}
-            stagiairesList={stagiaires}
+            allStagiairesList={stagiaires}
             sessions={sessions}
             onUpdatePromotion={handleUpdatePromotion}
+            onDeleteStagiaire={handleDeleteStagiaireFromPromotion}
+            onAddStagiaire={handleAddStagiaireToPromotion}
           />
-          <PromotionList promotions={promotions} currentPage={currentPage}/>
+          <PromotionList 
+            promotions={promotions} 
+            currentPage={currentPage}
+          />
         </>
       }
     </>
