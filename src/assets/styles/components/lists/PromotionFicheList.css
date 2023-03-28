@@ -63,6 +63,14 @@
     height: 40px;
 }
 
+.updatelogo:hover {
+    grid-area: update;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    outline: 2px solid #1C1D3B;
+}
+
 .validateLogo {
     grid-area: validate;
     width: 40px;
@@ -83,7 +91,7 @@
 .gridStagiairePromotionFiche {
     display: grid;
     grid-template-columns: 25% 25% 50%;
-    padding: 15px 0 15px 0;
+    padding: 15px 0;
     background-color: #D9D9D9;
     color: #1C1D3B;
     position: sticky;
@@ -93,12 +101,12 @@
 
 .gridStagiairePromotionFicheUpdate {
     display: grid;
-    grid-template-columns: 25% 25% 40% 10%;
-    padding: 8px 0 8px 0;
+    grid-template-columns: 25% 25% 50%;
+    padding: 15px 0;
     background-color: #D9D9D9;
     color: #1C1D3B;
     position: sticky;
-    top: 50px;
+    top: 92px;
     border-bottom: 1px solid #1C1D3B;
 }
 
@@ -128,4 +136,18 @@
 
 .addLogo {
     width: 35px;
+}
+
+.addStagiaireMenu {
+    position: sticky;
+    top: 50px;
+}
+
+.stagiaireInputPromotions {
+    border: none;
+    border-bottom: 1px solid #1C1D3B;
+    padding: 10px 0px;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
 }

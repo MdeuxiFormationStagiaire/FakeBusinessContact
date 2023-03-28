@@ -1,6 +1,7 @@
 .itemsContainerStagiairesPromotion {
     display: grid;
-    grid-template-columns: 25% 25% 46% 4%;
+    align-items: center;
+    grid-template-columns: 25% 25% 45% 5%;
     border-bottom: 1px solid #1C1D3B;
     font-weight: 500;
 }
@@ -72,4 +73,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.removeLogo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+}
+
+.removeLogo:hover {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    border-radius: 5px;
+    outline: 2px solid #1C1D3B;
 }
