@@ -128,21 +128,21 @@ const PromotionFiche : React.FC<PromotionFicheProps> = ({idPromotion, onUpdatePr
   };
 
   const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-  //   const selectedValue = event.target.value;
-  //   const selectedName = event.target.name;
-  //   if (selectedName === "salle") {
-  //     const selectedSalle = salles.find((salle) => salle.name === selectedValue);
-  //     setPromotion((prevState) => ({
-  //       ...prevState,
-  //       salle: selectedSalle !== undefined ? selectedSalle : prevState.salle,
-  //     }));
-  //   } else if (selectedName === "formateur") {
-  //     const selectedFormateur = formateurs.find((formateur) => formateur.last_name === selectedValue);
-  //     setPromotion((prevState) => ({
-  //       ...prevState,
-  //       formateur: selectedFormateur !== undefined ? selectedFormateur : prevState.formateur,
-  //     }))
-  //   }
+    // const selectedValue = event.target.value;
+    // const selectedName = event.target.name;
+    // if (selectedName === "salle") {
+    //   const selectedSalle = salles.find((salle) => salle.name === selectedValue);
+    //   setPromotion((prevState) => ({
+    //     ...prevState,
+    //     salle: selectedSalle !== undefined ? selectedSalle : prevState.salle,
+    //   }));
+    // } else if (selectedName === "formateur") {
+    //   const selectedFormateur = formateurs.find((formateur) => formateur.last_name === selectedValue);
+    //   setPromotion((prevState) => ({
+    //     ...prevState,
+    //     formateur: selectedFormateur !== undefined ? selectedFormateur : prevState.formateur,
+    //   }))
+    // }
   };
 
   const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -162,11 +162,12 @@ const PromotionFiche : React.FC<PromotionFicheProps> = ({idPromotion, onUpdatePr
   };
 
   const handleDeleteStagiaireFromPromotion = (idStagiaire : number) => {
-    promotionService.deleteStagiairePromotion(idPromotion, idStagiaire)
-    .then(() => 
-      getPromotionById(idPromotion)
-    )
-    .catch((error) => console.error(error))
+    promotionService.deleteStagiaireFromPromotion(idPromotion, idStagiaire)
+      .then(() => 
+        getPromotionById(idPromotion)
+      )
+      .catch((error) => console.error(error))
+    onUpdatePromotion(promotion)
   }
 
   const handleAddStagiaireToPromotion = (selectedStagiaire : Stagiaire) => {
@@ -176,12 +177,30 @@ const PromotionFiche : React.FC<PromotionFicheProps> = ({idPromotion, onUpdatePr
         return;
       } else {
         promotionService.addStagiaireToPromotion(promotion.id, selectedStagiaire)
-        .then(() => {
-          getPromotionById(idPromotion)
-        })
-        .catch((error) => console.error(error));
+          .then( () => {
+            getPromotionById(idPromotion)
+          })
+          .catch((error) => console.error(error));
+        onUpdatePromotion(promotion)
       }
     }
+  }
+
+  const handleDeleteSessionFromPromotion = (idSession : number) => {
+    promotionService.deleteSessionFromPromotion(idPromotion, idSession)
+      .then(() =>
+        getPromotionById(idPromotion)
+      )
+      .catch((error) => console.error(error))
+  }
+
+  const handleAddSessionToPromotion = (idSession : number) => {
+    promotionService.addSessionToPromotion(idPromotion, idSession)
+      .then(() => {
+        getPromotionById(idPromotion)
+      })
+      .catch((error) => console.error(error));
+    onUpdatePromotion(promotion)
   }
 
   const handleCancel = () => {
@@ -332,11 +351,16 @@ const PromotionFiche : React.FC<PromotionFicheProps> = ({idPromotion, onUpdatePr
                   <PromotionStagiairesList 
                     promotion={promotion} 
                     allStagiaires={stagiaires}
-                    onUpdatePromotion={onUpdatePromotion}
                     onDeleteStagiaire={handleDeleteStagiaireFromPromotion}
                     onAddStagiaire={handleAddStagiaireToPromotion}
                   />
-                  <PromotionSessionsList sessions={promotion.sessions}/>
+                  <PromotionSessionsList
+                    promotion={promotion}
+                    formateurs={formateurs}
+                    sessions={sessions}
+                    onDeleteSession={handleDeleteSessionFromPromotion}
+                    onAddSession={handleAddSessionToPromotion}
+                  />
                 </div>
               </section>  
             ) : (
@@ -395,11 +419,16 @@ const PromotionFiche : React.FC<PromotionFicheProps> = ({idPromotion, onUpdatePr
                       <PromotionStagiairesList 
                         promotion={backupPromotion} 
                         allStagiaires={stagiaires}
-                        onUpdatePromotion={onUpdatePromotion}
                         onDeleteStagiaire={handleDeleteStagiaireFromPromotion}
                         onAddStagiaire={handleAddStagiaireToPromotion}
                       />
-                      <PromotionSessionsList sessions={backupPromotion.sessions}/>
+                      <PromotionSessionsList 
+                        promotion={promotion}
+                        formateurs={formateurs}
+                        sessions={sessions}
+                        onDeleteSession={handleDeleteSessionFromPromotion}
+                        onAddSession={handleAddSessionToPromotion}
+                      />
                     </div>
                   </section>
                 }
