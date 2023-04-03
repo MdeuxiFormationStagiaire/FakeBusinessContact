@@ -47,7 +47,7 @@ const PromotionSessionListContainer : React.FC<PromotionSessionListContainerProp
         />
         </Modal>
         {editMode ? (
-            <div className='itemsContainerSessionsPromotion'>
+            <div className='itemsContainerSessionsPromotionUpdate'>
                 <span className="itemsSessionsPromotion">{session.desc}</span>
                 <span className="itemsSessionsPromotion">{formateDate(session.startAt)}</span>
                 <span className="itemsSessionsPromotion">{formateDate(session.endAt)}</span>
