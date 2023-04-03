@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import PromotionFiche from '../../../components/fiche/PromotionFiche'
+import PromotionFiche from '../../../components/fiche/Promotion/PromotionFiche'
 import PromotionList from '../../../components/lists/Promotion/PromotionList'
 import { Promotion } from '../../../models/Reservation/Promotion'
 import { promotionService } from '../../../services/Reservation/PromotionService'

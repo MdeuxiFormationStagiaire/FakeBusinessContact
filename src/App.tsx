@@ -17,10 +17,12 @@ import UtilisateurPage from './pages/Utilisateurs/UtilisateurPage';
 import AffichagePage from './pages/Affichage/AffichagePage';
 import UtilisateurFichePage from './pages/Utilisateurs/UtilisateurFichePage';
 import UtilisateurAddPage from './pages/Utilisateurs/UtilisateurAddPage';
-import Modal from 'react-modal';
-import './App.css';
 import ReservationsPromotionFichePage from './pages/Reservations/Promotions/ReservationsPromotionFichePage';
 import ReservationsPromotionAddPage from './pages/Reservations/Promotions/ReservationsPromotionAddPage';
+import ReservationsAutresFichePage from './pages/Reservations/Autres/ReservationsAutresFichePage';
+import ReservationsAutresAddPage from './pages/Reservations/Autres/ReservationsAutresAddPage';
+import Modal from 'react-modal';
+import './App.css';
 
 Modal.setAppElement('#root')
 
@@ -36,6 +38,8 @@ function App() {
             <Route path='/reservations/promotions/:id' element={<ReservationsPromotionFichePage/>}/>
             <Route path='/reservations/promotions/add' element={<ReservationsPromotionAddPage/>}/>
             <Route path='/reservations/autres' element={<ReservationsAutresPage/>}/>
+            <Route path='/reservations/autres/:id' element={<ReservationsAutresFichePage/>}/>
+            <Route path='/reservations/autres/add' element={<ReservationsAutresAddPage/>}/>
             <Route path='/formateurs' element={<FormateursPage/>}/>
             <Route path='/formateurs/:id' element={<FormateurFichePage/>}/>
             <Route path='/formateurs/add' element={<FormateurAddPage/>}/>

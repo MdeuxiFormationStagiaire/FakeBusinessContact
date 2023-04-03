@@ -1,0 +1,45 @@
+.itemsContainerAutres {
+    display: grid;
+    grid-template-columns: 10% 30% 10% 10% 10% 15% 15%;
+    border-top: 1px solid #1C1D3B;
+    font-weight: 500;
+}
+
+.itemsContainerAutres:hover {
+    display: grid;
+    grid-template-columns: 10% 30% 10% 10% 10% 15% 15%;
+    background-color: #e3061546;
+}
+
+.itemsContainerSelectedAutres {
+    display: grid;
+    grid-template-columns: 10% 30% 10% 10% 10% 15% 15%;
+    background-color: #e3061546;
+    border-top: 2px solid #1C1D3B;
+    border-bottom: 1px solid #1C1D3B;
+    font-weight:800;
+}
+
+.itemsAutres {
+    text-align: center;
+    color: #1C1D3B;
+    font-size: 16px;
+    border-right: 1px solid #1C1D3B;
+    padding: 10px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.items2Autres {
+    text-align: center;
+    color: #1C1D3B;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    width: 40px;
+}

@@ -130,10 +130,10 @@
   "stagiaires": [
     {
       "id": 1,
-      "first_name": "Morie",
-      "last_name": "Derr",
+      "first_name": "Gloria",
+      "last_name": "McQuarrie",
       "email": "mderr0@npr.org",
-      "createdAt": "2022-06-22T11:58:04Z"
+      "createdAt": "2023-10-26T13:58:40Z"
     },
     {
       "id": 2,
@@ -587,29 +587,119 @@
       "position": "Pdg of the universe",
       "createdAt": "2023-03-15T14:18:39.678Z",
       "adminRight": true
+    },
+    {
+      "id": 13,
+      "first_name": "Jean",
+      "last_name": "Dupont",
+      "email": "j.dupont@gmail.com",
+      "position": "Gentil",
+      "createdAt": "2023-03-29T10:10:30.119Z",
+      "adminRight": true
+    }
+  ],
+  "sessions": [
+    {
+      "id": 1,
+      "desc": "HTML/CSS",
+      "startAt": "2022-03-24T05:17:01Z",
+      "endAt": "2022-03-29T05:17:01Z",
+      "formateur": {
+        "id": 2,
+        "first_name": "Leila",
+        "last_name": "Sandell",
+        "email": "lsandell4@independent.co",
+        "createdAt": "2022-02-17T18:03:26Z"
+      }
+    },
+    {
+      "id": 2,
+      "desc": "HTML/CSS",
+      "startAt": "2022-03-24T05:17:01Z",
+      "endAt": "2022-03-29T05:17:01Z",
+      "formateur": {
+        "id": 2,
+        "first_name": "Leila",
+        "last_name": "Sandell",
+        "email": "lsandell4@independent.co",
+        "createdAt": "2022-02-17T18:03:26Z"
+      }
+    },
+    {
+      "id": 3,
+      "desc": "HTML/CSS",
+      "startAt": "2022-03-24T05:17:01Z",
+      "endAt": "2022-03-29T05:17:01Z",
+      "formateur": {
+        "id": 2,
+        "first_name": "Leila",
+        "last_name": "Sandell",
+        "email": "lsandell4@independent.co",
+        "createdAt": "2022-02-17T18:03:26Z"
+      }
+    },
+    {
+      "id": 4,
+      "desc": "HTML/CSS",
+      "startAt": "2022-03-24T05:17:01Z",
+      "endAt": "2022-03-29T05:17:01Z",
+      "formateur": {
+        "id": 2,
+        "first_name": "Leila",
+        "last_name": "Sandell",
+        "email": "lsandell4@independent.co",
+        "createdAt": "2022-02-17T18:03:26Z"
+      }
+    },
+    {
+      "id": 5,
+      "desc": "HTML/CSS",
+      "startAt": "2023-03-24T00:00:00.000Z",
+      "endAt": "2023-03-29T00:00:00.000Z",
+      "formateur": {
+        "id": 2,
+        "first_name": "Leila",
+        "last_name": "Sandell",
+        "email": "lsandell4@independent.co",
+        "createdAt": "2022-02-17T18:03:26Z"
+      }
+    },
+    {
+      "id": 6,
+      "desc": "Java",
+      "startAt": "2023-05-08T00:00:00.000Z",
+      "endAt": "2023-05-12T00:00:00.000Z",
+      "formateur": {
+        "id": 9,
+        "first_name": "Terrence",
+        "last_name": "Aireton",
+        "email": "tairetond@washington.edu",
+        "createdAt": "2023-07-09T22:05:51Z"
+      }
     }
   ],
   "promotions": [
     {
       "id": 1,
+      "type": "Promotion",
       "description": "CDA",
       "salle": {
-        "id": 1,
-        "capacity": "40",
-        "name": "La Laja",
-        "floor": "RDC",
-        "indication": "visualize intuitive action-items",
-        "createdAt": "2022-03-24T05:17:01Z"
+        "id": 5,
+        "capacity": 17,
+        "name": "San Francisco",
+        "floor": "1er",
+        "indication": "brand cutting-edge interfaces",
+        "createdAt": "2022-05-29T12:03:59Z"
       },
       "formateur": {
-        "id": 1,
-        "first_name": "David",
-        "last_name": "Brim",
-        "email": "dbrim3@sourceforge.net",
-        "createdAt": "2022-02-15T04:41:21Z"
+        "id": 6,
+        "first_name": "Adam",
+        "last_name": "Carry",
+        "email": "amccarrya@angelfire.com",
+        "createdAt": "2022-09-30T08:24:28Z"
       },
       "startAt": "2022-03-24T05:17:01Z",
-      "endAt": "2022-03-24T05:17:01Z",
+      "endAt": "2022-03-31T00:00:00.000Z",
       "sessions": [
         {
           "id": 1,
@@ -636,15 +726,67 @@
             "email": "lsandell4@independent.co",
             "createdAt": "2022-02-17T18:03:26Z"
           }
+        },
+        {
+          "id": 3,
+          "desc": "HTML/CSS",
+          "startAt": "2022-03-24T05:17:01Z",
+          "endAt": "2022-03-29T05:17:01Z",
+          "formateur": {
+            "id": 2,
+            "first_name": "Leila",
+            "last_name": "Sandell",
+            "email": "lsandell4@independent.co",
+            "createdAt": "2022-02-17T18:03:26Z"
+          }
+        },
+        {
+          "id": 4,
+          "desc": "HTML/CSS",
+          "startAt": "2022-03-24T05:17:01Z",
+          "endAt": "2022-03-29T05:17:01Z",
+          "formateur": {
+            "id": 2,
+            "first_name": "Leila",
+            "last_name": "Sandell",
+            "email": "lsandell4@independent.co",
+            "createdAt": "2022-02-17T18:03:26Z"
+          }
+        },
+        {
+          "id": 5,
+          "desc": "HTML/CSS",
+          "startAt": "2023-03-24T00:00:00.000Z",
+          "endAt": "2023-03-29T00:00:00.000Z",
+          "formateur": {
+            "id": 2,
+            "first_name": "Leila",
+            "last_name": "Sandell",
+            "email": "lsandell4@independent.co",
+            "createdAt": "2022-02-17T18:03:26Z"
+          }
+        },
+        {
+          "id": 6,
+          "desc": "Java",
+          "startAt": "2023-05-08T00:00:00.000Z",
+          "endAt": "2023-05-12T00:00:00.000Z",
+          "formateur": {
+            "id": 9,
+            "first_name": "Terrence",
+            "last_name": "Aireton",
+            "email": "tairetond@washington.edu",
+            "createdAt": "2023-07-09T22:05:51Z"
+          }
         }
       ],
       "stagiaires": [
         {
           "id": 1,
-          "first_name": "Morie",
-          "last_name": "Derr",
+          "first_name": "Gloria",
+          "last_name": "McQuarrie",
           "email": "mderr0@npr.org",
-          "createdAt": "2022-06-22T11:58:04Z"
+          "createdAt": "2023-10-26T13:58:40Z"
         },
         {
           "id": 2,
@@ -652,6 +794,48 @@
           "last_name": "Grandin",
           "email": "ggrandin1@statcounter.com",
           "createdAt": "2023-10-26T13:58:40Z"
+        },
+        {
+          "id": 3,
+          "first_name": "Kimberlyn",
+          "last_name": "Delmage",
+          "email": "kdelmage2@utexas.edu",
+          "createdAt": "2023-02-11T20:27:04Z"
+        },
+        {
+          "id": 4,
+          "first_name": "Alie",
+          "last_name": "Fielders",
+          "email": "afielders3@businessinsider.com",
+          "createdAt": "2023-05-20T02:04:06Z"
+        },
+        {
+          "id": 7,
+          "first_name": "Chastity",
+          "last_name": "Servis",
+          "email": "cservis6@umich.edu",
+          "createdAt": "2023-10-08T23:11:23Z"
+        },
+        {
+          "id": 15,
+          "first_name": "Pinchas",
+          "last_name": "Wainer",
+          "email": "pwainere@paypal.com",
+          "createdAt": "2023-12-14T00:28:23Z"
+        },
+        {
+          "id": 17,
+          "first_name": "Swen",
+          "last_name": "Rix",
+          "email": "srixg@w3.org",
+          "createdAt": "2022-03-05T15:07:38Z"
+        },
+        {
+          "id": 18,
+          "first_name": "Nell",
+          "last_name": "Godbald",
+          "email": "ngodbaldh@wiley.com",
+          "createdAt": "2023-11-19T16:59:01Z"
         }
       ],
       "utilisateur": {
@@ -666,7 +850,8 @@
       "createdAt": "2023-03-15T13:21:58.584Z"
     },
     {
-      "id": 1,
+      "id": 2,
+      "type": "Promotion",
       "description": "CDA",
       "salle": {
         "id": 1,
@@ -677,11 +862,11 @@
         "createdAt": "2022-03-24T05:17:01Z"
       },
       "formateur": {
-        "id": 1,
-        "first_name": "David",
-        "last_name": "Brim",
-        "email": "dbrim3@sourceforge.net",
-        "createdAt": "2022-02-15T04:41:21Z"
+        "id": 2,
+        "first_name": "Leila",
+        "last_name": "Sandell",
+        "email": "lsandell4@independent.co",
+        "createdAt": "2022-02-17T18:03:26Z"
       },
       "startAt": "2022-03-24T05:17:01Z",
       "endAt": "2022-03-24T05:17:01Z",
@@ -739,6 +924,83 @@
         "adminRight": true
       },
       "createdAt": "2023-03-15T13:21:58.584Z"
+    }
+  ],
+  "autres": [
+    {
+      "id": 1,
+      "type": "Visioconférence",
+      "salle": {
+        "id": 2,
+        "capacity": 22,
+        "name": "Parzęczew",
+        "floor": "RDC",
+        "indication": "architect distributed solutions",
+        "createdAt": "2022-06-24T01:53:17Z"
+      },
+      "desc": "Ceci est un test de commentaire !",
+      "createdAt": "2022-01-07T03:18:47Z",
+      "startAt": "2023-03-24T00:00:00.000Z",
+      "endAt": "2023-05-12T00:00:00.000Z",
+      "utilisateur": {
+        "id": 11,
+        "first_name": "Nara",
+        "last_name": "Tanier",
+        "email": "nara.tanier@gmail.com",
+        "position": "Cheffe de projet",
+        "createdAt": "2023-03-15T13:21:58.584Z",
+        "adminRight": true
+      }
+    },
+    {
+      "id": 2,
+      "type": "Réunion",
+      "salle": {
+        "id": 5,
+        "capacity": 17,
+        "name": "San Francisco",
+        "floor": "1er",
+        "indication": "brand cutting-edge interfaces",
+        "createdAt": "2022-05-29T12:03:59Z"
+      },
+      "desc": "Ceci est un test de commentaire !",
+      "createdAt": "2022-01-07T03:18:47Z",
+      "startAt": "2023-03-24T00:00:00.000Z",
+      "endAt": "2023-05-12T00:00:00.000Z",
+      "utilisateur": {
+        "id": 11,
+        "first_name": "Nara",
+        "last_name": "Tanier",
+        "email": "nara.tanier@gmail.com",
+        "position": "Cheffe de projet",
+        "createdAt": "2023-03-15T13:21:58.584Z",
+        "adminRight": true
+      }
+    },
+    {
+      "id": 3,
+      "type": "Entretien",
+      "salle": {
+        "id": 10,
+        "capacity": 16,
+        "name": "McKinley",
+        "floor": "1er",
+        "indication": "utilize granular convergence",
+        "createdAt": "2022-09-09T10:01:08Z"
+      },
+      "desc": "Ceci est un test de commentaire !",
+      "createdAt": "2022-01-07T03:18:47Z",
+      "startAt": "2023-03-24T00:00:00.000Z",
+      "endAt": "2023-05-12T00:00:00.000Z",
+      "utilisateur": {
+        "id": 11,
+        "first_name": "Nara",
+        "last_name": "Tanier",
+        "email": "nara.tanier@gmail.com",
+        "position": "Cheffe de projet",
+        "createdAt": "2023-03-15T13:21:58.584Z",
+        "adminRight": true
+      }
     }
   ]
 }

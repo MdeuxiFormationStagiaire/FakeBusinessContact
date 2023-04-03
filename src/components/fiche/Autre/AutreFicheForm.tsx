@@ -1,0 +1,296 @@
+import Modal from 'react-modal'
+import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { Autre } from '../../../models/Reservation/Autre'
+import { Salle } from '../../../models/Salle'
+import { autreService } from '../../../services/Reservation/AutreService'
+import { salleService } from '../../../services/SalleService'
+import { ModalStyle } from '../../../assets/styles/components/modals/ModalStyle.css'
+import DeleteConfirmation from '../../modals/DeleteConfirmation'
+
+type AutreFicheFormProps = {
+    autre : Autre
+    onUpdateAutre: Function
+}
+
+const AutreFicheForm : React.FC<AutreFicheFormProps> = ({autre, onUpdateAutre}) => {
+
+    const navigate = useNavigate();
+
+    const [editMode, setEditMode] = useState<boolean>(false)
+
+    const [showDeleteConfirmation, setShowDeleteConfirmation] = useState<boolean>(false)
+
+    const [currentAutre, setCurrentAutre] = useState<Autre>(autre)
+
+    const [backupAutre, setBackupAutre] = useState<Autre>(autre)
+
+    const [salles, setSalles] = useState<Salle[]>([])
+
+    const getAllSalles = () => {
+        salleService.findAllSalles()
+          .then((data) => setSalles(data))
+          .catch((error) => console.log(error));
+    }
+
+    useEffect(() => {
+        getAllSalles()
+    }, [])
+
+    const handleEditMode = () => {
+        if (editMode == false) {
+          setBackupAutre(currentAutre)
+          setEditMode(true)
+        }
+    };
+
+    const handleDelete = () => {
+        setShowDeleteConfirmation(true)
+    };
+    
+    const handleCancelDelete = () => {
+        setShowDeleteConfirmation(false)
+    };
+    
+    const handleConfirmDelete = () => {
+      if (!autre) {
+        return;
+      }
+      autreService
+        .deleteAutre(autre.id)
+        .then(() => navigate('/autres'))
+        .catch((error) => console.error(error))
+      setShowDeleteConfirmation(false);
+    };
+
+    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
+        const { name, value } = event.target;
+        if (name === 'startAt' || name === 'endAt') {
+          const date = new Date(value);
+          setCurrentAutre(prevState => Object.assign({}, prevState, { [name]: date.toISOString() }));
+        } else {
+          const capitalizedValue = value.charAt(0).toUpperCase() + value.slice(1);
+          setCurrentAutre(prevState => Object.assign({}, prevState, { [name]: capitalizedValue}));
+        }
+    };
+
+    const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+        const selectedValue = event.target.value;
+        const selectedName = event.target.name;
+        if (selectedName === "salle") {
+          const selectedSalle = salles.find((salle) => salle.name === selectedValue);
+          setCurrentAutre((prevState) => ({
+            ...prevState,
+            salle: selectedSalle !== undefined ? selectedSalle : prevState.salle,
+          }));
+        } else if (selectedName === "type") {
+            setCurrentAutre(prevState => Object.assign({}, prevState, { [selectedName]: selectedValue }));
+        }
+    };
+
+    const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+        if (autre) {
+          event.preventDefault();
+      
+          setBackupAutre(currentAutre);
+      
+          autreService.updateAutre(autre.id, currentAutre)
+            .then(() => {
+              setEditMode(false)
+            })
+            .catch((error) => console.error(error)
+            );
+          onUpdateAutre(currentAutre)
+        }
+    };
+
+    const handleCancel = () => {
+        setEditMode(false)
+        if (backupAutre != undefined) {
+          setCurrentAutre(backupAutre)
+        }
+    };
+
+    const formateDateForm = (date : Date): string => {
+        const formatedDate : string = date.toLocaleString('fr-FR').slice(0, 10);
+        return formatedDate;
+    }
+
+    const formateDate = (date : Date) => {
+        const formatedDate : string = 
+            date.toLocaleString('fr-FR').slice(8, 10) + '/' +
+            date.toLocaleString('fr-FR').slice(5, 7) + '/' +
+            date.toLocaleString('fr-FR').slice(0, 4)
+        ;
+        return formatedDate;
+    }
+
+    const handleButtonHover = (className: string, hover: boolean) : any => {
+        const fiche = document.querySelector('.ficheSectionPromotions') as HTMLDivElement | null;
+        if (fiche) {
+          if (hover) {
+            fiche.classList.add(className);
+          } else {
+            fiche.classList.remove(className);
+          }
+        }
+    };
+
+    const handleAddButtonNav = () => {
+        navigate('/promotions/add')
+    };
+
+  return (
+    <>
+        <section className='buttonSectionPromotions'>
+            <button type='button' className='updateButtonBoxPromotions' onClick={handleEditMode} onMouseEnter={() => handleButtonHover('hoveredUpdatePromotions', true)} onMouseLeave={() => handleButtonHover('hoveredUpdatePromotions', false)}>
+              M
+            </button>
+            <button type='button' className='deleteButtonBoxPromotions' onClick={handleDelete} onMouseEnter={() => handleButtonHover('hoveredDeletePromotions', true)} onMouseLeave={() => handleButtonHover('hoveredDeletePromotions', false)}>
+              X
+            </button>
+            <button type='button' className='addButtonBoxFichePromotions' onClick={handleAddButtonNav}>Ajouter</button>
+        </section>
+        <Modal
+            isOpen={showDeleteConfirmation}
+            onRequestClose={handleCancelDelete}
+            contentLabel="Confirmation de suppression"
+            style={ModalStyle}
+          >
+            <DeleteConfirmation
+              onConfirm={handleConfirmDelete}
+              onCancel={handleCancelDelete} 
+            />
+        </Modal>
+        <section className='ficheSectionUpdateAutres'>
+        {editMode ? (
+            <form className='formSectionAutres' onSubmit={handleFormSubmit}>
+                <section className='inputSectionAutres'>
+                    <div className="topRow">
+                        <div className="titleInputBoxAutres">
+                            <h3 className='inputTitleAutres'>Type :</h3>
+                            <div className="inputBoxAutres">
+                            <select
+                                name="type"
+                                value={autre.type}
+                                onChange={handleSelectChange}
+                                className='typeInputTextAutres'
+                            >
+                                <option value="Réunion">Réunion</option>
+                                <option value="Examen">Examen</option>
+                                <option value="Job Dating">Job Dating</option>
+                                <option value="Entretien">Entretien</option>
+                                <option value="Visioconférence">Visioconférence</option>
+                            </select>
+                            </div>
+                        </div>
+                        <div className="titleInputBoxAutres">
+                            <h3 className='inputTitleAutres'>DD :</h3>
+                            <div className="inputBoxAutres">
+                                <input
+                                    type="date"
+                                    name="startAt"
+                                    value={formateDateForm(currentAutre.startAt)}
+                                    onChange={handleInputChange}
+                                    className='startAtInputDateAutres'
+                                />
+                            </div>
+                        </div>
+                        <div className="titleInputBoxAutres">
+                            <h3 className='inputTitleAutres'>DF :</h3>
+                            <div className="inputBoxAutres">
+                                <input
+                                    type="date"
+                                    name="endAt"
+                                    value={formateDateForm(currentAutre.endAt)}
+                                    onChange={handleInputChange}
+                                    className='endAtInputDateAutres'
+                                />
+                            </div>
+                        </div>
+                        <div className="titleInputBoxAutres">
+                            <h3 className='inputTitle'>Salle :</h3>
+                            <div className="inputBoxAutres">
+                                <select
+                                    name="salle"
+                                    value={currentAutre.salle.name}
+                                    onChange={handleSelectChange}
+                                    className='salleInputAutres'
+                                >
+                                    {salles.map((salle) => (
+                                      <option key={salle.id} value={salle.name}>{salle.name}</option>
+                                    ))}
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="botRow">
+                        <div className="titleInputBoxAutres">
+                            <h3 className='inputTitle'>Description :</h3>
+                            <div className="inputBoxAutres">
+                                <input
+                                    type="text"
+                                    name="description"
+                                    value={currentAutre.desc}
+                                    onChange={handleInputChange}
+                                    className='descriptionInputTextAutres'
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section className='updateButtonsSectionAutres'>
+                    <button type="submit" className='formSaveButtonAutres'>Enregistrer</button>
+                    <button type="button" className='formCancelButtonAutres' onClick={handleCancel}>Annuler</button>
+                </section>
+            </form>
+        ) : (
+            <>
+                <div className="topRow">
+                    <div className="titleInputBoxAutres">
+                        <h3 className='inputTitleAutres'>Type :</h3>
+                        <div className="inputBoxAutres">
+                            <p className='typeInputTextAutres'>{backupAutre.type}</p>
+                        </div>
+                    </div>
+                    <div className="titleInputBoxAutres">
+                        <h3 className='inputTitleAutres'>DC :</h3>
+                        <div className="inputBoxAutres">
+                            <p className='dateInputAutres'>{formateDate(backupAutre.createdAt)}</p>
+                        </div>
+                    </div>
+                    <div className="titleInputBoxAutres">
+                        <h3 className='inputTitleAutres'>DD :</h3>
+                        <div className="inputBoxAutres">
+                            <p className='dateInputAutres'>{formateDate(backupAutre.startAt)}</p>
+                        </div>
+                    </div>
+                    <div className="titleInputBoxAutres">
+                        <h3 className='inputTitleAutres'>DF :</h3>
+                        <div className="inputBoxAutres">
+                            <p className='dateInputAutres'>{formateDate(backupAutre.endAt)}</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="botRow">
+                    <div className="titleInputBoxAutres">
+                        <h3 className='inputTitleAutres'>Description :</h3>
+                        <div className="inputBoxAutres">
+                            <p className='descriptionInputTextAutres'>{backupAutre.desc}</p>
+                        </div>
+                    </div>
+                    <div className="titleInputBoxAutres">
+                        <h3 className='inputTitleAutres'>Salle :</h3>
+                        <div className="inputBoxAutres">
+                            <p className='salleInputTextAutres'>{backupAutre.salle.name}</p>
+                        </div>
+                    </div>
+                </div>
+            </>
+        )}
+        </section>  
+    </>
+  )
+}
+
+export default AutreFicheForm

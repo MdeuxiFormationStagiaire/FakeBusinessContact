@@ -1,17 +1,13 @@
-import Modal from 'react-modal';
 import React, { useEffect, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom';
-import { Promotion } from '../../models/Reservation/Promotion'
-import { promotionService } from '../../services/Reservation/PromotionService';
-import DeleteConfirmation from '../modals/DeleteConfirmation';
-import { ModalStyle } from '../../assets/styles/components/modals/ModalStyle.css';
-import { Stagiaire } from '../../models/Stagiaire';
-import { Session } from '../../models/Reservation/Session';
-import PromotionStagiairesList from '../lists/Promotion/PromotionStagiairesList';
-import PromotionSessionsList from '../lists/Promotion/PromotionSessionsList';
-import { stagiaireService } from '../../services/StagiaireService';
-import { sessionService } from '../../services/Reservation/SessionService';
-import '../../assets/styles/components/fiches/PromotionFiche.css'
+import { Promotion } from '../../../models/Reservation/Promotion'
+import { promotionService } from '../../../services/Reservation/PromotionService';
+import { Stagiaire } from '../../../models/Stagiaire';
+import { Session } from '../../../models/Reservation/Session';
+import PromotionStagiairesList from '../../lists/Promotion/PromotionStagiairesList';
+import PromotionSessionsList from '../../lists/Promotion/PromotionSessionsList';
+import { stagiaireService } from '../../../services/StagiaireService';
+import { sessionService } from '../../../services/Reservation/SessionService';
+import '../../../assets/styles/components/fiches/PromotionFiche.css'
 import PromotionFicheForm from './PromotionFicheForm';
 
 type PromotionFicheProps = {

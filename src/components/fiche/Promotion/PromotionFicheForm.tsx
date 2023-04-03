@@ -1,14 +1,14 @@
 import Modal from 'react-modal'
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Formateur } from '../../models/Formateur'
-import { Promotion } from '../../models/Reservation/Promotion'
-import { Salle } from '../../models/Salle'
-import { formateurService } from '../../services/FormateurService'
-import { promotionService } from '../../services/Reservation/PromotionService'
-import { salleService } from '../../services/SalleService'
-import { ModalStyle } from '../../assets/styles/components/modals/ModalStyle.css'
-import DeleteConfirmation from '../modals/DeleteConfirmation'
+import { Formateur } from '../../../models/Formateur'
+import { Promotion } from '../../../models/Reservation/Promotion'
+import { Salle } from '../../../models/Salle'
+import { formateurService } from '../../../services/FormateurService'
+import { promotionService } from '../../../services/Reservation/PromotionService'
+import { salleService } from '../../../services/SalleService'
+import { ModalStyle } from '../../../assets/styles/components/modals/ModalStyle.css'
+import DeleteConfirmation from '../../modals/DeleteConfirmation'
 
 type PromotionFicheFormProps = {
     promotion : Promotion
@@ -57,22 +57,22 @@ const PromotionFicheForm : React.FC<PromotionFicheFormProps> = ({promotion, onUp
 
     const handleDelete = () => {
         setShowDeleteConfirmation(true)
-      };
+    };
     
-      const handleCancelDelete = () => {
+    const handleCancelDelete = () => {
         setShowDeleteConfirmation(false)
-      };
+    };
     
-      const handleConfirmDelete = () => {
-        if (!promotion) {
-          return;
-        }
-        promotionService
-          .deletePromotion(promotion.id)
-          .then(() => navigate('/promotions'))
-          .catch((error) => console.error(error))
-        setShowDeleteConfirmation(false);
-      };
+    const handleConfirmDelete = () => {
+      if (!promotion) {
+        return;
+      }
+      promotionService
+        .deletePromotion(promotion.id)
+        .then(() => navigate('/promotions'))
+        .catch((error) => console.error(error))
+      setShowDeleteConfirmation(false);
+    };
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
         const { name, value } = event.target;
