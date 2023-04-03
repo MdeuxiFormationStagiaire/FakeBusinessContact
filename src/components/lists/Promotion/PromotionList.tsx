@@ -21,7 +21,7 @@ const PromotionList : React.FC<PromotionListProps> = ({promotions, currentPage})
       if (filterOrder === 'ascendant') {
         return salleA.localeCompare(salleB);
       } else {
-        return salleB.localeCompare(salleB);
+        return salleB.localeCompare(salleA);
       };
     });
     setFilterOrder(filterOrder === 'ascendant' ? 'descendant' : 'ascendant');
@@ -74,7 +74,7 @@ const PromotionList : React.FC<PromotionListProps> = ({promotions, currentPage})
     <section className={'list' + `${currentPage}` + 'Promotions'}>
       <div className="filterBarPromotions">
         <div className="allPromotions">{promotions.length} Promotions</div>
-        <button onClick={filterBySalle} className="filterNameButtonPromotions">
+        <button onClick={filterBySalle} className="filterSalleButtonPromotions">
           By Salle
         </button>
         <button onClick={filterByFormateur} className="filterNameButtonPromotions">
