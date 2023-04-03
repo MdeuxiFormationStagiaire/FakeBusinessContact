@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Session } from '../../../models/Reservation/Session'
 import PromotionSessionListContainer from '../../listContainers/Promotion/PromotionSessionListContainer'
 import { Promotion } from '../../../models/Reservation/Promotion'
@@ -7,26 +7,37 @@ import updateLogo from '../../../assets/img/modify.png'
 import validateLogo from '../../../assets/img/checked.png'
 import addLogo from '../../../assets/img/ajouter.png'
 import '../../../assets/styles/components/lists/PromotionFicheList.css'
-import { promotionService } from '../../../services/Reservation/PromotionService'
 import { sessionService } from '../../../services/Reservation/SessionService'
+import { formateurService } from '../../../services/FormateurService'
 
 type PromotionSessionsListProps = {
   promotion: Promotion
-  formateurs: Formateur[]
   sessions: Session[]
   onDeleteSession: (idSession : number) => void
   onAddSession: (idSession : number) => void
 }
 
-const PromotionSessionsList : React.FC<PromotionSessionsListProps> = ({promotion, formateurs, sessions, onDeleteSession, onAddSession}) => {
+const PromotionSessionsList : React.FC<PromotionSessionsListProps> = ({promotion, sessions, onDeleteSession, onAddSession}) => {
 
   const [search, setSearch] = useState<string>('')
 
   const [editMode, setEditMode] = useState<boolean>(false)
-
+  
+  const [formateurs, setFormateurs] = useState<Formateur[]>([])
+  
   const [session, setSession] = useState<Session>({id: 0, desc: '', startAt: new Date(), endAt: new Date(), formateur: formateurs[0]})
-
+  
   const [selectedFormateur, setSelectedFormateur] = useState<Formateur>(formateurs[0])
+  
+  const getAllFormateur = () => {
+    formateurService.findAllFormateurs()
+      .then((data) => setFormateurs(data))
+      .catch((error) => console.log(error));
+  }
+
+  useEffect(() => {
+    getAllFormateur()
+  }, [])
 
   const handleEditMode = () => {
     if (editMode == false) {
@@ -95,19 +106,22 @@ const PromotionSessionsList : React.FC<PromotionSessionsListProps> = ({promotion
     }
   }
 
-  const IsOutsideSessionsRange = (date : Date) : boolean => {
-    for (const session of sessions) {
-      if (session.startAt <= date && date <= session.endAt) {
-        return false;
+  const IsOverlapping = (newSession : Session) : boolean => {
+    for (const session of promotion.sessions) {
+      if (
+        (newSession.startAt >= session.startAt && newSession.startAt <= session.endAt) ||
+        (newSession.endAt >= session.startAt && newSession.endAt <= session.endAt)
+      ) {
+        return true;
       }
     }
-    return true;
+    return false;
   }
 
   const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    if (IsOutsideSessionsRange(session.startAt) && IsOutsideSessionsRange(session.endAt)) {
+    if (!IsOverlapping(session)) {
       sessionService.createSession(session)
         .catch((error) => console.error(error))
       ;
@@ -136,39 +150,43 @@ const PromotionSessionsList : React.FC<PromotionSessionsListProps> = ({promotion
           </div>
           <form className='formSectionSessionsPromotions' onSubmit={handleFormSubmit}>
             <div className="addSessionMenu">
-              <div className="inputBoxFormateurs">
+              <div className="inputBoxSession">
                 <input
                   type="text"
                   name="desc"
                   placeholder='Nom de la session'
                   value={session.desc}
                   onChange={handleInputChange}
-                  className='descriptionInputTextFormateurs'
+                  className='descriptionTextSession'
+                  required
                 />
               </div>
-              <div className="inputBoxFormateurs">
+              <div className="inputBoxSession">
                 <input
                   type="date"
                   name="startAt"
                   value={formateDateForm(session.startAt)}
                   onChange={handleInputChange}
-                  className='descriptionInputTextFormateurs'
+                  className='inputTextSession'
+                  required
                 />
               </div>
-              <div className="inputBoxFormateurs">
+              <div className="inputBoxSession">
                 <input
                   type="date"
                   name="endAt"
                   value={formateDateForm(session.endAt)}
                   onChange={handleInputChange}
-                  className='descriptionInputTextFormateurs'
+                  className='inputTextSession'
+                  required
                 />
               </div>
                 <select
                     name="formateur"
                     value={selectedFormateur.last_name}
                     onChange={handleSelectChange}
-                    className='formateurInputPromotions'
+                    className='formateurSelectSession'
+                    required
                   >
                     <option value=''>-- Formateurs --</option>
                     {formateurs.map((formateur) => (
@@ -177,8 +195,8 @@ const PromotionSessionsList : React.FC<PromotionSessionsListProps> = ({promotion
                       </option>
                     ))}
                 </select>
-              <button type='submit'>
-                <img src={addLogo} className='formAddButtonSessionsPromotion'/>
+              <button type='submit' className='formAddButtonSessionsPromotion'>
+                <img src={addLogo} className='addLogoForm'/>
               </button>
             </div>
           </form>
