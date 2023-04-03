@@ -138,6 +138,10 @@
     width: 35px;
 }
 
+.addLogoForm {
+    width: 30px;
+}
+
 .addStagiaireMenu {
     position: sticky;
     top: 50px;
@@ -150,4 +154,48 @@
     width: 100%;
     text-align: center;
     font-size: 16px;
+}
+
+.formAddButtonSessionsPromotion {
+    display: flex;
+    width: 100%;
+    border: none;
+    padding: 5px 0;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+.formAddButtonSessionsPromotion:hover {
+    display: flex;
+    width: 100%;
+    border: 1px solid #1C1D3B;
+    padding: 5px 0;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.addSessionMenu {
+    display: grid;
+    grid-template-columns: 30% 20% 20% 24.8% 5.2%;
+    justify-content: center;
+    align-items: center;
+}
+
+.descriptionTextSession {
+    width: 100%;
+    padding: 11px 0;
+}
+
+.formateurSelectSession {
+    width: 100%;
+    padding: 11px 0;
+}
+
+.inputTextSession {
+    width: 100%;
+    padding: 10px 0;
 }
