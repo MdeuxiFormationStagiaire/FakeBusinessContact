@@ -7,6 +7,7 @@ import { autreService } from '../../../services/Reservation/AutreService'
 import { salleService } from '../../../services/SalleService'
 import { ModalStyle } from '../../../assets/styles/components/modals/ModalStyle.css'
 import DeleteConfirmation from '../../modals/DeleteConfirmation'
+import '../../../assets/styles/components/fiches/AutreFiche.css'
 
 type AutreFicheFormProps = {
     autre : Autre
@@ -73,6 +74,12 @@ const AutreFicheForm : React.FC<AutreFicheFormProps> = ({autre, onUpdateAutre}) 
           setCurrentAutre(prevState => Object.assign({}, prevState, { [name]: capitalizedValue}));
         }
     };
+
+    const handleTextChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+        const { name, value } = event.target;
+        const capitalizedValue = value.charAt(0).toUpperCase() + value.slice(1);
+        setCurrentAutre(prevState => Object.assign({}, prevState, { [name]: capitalizedValue}));
+    }
 
     const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         const selectedValue = event.target.value;
@@ -169,7 +176,7 @@ const AutreFicheForm : React.FC<AutreFicheFormProps> = ({autre, onUpdateAutre}) 
         {editMode ? (
             <form className='formSectionAutres' onSubmit={handleFormSubmit}>
                 <section className='inputSectionAutres'>
-                    <div className="topRow">
+                    <div className="leftForm">
                         <div className="titleInputBoxAutres">
                             <h3 className='inputTitleAutres'>Type :</h3>
                             <div className="inputBoxAutres">
@@ -195,24 +202,12 @@ const AutreFicheForm : React.FC<AutreFicheFormProps> = ({autre, onUpdateAutre}) 
                                     name="startAt"
                                     value={formateDateForm(currentAutre.startAt)}
                                     onChange={handleInputChange}
-                                    className='startAtInputDateAutres'
+                                    className='dateInputAutres'
                                 />
                             </div>
                         </div>
                         <div className="titleInputBoxAutres">
-                            <h3 className='inputTitleAutres'>DF :</h3>
-                            <div className="inputBoxAutres">
-                                <input
-                                    type="date"
-                                    name="endAt"
-                                    value={formateDateForm(currentAutre.endAt)}
-                                    onChange={handleInputChange}
-                                    className='endAtInputDateAutres'
-                                />
-                            </div>
-                        </div>
-                        <div className="titleInputBoxAutres">
-                            <h3 className='inputTitle'>Salle :</h3>
+                            <h3 className='inputTitleAutres'>Salle :</h3>
                             <div className="inputBoxAutres">
                                 <select
                                     name="salle"
@@ -226,17 +221,28 @@ const AutreFicheForm : React.FC<AutreFicheFormProps> = ({autre, onUpdateAutre}) 
                                 </select>
                             </div>
                         </div>
-                    </div>
-                    <div className="botRow">
                         <div className="titleInputBoxAutres">
-                            <h3 className='inputTitle'>Description :</h3>
+                            <h3 className='inputTitleAutres'>DF :</h3>
                             <div className="inputBoxAutres">
                                 <input
-                                    type="text"
+                                    type="date"
+                                    name="endAt"
+                                    value={formateDateForm(currentAutre.endAt)}
+                                    onChange={handleInputChange}
+                                    className='dateInputAutres'
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="rightForm">
+                        <div className="titleInputBoxAutres">
+                            <h3 className='inputTitleAutres'>Description :</h3>
+                            <div className="inputBoxAutres">
+                                <textarea
                                     name="desc"
                                     value={currentAutre.desc}
-                                    onChange={handleInputChange}
-                                    className='descriptionInputTextAutres'
+                                    onChange={handleTextChange}
+                                    className='descriptionFormInputTextAutres'
                                 />
                             </div>
                         </div>
@@ -249,7 +255,7 @@ const AutreFicheForm : React.FC<AutreFicheFormProps> = ({autre, onUpdateAutre}) 
             </form>
         ) : (
             <>
-                <div className="topRow">
+                <div className="topRowFiche">
                     <div className="titleInputBoxAutres">
                         <h3 className='inputTitleAutres'>Type :</h3>
                         <div className="inputBoxAutres">
@@ -275,17 +281,17 @@ const AutreFicheForm : React.FC<AutreFicheFormProps> = ({autre, onUpdateAutre}) 
                         </div>
                     </div>
                 </div>
-                <div className="botRow">
-                    <div className="titleInputBoxAutres">
-                        <h3 className='inputTitleAutres'>Description :</h3>
-                        <div className="inputBoxAutres">
-                            <p className='descriptionInputTextAutres'>{backupAutre.desc}</p>
-                        </div>
-                    </div>
+                <div className="botRowFiche">
                     <div className="titleInputBoxAutres">
                         <h3 className='inputTitleAutres'>Salle :</h3>
                         <div className="inputBoxAutres">
                             <p className='salleInputTextAutres'>{backupAutre.salle.name}</p>
+                        </div>
+                    </div>
+                    <div className="titleInputBoxAutres">
+                        <h3 className='inputTitleAutres'>Description :</h3>
+                        <div className="inputBoxAutres">
+                            <p className='descriptionInputTextAutres'>{backupAutre.desc}</p>
                         </div>
                     </div>
                 </div>
