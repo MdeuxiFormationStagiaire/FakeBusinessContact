@@ -69,7 +69,7 @@ const PromotionFicheForm : React.FC<PromotionFicheFormProps> = ({promotion, onUp
       }
       promotionService
         .deletePromotion(promotion.id)
-        .then(() => navigate('/promotions'))
+        .then(() => navigate('/reservations/promotions'))
         .catch((error) => console.error(error))
       setShowDeleteConfirmation(false);
     };
