@@ -7,8 +7,8 @@ import PromotionStagiairesList from '../../lists/Promotion/PromotionStagiairesLi
 import PromotionSessionsList from '../../lists/Promotion/PromotionSessionsList';
 import { stagiaireService } from '../../../services/StagiaireService';
 import { sessionService } from '../../../services/Reservation/SessionService';
-import '../../../assets/styles/components/fiches/PromotionFiche.css'
 import PromotionFicheForm from './PromotionFicheForm';
+import '../../../assets/styles/components/fiches/PromotionFiche.css'
 
 type PromotionFicheProps = {
   idPromotion: number
@@ -93,10 +93,11 @@ const PromotionFiche : React.FC<PromotionFicheProps> = ({idPromotion, onUpdatePr
     <>
       {promotion &&
         <>
-            <PromotionFicheForm
-              promotion={promotion}
-              onUpdatePromotion={onUpdatePromotion}
-            />
+          <PromotionFicheForm
+            promotion={promotion}
+            onUpdatePromotion={onUpdatePromotion}
+          />
+          <section className='sectionListsPromotion'>
             <div className="stagiairesSessionsTabs">
               <PromotionStagiairesList 
                 promotion={promotion} 
@@ -111,6 +112,7 @@ const PromotionFiche : React.FC<PromotionFicheProps> = ({idPromotion, onUpdatePr
                 onAddSession={handleAddSessionToPromotion}
               />
             </div>
+          </section>
         </>
       }
     </>
