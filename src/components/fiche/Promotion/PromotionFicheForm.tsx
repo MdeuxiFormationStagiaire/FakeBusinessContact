@@ -154,7 +154,7 @@ const PromotionFicheForm : React.FC<PromotionFicheFormProps> = ({promotion, onUp
     };
 
     const handleAddButtonNav = () => {
-        navigate('/promotions/add')
+        navigate('/reservations/promotions/add')
     };
 
   return (
