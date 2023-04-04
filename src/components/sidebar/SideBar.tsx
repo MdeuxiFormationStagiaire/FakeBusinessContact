@@ -1,11 +1,12 @@
 import { AnimatePresence, motion } from "framer-motion"
-import { FaBars, FaHome, FaUsersCog } from "react-icons/fa";
+import { FaBars, FaUsersCog } from "react-icons/fa";
 import { BsCalendar2Week } from "react-icons/bs";
 import { GiTeacher } from "react-icons/gi";
 import { SiGoogleclassroom } from "react-icons/si";
 import { ImProfile } from "react-icons/im";
 import { TbScreenShare } from "react-icons/tb";
 import { FiLogOut } from "react-icons/fi";
+import { IoSchoolOutline } from "react-icons/io5";
 import { NavLink, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { IconContext } from "react-icons";
@@ -14,13 +15,13 @@ import "../../assets/styles/components/sidebar/Sidebar.css";
 const routes = [
     {
         path: "/",
-        name: "Home",
-        icon: <FaHome/>
+        name: "Planning",
+        icon: <BsCalendar2Week/>
     },
     {
         path: "/reservations",
         name: "Réservations",
-        icon: <BsCalendar2Week/>
+        icon: <IoSchoolOutline/>
     },
     {
         path: "/formateurs",
@@ -96,7 +97,7 @@ const SideBar = ({children} : any) => {
                         {routes.map((route) => {
                             let className = 'link';
                             switch (route.name) {
-                              case 'Home':
+                              case 'Planning':
                                 className += '-home';
                                 break;
                               case 'Réservations':
