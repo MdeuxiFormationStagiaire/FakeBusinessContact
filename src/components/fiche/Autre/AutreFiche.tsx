@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Autre } from '../../../models/Reservation/Autre';
 import { autreService } from '../../../services/Reservation/AutreService';
 import AutreFicheForm from './AutreFicheForm';
+import '../../../assets/styles/components/fiches/AutreFiche.css'
 
 type AutreFicheProps = {
     idAutre: number;
@@ -25,10 +26,12 @@ const AutreFiche : React.FC<AutreFicheProps> = ({idAutre, onUpdateAutre}) => {
     return (
         <>
             {autre &&
-                <AutreFicheForm
-                    autre={autre}
-                    onUpdateAutre={onUpdateAutre}
-                />
+                <>
+                    <AutreFicheForm
+                        autre={autre}
+                        onUpdateAutre={onUpdateAutre}
+                    />
+                </>
             }
         </>
     )
