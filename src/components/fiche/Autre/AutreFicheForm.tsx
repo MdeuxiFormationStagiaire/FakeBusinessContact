@@ -58,7 +58,7 @@ const AutreFicheForm : React.FC<AutreFicheFormProps> = ({autre, onUpdateAutre}) 
       }
       autreService
         .deleteAutre(autre.id)
-        .then(() => navigate('/autres'))
+        .then(() => navigate('/reservations/autres'))
         .catch((error) => console.error(error))
       setShowDeleteConfirmation(false);
     };
@@ -68,7 +68,7 @@ const AutreFicheForm : React.FC<AutreFicheFormProps> = ({autre, onUpdateAutre}) 
         if (name === 'startAt' || name === 'endAt') {
           const date = new Date(value);
           setCurrentAutre(prevState => Object.assign({}, prevState, { [name]: date.toISOString() }));
-        } else {
+        } else if (name === 'desc') {
           const capitalizedValue = value.charAt(0).toUpperCase() + value.slice(1);
           setCurrentAutre(prevState => Object.assign({}, prevState, { [name]: capitalizedValue}));
         }
@@ -83,9 +83,12 @@ const AutreFicheForm : React.FC<AutreFicheFormProps> = ({autre, onUpdateAutre}) 
             ...prevState,
             salle: selectedSalle !== undefined ? selectedSalle : prevState.salle,
           }));
-        } else if (selectedName === "type") {
-            setCurrentAutre(prevState => Object.assign({}, prevState, { [selectedName]: selectedValue }));
         }
+    };
+
+    const handleTypeChange = (event: React.ChangeEvent<HTMLSelectElement>): void => {
+        const { name, value } = event.target;
+        setCurrentAutre(prevState => Object.assign({}, prevState, { [name]: value }));
     };
 
     const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -137,7 +140,7 @@ const AutreFicheForm : React.FC<AutreFicheFormProps> = ({autre, onUpdateAutre}) 
     };
 
     const handleAddButtonNav = () => {
-        navigate('/promotions/add')
+        navigate('/reservations/autres/add')
     };
 
   return (
@@ -162,7 +165,7 @@ const AutreFicheForm : React.FC<AutreFicheFormProps> = ({autre, onUpdateAutre}) 
               onCancel={handleCancelDelete} 
             />
         </Modal>
-        <section className='ficheSectionUpdateAutres'>
+        <section className='ficheSectionAutres'>
         {editMode ? (
             <form className='formSectionAutres' onSubmit={handleFormSubmit}>
                 <section className='inputSectionAutres'>
@@ -172,8 +175,8 @@ const AutreFicheForm : React.FC<AutreFicheFormProps> = ({autre, onUpdateAutre}) 
                             <div className="inputBoxAutres">
                             <select
                                 name="type"
-                                value={autre.type}
-                                onChange={handleSelectChange}
+                                value={currentAutre.type}
+                                onChange={handleTypeChange}
                                 className='typeInputTextAutres'
                             >
                                 <option value="Réunion">Réunion</option>
@@ -230,7 +233,7 @@ const AutreFicheForm : React.FC<AutreFicheFormProps> = ({autre, onUpdateAutre}) 
                             <div className="inputBoxAutres">
                                 <input
                                     type="text"
-                                    name="description"
+                                    name="desc"
                                     value={currentAutre.desc}
                                     onChange={handleInputChange}
                                     className='descriptionInputTextAutres'
