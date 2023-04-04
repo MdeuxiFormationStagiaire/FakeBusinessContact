@@ -19,7 +19,7 @@ const ReservationsAutresPage = () => {
   };
 
   const handleAddButtonNav = () => {
-    navigate('/autres/add')
+    navigate('/reservations/autres/add')
   };
   
   return (
