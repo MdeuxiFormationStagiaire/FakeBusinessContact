@@ -19,7 +19,7 @@ const ReservationsPromotionsPage = () => {
   };
 
   const handleAddButtonNav = () => {
-    navigate('/promotions/add')
+    navigate('/reservations/promotions/add')
   };
 
   return (
