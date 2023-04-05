@@ -20,7 +20,16 @@ const AddAutre : React.FC<AddAutreProps> = ({autres, utilisateur, salles, addNew
 
   const [newSalle, setNewSalle] = useState<Salle>(salles[0])
 
-  const [autre, setAutre] = useState<Autre>({ id: 0, type: 'Entretien', salle: newSalle, desc: '', createdAt: new Date(), startAt: new Date(), endAt: new Date(), utilisateur:  utilisateur});
+  const [autre, setAutre] = useState<Autre>({
+    id: 0, 
+    type: 'Entretien', 
+    salle: newSalle, 
+    desc: '', 
+    createdAt: new Date(), 
+    startAt: new Date(), 
+    endAt: new Date(), 
+    utilisateur:  utilisateur
+  });
 
   useEffect(() => {
     setAutre((autre) => ({...autre, createdAt: new Date()}));
