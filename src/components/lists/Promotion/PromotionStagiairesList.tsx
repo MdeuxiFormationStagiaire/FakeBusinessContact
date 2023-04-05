@@ -28,7 +28,6 @@ const PromotionStagiairesList : React.FC<PromotionStagiairesListProps> = ({promo
       setEditMode(false)
     }
   }
-
   
   const handleDeleteStagiaire = async (idStagiaire : number) => {
     onDeleteStagiaire(idStagiaire)
@@ -42,7 +41,6 @@ const PromotionStagiairesList : React.FC<PromotionStagiairesListProps> = ({promo
     }
   }
 
-  
   const renderPromotionStagiairesList = () => {
     const filteredStagiaires = promotion.stagiaires.filter((stagiaire: Stagiaire) => {
       const name = `
@@ -56,10 +54,10 @@ const PromotionStagiairesList : React.FC<PromotionStagiairesListProps> = ({promo
     return filteredStagiaires.map((stagiaire: Stagiaire) => {
       return (
         <PromotionStagiaireListContainer
-        key={stagiaire.id}
-        stagiaire={stagiaire}
-        editMode={editMode}
-        onDeleteStagiaire={handleDeleteStagiaire}
+          key={stagiaire.id}
+          stagiaire={stagiaire}
+          editMode={editMode}
+          onDeleteStagiaire={handleDeleteStagiaire}
         />
       );
     });
