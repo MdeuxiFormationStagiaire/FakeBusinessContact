@@ -1,0 +1,167 @@
+/* ------------ AddPromotionPage ------------- */
+
+.addFormPromotions {
+    width: 95%;
+    margin-top: 25px;
+    margin-bottom: 25px;
+
+}
+
+/* ------------ AddPromotion ------------- */
+
+.formSectionAddPromotions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ------------ Formulaire ------------- */
+
+/* ----- ButtonSection ----- */
+
+.buttonDivBoxPromotions {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.addFormButtonPromotions {
+    border: none;
+    border-radius: 5px;
+    height: 50px;
+    width: 400px;
+    background-color: #90C99B;
+    color: #1C1D3B;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.addFormButtonPromotions:hover {
+    border: 2px solid white;
+    border-radius: 5px;
+    height: 50px;
+    width: 400px;
+    background-color: #90C99B;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.cancelButtonPromotions {
+    border: none;
+    border-radius: 5px;
+    height: 50px;
+    width: 400px;
+    background-color: #828282;
+    color: #1C1D3B;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.cancelButtonPromotions:hover {
+    border: 2px solid white;
+    border-radius: 5px;
+    height: 50px;
+    width: 400px;
+    background-color: #828282;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* ----- FormSection ----- */
+
+/* 1.TopRowFormSection */
+
+.topRowAddPromotions {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 30px 10px 20px 10px;
+    background-color: #d9d9d9e5;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.inputDivTopPromotions {
+    display: flex;
+    align-items: center;
+}
+
+.addInputTitlePromotions {
+    font-weight: bold;
+    font-size: 22px;
+    color: #1C1D3B;
+}
+
+.inputFormPromotions {
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 10px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* 2.BotRowFormSection */
+
+.botRowAddPromotions {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px 10px;
+    background-color: #d9d9d9e5;
+}
+
+/* ----- StagSessSection ----- */
+
+.stagiairesSessionsForm {
+    width: 100%;
+    display: flex;
+    background-color: #d9d9d9e5;
+    padding: 20px 0 30px 0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.stagiairesSectionForm {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.sessionsSectionForm {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.stagiairesAddPromotion {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 3px solid #1C1D3B;
+    border-radius: 10px;
+    background-color: white;
+    height: 300px;
+    max-height: 300px;
+    overflow-y: scroll;
+    margin: 0 40px;
+}
+
+.sessionsAddPromotion {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 3px solid #1C1D3B;
+    border-radius: 10px;
+    background-color: white;
+    height: 300px;
+    max-height: 300px;
+    overflow-y: scroll;
+    margin: 0 40px;
+}
