@@ -5,14 +5,13 @@ import { Utilisateur } from '../../../models/Utilisateur'
 import { utilisateurService } from '../../../services/UtilisateurService'
 import PromotionList from '../../../components/lists/Promotion/PromotionList'
 import AddPromotion from '../../../components/add/AddPromotion'
-import { Formateur } from '../../../models/Formateur'
 import { Stagiaire } from '../../../models/Stagiaire'
 import { Session } from '../../../models/Reservation/Session'
-import { formateurService } from '../../../services/FormateurService'
 import { stagiaireService } from '../../../services/StagiaireService'
-import { sessionService } from '../../../services/Reservation/SessionService'
 import { salleService } from '../../../services/SalleService'
 import { Salle } from '../../../models/Salle'
+import { formateurService } from '../../../services/FormateurService'
+import { Formateur } from '../../../models/Formateur'
 
 const ReservationsPromotionAddPage = () => {
 
@@ -24,11 +23,9 @@ const ReservationsPromotionAddPage = () => {
 
   const [salles, setSalles] = useState<Salle[]>([])
 
-  const [formateurs, setFormateurs] = useState<Formateur[]>([])
-
   const [stagiaires, setStagiaires] = useState<Stagiaire[]>([])
 
-  const [sessions, setSessions] = useState<Session[]>([])
+  const [formateurs, setFormateurs] = useState<Formateur[]>([])
 
   const [currentPage, setCurrentPage] = useState('Add')
 
@@ -36,9 +33,8 @@ const ReservationsPromotionAddPage = () => {
     getUtilisateurById(idUtilisateur)
     getAllPromotions()
     getAllSalles()
-    getAllFormateurs()
     getAllStagiaires()
-    getAllSessions()
+    getAllFormateurs()
   }, [])
 
   const getUtilisateurById = (id : number) => {
@@ -53,16 +49,12 @@ const ReservationsPromotionAddPage = () => {
     salleService.findAllSalles().then(data => setSalles(data))
   }
 
-  const getAllFormateurs = () => {
-    formateurService.findAllFormateurs().then(data => setFormateurs(data))
-  }
-
   const getAllStagiaires = () => {
     stagiaireService.findAllStagiaires().then(data => setStagiaires(data))
   }
 
-  const getAllSessions = () => {
-    sessionService.findAllSessions().then(data => setSessions(data))
+  const getAllFormateurs = () => {
+    formateurService.findAllFormateurs().then(data => setFormateurs(data))
   }
 
   const addNewPromotion = (promotion : Promotion) => {
@@ -75,11 +67,9 @@ const ReservationsPromotionAddPage = () => {
         <>
           {utilisateur && 
             <AddPromotion
-              promotions={promotions}
-              salles={salles}
               formateurs={formateurs}
+              salles={salles}
               stagiaires={stagiaires}
-              sessions={sessions}
               utilisateur={utilisateur}
               addNewPromotion={addNewPromotion}
             />
