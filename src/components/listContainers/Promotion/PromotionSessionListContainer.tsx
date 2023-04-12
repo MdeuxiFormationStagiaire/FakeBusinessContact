@@ -31,7 +31,7 @@ const PromotionSessionListContainer : React.FC<PromotionSessionListContainerProp
             date.toLocaleString('fr-FR').slice(0, 4)
         ;
         return formatedDate;
-      }
+    }
 
   return (
     <>
