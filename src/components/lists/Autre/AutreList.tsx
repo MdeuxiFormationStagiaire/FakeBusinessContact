@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Autre } from '../../../models/Reservation/Autre'
 import AutreListContainer from '../../listContainers/Autre/AutreListContainer';
+import {format} from 'date-fns'
 import '../../../assets/styles/components/lists/AutreList.css'
 
 type AutreListProps = {
@@ -60,22 +61,27 @@ const AutreList : React.FC<AutreListProps> = ({autres, currentPage}) => {
   const renderAutresList = () => {
 
     const filteredAutres = autres.filter((autre: Autre) => {
-      const name = 
-      `
-        ${autre.desc.toLocaleLowerCase()} 
-        ${autre.salle.name.toLocaleLowerCase()} 
-        ${autre.utilisateur.first_name.toLocaleLowerCase()} 
-        ${autre.utilisateur.last_name.toLocaleLowerCase()}
-      `;
-      return search === '' ? autre : name.includes(search);
+      const type = autre.type.toLocaleLowerCase();
+      const utilisateur = autre.utilisateur.last_name.toLocaleLowerCase();
+      const salle = autre.salle.name.toLocaleLowerCase();
+      const startAt = format(new Date(autre.startAt), 'dd/MM/yyyy');
+      const endAt = format(new Date(autre.endAt), 'dd/MM/yyyy');
+      const searchLowerCase = search.toLocaleLowerCase();
+      return (
+        type.startsWith(searchLowerCase) || 
+        utilisateur.startsWith(searchLowerCase) ||
+        salle.startsWith(searchLowerCase) ||
+        startAt.startsWith(searchLowerCase) ||
+        endAt.startsWith(searchLowerCase)
+      );
     });
-
+  
     return filteredAutres.map((autre: Autre) => {
       return (
         <AutreListContainer
           key={autre.id} 
           autre={autre} 
-          onAutreSelected={handleAutreSelected}/>
+          onAutreSelected={handleAutreSelected} />
       );
     });
   }
