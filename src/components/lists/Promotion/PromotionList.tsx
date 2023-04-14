@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Promotion } from '../../../models/Reservation/Promotion'
 import PromotionListContainer from '../../listContainers/Promotion/PromotionListContainer';
 import '../../../assets/styles/components/lists/PromotionList.css'
+import { format } from 'date-fns';
 
 type PromotionListProps = {
   promotions: Promotion[];
@@ -47,24 +48,26 @@ const PromotionList : React.FC<PromotionListProps> = ({promotions, currentPage})
   const renderPromotionsList = () => {
 
     const filteredPromotions = promotions.filter((promotion: Promotion) => {
-      const name = 
-      `
-        ${promotion.description.toLocaleLowerCase()} 
-        ${promotion.formateur.first_name.toLocaleLowerCase()} 
-        ${promotion.formateur.last_name.toLocaleLowerCase()} 
-        ${promotion.salle.name.toLocaleLowerCase()} 
-        ${promotion.utilisateur.first_name.toLocaleLowerCase()} 
-        ${promotion.utilisateur.last_name.toLocaleLowerCase()}
-      `;
-      return search === '' ? promotion : name.includes(search);
+      const name = promotion.description.toLocaleLowerCase();
+      const salle = promotion.salle.name.toLocaleLowerCase();
+      const formateurLastName = promotion.formateur.last_name.toLocaleLowerCase();
+      const formateurFirstName = promotion.formateur.first_name.toLocaleLowerCase();
+      const startAt = format(new Date(promotion.startAt), 'dd/MM/yyyy');
+      const endAt = format(new Date(promotion.endAt), 'dd/MM/yyyy');
+      const searchLowerCase = search.toLocaleLowerCase();
+      return (
+        name.startsWith(searchLowerCase) || salle.startsWith(searchLowerCase) ||
+        formateurLastName.startsWith(searchLowerCase) || formateurFirstName.startsWith(searchLowerCase) ||
+        startAt.startsWith(searchLowerCase) || endAt.startsWith(searchLowerCase)
+      );
     });
-
+  
     return filteredPromotions.map((promotion: Promotion) => {
       return (
         <PromotionListContainer
           key={promotion.id} 
           promotion={promotion} 
-          onPromotionSelected={handlePromotionSelected}/>
+          onPromotionSelected={handlePromotionSelected} />
       );
     });
   }
