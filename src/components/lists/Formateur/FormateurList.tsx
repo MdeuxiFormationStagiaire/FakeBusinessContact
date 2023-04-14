@@ -31,12 +31,12 @@ const FormateurList: React.FC<FormateurListProps> = ({ formateurs, currentPage }
   };
 
   const renderFormateursList = () => {
-
     const filteredFormateurs = formateurs.filter((formateur: Formateur) => {
-      const name = `${formateur.first_name.toLocaleLowerCase()} ${formateur.last_name.toLocaleLowerCase()} ${formateur.email} ${formateur.createdAt.toString().slice(0, 10)}`;
-      return search === '' ? formateur : name.includes(search);
+      const firstName = formateur.first_name.toLocaleLowerCase();
+      const lastName = formateur.last_name.toLocaleLowerCase();
+      const searchLowerCase = search.toLocaleLowerCase();
+      return firstName.startsWith(searchLowerCase) || lastName.startsWith(searchLowerCase);
     });
-
     return filteredFormateurs.map((formateur: Formateur) => {
       return (
         <FormateurListContainer
@@ -45,7 +45,6 @@ const FormateurList: React.FC<FormateurListProps> = ({ formateurs, currentPage }
           onFormateurSelected={handleFormateurSelected} />
       );
     });
-    
   };
 
   return (
