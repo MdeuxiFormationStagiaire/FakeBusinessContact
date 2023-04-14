@@ -34,10 +34,12 @@ const StagiaireList : React.FC<StagiaireListProps> = ({stagiaires, currentPage})
   const renderStagiairesList = () => {
   
     const filteredStagiaires = stagiaires.filter((stagiaire: Stagiaire) => {
-      const name = `${stagiaire.first_name.toLocaleLowerCase()} ${stagiaire.last_name.toLocaleLowerCase()} ${stagiaire.email} ${stagiaire.createdAt.toString().slice(0, 10)}`;
-      return search === '' ? stagiaire : name.includes(search);
+      const firstName = stagiaire.first_name.toLocaleLowerCase();
+      const lastName = stagiaire.last_name.toLocaleLowerCase();
+      const searchLowerCase = search.toLocaleLowerCase();
+      return firstName.startsWith(searchLowerCase) || lastName.startsWith(searchLowerCase);
     });
-
+  
     return filteredStagiaires.map((stagiaire: Stagiaire) => {
       return (
         <StagiaireListContainer
