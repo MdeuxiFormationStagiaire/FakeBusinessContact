@@ -32,20 +32,20 @@ const SalleList : React.FC<SalleListProps> = ({salles, currentPage}) => {
   };
 
   const renderSallesList = () => {
-
-      const filteredSalles = salles.filter((salle: Salle) => {
-        const name = `${salle.name.toLowerCase()} ${salle.indication.toLowerCase()} ${salle.capacity} ${salle.floor} ${salle.createdAt.toString().slice(0, 10)}`;
-        return search === '' ? salle : name.includes(search);
-      });
+    const filteredSalles = salles.filter((salle: Salle) => {
+      const name = salle.name.toLocaleLowerCase();
+      const searchLowerCase = search.toLocaleLowerCase();
+      return name.startsWith(searchLowerCase);
+    });
   
-      return filteredSalles.map((salle: Salle) => {
-        return (
-          <SalleListContainer
-            key={salle.id} 
-            salle={salle} 
-            onSalleSelected={handleSalleSelected} />
-        );
-      });    
+    return filteredSalles.map((salle: Salle) => {
+      return (
+        <SalleListContainer
+          key={salle.id}
+          salle={salle}
+          onSalleSelected={handleSalleSelected} />
+      );
+    });
   };
 
   return (
