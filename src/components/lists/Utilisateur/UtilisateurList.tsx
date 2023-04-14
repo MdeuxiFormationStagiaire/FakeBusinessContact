@@ -47,17 +47,12 @@ const UtilisateurList : React.FC<UtilisateurListProps> = ({utilisateurs, current
   const renderUtilisateursList = () => {
   
     const filteredUtilisateurs = utilisateurs.filter((utilisateur: Utilisateur) => {
-      const name = 
-      `
-        ${utilisateur.first_name.toLocaleLowerCase()} 
-        ${utilisateur.last_name.toLocaleLowerCase()} 
-        ${utilisateur.email.toLocaleLowerCase()}
-        ${utilisateur.position.toLocaleLowerCase()}
-        ${utilisateur.createdAt.toString().slice(0, 10)}
-      `;
-      return search === '' ? utilisateur : name.includes(search);
+      const firstName = utilisateur.first_name.toLocaleLowerCase();
+      const lastName = utilisateur.last_name.toLocaleLowerCase();
+      const searchLowerCase = search.toLocaleLowerCase();
+      return firstName.startsWith(searchLowerCase) || lastName.startsWith(searchLowerCase);
     });
-
+  
     return filteredUtilisateurs.map((utilisateur: Utilisateur) => {
       return (
         <UtilisateurListContainer
@@ -66,7 +61,6 @@ const UtilisateurList : React.FC<UtilisateurListProps> = ({utilisateurs, current
           onUtilisateurSelected={handleUtilisateurSelected} />
       );
     });
-      
   };
   
   return (
