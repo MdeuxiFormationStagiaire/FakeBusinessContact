@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { Stagiaire } from '../../models/Stagiaire';
+import Papa from 'papaparse';
+import _ from 'lodash';
 import '../../assets/styles/components/add/AddStagiaire.css'
 
 type addStagiaireProps = {
-  addNewStagiaire : Function
+  addNewStagiaire : (stagiaire : Stagiaire) => void
+  addNewStagiairesByImport : (stagiaires : Stagiaire[]) => void
 }
 
-const AddStagiaire : React.FC<addStagiaireProps> = ({addNewStagiaire}) => {
+const AddStagiaire : React.FC<addStagiaireProps> = ({addNewStagiaire, addNewStagiairesByImport}) => {
 
   const URL = process.env.REACT_APP_DB_STAGIAIRE_URL;
 
@@ -38,8 +41,8 @@ const AddStagiaire : React.FC<addStagiaireProps> = ({addNewStagiaire}) => {
     const stagiaireCapitalized: Stagiaire = {
       ...stagiaire,
       first_name: stagiaire.first_name.charAt(0).toUpperCase() + stagiaire.first_name.toLocaleLowerCase().slice(1),
-      last_name: stagiaire.last_name.charAt(0).toUpperCase() + stagiaire.last_name.toLocaleLowerCase().slice(1),
-      email: stagiaire.email.toLocaleLowerCase(),
+      last_name: stagiaire.last_name.toUpperCase(),
+      email: stagiaire.email.toLowerCase(),
     };
   
     const response = await fetch(`${URL}`);
@@ -55,91 +58,29 @@ const AddStagiaire : React.FC<addStagiaireProps> = ({addNewStagiaire}) => {
     }
   };
 
-  const handleFileSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  const handleFileSubmit = (event : React.ChangeEvent<HTMLFormElement>) => {
     event.preventDefault();
-  
-    if (file) {
-      const fileReader = new FileReader();
-      fileReader.readAsText(file, 'UTF-8');
-  
-      fileReader.onload = (e) => {
-        if (e.target?.result) {
-          const csvData = e.target.result as string;
-          const allTextLines = csvData.split(/\r\n|\n/);
-  
-          const headers = allTextLines[0].split(',');
-  
-          for (let i = 1; i < allTextLines.length; i++) {
-            const data = allTextLines[i].split(',');
-            if (data.length === headers.length) {
-              let stagiaire: Stagiaire = {
-                id: 0,
-                first_name: data[0],
-                last_name: data[1],
-                email: data[2],
-                createdAt: new Date(),
-              };
-              addNewStagiaire(stagiaire);
-            }
-          }
-        }
-      };
-    }
-  
-    const newStagiaire: Stagiaire = { id: 0, first_name: '', last_name: '', email: '', createdAt: new Date() };
-    setStagiaire(newStagiaire);
-  };
 
-  // const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-  //   event.preventDefault();
-  
-  //   if (file) {
-  //     const fileReader = new FileReader();
-  //     fileReader.readAsText(file, 'UTF-8');
-  
-  //     fileReader.onload = (e) => {
-  //       if (e.target?.result) {
-  //         const csvData = e.target.result as string;
-  //         const allTextLines = csvData.split(/\r\n|\n/);
-  
-  //         const headers = allTextLines[0].split(',');
-  
-  //         for (let i = 1; i < allTextLines.length; i++) {
-  //           const data = allTextLines[i].split(',');
-  //           if (data.length === headers.length) {
-  //             let stagiaire: Stagiaire = {
-  //               id : 0,
-  //               first_name: data[0],
-  //               last_name: data[1],
-  //               email: data[2],
-  //               createdAt: new Date(),
-  //             };
-  //             addNewStagiaire(stagiaire);
-  //           }
-  //         }
-  //       }
-  //     };
-  //   } else {
-  //     const stagiaireCapitalized: Stagiaire = {
-  //       ...stagiaire,
-  //       first_name: stagiaire.first_name.charAt(0).toUpperCase() + stagiaire.first_name.toLocaleLowerCase().slice(1),
-  //       last_name: stagiaire.last_name.charAt(0).toUpperCase() + stagiaire.last_name.toLocaleLowerCase().slice(1),
-  //       email: stagiaire.email.toLocaleLowerCase(),
-  //     };
-  
-  //     const response = await fetch(`${URL}`);
-  //     const data = await response.json();
-  //     const duplicateStagiaire = data.find((stagiaire: Stagiaire) => stagiaire.email === stagiaireCapitalized.email);
-  
-  //     if (duplicateStagiaire) {
-  //       alert('Ce stagiaire existe déjà !');
-  //     } else {
-  //       addNewStagiaire(stagiaireCapitalized);
-  //       const newStagiaire: Stagiaire = { id: 0, first_name: '', last_name: '', email: '', createdAt: new Date() };
-  //       setStagiaire(newStagiaire);
-  //     }
-  //   }
-  // };
+    if (file) {
+      Papa.parse(file, {
+        header: true,
+        complete : (results) => {
+          const stagiaires : Stagiaire[] = results.data.map((data : any) => ({
+            id : 0,
+            first_name: data.first_name,
+            last_name: data.last_name.toUpperCase(),
+            email: data.email.toLowerCase(),
+            createdAt: new Date(),
+          }));
+          addNewStagiairesByImport(stagiaires)
+        },
+        error : (error) => {
+          console.log(error);
+          alert("Le fichier CSV est incorrect")
+        }
+      })
+    }
+  }
 
   return (
     <>
@@ -189,7 +130,7 @@ const AddStagiaire : React.FC<addStagiaireProps> = ({addNewStagiaire}) => {
           </div>
         </section>
       </form>
-      <form onSubmit={(event) => handleFileSubmit(event)}>
+      <form onSubmit={handleFileSubmit}>
         <div className='inputDivStagiaires'>
           <label htmlFor="file" className='addInputTitleStagiaires'>Fichier CSV :</label>
           <input 
