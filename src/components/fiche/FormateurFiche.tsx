@@ -18,6 +18,7 @@ type formateurFicheProps = {
 const FormateurFiche : React.FC<formateurFicheProps> = ({formateurs, onUpdateFormateur}) => {
 
   const navigate = useNavigate();
+
   const { id } = useParams<{id : string}>();
 
   const [backupFormateur, setBackupFormateur] = useState<Formateur>(formateurs[0])
@@ -123,9 +124,9 @@ const FormateurFiche : React.FC<formateurFicheProps> = ({formateurs, onUpdateFor
 
   const formateDate = (date : Date) => {
     const formatedDate : string = 
-        date.toLocaleString('fr-FR').slice(8, 10) + '/' +
-        date.toLocaleString('fr-FR').slice(5, 7) + '/' +
-        date.toLocaleString('fr-FR').slice(0, 4)
+      date.toLocaleString('fr-FR').slice(8, 10) + '/' +
+      date.toLocaleString('fr-FR').slice(5, 7) + '/' +
+      date.toLocaleString('fr-FR').slice(0, 4)
     ;
     return formatedDate;
   }
@@ -192,10 +193,10 @@ const FormateurFiche : React.FC<formateurFicheProps> = ({formateurs, onUpdateFor
                     />
                   </div>
                 </div>
-              </section>
-              <section className='updateButtonsSectionFormateurs'>
-                <button type="submit" className='formSaveButtonFormateurs'>Enregistrer</button>
-                <button type="button" className='formCancelButtonFormateurs' onClick={handleCancel}>Annuler</button>
+                <section className='updateButtonsSectionFormateurs'>
+                  <button type="submit" className='formSaveButtonFormateurs'>Enregistrer</button>
+                  <button type="button" className='formCancelButtonFormateurs' onClick={handleCancel}>Annuler</button>
+                </section>
               </section>
             </form>
           </section>  

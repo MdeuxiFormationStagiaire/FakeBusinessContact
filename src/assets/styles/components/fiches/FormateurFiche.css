@@ -129,14 +129,16 @@
 
 .updateButtonsSectionFormateurs {
     display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
+    gap: 10px;
 }
 
 .formSaveButtonFormateurs {
     border: none;
     border-radius: 15px;
     height: 30px;
-    width: 100px;
+    width: 150px;
     background-color: #90C99B;
     color: #1C1D3B;
     font-weight: bold;
@@ -146,7 +148,7 @@
     border: 2px solid white;
     border-radius: 15px;
     height: 30px;
-    width: 100px;
+    width: 150px;
     background-color: #90C99B;
     color: white;
     font-weight: bold;
@@ -156,7 +158,7 @@
     border: none;
     border-radius: 15px;
     height: 30px;
-    width: 100px;
+    width: 150px;
     background-color: #828282;
     color: #1C1D3B;
     font-weight: bold;
@@ -166,7 +168,7 @@
     border: 2px solid white;
     border-radius: 15px;
     height: 30px;
-    width: 100px;
+    width: 150px;
     background-color: #828282;
     color: white;
     font-weight: bold;
@@ -180,7 +182,7 @@
 .lastNameInputTextFormateurs {
     border: none;
     height: 20px;
-    min-width: 100px;
+    width: 150px;
     font-size: 18px;
     font-weight: 700;
     color: #1C1D3B;
@@ -190,7 +192,7 @@
 .firstNameInputTextFormateurs {
     border: none;
     height: 20px;
-    min-width: 100px;
+    width: 150px;
     font-size: 18px;
     font-weight: 700;
     color: #1C1D3B;
@@ -200,7 +202,7 @@
 .emailInputTextFormateurs {
     border: none;
     height: 20px;
-    width: fit-content;
+    width: 300px;
     font-size: 16px;
     font-weight: 700;
     color: #1C1D3B;
