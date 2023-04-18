@@ -19,7 +19,6 @@ const ReservationsAutresAddPage = () => {
   const [salles, setSalles] = useState<Salle[]>([])
 
   const [currentPage, setCurrentPage] = useState('Add')
-
   
   useEffect(() => {
     getAllAutres()
