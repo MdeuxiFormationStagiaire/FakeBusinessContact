@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
 import AutreFiche from '../../../components/fiche/Autre/AutreFiche';
 import AutreList from '../../../components/lists/Autre/AutreList';
 import { Autre } from '../../../models/Reservation/Autre';
@@ -10,8 +9,6 @@ const ReservationsAutresFichePage = () => {
   const [autres, setAutres] = useState<Autre[]>([])
 
   const [currentPage, setCurrentPage] = useState('Fiche')
-
-  const { id } = useParams<{id : string}>();
 
   useEffect(() => {
     getAllAutres()
@@ -29,12 +26,10 @@ const ReservationsAutresFichePage = () => {
     <>
       {autres &&
         <>
-          {id &&
-            <AutreFiche
-              idAutre={parseInt(id)}
-              onUpdateAutre={handleUpdateAutre}
-            />
-          }
+          <AutreFiche
+            autres={autres}
+            onUpdateAutre={handleUpdateAutre}
+          />
           <AutreList 
             autres={autres} 
             currentPage={currentPage}
