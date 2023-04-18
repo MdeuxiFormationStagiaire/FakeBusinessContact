@@ -67,7 +67,7 @@ const AddStagiaire : React.FC<addStagiaireProps> = ({addNewStagiaire, addNewStag
         complete : (results) => {
           const stagiaires : Stagiaire[] = results.data.map((data : any) => ({
             id : 0,
-            first_name: data.first_name,
+            first_name: data.first_name.charAt(0).toUpperCase() + data.first_name.toLowerCase().slice(1),
             last_name: data.last_name.toUpperCase(),
             email: data.email.toLowerCase(),
             createdAt: new Date(),
