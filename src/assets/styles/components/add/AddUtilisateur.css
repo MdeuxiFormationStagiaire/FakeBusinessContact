@@ -18,7 +18,7 @@
     border: none;
     border-radius: 5px;
     height: 50px;
-    width: 400px;
+    width: 300px;
     background-color: #90C99B;
     color: #1C1D3B;
     font-size: 26px;
@@ -26,13 +26,13 @@
 }
 
 .addFormButtonUtilisateurs:hover {
-    border: 2px solid white;
+    outline: 3px solid #1C1D3B;
     border-radius: 5px;
     height: 50px;
-    width: 400px;
+    width: 300px;
     background-color: #90C99B;
-    color: white;
-    font-size: 24px;
+    color: #1C1D3B;
+    font-size: 26px;
     font-weight: bold;
 }
 
@@ -40,7 +40,7 @@
     border: none;
     border-radius: 5px;
     height: 50px;
-    width: 400px;
+    width: 300px;
     background-color: #828282;
     color: #1C1D3B;
     font-size: 26px;
@@ -48,25 +48,26 @@
 }
 
 .cancelButtonUtilisateurs:hover {
-    border: 2px solid white;
+    outline: 3px solid #1C1D3B;
     border-radius: 5px;
     height: 50px;
-    width: 400px;
+    width: 300px;
     background-color: #828282;
-    color: white;
-    font-size: 24px;
+    color: #1C1D3B;
+    font-size: 26px;
     font-weight: bold;
 }
 
 .addFicheSectionUtilisateurs {
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
     background-color: #e30615be;
     border-radius: 10px;
     border: 3px solid #1C1D3B;
     width: 95%;
-    height: 120px;
+    height: 200px;
 }
 
 .inputDivBoxUtilisateurs {

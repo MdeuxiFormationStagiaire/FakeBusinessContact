@@ -54,10 +54,6 @@ const AddUtilisateur : React.FC<AddUtilisateurProps> = ({addNewUtilisateur}) => 
   return (
     <>
       <form className='addFormSectionUtilisateurs' onSubmit={(event) => handleSubmit(event)}>
-        <div className="buttonDivBoxUtilisateurs">
-          <button type="submit" className='addFormButtonUtilisateurs'>Ajouter</button>
-          <button type='button' className='cancelButtonUtilisateurs' onClick={() => navigate(-1)}>Annuler</button>
-        </div>
         <section className="addFicheSectionUtilisateurs">
           <div className="inputDivBoxUtilisateurs">
             <div className='inputDivUtilisateurs'>
@@ -120,6 +116,10 @@ const AddUtilisateur : React.FC<AddUtilisateurProps> = ({addNewUtilisateur}) => 
                 required
               />
             </div>
+          </div>
+          <div className="buttonDivBoxUtilisateurs">
+            <button type='button' className='cancelButtonUtilisateurs' onClick={() => navigate(-1)}>Annuler</button>
+            <button type="submit" className='addFormButtonUtilisateurs'>Ajouter</button>
           </div>
         </section>
       </form>
