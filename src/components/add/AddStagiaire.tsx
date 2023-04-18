@@ -12,7 +12,10 @@ const AddStagiaire : React.FC<addStagiaireProps> = ({addNewStagiaire}) => {
   const URL = process.env.REACT_APP_DB_STAGIAIRE_URL;
 
   const navigate = useNavigate();
+
   const [stagiaire, setStagiaire] = useState<Stagiaire>({ id: 0, first_name: '', last_name: '', email: '', createdAt: new Date() });
+
+  const [file, setFile] = useState<File | null>(null);
 
   useEffect(() => {
     setStagiaire((stagiaire) => ({...stagiaire, createdAt: new Date()}));
@@ -23,36 +26,124 @@ const AddStagiaire : React.FC<addStagiaireProps> = ({addNewStagiaire}) => {
     setStagiaire((stagiaire) => ({...stagiaire, [name]: value}));
   };
 
+  const handleFileChange = (event : React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.files) {
+      setFile(event.target.files[0]);
+    }
+  }
+
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-
-    const stagiaireCapitalized : Stagiaire = {
+  
+    const stagiaireCapitalized: Stagiaire = {
       ...stagiaire,
       first_name: stagiaire.first_name.charAt(0).toUpperCase() + stagiaire.first_name.toLocaleLowerCase().slice(1),
       last_name: stagiaire.last_name.charAt(0).toUpperCase() + stagiaire.last_name.toLocaleLowerCase().slice(1),
-      email: stagiaire.email.toLocaleLowerCase()
+      email: stagiaire.email.toLocaleLowerCase(),
     };
-
+  
     const response = await fetch(`${URL}`);
     const data = await response.json();
-    const duplicateStagiaire = data.find((stagiaire : Stagiaire) => stagiaire.email === stagiaireCapitalized.email);
-
+    const duplicateStagiaire = data.find((stagiaire: Stagiaire) => stagiaire.email === stagiaireCapitalized.email);
+  
     if (duplicateStagiaire) {
       alert('Ce stagiaire existe déjà !');
     } else {
       addNewStagiaire(stagiaireCapitalized);
-      const newStagiaire : Stagiaire = { id: 0, first_name: '', last_name: '', email: '', createdAt: new Date() };
+      const newStagiaire: Stagiaire = { id: 0, first_name: '', last_name: '', email: '', createdAt: new Date() };
       setStagiaire(newStagiaire);
-    };
+    }
   };
+
+  const handleFileSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+  
+    if (file) {
+      const fileReader = new FileReader();
+      fileReader.readAsText(file, 'UTF-8');
+  
+      fileReader.onload = (e) => {
+        if (e.target?.result) {
+          const csvData = e.target.result as string;
+          const allTextLines = csvData.split(/\r\n|\n/);
+  
+          const headers = allTextLines[0].split(',');
+  
+          for (let i = 1; i < allTextLines.length; i++) {
+            const data = allTextLines[i].split(',');
+            if (data.length === headers.length) {
+              let stagiaire: Stagiaire = {
+                id: 0,
+                first_name: data[0],
+                last_name: data[1],
+                email: data[2],
+                createdAt: new Date(),
+              };
+              addNewStagiaire(stagiaire);
+            }
+          }
+        }
+      };
+    }
+  
+    const newStagiaire: Stagiaire = { id: 0, first_name: '', last_name: '', email: '', createdAt: new Date() };
+    setStagiaire(newStagiaire);
+  };
+
+  // const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  //   event.preventDefault();
+  
+  //   if (file) {
+  //     const fileReader = new FileReader();
+  //     fileReader.readAsText(file, 'UTF-8');
+  
+  //     fileReader.onload = (e) => {
+  //       if (e.target?.result) {
+  //         const csvData = e.target.result as string;
+  //         const allTextLines = csvData.split(/\r\n|\n/);
+  
+  //         const headers = allTextLines[0].split(',');
+  
+  //         for (let i = 1; i < allTextLines.length; i++) {
+  //           const data = allTextLines[i].split(',');
+  //           if (data.length === headers.length) {
+  //             let stagiaire: Stagiaire = {
+  //               id : 0,
+  //               first_name: data[0],
+  //               last_name: data[1],
+  //               email: data[2],
+  //               createdAt: new Date(),
+  //             };
+  //             addNewStagiaire(stagiaire);
+  //           }
+  //         }
+  //       }
+  //     };
+  //   } else {
+  //     const stagiaireCapitalized: Stagiaire = {
+  //       ...stagiaire,
+  //       first_name: stagiaire.first_name.charAt(0).toUpperCase() + stagiaire.first_name.toLocaleLowerCase().slice(1),
+  //       last_name: stagiaire.last_name.charAt(0).toUpperCase() + stagiaire.last_name.toLocaleLowerCase().slice(1),
+  //       email: stagiaire.email.toLocaleLowerCase(),
+  //     };
+  
+  //     const response = await fetch(`${URL}`);
+  //     const data = await response.json();
+  //     const duplicateStagiaire = data.find((stagiaire: Stagiaire) => stagiaire.email === stagiaireCapitalized.email);
+  
+  //     if (duplicateStagiaire) {
+  //       alert('Ce stagiaire existe déjà !');
+  //     } else {
+  //       addNewStagiaire(stagiaireCapitalized);
+  //       const newStagiaire: Stagiaire = { id: 0, first_name: '', last_name: '', email: '', createdAt: new Date() };
+  //       setStagiaire(newStagiaire);
+  //     }
+  //   }
+  // };
 
   return (
     <>
       <form className='addFormSectionStagiaires' onSubmit={(event) => handleSubmit(event)}>
-        <div className="buttonDivBoxStagiaires">
-          <button type="submit" className='addFormButtonStagiaires'>Ajouter</button>
-          <button type='button' className='cancelButtonStagiaires' onClick={() => navigate(-1)}>Annuler</button>
-        </div>
         <section className="addFicheSectionStagiaires">
           <div className="inputDivBoxStagiaires">
             <div className='inputDivStagiaires'>
@@ -92,7 +183,26 @@ const AddStagiaire : React.FC<addStagiaireProps> = ({addNewStagiaire}) => {
               />
             </div>
           </div>
+          <div className="buttonDivBoxStagiaires">
+            <button type='button' className='cancelButtonStagiaires' onClick={() => navigate(-1)}>Annuler</button>
+            <button type="submit" className='addFormButtonStagiaires'>Ajouter</button>
+          </div>
         </section>
+      </form>
+      <form onSubmit={(event) => handleFileSubmit(event)}>
+        <div className='inputDivStagiaires'>
+          <label htmlFor="file" className='addInputTitleStagiaires'>Fichier CSV :</label>
+          <input 
+            type="file" 
+            name="file" 
+            id="file" 
+            onChange={handleFileChange}
+            accept=".csv"
+          />
+        </div>
+        <div className="buttonDivBoxStagiaires">
+          <button type="submit" className='addFormButtonStagiaires'>Ajouter CSV</button>
+        </div>
       </form>
     </>
   );
