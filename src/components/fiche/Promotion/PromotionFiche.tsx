@@ -58,6 +58,7 @@ const PromotionFiche : React.FC<PromotionFicheProps> = ({idPromotion, onUpdatePr
     getPromotionById(idPromotion)
     getAllStagiaires()
     getAllSessions()
+    setEditMode(false)
   }, [idPromotion]);
 
   const handleDeleteStagiaireFromPromotion = (idStagiaire : number) => {
