@@ -1,9 +1,13 @@
+.addFormsSectionUtilisateurs {
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0;
+}
+
 .addFormSectionUtilisateurs {
-    width: 100%;
-    height: 300px;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
     align-items: center;
     gap: 10px;
 }
@@ -75,6 +79,8 @@
     display: flex;
     justify-content: space-around;
     color: white;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 .inputDivUtilisateurs {
@@ -136,4 +142,70 @@
     font-weight: 700;
     color: #1C1D3B;
     text-align: center;
+}
+
+.addFormCSVFileSectionUtilisateurs {
+    height: 100%;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #e30615be;
+    border: 3px solid #1C1D3B;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.addCSVFormButtonUtilisateurs {
+    border: none;
+    border-radius: 5px;
+    height: 50px;
+    width: 150px;
+    background-color: #90C99B;
+    color: #1C1D3B;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.addCSVFormButtonUtilisateurs:hover {
+    outline: 3px solid #1C1D3B;
+    border: none;
+    border-radius: 5px;
+    height: 50px;
+    width: 150px;
+    background-color: #90C99B;
+    color: #1C1D3B;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.addCSVFileTitleUtilisateurs {
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.testSection {
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0
+}
+
+.inputCSVDivUtilisateurs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
+
+.inputCSVFileUtilisateurs {
+    direction: rtl;
+    margin-right: 45px;
+}
+
+.addFormSectionUtilisateurs {
+    width: 75%;
 }

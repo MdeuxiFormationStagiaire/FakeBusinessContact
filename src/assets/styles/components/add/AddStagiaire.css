@@ -1,5 +1,8 @@
-.addFormSectionStagiaires {
-    width: 75%;
+.addFormsSectionStagiaires {
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0;
 }
 
 .buttonDivBoxStagiaires {
@@ -174,4 +177,8 @@
 .inputCSVFileStagiaires {
     direction: rtl;
     margin-right: 45px;
+}
+
+.addFormSectionStagiaires {
+    width: 75%;
 }
