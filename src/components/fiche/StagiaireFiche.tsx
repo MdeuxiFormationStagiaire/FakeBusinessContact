@@ -17,6 +17,7 @@ type stagiaireFicheProps = {
 const StagiaireFiche : React.FC<stagiaireFicheProps> = ({stagiaires, onUpdateStagiaire}) => {
   
   const navigate = useNavigate();
+
   const { id } = useParams<{id : string}>();
 
   const [stagiaire, setStagiaire] = useState<Stagiaire>(stagiaires[0])
@@ -180,7 +181,7 @@ const StagiaireFiche : React.FC<stagiaireFicheProps> = ({stagiaires, onUpdateSta
                   </div>
                 </div>
                 <div className="titleInputBoxStagiaires">
-                  <h3 className='inputTitle'>Email :</h3>
+                  <h3 className='inputTitleStagiaires'>Email :</h3>
                   <div className="inputBoxStagiaires">
                     <input
                       type="email"
@@ -191,10 +192,10 @@ const StagiaireFiche : React.FC<stagiaireFicheProps> = ({stagiaires, onUpdateSta
                     />
                   </div>
                 </div>
-              </section>
-              <section className='updateButtonsSectionStagiaires'>
-                <button type="submit" className='formSaveButtonStagiaires'>Enregistrer</button>
-                <button type="button" className='formCancelButtonStagiaires' onClick={handleCancel}>Annuler</button>
+                <section className='updateButtonsSectionStagiaires'>
+                  <button type="submit" className='formSaveButtonStagiaires'>Enregistrer</button>
+                  <button type="button" className='formCancelButtonStagiaires' onClick={handleCancel}>Annuler</button>
+                </section>
               </section>
             </form>
           </section>  
