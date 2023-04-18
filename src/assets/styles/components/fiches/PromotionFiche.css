@@ -66,7 +66,7 @@
     justify-content: center;
     background-color: #90C99B;
     border: none;
-    border-radius: 15px;
+    border-radius: 5px;
     color: white;
     font-size: 28px;
     font-weight: bold;
@@ -77,8 +77,8 @@
     align-items: center;
     justify-content: center;
     background-color: #90C99B;
-    border: 4px solid #1C1D3B;
-    border-radius: 15px;
+    border: 3px solid #1C1D3B;
+    border-radius: 5px;
     color: white;
     font-size: 28px;
     font-weight: bold;
@@ -99,16 +99,35 @@
     padding-bottom: 30px;
 }
 
-.topRow {
-    width: 100%;
+.inputTopBotSectionPromotions {
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    gap: 10px;
+    width: 75%;
 }
 
-.botRow {
+.topRowForm {
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+}
+
+.botRowForm {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.topRowFichePromotions {
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.botRowFichePromotions {
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
 }
 
 .stagiairesSessionsTabs {
@@ -186,21 +205,22 @@
 .inputSectionPromotions {
     width: 100%;
     display: flex;
-    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
-    gap: 20px;
 }
 
 .updateButtonsSectionPromotions {
     display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
+    gap: 10px;
 }
 
 .formSaveButtonPromotions {
     border: none;
     border-radius: 15px;
     height: 30px;
-    width: 100px;
+    width: 150px;
     background-color: #90C99B;
     color: #1C1D3B;
     font-weight: bold;
@@ -210,7 +230,7 @@
     border: 2px solid white;
     border-radius: 15px;
     height: 30px;
-    width: 100px;
+    width: 150px;
     background-color: #90C99B;
     color: white;
     font-weight: bold;
@@ -220,7 +240,7 @@
     border: none;
     border-radius: 15px;
     height: 30px;
-    width: 100px;
+    width: 150px;
     background-color: #828282;
     color: #1C1D3B;
     font-weight: bold;
@@ -230,7 +250,7 @@
     border: 2px solid white;
     border-radius: 15px;
     height: 30px;
-    width: 100px;
+    width: 150px;
     background-color: #828282;
     color: white;
     font-weight: bold;
@@ -261,7 +281,7 @@
     text-align: center;
 }
 
-.salleInputTextPromotions {
+.salleInputPromotions {
     border: none;
     height: 20px;
     min-width: 100px;
@@ -271,7 +291,7 @@
     text-align: center;
 }
 
-.formateurInputTextPromotions {
+.formateurInputPromotions {
     border: none;
     height: 20px;
     min-width: 100px;
