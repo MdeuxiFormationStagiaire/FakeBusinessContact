@@ -15,7 +15,7 @@ import { Formateur } from '../../../models/Formateur'
 
 const ReservationsPromotionAddPage = () => {
 
-  const idUtilisateur : number = 10
+  const idUtilisateur : number = 11
 
   const [utilisateur, setUtilisateur] = useState<Utilisateur>()
 
