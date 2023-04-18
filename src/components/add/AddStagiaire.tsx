@@ -84,67 +84,70 @@ const AddStagiaire : React.FC<addStagiaireProps> = ({addNewStagiaire, addNewStag
 
   return (
     <>
-      <form className='addFormSectionStagiaires' onSubmit={(event) => handleSubmit(event)}>
-        <section className="addFicheSectionStagiaires">
-          <div className="inputDivBoxStagiaires">
-            <div className='inputDivStagiaires'>
-              <label htmlFor="last_name" className='addInputTitleStagiaires'>Nom :</label>
-              <input
-                type="text"
-                name="last_name"
-                id="last_name"
-                className='lastNameInputStagiaires'
-                value={stagiaire.last_name}
-                onChange={handleInputChange}
-                required
-              />
+      <section className='testSection'>
+        <form className='addFormSectionStagiaires' onSubmit={(event) => handleSubmit(event)}>
+          <section className="addFicheSectionStagiaires">
+            <div className="inputDivBoxStagiaires">
+              <div className='inputDivStagiaires'>
+                <label htmlFor="last_name" className='addInputTitleStagiaires'>Nom :</label>
+                <input
+                  type="text"
+                  name="last_name"
+                  id="last_name"
+                  className='lastNameInputStagiaires'
+                  value={stagiaire.last_name}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+              <div className='inputDivStagiaires'>
+                <label htmlFor="first_name" className='addInputTitleStagiaires'>Prénom :</label>
+                <input
+                  type="text"
+                  name="first_name"
+                  id="first_name"
+                  className='firstNameInputStagiaires'
+                  value={stagiaire.first_name}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+              <div className='inputDivStagiaires'>
+                <label htmlFor="email" className='addInputTitleStagiaires'>Email :</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  className='emailInputStagiaires'
+                  value={stagiaire.email}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
             </div>
-            <div className='inputDivStagiaires'>
-              <label htmlFor="first_name" className='addInputTitleStagiaires'>Prénom :</label>
-              <input
-                type="text"
-                name="first_name"
-                id="first_name"
-                className='firstNameInputStagiaires'
-                value={stagiaire.first_name}
-                onChange={handleInputChange}
-                required
-              />
+            <div className="buttonDivBoxStagiaires">
+              <button type='button' className='cancelButtonStagiaires' onClick={() => navigate(-1)}>Annuler</button>
+              <button type="submit" className='addFormButtonStagiaires'>Ajouter</button>
             </div>
-            <div className='inputDivStagiaires'>
-              <label htmlFor="email" className='addInputTitleStagiaires'>Email :</label>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                className='emailInputStagiaires'
-                value={stagiaire.email}
-                onChange={handleInputChange}
-                required
-              />
-            </div>
+          </section>
+        </form>
+        <form onSubmit={handleFileSubmit} className='addFormCSVFileSectionStagiaires'>
+          <div className='inputCSVDivStagiaires'>
+            <label htmlFor="file" className='addCSVFileTitleStagiaires'>Importation par fichier CSV :</label>
+            <input 
+              type="file" 
+              name="file" 
+              id="file" 
+              onChange={handleFileChange}
+              accept=".csv"
+              className='inputCSVFileStagiaires'
+            />
           </div>
-          <div className="buttonDivBoxStagiaires">
-            <button type='button' className='cancelButtonStagiaires' onClick={() => navigate(-1)}>Annuler</button>
-            <button type="submit" className='addFormButtonStagiaires'>Ajouter</button>
+          <div className="buttonFormCSVBoxStagiaires">
+            <button type="submit" className='addCSVFormButtonStagiaires'>Importer</button>
           </div>
-        </section>
-      </form>
-      <form onSubmit={handleFileSubmit}>
-        <div className='inputDivStagiaires'>
-          <label htmlFor="file" className='addInputTitleStagiaires'>Fichier CSV :</label>
-          <input 
-            type="file" 
-            name="file" 
-            id="file" 
-            onChange={handleFileChange}
-            accept=".csv"
-          />
-        </div>
-        <div className="buttonDivBoxStagiaires">
-          <button type="submit" className='addFormButtonStagiaires'>Ajouter CSV</button>
-        </div>
-      </form>
+        </form>
+      </section>
     </>
   );
 };
