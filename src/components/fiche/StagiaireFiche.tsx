@@ -33,6 +33,7 @@ const StagiaireFiche : React.FC<stagiaireFicheProps> = ({stagiaires, onUpdateSta
     stagiaireService.getStagiaireById(stagiaireId)
       .then((data) => {setStagiaire(data); setBackupStagiaire(data)})
       .catch((error) => console.log(error));
+    setEditMode(false)
   }, [id]);
 
   const handleDelete = () => {
