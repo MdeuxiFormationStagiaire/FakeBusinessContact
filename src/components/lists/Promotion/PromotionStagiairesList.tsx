@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Stagiaire } from '../../../models/Stagiaire'
 import PromotionStagiaireListContainer from '../../listContainers/Promotion/PromotionStagiaireListContainer'
-import updateLogo from '../../../assets/img/modify.png'
-import validateLogo from '../../../assets/img/checked.png'
 import { Promotion } from '../../../models/Reservation/Promotion'
 import '../../../assets/styles/components/lists/PromotionFicheList.css'
 
@@ -11,23 +9,14 @@ type PromotionStagiairesListProps = {
   allStagiaires: Stagiaire[]
   onDeleteStagiaire: (idStagiaire : number) => void
   onAddStagiaire: (stagiaire : Stagiaire) => void
+  editMode : boolean
 }
 
-const PromotionStagiairesList : React.FC<PromotionStagiairesListProps> = ({promotion, allStagiaires, onDeleteStagiaire, onAddStagiaire}) => {
+const PromotionStagiairesList : React.FC<PromotionStagiairesListProps> = ({promotion, allStagiaires, onDeleteStagiaire, onAddStagiaire, editMode}) => {
   
   const [search, setSearch] = useState<string>('')
 
-  const [editMode, setEditMode] = useState<boolean>(false)
-
   const [defaultSelectedValue, setDefaultSelectedValue] = useState('')
-
-  const handleEditMode = () => {
-    if (editMode == false) {
-      setEditMode(true)
-    } else {
-      setEditMode(false)
-    }
-  }
   
   const handleDeleteStagiaire = async (idStagiaire : number) => {
     onDeleteStagiaire(idStagiaire)
@@ -76,7 +65,6 @@ const PromotionStagiairesList : React.FC<PromotionStagiairesListProps> = ({promo
                 placeholder="   Recherche ..."
                 onChange={(e) => setSearch(e.target.value)}
               />
-              <img src={validateLogo} alt="validate" className='updatelogo' onClick={handleEditMode}/>
               <div className='sumPromotionFiche'>{promotion.stagiaires.length}</div>
             </div>
             <div className='addStagiaireMenu'>
@@ -113,7 +101,6 @@ const PromotionStagiairesList : React.FC<PromotionStagiairesListProps> = ({promo
                 placeholder="   Recherche ..."
                 onChange={(e) => setSearch(e.target.value)}
               />
-              <img src={updateLogo} alt="update" className='updatelogo' onClick={handleEditMode}/>
               <div className='sumPromotionFiche'>{promotion.stagiaires.length}</div>
             </div>
             <div className="gridStagiairePromotionFiche">

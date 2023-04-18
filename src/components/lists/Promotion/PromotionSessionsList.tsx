@@ -3,8 +3,6 @@ import { Session } from '../../../models/Reservation/Session'
 import PromotionSessionListContainer from '../../listContainers/Promotion/PromotionSessionListContainer'
 import { Promotion } from '../../../models/Reservation/Promotion'
 import { Formateur } from '../../../models/Formateur'
-import updateLogo from '../../../assets/img/modify.png'
-import validateLogo from '../../../assets/img/checked.png'
 import addLogo from '../../../assets/img/ajouter.png'
 import '../../../assets/styles/components/lists/PromotionFicheList.css'
 import { sessionService } from '../../../services/Reservation/SessionService'
@@ -15,19 +13,18 @@ type PromotionSessionsListProps = {
   sessions: Session[]
   onDeleteSession: (idSession : number) => void
   onAddSession: (idSession : number) => void
+  editMode : boolean
 }
 
-const PromotionSessionsList : React.FC<PromotionSessionsListProps> = ({promotion, sessions, onDeleteSession, onAddSession}) => {
+const PromotionSessionsList : React.FC<PromotionSessionsListProps> = ({promotion, sessions, onDeleteSession, onAddSession, editMode}) => {
 
   const [search, setSearch] = useState<string>('')
-
-  const [editMode, setEditMode] = useState<boolean>(false)
   
   const [formateurs, setFormateurs] = useState<Formateur[]>([])
   
   const [session, setSession] = useState<Session>({id: 0, desc: '', startAt: new Date(), endAt: new Date(), formateur: formateurs[0]})
   
-  const [selectedFormateur, setSelectedFormateur] = useState<Formateur>(formateurs[0])
+  const [selectedFormateur, setSelectedFormateur] = useState<Formateur>({ id: 0, first_name: '', last_name: '', email: '', createdAt: new Date() })
   
   const getAllFormateur = () => {
     formateurService.findAllFormateurs()
@@ -37,16 +34,12 @@ const PromotionSessionsList : React.FC<PromotionSessionsListProps> = ({promotion
 
   useEffect(() => {
     getAllFormateur()
-  }, [])
+    handleReset()
+  }, [editMode])
 
-  const handleEditMode = () => {
-    if (editMode == false) {
-      setEditMode(true)
-      setSession({id: 0, desc: '', startAt: new Date(), endAt: new Date(), formateur: formateurs[0]})
-      setSelectedFormateur(formateurs[0])
-    } else {
-      setEditMode(false)
-    }
+  const handleReset = () => {
+    setSession({id: 0, desc: '', startAt: new Date(), endAt: new Date(), formateur: formateurs[0]})
+    setSelectedFormateur({ id: 0, first_name: '', last_name: '', email: '', createdAt: new Date() })
   }
 
   const handleDeleteSession = async (idSession : number) => {
@@ -145,7 +138,6 @@ const PromotionSessionsList : React.FC<PromotionSessionsListProps> = ({promotion
               placeholder="   Recherche ..."
               onChange={(e) => setSearch(e.target.value)}
             />
-            <img src={validateLogo} alt="update" className='updatelogo' onClick={handleEditMode}/>
             <div className='sumPromotionFiche'>{promotion.sessions.length}</div>
           </div>
           <form className='formSectionSessionsPromotions' onSubmit={handleFormSubmit}>
@@ -218,7 +210,6 @@ const PromotionSessionsList : React.FC<PromotionSessionsListProps> = ({promotion
               placeholder="   Recherche ..."
               onChange={(e) => setSearch(e.target.value)}
             />
-            <img src={updateLogo} alt="update" className='updatelogo' onClick={handleEditMode}/>
             <div className='sumPromotionFiche'>{promotion.sessions.length}</div>
           </div>
           <div className="gridSessionPromotionFiche">
