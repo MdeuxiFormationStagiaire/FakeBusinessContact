@@ -49,10 +49,6 @@ const AddFormateur : React.FC<addFormateurProps> = ({addNewFormateur}) => {
   return (
     <>
       <form className='addFormSectionFormateurs' onSubmit={(event) => handleSubmit(event)}>
-        <div className="buttonDivBoxFormateurs">
-          <button type="submit" className='addFormButtonFormateurs'>Ajouter</button>
-          <button type='button' className='cancelButtonFormateurs' onClick={() => navigate(-1)}>Annuler</button>
-        </div>
         <section className="addFicheSectionFormateurs">
           <div className="inputDivBoxFormateurs">
             <div className='inputDivFormateurs'>
@@ -91,6 +87,10 @@ const AddFormateur : React.FC<addFormateurProps> = ({addNewFormateur}) => {
                 required
               />
             </div>
+          </div>
+          <div className="buttonDivBoxFormateurs">
+            <button type='button' className='cancelButtonFormateurs' onClick={() => navigate(-1)}>Annuler</button>
+            <button type="submit" className='addFormButtonFormateurs'>Ajouter</button>
           </div>
         </section>
       </form>
