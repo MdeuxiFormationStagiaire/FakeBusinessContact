@@ -212,10 +212,10 @@ const SalleFiche : React.FC<SalleFicheProps> = ({salles, onUpdateSalle}) => {
                     </select>
                   </div>
                 </div>
-              </section>
-              <section className='updateButtonsSectionSalles'>
-                <button type="submit" className='formSaveButtonSalles'>Enregistrer</button>
-                <button type="button" className='formCancelButtonSalles' onClick={handleCancel}>Annuler</button>
+                <section className='updateButtonsSectionSalles'>
+                  <button type="submit" className='formSaveButtonSalles'>Enregistrer</button>
+                  <button type="button" className='formCancelButtonSalles' onClick={handleCancel}>Annuler</button>
+                </section>
               </section>
             </form>
           </section>  
