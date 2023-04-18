@@ -14,8 +14,6 @@ type AddAutreProps = {
 
 const AddAutre : React.FC<AddAutreProps> = ({autres, utilisateur, salles, addNewAutre}) => {
 
-  const URL = process.env.REACT_APP_DB_AUTRE_URL;
-
   const navigate = useNavigate();
 
   const [newSalle, setNewSalle] = useState<Salle>(salles[0])
@@ -104,10 +102,6 @@ const AddAutre : React.FC<AddAutreProps> = ({autres, utilisateur, salles, addNew
   return (
     <>
       <form className='addFormSectionAutres' onSubmit={(event) => handleSubmit(event)}>
-        <div className="buttonDivBoxAutres">
-          <button type="submit" className='addFormButtonAutres'>Ajouter</button>
-          <button type='button' className='cancelButtonAutres' onClick={() => navigate(-1)}>Annuler</button>
-        </div>
         <section className='addFicheSectionAutres'>
           <section className="addFicheLeftSectionAutres">
             <div className='inputDivLeftAutres'>
@@ -177,6 +171,10 @@ const AddAutre : React.FC<AddAutreProps> = ({autres, utilisateur, salles, addNew
             </div>
           </section>
         </section>
+        <div className="buttonDivBoxAutres">
+          <button type='button' className='cancelButtonAutres' onClick={() => navigate(-1)}>Annuler</button>
+          <button type="submit" className='addFormButtonAutres'>Ajouter</button>
+        </div>
       </form>
     </>
   )
