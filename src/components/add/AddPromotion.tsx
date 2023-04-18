@@ -8,198 +8,246 @@ import { Session } from '../../models/Reservation/Session'
 import { useNavigate } from 'react-router-dom'
 import AddPromotionStagiaires from './AddPromotionStagiaires'
 import AddPromotionSessions from './AddPromotionSessions'
+import { sessionService } from '../../services/Reservation/SessionService'
+import '../../assets/styles/components/add/AddPromotion.css'
 
 type AddPromotionProps = {
-    promotions: Promotion[]
-    salles: Salle[]
-    formateurs: Formateur[]
-    stagiaires: Stagiaire[]
-    sessions: Session[]
-    utilisateur: Utilisateur
-    addNewPromotion: Function
+  utilisateur: Utilisateur
+  formateurs: Formateur[]
+  salles: Salle[]
+  stagiaires: Stagiaire[]
+  addNewPromotion: Function
 }
 
-const AddPromotion : React.FC<AddPromotionProps> = ({utilisateur, promotions, salles, formateurs, stagiaires, sessions, addNewPromotion}) => {
+const AddPromotion : React.FC<AddPromotionProps> = ({utilisateur, formateurs, salles, stagiaires, addNewPromotion}) => {
 
-    const navigate = useNavigate();
-    
-    const [newSalle, setNewSalle] = useState<Salle>(salles[0])
-    
-    const [newFormateur, setNewFormateur] = useState<Formateur>(formateurs[0])
-    
-    const [newSessionList, setnewSessionList] = useState<Session[]>([sessions[0]])
-    
-    const [newStagiaireList, setNewStagiaireList] = useState<Stagiaire[]>([stagiaires[0]])
+  const navigate = useNavigate();
 
-    const [newPromotion, setNewPromotion] = useState<Promotion>({
-        id: 0, 
-        type: "Promotion",
-        description: '', 
-        salle: newSalle, 
-        formateur: newFormateur, 
-        createdAt: new Date(),
-        startAt: new Date(),
-        endAt: new Date(),
-        sessions: newSessionList,
-        stagiaires: newStagiaireList,
-        utilisateur: utilisateur
-    })
+  const [sessions, setSessions] = useState<Session[]>([])
 
-    useEffect(() => {
-        setNewPromotion(newPromotion);
-    }, []);
+  const [newSalle, setNewSalle] = useState<Salle>({ id: 0, name: '', capacity: 0, indication: '', floor: 'RDC', createdAt: new Date() })
+  
+  const [newFormateur, setNewFormateur] = useState<Formateur>({ id: 0, first_name: '', last_name: '', email: '', createdAt: new Date()})
+  
+  const [newSessionList, setNewSessionList] = useState<Session[]>([])
+  
+  const [newStagiaireList, setNewStagiaireList] = useState<Stagiaire[]>([])
+  
+  const [newPromotion, setNewPromotion] = useState<Promotion>({
+    id: 0, 
+    type: "Promotion",
+    description: '', 
+    salle: newSalle, 
+    formateur: newFormateur, 
+    createdAt: new Date(),
+    startAt: new Date(),
+    endAt: new Date(),
+    sessions: newSessionList,
+    stagiaires: newStagiaireList,
+    utilisateur: utilisateur
+  })
 
-    const formateDateForm = (date : Date): string => {
-        const formatedDate : string = date.toLocaleString('fr-FR').slice(0, 10);
-        return formatedDate;
+  console.log(utilisateur);
+  
+
+  useEffect(() => {
+    getAllSessions()
+  }, []);
+
+  const getAllSessions = () => {
+    sessionService.findAllSessions().then(data => setSessions(data))
+  }
+
+  const formateDateForm = (date : Date): string => {
+    const formatedDate : string = date.toLocaleString('fr-FR').slice(0, 10);
+    return formatedDate;
+  }
+
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
+    const { name, value } = event.target;
+    if (name === 'startAt' || name === 'endAt') {
+      const date = new Date(value);
+      setNewPromotion(prevState => Object.assign({}, prevState, { [name]: date.toISOString() }));
+    } else if (name === 'description') {
+      const capitalizedValue = value.charAt(0).toUpperCase() + value.slice(1);
+      setNewPromotion(prevState => Object.assign({}, prevState, { [name]: capitalizedValue}));
     }
+  };
 
-    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
-        const { name, value } = event.target;
-        if (name === 'startAt' || name === 'endAt') {
-          const date = new Date(value);
-          setNewPromotion(prevState => Object.assign({}, prevState, { [name]: date.toISOString() }));
-        } else if (name === 'description') {
-          const capitalizedValue = value.charAt(0).toUpperCase() + value.slice(1);
-          setNewPromotion(prevState => Object.assign({}, prevState, { [name]: capitalizedValue}));
-        }
-    };
-
-    const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        const selectedValue = event.target.value;
-        const selectedName = event.target.name;
-        if (selectedName === "salle") {
-          const selectedSalle = salles.find((salle) => salle.name === selectedValue);
-          setNewPromotion((prevState) => ({
-            ...prevState,
-            salle: selectedSalle !== undefined ? selectedSalle : prevState.salle,
-          }));
-        } else if (selectedName === "formateur") {
-          const selectedFormateur = formateurs.find((formateur) => formateur.last_name === selectedValue);
-          setNewPromotion((prevState) => ({
-            ...prevState,
-            formateur: selectedFormateur !== undefined ? selectedFormateur : prevState.formateur,
-          }))
-        }
-    };
-
-    const handleAddStagiaireToPromotion = (selectedStagiaire : Stagiaire) => {
-
+  const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedValue = event.target.value;
+    const selectedName = event.target.name;
+    if (selectedName === "salle") {
+      const selectedSalle = salles.find((salle) => salle.name === selectedValue);
+      setNewPromotion((prevState) => ({
+        ...prevState,
+        salle: selectedSalle !== undefined ? selectedSalle : prevState.salle,
+      }));
+    } else if (selectedName === "formateur") {
+      const selectedFormateur = formateurs.find((formateur) => formateur.last_name === selectedValue);
+      setNewPromotion((prevState) => ({
+        ...prevState,
+        formateur: selectedFormateur !== undefined ? selectedFormateur : prevState.formateur,
+      }))
     }
+  };
 
-    const handleDeleteStagiaireFromPromotion = (idStagiaire : number) => {
-
+  const handleAddStagiaireToPromotionFromSelect = (selectedStagiaire : Stagiaire) => {
+    if (newStagiaireList.some(stagiaire => stagiaire.id === selectedStagiaire.id)) {
+      alert("Ce stagiaire existe déjà dans cette liste.")
+    } else {
+      setNewStagiaireList((prevStagiaireList) => {
+        const newStagiaireList = [...prevStagiaireList, selectedStagiaire];
+        setNewPromotion((prevState) => ({
+          ...prevState,
+          stagiaires: newStagiaireList,
+        }));
+        return newStagiaireList;
+      });
     }
+  }
 
-    const handleAddSessionToPromotion = (idSession : number) => {
+  const handleDeleteStagiaireFromPromotion = (idStagiaire : number) => {
+    const updatedStagiaireList : Stagiaire[] = newStagiaireList.filter((stagiaire : Stagiaire) => stagiaire.id !== idStagiaire)
+    setNewStagiaireList(updatedStagiaireList);
+    setNewPromotion((prevState) => ({
+      ...prevState,
+      stagiaires: updatedStagiaireList,
+    }));
+  }
 
-    }
+  const handleAddSessionToPromotion = (newSession : Session) => {
+    const sessionListTest : Session[] = [...newSessionList, newSession]
+    setNewPromotion((prevState) => ({
+      ...prevState,
+      sessions: sessionListTest
+    }))
+    setNewSessionList(sessionListTest)
+  }
 
-    const handleDeleteSessionFromPromotion = (idSession : number) => {
+  const handleDeleteSessionFromPromotion = (session : Session) => {
+    const updatedSessionList : Session[] = newSessionList.filter((s : Session) => s.id !== session.id)
+    setNewSessionList(updatedSessionList)
+    setNewPromotion((prevState) => ({
+      ...prevState,
+      sessions: updatedSessionList,
+    }));
+    sessionService.deleteSession(session.id)
+      .then(() => {
+        getAllSessions()
+      })
+      .catch((error) => console.error(error))
+    ;
+  }
 
-    }
-
-    const handleSubmit = (event : React.FormEvent<HTMLFormElement>) => {
-
-    }
+  const handleSubmit = (event : React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    addNewPromotion(newPromotion)
+  }
 
   return (
     <>
-        <section className='addFormPromotions'>
-            <form className='addFormSectionPromotions' onSubmit={(event) => handleSubmit(event)}>
-                <div className="buttonDivBoxPromotions">
-                  <button type="submit" className='addFormButtonPromotions'>Ajouter</button>
-                  <button type='button' className='cancelButtonPromotions' onClick={() => navigate(-1)}>Annuler</button>
-                </div>
-                <section className='topRowAddPromotions'>
-                    <div className='inputDivTopPromotions'>
-                        <label className='addInputTitlePromotions'>Type :</label>
-                        <input 
-                            type="text"
-                            name="type"
-                            value={newPromotion.type}
-                            className='typeInputTextPromotions'
-                            disabled
-                        />
-                    </div>
-                    <div className='inputDivTopPromotions'>
-                        <label className='addInputTitlePromotions'>Salle :</label>
-                        <select
-                          name="salle"
-                          value={newPromotion.salle.name}
-                          onChange={handleSelectChange}
-                          className='salleAddInputPromotions'
-                        >
-                          {salles.map((salle) => (
-                            <option key={salle.id} value={salle.name}>{salle.name}</option>
-                          ))}
-                        </select>
-                    </div>
-                    <div className='inputDivTopPromotions'>
-                        <label className='addInputTitlePromotions'>DD :</label>
-                        <input
-                          type="date"
-                          name="startAt"
-                          id="startAt"
-                          className='dateAddInputPromotions'
-                          value={formateDateForm(newPromotion.startAt)}
-                          onChange={handleInputChange}
-                          required
-                        />
-                    </div>
-                    <div className='inputDivTopPromotion'>
-                        <label className='addInputTitlePromotions'>DF :</label>
-                        <input
-                          type="date"
-                          name="endAt"
-                          id="endAt"
-                          className='dateAddInputPromotions'
-                          value={formateDateForm(newPromotion.endAt)}
-                          onChange={handleInputChange}
-                          required
-                        />
-                    </div>
-                </section>
-                <section className='botRowAddPromotions'>
-                    <div className="titleInputBoxPromotions">
-                        <label className='inputTitlePromotions'>Description :</label>
-                        <input
-                            type="text"
-                            name="description"
-                            value={newPromotion.description}
-                            onChange={handleInputChange}
-                            className='descriptionInputTextPromotions'
-                        />
-                    </div>
-                    <div className="titleInputBoxPromotions">
-                        <label className='inputTitlePromotions'>Formateur :</label>
-                        <select
-                            name="formateur"
-                            value={newPromotion.formateur.last_name}
-                            onChange={handleSelectChange}
-                            className='formateurInputPromotions'
-                        >
-                            {formateurs.map((formateur) => (
-                              <option key={formateur.id} value={formateur.last_name}>
-                                {`${formateur.first_name} ${formateur.last_name}`}
-                              </option>
-                            ))}
-                        </select>
-                    </div>
-                </section>
-            </form>
+      <section className='addFormPromotions'>
+        <form className='formSectionAddPromotions' onSubmit={(event) => handleSubmit(event)}>
+          <section className='topRowAddPromotions'>
+            <div className='inputDivTopPromotions'>
+                <label className='addInputTitlePromotions'>Type :</label>
+                <input 
+                  type="text"
+                  name="type"
+                  value={newPromotion.type}
+                  className='inputFormPromotions'
+                  disabled
+                />
+            </div>
+            <div className='inputDivTopPromotions'>
+                <label className='addInputTitlePromotions'>Salle :</label>
+                <select
+                  name="salle"
+                  value={newPromotion.salle.name}
+                  onChange={handleSelectChange}
+                  className='inputFormPromotions'
+                >
+                  {salles.map((salle) => (
+                    <option key={salle.id} value={salle.name}>{salle.name}</option>
+                  ))}
+                </select>
+            </div>
+            <div className='inputDivTopPromotions'>
+                <label className='addInputTitlePromotions'>DD :</label>
+                <input
+                  type="date"
+                  name="startAt"
+                  id="startAt"
+                  className='inputFormPromotions'
+                  value={formateDateForm(newPromotion.startAt)}
+                  onChange={handleInputChange}
+                  required
+                />
+            </div>
+            <div className='inputDivTopPromotion'>
+                <label className='addInputTitlePromotions'>DF :</label>
+                <input
+                  type="date"
+                  name="endAt"
+                  id="endAt"
+                  className='inputFormPromotions'
+                  value={formateDateForm(newPromotion.endAt)}
+                  onChange={handleInputChange}
+                  required
+                />
+            </div>
+          </section>
+          <section className='botRowAddPromotions'>
+            <div className="inputDivBotPromotion">
+                <label className='addInputTitlePromotions'>Description :</label>
+                <input
+                  type="text"
+                  name="description"
+                  value={newPromotion.description}
+                  onChange={handleInputChange}
+                  className='inputFormPromotions'
+                />
+            </div>
+            <div className="inputDivBotPromotion">
+                <label className='addInputTitlePromotions'>Formateur :</label>
+                <select
+                  name="formateur"
+                  value={newPromotion.formateur.last_name}
+                  onChange={handleSelectChange}
+                  className='inputFormPromotions'
+                >
+                  {formateurs.map((formateur) => (
+                    <option key={formateur.id} value={formateur.last_name}>
+                      {`${formateur.first_name} ${formateur.last_name}`}
+                    </option>
+                  ))}
+                </select>
+            </div>
+          </section>
+        </form>
+        <section className='stagiairesSessionsForm'>
+          <div className='stagiairesSectionForm'>
             <AddPromotionStagiaires
-                stagiaires={stagiaires}
-                onAddStagiaire={handleAddStagiaireToPromotion}
-                onDeleteStagiaire={handleDeleteStagiaireFromPromotion}
+              stagiaires={stagiaires}
+              onAddStagiaireSelect={handleAddStagiaireToPromotionFromSelect}
+              onDeleteStagiaire={handleDeleteStagiaireFromPromotion}
             />
+          </div>
+          <div className='sessionsSectionForm'>
             <AddPromotionSessions
-                sessions={sessions}
-                formateurs={formateurs}
-                onAddSession={handleAddSessionToPromotion}
-                onDeleteSession={handleDeleteSessionFromPromotion}
+              sessions={sessions}
+              formateurs={formateurs}
+              onAddSession={handleAddSessionToPromotion}
+              onDeleteSession={handleDeleteSessionFromPromotion}
             />
+          </div>
         </section>
+        <section className="buttonDivBoxPromotions">
+          <button type='button' className='cancelButtonPromotions' onClick={() => navigate(-1)}>Annuler</button>
+          <button type="submit" className='addFormButtonPromotions'>Ajouter</button>
+        </section>
+      </section>
     </>
   )
 }

@@ -1,9 +1,11 @@
 /* ------------ AddPromotionPage ------------- */
 
 .addFormPromotions {
+    background-color: #d9d9d9e5;
     width: 95%;
     margin-top: 25px;
     margin-bottom: 25px;
+    border-radius: 10px;
 
 }
 
@@ -30,7 +32,7 @@
     border: none;
     border-radius: 5px;
     height: 50px;
-    width: 400px;
+    width: 300px;
     background-color: #90C99B;
     color: #1C1D3B;
     font-size: 26px;
@@ -38,13 +40,13 @@
 }
 
 .addFormButtonPromotions:hover {
-    border: 2px solid white;
+    outline: 3px solid #1C1D3B;
     border-radius: 5px;
     height: 50px;
-    width: 400px;
+    width: 300px;
     background-color: #90C99B;
-    color: white;
-    font-size: 24px;
+    color: #1C1D3B;
+    font-size: 26px;
     font-weight: bold;
 }
 
@@ -52,7 +54,7 @@
     border: none;
     border-radius: 5px;
     height: 50px;
-    width: 400px;
+    width: 300px;
     background-color: #828282;
     color: #1C1D3B;
     font-size: 26px;
@@ -60,13 +62,13 @@
 }
 
 .cancelButtonPromotions:hover {
-    border: 2px solid white;
+    outline: 3px solid #1C1D3B;
     border-radius: 5px;
     height: 50px;
-    width: 400px;
+    width: 300px;
     background-color: #828282;
-    color: white;
-    font-size: 24px;
+    color: #1C1D3B;
+    font-size: 26px;
     font-weight: bold;
 }
 
@@ -79,7 +81,6 @@
     display: flex;
     justify-content: space-evenly;
     padding: 30px 10px 20px 10px;
-    background-color: #d9d9d9e5;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
 }
@@ -114,7 +115,6 @@
     display: flex;
     justify-content: space-evenly;
     padding: 20px 10px;
-    background-color: #d9d9d9e5;
 }
 
 /* ----- StagSessSection ----- */
@@ -122,7 +122,6 @@
 .stagiairesSessionsForm {
     width: 100%;
     display: flex;
-    background-color: #d9d9d9e5;
     padding: 20px 0 30px 0;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
