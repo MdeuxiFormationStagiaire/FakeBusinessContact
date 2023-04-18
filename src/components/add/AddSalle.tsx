@@ -2,19 +2,24 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { Salle } from '../../models/Salle';
 import '../../assets/styles/components/add/AddSalle.css'
+import Papa from 'papaparse';
 
 
 type addSalleProps = {
-  addNewSalle : Function
+  addNewSalle : (salle : Salle) => void
+  addNewSallesByImport : (salles : Salle[]) => void
 }
 
-const AddSalle : React.FC<addSalleProps> = ({addNewSalle}) => {
+const AddSalle : React.FC<addSalleProps> = ({addNewSalle, addNewSallesByImport}) => {
 
   const URL = process.env.REACT_APP_DB_SALLE_URL;
 
   const navigate = useNavigate();
+
   const [salle, setSalle] = useState<Salle>({ id: 0, name: '', capacity: 0, indication: '', floor: 'RDC', createdAt: new Date() });
   
+  const [file, setFile] = useState<File | null>(null);
+
   useEffect(() => {
     setSalle((salle) => ({...salle, createdAt: new Date()}));
   }, []);
@@ -29,6 +34,12 @@ const AddSalle : React.FC<addSalleProps> = ({addNewSalle}) => {
     setSalle((salle) => ({...salle, [name]: value}));
   };
 
+  const handleFileChange = (event : React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.files) {
+      setFile(event.target.files[0]);
+    }
+  }
+
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     
@@ -37,9 +48,11 @@ const AddSalle : React.FC<addSalleProps> = ({addNewSalle}) => {
         name: salle.name.charAt(0).toUpperCase() + salle.name.toLocaleLowerCase().slice(1),
         indication: salle.indication.charAt(0).toUpperCase() + salle.indication.toLocaleLowerCase().slice(1)
     };
+
     const response = await fetch(`${URL}`);
     const data = await response.json();
     const duplicateSalle = data.find((salle : Salle) => salle.name === salleCapitalized.name);
+
     if (duplicateSalle) {
         alert('Cette salle existe déjà !');
     } else {
@@ -48,6 +61,31 @@ const AddSalle : React.FC<addSalleProps> = ({addNewSalle}) => {
         setSalle(newSalle);
     };
   };
+
+  const handleFileSubmit = (event : React.ChangeEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    if (file) {
+      Papa.parse(file, {
+        header: true,
+        complete : (results) => {
+          const salles : Salle[] = results.data.map((data : any) => ({
+            id : 0,
+            capacity : parseInt(data.capacity),
+            name: data.name.charAt(0).toUpperCase() + data.name.toLowerCase().slice(1),
+            floor: data.floor as "RDC" | "1er" | "2ème" | undefined,
+            indication: data.indication.charAt(0).toUpperCase() + data.indication.toLowerCase().slice(1),
+            createdAt: new Date(),
+          }));
+          addNewSallesByImport(salles)
+        },
+        error : (error) => {
+          console.log(error);
+          alert("Le fichier CSV est incorrect : " + error.message)
+        }
+      })
+    }
+  }
 
   return (
     <>
@@ -113,6 +151,22 @@ const AddSalle : React.FC<addSalleProps> = ({addNewSalle}) => {
           </div>
         </section>
       </form>
+      <form onSubmit={handleFileSubmit} className='addFormCSVFileSectionSalles'>
+          <div className='inputCSVDivSalles'>
+            <label htmlFor="file" className='addCSVFileTitleSalles'>Importation par fichier CSV :</label>
+            <input 
+              type="file" 
+              name="file" 
+              id="file" 
+              onChange={handleFileChange}
+              accept=".csv"
+              className='inputCSVFileSalles'
+            />
+          </div>
+          <div className="buttonFormCSVBoxSalles">
+            <button type="submit" className='addCSVFormButtonSalles'>Importer</button>
+          </div>
+        </form>
     </>
   );
 }
