@@ -41,6 +41,7 @@ const AutreFicheForm : React.FC<AutreFicheFormProps> = ({autre, onUpdateAutre}) 
         setCurrentAutre(autre)
         setBackupAutre(autre)
         getAllSalles()
+        setEditMode(false)
     }, [autre])
 
     const handleEditMode = () => {
