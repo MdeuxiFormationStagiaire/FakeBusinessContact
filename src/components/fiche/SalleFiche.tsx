@@ -10,8 +10,8 @@ import deleteLogo from '../../assets/img/remove.png'
 import '../../assets/styles/components/fiches/SalleFiche.css'
 
 type SalleFicheProps = {
-    salles : Salle[],
-    onUpdateSalle: Function
+  salles : Salle[],
+  onUpdateSalle: Function
 }
 
 const SalleFiche : React.FC<SalleFicheProps> = ({salles, onUpdateSalle}) => {
@@ -31,6 +31,7 @@ const SalleFiche : React.FC<SalleFicheProps> = ({salles, onUpdateSalle}) => {
     salleService.getSalleById(salleId)
       .then((data) => {setSalle(data); setBackupSalle(data)})
       .catch((error) => console.log(error));
+    setEditMode(false)
   }, [id]);
 
   const handleDelete = () => {
