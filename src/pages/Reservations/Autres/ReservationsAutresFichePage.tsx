@@ -27,7 +27,6 @@ const ReservationsAutresFichePage = () => {
       {autres &&
         <>
           <AutreFiche
-            autres={autres}
             onUpdateAutre={handleUpdateAutre}
           />
           <AutreList 
