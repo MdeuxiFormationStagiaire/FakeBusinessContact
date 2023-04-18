@@ -6,7 +6,7 @@ import { utilisateurService } from '../../services/UtilisateurService'
 
 const UtilisateurAddPage = () => {
 
-  const [utilisateurs, setUtilisateurs] = useState<Utilisateur[]>([])
+  const [utilisateursList, setUtilisateursList] = useState<Utilisateur[]>([])
 
   const [currentPage, setCurrentPage] = useState('Add')
 
@@ -15,17 +15,41 @@ const UtilisateurAddPage = () => {
   }, [])
 
   const getAllUtilisateurs = () => {
-    utilisateurService.findAllUtilisateurs().then(data => setUtilisateurs(data))
+    utilisateurService.findAllUtilisateurs().then(data => setUtilisateursList(data))
   }
   
   const addNewUtilisateur = (utilisateur : Utilisateur) => {
     utilisateurService.createUtilisateur(utilisateur).then(() => getAllUtilisateurs())
   }
+
+  const addNewUtilisateursByImport = async (utilisateurs : Utilisateur[]) => {
+    const failedUtilisateurs: {nom: string, prenom: string}[] = [];
+
+    for (const utilisateur of utilisateurs) {
+      const existingUtilisateur = utilisateursList.find(s => s.email === utilisateur.email);
+  
+      if (existingUtilisateur) {
+        failedUtilisateurs.push({nom: utilisateur.last_name, prenom: utilisateur.first_name});
+      } else {
+        await utilisateurService.createUtilisateur(utilisateur);
+      }
+    }
+  
+    if (failedUtilisateurs.length > 0) {
+      const failedUtilisateursMsg = failedUtilisateurs.map(s => `${s.prenom} ${s.nom}`).join(', ');
+      alert(`Les utilisateurs suivants n'ont pas pu être créés : ${failedUtilisateursMsg}. Ils existent déjà dans la base de données.`);
+    }
+  
+    getAllUtilisateurs();
+  }
   
   return (
     <>
-      <AddUtilisateur addNewUtilisateur={addNewUtilisateur}/>
-      <UtilisateurList utilisateurs={utilisateurs} currentPage={currentPage}/>
+      <AddUtilisateur 
+        addNewUtilisateur={addNewUtilisateur}
+        addNewUtilisateursByImport={addNewUtilisateursByImport}
+      />
+      <UtilisateurList utilisateurs={utilisateursList} currentPage={currentPage}/>
     </>
   )
 }
