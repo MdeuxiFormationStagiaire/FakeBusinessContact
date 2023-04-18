@@ -34,6 +34,7 @@ const UtilisateurFiche : React.FC<UtilisateurFicheProps> = ({utilisateurs, onUpd
     utilisateurService.getUtilisateurById(utilisateurId)
       .then((data) => {setUtilisateur(data); setBackupUtilisateur(data)})
       .catch((error) => console.log(error));
+    setEditMode(false)
   }, [id]);
 
   const handleDelete = () => {
