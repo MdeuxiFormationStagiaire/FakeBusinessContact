@@ -34,6 +34,7 @@ const FormateurFiche : React.FC<formateurFicheProps> = ({formateurs, onUpdateFor
     formateurService.getFormateurById(formateurId)
       .then((data) => {setFormateur(data); setBackupFormateur(data)})
       .catch((error) => console.log(error));
+    setEditMode(false)
   }, [id]);
 
   const handleDelete = () => {
