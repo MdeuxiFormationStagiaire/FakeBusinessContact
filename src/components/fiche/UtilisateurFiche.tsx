@@ -163,66 +163,70 @@ const UtilisateurFiche : React.FC<UtilisateurFicheProps> = ({utilisateurs, onUpd
           <section className='ficheSectionUpdateUtilisateurs'>
             <form className='formSectionUtilisateurs' onSubmit={handleFormSubmit}>
               <section className='inputSectionUtilisateurs'>
-                <div className="titleInputBoxUtilisateurs">
-                  <h3 className='inputTitleUtilisateurs'>Nom :</h3>
-                  <div className="inputBoxUtilisateurs">
-                    <input
-                      type="text"
-                      name="last_name"
-                      value={utilisateur.last_name}
-                      onChange={handleInputChange}
-                      className='lastNameInputTextUtilisateurs'
-                    />
+                <section className='inputTopSectionUtilisateurs'>
+                  <div className="titleInputBoxUtilisateurs">
+                    <h3 className='inputTitleUtilisateurs'>Nom :</h3>
+                    <div className="inputBoxUtilisateurs">
+                      <input
+                        type="text"
+                        name="last_name"
+                        value={utilisateur.last_name}
+                        onChange={handleInputChange}
+                        className='lastNameInputTextUtilisateurs'
+                      />
+                    </div>
                   </div>
-                </div>
-                <div className="titleInputBoxUtilisateurs">
-                  <h3 className='inputTitleUtilisateurs'>Prénom :</h3>
-                  <div className="inputBoxUtilisateurs">
-                    <input
-                      type="text"
-                      name="first_name"
-                      value={utilisateur.first_name}
-                      onChange={handleInputChange}
-                      className='firstNameInputTextUtilisateurs'
-                    />
+                  <div className="titleInputBoxUtilisateurs">
+                    <h3 className='inputTitleUtilisateurs'>Prénom :</h3>
+                    <div className="inputBoxUtilisateurs">
+                      <input
+                        type="text"
+                        name="first_name"
+                        value={utilisateur.first_name}
+                        onChange={handleInputChange}
+                        className='firstNameInputTextUtilisateurs'
+                      />
+                    </div>
                   </div>
-                </div>
-                <div className="titleInputBoxUtilisateurs">
-                  <h3 className='inputTitleUtilisateurs'>Email :</h3>
-                  <div className="inputBoxUtilisateurs">
-                    <input
-                      type="email"
-                      name="email"
-                      value={utilisateur.email}
-                      onChange={handleInputChange}
-                      className='emailInputTextUtilisateurs'
-                    />
+                  <div className="titleInputBoxUtilisateurs">
+                    <h3 className='inputTitleUtilisateurs'>Admin :</h3>
+                    <div className="inputAdminBoxUtilisateurs">
+                      <input
+                        type="checkbox"
+                        name="adminRight"
+                        checked={utilisateur.adminRight}
+                        onChange={handleInputChange}
+                        className='adminRightInputTextUtilisateurs'
+                      />
+                    </div>
                   </div>
-                </div>
-                <div className="titleInputBoxUtilisateurs">
-                  <h3 className='inputTitleUtilisateurs'>Fonction :</h3>
-                  <div className="inputBoxUtilisateurs">
-                    <input
-                      type="text"
-                      name="position"
-                      value={utilisateur.position}
-                      onChange={handleInputChange}
-                      className='positionInputTextUtilisateurs'
-                    />
+                </section>
+                <section className='inputBotSectionUtilisateurs'>
+                  <div className="titleInputBoxUtilisateurs">
+                    <h3 className='inputTitleUtilisateurs'>Email :</h3>
+                    <div className="inputBoxUtilisateurs">
+                      <input
+                        type="email"
+                        name="email"
+                        value={utilisateur.email}
+                        onChange={handleInputChange}
+                        className='emailInputTextUtilisateurs'
+                      />
+                    </div>
                   </div>
-                </div>
-                <div className="titleInputBoxUtilisateurs">
-                  <h3 className='inputTitleUtilisateurs'>Admin :</h3>
-                  <div className="inputBoxUtilisateurs">
-                    <input
-                      type="checkbox"
-                      name="adminRight"
-                      checked={utilisateur.adminRight}
-                      onChange={handleInputChange}
-                      className='adminRightInputTextUtilisateurs'
-                    />
+                  <div className="titleInputBoxUtilisateurs">
+                    <h3 className='inputTitleUtilisateurs'>Fonction :</h3>
+                    <div className="inputBoxUtilisateurs">
+                      <input
+                        type="text"
+                        name="position"
+                        value={utilisateur.position}
+                        onChange={handleInputChange}
+                        className='positionInputTextUtilisateurs'
+                      />
+                    </div>
                   </div>
-                </div>
+                </section>
               </section>
               <section className='updateButtonsSectionUtilisateurs'>
                 <button type="submit" className='formSaveButtonUtilisateurs'>Enregistrer</button>
@@ -233,50 +237,54 @@ const UtilisateurFiche : React.FC<UtilisateurFicheProps> = ({utilisateurs, onUpd
         ) : (
           <>
             <section className='ficheSectionUtilisateurs'>
-              <div className="titleInputBoxUtilisateurs">
-                <h3 className='inputTitleUtilisateurs'>Nom :</h3>
-                <div className="inputBoxUtilisateurs">
-                  <p className='lastNameInputTextUtilisateurs'>{backupUtilisateur.last_name}</p>
+              <section className='ficheTopSectionUtilisateurs'>
+                <div className="titleInputBoxUtilisateurs">
+                  <h3 className='inputTitleUtilisateurs'>Nom :</h3>
+                  <div className="inputBoxUtilisateurs">
+                    <p className='lastNameInputTextUtilisateurs'>{backupUtilisateur.last_name}</p>
+                  </div>
                 </div>
-              </div>
-              <div className="titleInputBoxUtilisateurs">
-                <h3 className='inputTitleUtilisateurs'>Prénom :</h3>
-                <div className="inputBoxUtilisateurs">
-                  <p className='firstNameInputTextUtilisateurs'>{backupUtilisateur.first_name}</p>
+                <div className="titleInputBoxUtilisateurs">
+                  <h3 className='inputTitleUtilisateurs'>Prénom :</h3>
+                  <div className="inputBoxUtilisateurs">
+                    <p className='firstNameInputTextUtilisateurs'>{backupUtilisateur.first_name}</p>
+                  </div>
                 </div>
-              </div>
-              <div className="titleInputBoxUtilisateurs">
-                <h3 className='inputTitleUtilisateurs'>Email :</h3>
-                <div className="inputBoxUtilisateurs">
-                  <p className='emailInputTextUtilisateurs'>{backupUtilisateur.email}</p>
+                <div className="titleInputBoxUtilisateurs">
+                  <h3 className='inputTitleUtilisateurs'>DC :</h3>
+                  <div className="inputBoxUtilisateurs">
+                    <p className='createdAtInputTextUtilisateurs'>{formateDate(backupUtilisateur.createdAt)}</p>
+                  </div>
                 </div>
-              </div>
-              <div className="titleInputBoxUtilisateurs">
-                <h3 className='inputTitleUtilisateurs'>Fonction :</h3>
-                <div className="inputBoxUtilisateurs">
-                  <p className='positionInputTextUtilisateurs'>{backupUtilisateur.position}</p>
+                <div className="titleInputBoxUtilisateurs">
+                  <h3 className='inputTitleUtilisateurs'>Admin :</h3>
+                  <div className="inputBoxAdminUtilisateurs">
+                    {utilisateur.adminRight ? (
+                      <span className="items2Utilisateurs">
+                        <img src={trueLogo} alt="Admin Right" className="logo" />
+                      </span>
+                    ) : (
+                      <span className="items2Utilisateurs">
+                        <img src={falseLogo} alt="No Admin Right" className="logo" />
+                      </span>
+                    )}
+                  </div>
                 </div>
-              </div>
+              </section>
+              <section className='ficheBotSectionUtilisateurs'>
               <div className="titleInputBoxUtilisateurs">
-                <h3 className='inputTitleUtilisateurs'>DC :</h3>
-                <div className="inputBoxUtilisateurs">
-                  <p className='createdAtInputTextUtilisateurs'>{formateDate(backupUtilisateur.createdAt)}</p>
+                  <h3 className='inputTitleUtilisateurs'>Email :</h3>
+                  <div className="inputBoxUtilisateurs">
+                    <p className='emailInputTextUtilisateurs'>{backupUtilisateur.email}</p>
+                  </div>
                 </div>
-              </div>
-              <div className="titleInputBoxUtilisateurs">
-                <h3 className='inputTitleUtilisateurs'>Admin :</h3>
-                <div className="inputBoxAdminUtilisateurs">
-                  {utilisateur.adminRight ? (
-                    <span className="items2Utilisateurs">
-                      <img src={trueLogo} alt="Admin Right" className="logo" />
-                    </span>
-                  ) : (
-                    <span className="items2Utilisateurs">
-                      <img src={falseLogo} alt="No Admin Right" className="logo" />
-                    </span>
-                  )}
+                <div className="titleInputBoxUtilisateurs">
+                  <h3 className='inputTitleUtilisateurs'>Fonction :</h3>
+                  <div className="inputBoxUtilisateurs">
+                    <p className='positionInputTextUtilisateurs'>{backupUtilisateur.position}</p>
+                  </div>
                 </div>
-              </div>
+              </section>
             </section>
           </>
         )}
