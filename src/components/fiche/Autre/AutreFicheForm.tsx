@@ -7,6 +7,8 @@ import { autreService } from '../../../services/Reservation/AutreService'
 import { salleService } from '../../../services/SalleService'
 import { ModalStyle } from '../../../assets/styles/components/modals/ModalStyle.css'
 import DeleteConfirmation from '../../modals/DeleteConfirmation'
+import updateLogo from '../../../assets/img/modify.png'
+import deleteLogo from '../../../assets/img/remove.png'
 import '../../../assets/styles/components/fiches/AutreFiche.css'
 
 type AutreFicheFormProps = {
@@ -31,12 +33,15 @@ const AutreFicheForm : React.FC<AutreFicheFormProps> = ({autre, onUpdateAutre}) 
     const getAllSalles = () => {
         salleService.findAllSalles()
           .then((data) => setSalles(data))
-          .catch((error) => console.log(error));
+          .catch((error) => console.log(error))
+        ;
     }
 
     useEffect(() => {
+        setCurrentAutre(autre)
+        setBackupAutre(autre)
         getAllSalles()
-    }, [])
+    }, [autre])
 
     const handleEditMode = () => {
         if (editMode == false) {
@@ -153,13 +158,9 @@ const AutreFicheForm : React.FC<AutreFicheFormProps> = ({autre, onUpdateAutre}) 
   return (
     <>
         <section className='buttonSectionPromotions'>
-            <button type='button' className='updateButtonBoxPromotions' onClick={handleEditMode} onMouseEnter={() => handleButtonHover('hoveredUpdatePromotions', true)} onMouseLeave={() => handleButtonHover('hoveredUpdatePromotions', false)}>
-              M
-            </button>
-            <button type='button' className='deleteButtonBoxPromotions' onClick={handleDelete} onMouseEnter={() => handleButtonHover('hoveredDeletePromotions', true)} onMouseLeave={() => handleButtonHover('hoveredDeletePromotions', false)}>
-              X
-            </button>
-            <button type='button' className='addButtonBoxFichePromotions' onClick={handleAddButtonNav}>Ajouter</button>
+        <img src={updateLogo} alt="update" className='updateLogoFiche'  onClick={handleEditMode} onMouseEnter={() => handleButtonHover('hoveredUpdateFormateurs', true)} onMouseLeave={() => handleButtonHover('hoveredUpdateFormateurs', false)}/>
+        <img src={deleteLogo} alt="delete" className='deleteLogoFiche'  onClick={handleDelete} onMouseEnter={() => handleButtonHover('hoveredDeleteFormateurs', true)} onMouseLeave={() => handleButtonHover('hoveredDeleteFormateurs', false)}/>
+        <button type='button' className='addButtonBoxFicheFormateurs' onClick={handleAddButtonNav}>Ajouter</button>
         </section>
         <Modal
             isOpen={showDeleteConfirmation}
@@ -247,10 +248,10 @@ const AutreFicheForm : React.FC<AutreFicheFormProps> = ({autre, onUpdateAutre}) 
                             </div>
                         </div>
                     </div>
-                </section>
-                <section className='updateButtonsSectionAutres'>
-                    <button type="submit" className='formSaveButtonAutres'>Enregistrer</button>
-                    <button type="button" className='formCancelButtonAutres' onClick={handleCancel}>Annuler</button>
+                    <section className='updateButtonsSectionAutres'>
+                        <button type="submit" className='formSaveButtonAutres'>Enregistrer</button>
+                        <button type="button" className='formCancelButtonAutres' onClick={handleCancel}>Annuler</button>
+                    </section>
                 </section>
             </form>
         ) : (
