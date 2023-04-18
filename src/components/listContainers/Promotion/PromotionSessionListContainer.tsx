@@ -4,7 +4,7 @@ import '../../../assets/styles/components/listContainer/PromotionFicheListContai
 import Modal from 'react-modal'
 import { ModalStyle } from '../../../assets/styles/components/modals/ModalStyle.css'
 import DeleteConfirmation from '../../modals/DeleteConfirmation'
-import removeLogo from '../../../assets/img/remove.png'
+import removeLogo from '../../../assets/img/remove2.png'
 
 type PromotionSessionListContainerProps = {
     session: Session
