@@ -3,270 +3,487 @@
     {
       "id": 1,
       "first_name": "Davidoff",
-      "last_name": "Brim",
+      "last_name": "BRIM",
       "email": "dbrim3@sourceforge.net",
       "createdAt": "2022-02-15T04:41:21Z"
     },
     {
       "id": 2,
       "first_name": "Leila",
-      "last_name": "Sandell",
+      "last_name": "SANDELL",
       "email": "lsandell4@independent.co",
       "createdAt": "2022-02-17T18:03:26Z"
     },
     {
       "id": 3,
       "first_name": "Chrysteline",
-      "last_name": "Bulti",
+      "last_name": "BULTI",
       "email": "cbultitude5@nationalgeographic.fr",
       "createdAt": "2023-10-24T20:38:13Z"
     },
     {
       "id": 4,
       "first_name": "Bern",
-      "last_name": "Burnip",
+      "last_name": "BURNIP",
       "email": "bburnip8@tuttocitta.it",
       "createdAt": "2022-12-12T18:49:44Z"
     },
     {
       "id": 5,
       "first_name": "Gloriana",
-      "last_name": "McQuarrie",
+      "last_name": "MCQUARRIE",
       "email": "gmcquarrie9@examiner.com",
       "createdAt": "2023-02-27T10:28:37Z"
     },
     {
       "id": 6,
       "first_name": "Adam",
-      "last_name": "Carry",
+      "last_name": "CARRY",
       "email": "amccarrya@angelfire.com",
       "createdAt": "2022-09-30T08:24:28Z"
     },
     {
       "id": 7,
       "first_name": "Netta",
-      "last_name": "Razovski",
+      "last_name": "RAZOVSKI",
       "email": "ngrzelewskib@mashable.com",
       "createdAt": "2023-01-21T12:01:35Z"
     },
     {
       "id": 8,
       "first_name": "Daniel",
-      "last_name": "Abramski",
+      "last_name": "ABRAMSKI",
       "email": "dabramskic@google.es",
       "createdAt": "2023-03-25T03:50:01Z"
     },
     {
       "id": 9,
       "first_name": "Terrence",
-      "last_name": "Aireton",
+      "last_name": "AIRETON",
       "email": "tairetond@washington.edu",
       "createdAt": "2023-07-09T22:05:51Z"
     },
     {
       "id": 10,
       "first_name": "Ailyn",
-      "last_name": "Shemmin",
+      "last_name": "SHEMMIN",
       "email": "ashemmine@mac.com",
       "createdAt": "2023-11-11T00:23:59Z"
     },
     {
       "id": 11,
       "first_name": "Gregorio",
-      "last_name": "Dunkerton",
+      "last_name": "DUNKERTON",
       "email": "gdunkertonf@hao123.com",
       "createdAt": "2023-05-25T20:29:25Z"
     },
     {
       "id": 12,
       "first_name": "Junia",
-      "last_name": "Kingsbury",
+      "last_name": "KINGSBURY",
       "email": "jkingsburyg@macromedia.com",
       "createdAt": "2022-02-25T13:45:32Z"
     },
     {
       "id": 13,
       "first_name": "Lena",
-      "last_name": "Harkus",
+      "last_name": "HARKUS",
       "email": "lharkush@weebly.com",
       "createdAt": "2023-04-15T19:05:06Z"
     },
     {
       "id": 14,
       "first_name": "Shantee",
-      "last_name": "Trematick",
+      "last_name": "TREMATICK",
       "email": "strematicki@t.co",
       "createdAt": "2023-03-16T11:37:53Z"
     },
     {
       "id": 15,
       "first_name": "Renaldo",
-      "last_name": "Mattschas",
+      "last_name": "MATTSCHAS",
       "email": "rmattschasj@instagram.com",
       "createdAt": "2023-07-02T15:01:02Z"
     },
     {
       "id": 16,
       "first_name": "Théo",
-      "last_name": "Tres Gros zizi",
+      "last_name": "GROS ZIZI",
       "email": "theo.groszizi@grossteub.org",
       "createdAt": "2023-03-17T10:29:06.869Z"
     },
     {
       "id": 17,
       "first_name": "Patrick",
-      "last_name": "Clément",
+      "last_name": "CLEMENT",
       "email": "patrick.gabin@gmail.com",
       "createdAt": "2023-03-17T15:18:29.295Z"
     },
     {
       "id": 18,
       "first_name": "Pat",
-      "last_name": "Clément",
+      "last_name": "CLEMENT",
       "email": "test@test.com",
       "createdAt": "2023-03-21T13:04:32.775Z"
+    },
+    {
+      "id": 19,
+      "first_name": "Antoine",
+      "last_name": "FISTOUILLE",
+      "email": "a.fist@gmail.com",
+      "createdAt": "2023-04-12T12:20:37.821Z"
+    },
+    {
+      "id": 20,
+      "first_name": "Titouan",
+      "last_name": "ANDRITSOS",
+      "email": "titouan.andritsos@labom2iformation.fr",
+      "createdAt": "2023-04-19T09:44:09.105Z"
+    },
+    {
+      "id": 21,
+      "first_name": "Ngo",
+      "last_name": "DUONG",
+      "email": "mderr0@npr.org",
+      "createdAt": "2023-04-19T09:44:09.105Z"
+    },
+    {
+      "id": 22,
+      "first_name": "Hélène",
+      "last_name": "DUBOURG",
+      "email": "helene.dubourg@labom2iformation.fr",
+      "createdAt": "2023-04-19T09:44:09.105Z"
+    },
+    {
+      "id": 23,
+      "first_name": "Mohamed achref",
+      "last_name": "ISSAOUI M",
+      "email": "mohamed-achref.issaoui@labom2iformation.fr",
+      "createdAt": "2023-04-19T09:44:09.105Z"
+    },
+    {
+      "id": 24,
+      "first_name": "Delphine",
+      "last_name": "MAURER",
+      "email": "delphine.maurer@labom2iformation.fr",
+      "createdAt": "2023-04-19T09:44:09.105Z"
+    },
+    {
+      "id": 25,
+      "first_name": "Olivia",
+      "last_name": "PIGANI",
+      "email": "olivia.pigani@labom2iformation.fr",
+      "createdAt": "2023-04-19T09:44:09.105Z"
+    },
+    {
+      "id": 26,
+      "first_name": "Alexis",
+      "last_name": "PORRAZ",
+      "email": "kdelmage2@utexas.edu",
+      "createdAt": "2023-04-19T09:44:09.105Z"
+    },
+    {
+      "id": 27,
+      "first_name": "Souleymane",
+      "last_name": "RAKKASSY",
+      "email": "souleymane.rakkassy@labom2iformation.fr",
+      "createdAt": "2023-04-19T09:44:09.105Z"
+    },
+    {
+      "id": 28,
+      "first_name": "Dorian",
+      "last_name": "TERNISIEN",
+      "email": "dorian.ternisien@labom2iformation.fr",
+      "createdAt": "2023-04-19T09:44:09.105Z"
+    },
+    {
+      "id": 29,
+      "first_name": "Mélanie",
+      "last_name": "VAN DAELE",
+      "email": "melanie.van-daele@labom2iformation.fr",
+      "createdAt": "2023-04-19T09:44:09.105Z"
+    },
+    {
+      "id": 30,
+      "first_name": "Clément",
+      "last_name": "VAUGOYEAU",
+      "email": "clement.vaugoyeau@labom2iformation.fr",
+      "createdAt": "2023-04-19T09:44:09.105Z"
+    },
+    {
+      "id": 31,
+      "first_name": "Mischa",
+      "last_name": "FRANGEUL",
+      "email": "cservis6@umich.edu",
+      "createdAt": "2023-04-19T09:44:09.105Z"
+    },
+    {
+      "id": 32,
+      "first_name": "Nseya",
+      "last_name": "MALUMBA",
+      "email": "nseya.malumba@labom2iformation.fr",
+      "createdAt": "2023-04-19T09:44:09.105Z"
+    },
+    {
+      "id": 33,
+      "first_name": "Antoine",
+      "last_name": "DIAS",
+      "email": "antoine.dias@labom2iformation.fr",
+      "createdAt": "2023-04-19T09:44:09.105Z"
+    },
+    {
+      "id": 34,
+      "first_name": "Juan",
+      "last_name": "MACHADO",
+      "email": "juan.machado@labom2iformation.fr",
+      "createdAt": "2023-04-19T09:44:09.105Z"
     }
   ],
   "stagiaires": [
     {
       "id": 1,
       "first_name": "Gloria",
-      "last_name": "McQuarrie",
+      "last_name": "MCQUARRIE",
       "email": "mderr0@npr.org",
       "createdAt": "2023-10-26T13:58:40Z"
     },
     {
       "id": 2,
       "first_name": "Glyn",
-      "last_name": "Grandin",
+      "last_name": "GRANDIN",
       "email": "ggrandin1@statcounter.com",
       "createdAt": "2023-10-26T13:58:40Z"
     },
     {
       "id": 3,
       "first_name": "Kimberlyn",
-      "last_name": "Delmage",
+      "last_name": "DELMAGE",
       "email": "kdelmage2@utexas.edu",
       "createdAt": "2023-02-11T20:27:04Z"
     },
     {
       "id": 4,
       "first_name": "Alie",
-      "last_name": "Fielders",
+      "last_name": "FIELDERS",
       "email": "afielders3@businessinsider.com",
       "createdAt": "2023-05-20T02:04:06Z"
     },
     {
       "id": 5,
       "first_name": "Philipa",
-      "last_name": "Callinan",
+      "last_name": "CALLINAN",
       "email": "pcallinan4@amazon.co.uk",
       "createdAt": "2022-01-15T02:51:07Z"
     },
     {
       "id": 6,
       "first_name": "Meghan",
-      "last_name": "Febry",
+      "last_name": "FEBRY",
       "email": "mfebry5@blogger.com",
       "createdAt": "2023-11-18T15:59:09Z"
     },
     {
       "id": 7,
       "first_name": "Chastity",
-      "last_name": "Servis",
+      "last_name": "SERVIS",
       "email": "cservis6@umich.edu",
       "createdAt": "2023-10-08T23:11:23Z"
     },
     {
       "id": 8,
       "first_name": "Kaycee",
-      "last_name": "Mably",
+      "last_name": "MABLY",
       "email": "kmably7@ycombinator.com",
       "createdAt": "2023-03-20T21:09:40Z"
     },
     {
       "id": 9,
       "first_name": "Byrann",
-      "last_name": "Pepon",
+      "last_name": "PEPON",
       "email": "bpepon8@jugem.jp",
       "createdAt": "2022-04-11T15:47:51Z"
     },
     {
       "id": 10,
       "first_name": "Doll",
-      "last_name": "Giorio",
+      "last_name": "GIORIO",
       "email": "dgiorio9@xrea.com",
       "createdAt": "2022-09-23T16:23:24Z"
     },
     {
       "id": 11,
       "first_name": "Darcee",
-      "last_name": "Messitt",
+      "last_name": "MESSITT",
       "email": "dmessitta@prnewswire.com",
       "createdAt": "2023-06-09T13:25:39Z"
     },
     {
       "id": 12,
       "first_name": "Burg",
-      "last_name": "Maben",
+      "last_name": "MABEN",
       "email": "bmabenb@hhs.gov",
       "createdAt": "2023-04-16T07:33:27Z"
     },
     {
       "id": 13,
       "first_name": "Benjie",
-      "last_name": "Joselevitch",
+      "last_name": "JOSELEVITCH",
       "email": "bjoselevitchc@youku.com",
       "createdAt": "2022-06-07T15:03:54Z"
     },
     {
       "id": 14,
       "first_name": "Caitrin",
-      "last_name": "Croley",
+      "last_name": "CROLEY",
       "email": "ccroleyd@xinhuanet.com",
       "createdAt": "2022-10-18T21:15:37Z"
     },
     {
       "id": 15,
       "first_name": "Pinchas",
-      "last_name": "Wainer",
+      "last_name": "WAINER",
       "email": "pwainere@paypal.com",
       "createdAt": "2023-12-14T00:28:23Z"
     },
     {
-      "id": 16,
-      "first_name": "Janice",
-      "last_name": "Joreau",
-      "email": "jjoreauf@miitbeian.gov.cn",
-      "createdAt": "2022-11-09T15:05:11Z"
-    },
-    {
       "id": 17,
       "first_name": "Swen",
-      "last_name": "Rix",
+      "last_name": "RIX",
       "email": "srixg@w3.org",
       "createdAt": "2022-03-05T15:07:38Z"
     },
     {
       "id": 18,
       "first_name": "Nell",
-      "last_name": "Godbald",
+      "last_name": "GODBALD",
       "email": "ngodbaldh@wiley.com",
       "createdAt": "2023-11-19T16:59:01Z"
     },
     {
       "id": 19,
       "first_name": "Gerry",
-      "last_name": "Yurinov",
+      "last_name": "YURINOV",
       "email": "gyurinovi@homestead.com",
       "createdAt": "2022-02-01T00:48:49Z"
     },
     {
       "id": 20,
       "first_name": "Bearnard",
-      "last_name": "Snow",
+      "last_name": "SNOW",
       "email": "bsnowj@istockphoto.com",
       "createdAt": "2022-01-26T17:46:11Z"
+    },
+    {
+      "id": 21,
+      "first_name": "Theo",
+      "last_name": "TRES GROS ZIZI",
+      "email": "theo.groszizi@groszizi.com",
+      "createdAt": "2023-04-14T12:14:06.278Z"
+    },
+    {
+      "id": 22,
+      "first_name": "Titouan",
+      "last_name": "ANDRITSOS",
+      "email": "titouan.andritsos@labom2iformation.fr",
+      "createdAt": "2023-04-19T09:41:00.084Z"
+    },
+    {
+      "id": 23,
+      "first_name": "Ngo",
+      "last_name": "DUONG",
+      "email": "ngo.duong@labom2iformation.fr",
+      "createdAt": "2023-04-19T09:41:00.084Z"
+    },
+    {
+      "id": 24,
+      "first_name": "Hélène",
+      "last_name": "DUBOURG",
+      "email": "helene.dubourg@labom2iformation.fr",
+      "createdAt": "2023-04-19T09:41:00.084Z"
+    },
+    {
+      "id": 25,
+      "first_name": "Mohamed achref",
+      "last_name": "ISSAOUI M",
+      "email": "mohamed-achref.issaoui@labom2iformation.fr",
+      "createdAt": "2023-04-19T09:41:00.084Z"
+    },
+    {
+      "id": 26,
+      "first_name": "Delphine",
+      "last_name": "MAURER",
+      "email": "delphine.maurer@labom2iformation.fr",
+      "createdAt": "2023-04-19T09:41:00.084Z"
+    },
+    {
+      "id": 27,
+      "first_name": "Olivia",
+      "last_name": "PIGANI",
+      "email": "olivia.pigani@labom2iformation.fr",
+      "createdAt": "2023-04-19T09:41:00.084Z"
+    },
+    {
+      "id": 28,
+      "first_name": "Alexis",
+      "last_name": "PORRAZ",
+      "email": "alexis.porraz@labom2iformation.fr",
+      "createdAt": "2023-04-19T09:41:00.084Z"
+    },
+    {
+      "id": 29,
+      "first_name": "Souleymane",
+      "last_name": "RAKKASSY",
+      "email": "souleymane.rakkassy@labom2iformation.fr",
+      "createdAt": "2023-04-19T09:41:00.084Z"
+    },
+    {
+      "id": 30,
+      "first_name": "Dorian",
+      "last_name": "TERNISIEN",
+      "email": "dorian.ternisien@labom2iformation.fr",
+      "createdAt": "2023-04-19T09:41:00.084Z"
+    },
+    {
+      "id": 31,
+      "first_name": "Mélanie",
+      "last_name": "VAN DAELE",
+      "email": "melanie.van-daele@labom2iformation.fr",
+      "createdAt": "2023-04-19T09:41:00.084Z"
+    },
+    {
+      "id": 32,
+      "first_name": "Clément",
+      "last_name": "VAUGOYEAU",
+      "email": "clement.vaugoyeau@labom2iformation.fr",
+      "createdAt": "2023-04-19T09:41:00.084Z"
+    },
+    {
+      "id": 33,
+      "first_name": "Mischa",
+      "last_name": "FRANGEUL",
+      "email": "mischa.frangeul@labom2iformation.fr",
+      "createdAt": "2023-04-19T09:41:00.084Z"
+    },
+    {
+      "id": 34,
+      "first_name": "Nseya",
+      "last_name": "MALUMBA",
+      "email": "nseya.malumba@labom2iformation.fr",
+      "createdAt": "2023-04-19T09:41:00.084Z"
+    },
+    {
+      "id": 35,
+      "first_name": "Antoine",
+      "last_name": "DIAS",
+      "email": "antoine.dias@labom2iformation.fr",
+      "createdAt": "2023-04-19T09:41:00.084Z"
+    },
+    {
+      "id": 36,
+      "first_name": "Juan",
+      "last_name": "MACHADO",
+      "email": "juan.machado@labom2iformation.fr",
+      "createdAt": "2023-04-19T09:41:00.084Z"
     }
   ],
   "salles": [
@@ -483,7 +700,7 @@
     {
       "id": 1,
       "first_name": "Adrianna",
-      "last_name": "Gannicott",
+      "last_name": "GANNICOTT",
       "email": "agannicott0@slashdot.org",
       "position": "Systems Manager",
       "createdAt": "2022-02-05T17:23:24Z",
@@ -492,16 +709,16 @@
     {
       "id": 2,
       "first_name": "Desi",
-      "last_name": "Delves",
+      "last_name": "DELVES",
       "email": "ddelves1@addthis.com",
       "position": "Speech Pathologist",
       "createdAt": "2022-01-07T03:18:47Z",
-      "adminRight": false
+      "adminRight": true
     },
     {
       "id": 3,
       "first_name": "Marylou",
-      "last_name": "Horrell",
+      "last_name": "HORELL",
       "email": "mhorrell2@deliciousdays.com",
       "position": "Quality Engineer",
       "createdAt": "2022-07-10T00:59:17Z",
@@ -510,7 +727,7 @@
     {
       "id": 4,
       "first_name": "Onfroi",
-      "last_name": "Javes",
+      "last_name": "JAVES",
       "email": "ojaves3@booking.com",
       "position": "Project Manager",
       "createdAt": "2022-08-13T05:56:26Z",
@@ -519,7 +736,7 @@
     {
       "id": 5,
       "first_name": "Mary",
-      "last_name": "Fitzsymonds",
+      "last_name": "FITZSYMONDS",
       "email": "mfitzsymonds4@squidoo.com",
       "position": "Recruiting Manager",
       "createdAt": "2022-09-18T21:23:02Z",
@@ -528,7 +745,7 @@
     {
       "id": 6,
       "first_name": "Carlyle",
-      "last_name": "Blackett",
+      "last_name": "BLACKETT",
       "email": "cblackett5@freewebs.com",
       "position": "Recruiter",
       "createdAt": "2022-01-26T14:26:51Z",
@@ -537,7 +754,7 @@
     {
       "id": 7,
       "first_name": "Ulric",
-      "last_name": "Arkin",
+      "last_name": "ARKIN",
       "email": "uarkin6@sciencedaily.com",
       "position": "Dental Hygienist",
       "createdAt": "2022-03-11T21:08:21Z",
@@ -546,7 +763,7 @@
     {
       "id": 8,
       "first_name": "Betty",
-      "last_name": "Ranstead",
+      "last_name": "RANSTEAD",
       "email": "branstead7@examiner.com",
       "position": "Executive Secretary",
       "createdAt": "2022-03-23T10:08:11Z",
@@ -555,7 +772,7 @@
     {
       "id": 9,
       "first_name": "Alard",
-      "last_name": "Merredy",
+      "last_name": "MERREDY",
       "email": "amerredy8@squarespace.com",
       "position": "Recruiter",
       "createdAt": "2022-10-29T23:06:38Z",
@@ -564,7 +781,7 @@
     {
       "id": 10,
       "first_name": "Iris",
-      "last_name": "Flute",
+      "last_name": "FLUTE",
       "email": "iflute9@purevolume.com",
       "position": "Junior Executive",
       "createdAt": "2022-07-27T05:09:46Z",
@@ -573,16 +790,16 @@
     {
       "id": 11,
       "first_name": "Nara",
-      "last_name": "Tanier",
+      "last_name": "TANIER",
       "email": "nara.tanier@gmail.com",
       "position": "Cheffe de projet",
       "createdAt": "2023-03-15T13:21:58.584Z",
-      "adminRight": true
+      "adminRight": false
     },
     {
       "id": 12,
       "first_name": "Sophie",
-      "last_name": "Pacala",
+      "last_name": "PACALA",
       "email": "s.pacala@2itechacademy.com",
       "position": "Pdg of the universe",
       "createdAt": "2023-03-15T14:18:39.678Z",
@@ -591,7 +808,7 @@
     {
       "id": 13,
       "first_name": "Jean",
-      "last_name": "Dupont",
+      "last_name": "DUPONT",
       "email": "j.dupont@gmail.com",
       "position": "Gentil",
       "createdAt": "2023-03-29T10:10:30.119Z",
@@ -607,7 +824,7 @@
       "formateur": {
         "id": 2,
         "first_name": "Leila",
-        "last_name": "Sandell",
+        "last_name": "SANDELL",
         "email": "lsandell4@independent.co",
         "createdAt": "2022-02-17T18:03:26Z"
       }
@@ -620,7 +837,7 @@
       "formateur": {
         "id": 2,
         "first_name": "Leila",
-        "last_name": "Sandell",
+        "last_name": "SANDELL",
         "email": "lsandell4@independent.co",
         "createdAt": "2022-02-17T18:03:26Z"
       }
@@ -633,7 +850,7 @@
       "formateur": {
         "id": 2,
         "first_name": "Leila",
-        "last_name": "Sandell",
+        "last_name": "SANDELL",
         "email": "lsandell4@independent.co",
         "createdAt": "2022-02-17T18:03:26Z"
       }
@@ -646,7 +863,7 @@
       "formateur": {
         "id": 2,
         "first_name": "Leila",
-        "last_name": "Sandell",
+        "last_name": "SANDELL",
         "email": "lsandell4@independent.co",
         "createdAt": "2022-02-17T18:03:26Z"
       }
@@ -654,12 +871,12 @@
     {
       "id": 5,
       "desc": "HTML/CSS",
-      "startAt": "2023-03-24T00:00:00.000Z",
-      "endAt": "2023-03-29T00:00:00.000Z",
+      "startAt": "2022-03-24T05:17:01Z",
+      "endAt": "2022-03-29T05:17:01Z",
       "formateur": {
         "id": 2,
         "first_name": "Leila",
-        "last_name": "Sandell",
+        "last_name": "SANDELL",
         "email": "lsandell4@independent.co",
         "createdAt": "2022-02-17T18:03:26Z"
       }
@@ -667,12 +884,64 @@
     {
       "id": 6,
       "desc": "Java",
-      "startAt": "2023-05-08T00:00:00.000Z",
-      "endAt": "2023-05-12T00:00:00.000Z",
+      "startAt": "2023-04-03T00:00:00.000Z",
+      "endAt": "2023-04-07T00:00:00.000Z",
+      "formateur": {
+        "id": 1,
+        "first_name": "Davidoff",
+        "last_name": "BRIM",
+        "email": "dbrim3@sourceforge.net",
+        "createdAt": "2022-02-15T04:41:21Z"
+      }
+    },
+    {
+      "id": 7,
+      "desc": "HTML/CSS",
+      "startAt": "2023-04-10T00:00:00.000Z",
+      "endAt": "2023-04-14T00:00:00.000Z",
+      "formateur": {
+        "id": 5,
+        "first_name": "Gloriana",
+        "last_name": "MCQUARRIE",
+        "email": "gmcquarrie9@examiner.com",
+        "createdAt": "2023-02-27T10:28:37Z"
+      }
+    },
+    {
+      "id": 8,
+      "desc": "Test",
+      "startAt": "2023-04-17T00:00:00.000Z",
+      "endAt": "2023-04-21T00:00:00.000Z",
+      "formateur": {
+        "id": 6,
+        "first_name": "Adam",
+        "last_name": "CARRY",
+        "email": "amccarrya@angelfire.com",
+        "createdAt": "2022-09-30T08:24:28Z"
+      }
+    },
+    {
+      "id": 9,
+      "desc": "Java",
+      "startAt": "2023-04-03T00:00:00.000Z",
+      "endAt": "2023-04-04T00:00:00.000Z",
+      "formateur": {
+        "id": 7,
+        "first_name": "Netta",
+        "last_name": "RAZOVSKI",
+        "email": "ngrzelewskib@mashable.com",
+        "createdAt": "2023-01-21T12:01:35Z"
+      }
+    },
+    {
+      "id": 10,
+      "desc": "Java",
+      "startAt": "2023-04-03T00:00:00.000Z",
+      "endAt": "2023-04-04T00:00:00.000Z",
       "formateur": {
         "id": 9,
         "first_name": "Terrence",
-        "last_name": "Aireton",
+        "last_name": "AIRETON",
         "email": "tairetond@washington.edu",
         "createdAt": "2023-07-09T22:05:51Z"
       }
@@ -682,7 +951,7 @@
     {
       "id": 1,
       "type": "Promotion",
-      "description": "CDA",
+      "description": "CDA Bagarre",
       "salle": {
         "id": 5,
         "capacity": 17,
@@ -692,11 +961,11 @@
         "createdAt": "2022-05-29T12:03:59Z"
       },
       "formateur": {
-        "id": 6,
-        "first_name": "Adam",
-        "last_name": "Carry",
-        "email": "amccarrya@angelfire.com",
-        "createdAt": "2022-09-30T08:24:28Z"
+        "id": 9,
+        "first_name": "Terrence",
+        "last_name": "AIRETON",
+        "email": "tairetond@washington.edu",
+        "createdAt": "2023-07-09T22:05:51Z"
       },
       "startAt": "2022-03-24T05:17:01Z",
       "endAt": "2022-03-31T00:00:00.000Z",
@@ -709,7 +978,7 @@
           "formateur": {
             "id": 2,
             "first_name": "Leila",
-            "last_name": "Sandell",
+            "last_name": "SANDELL",
             "email": "lsandell4@independent.co",
             "createdAt": "2022-02-17T18:03:26Z"
           }
@@ -722,7 +991,7 @@
           "formateur": {
             "id": 2,
             "first_name": "Leila",
-            "last_name": "Sandell",
+            "last_name": "SANDELL",
             "email": "lsandell4@independent.co",
             "createdAt": "2022-02-17T18:03:26Z"
           }
@@ -735,7 +1004,7 @@
           "formateur": {
             "id": 2,
             "first_name": "Leila",
-            "last_name": "Sandell",
+            "last_name": "SANDELL",
             "email": "lsandell4@independent.co",
             "createdAt": "2022-02-17T18:03:26Z"
           }
@@ -748,7 +1017,7 @@
           "formateur": {
             "id": 2,
             "first_name": "Leila",
-            "last_name": "Sandell",
+            "last_name": "SANDELL",
             "email": "lsandell4@independent.co",
             "createdAt": "2022-02-17T18:03:26Z"
           }
@@ -761,22 +1030,9 @@
           "formateur": {
             "id": 2,
             "first_name": "Leila",
-            "last_name": "Sandell",
+            "last_name": "SANDELL",
             "email": "lsandell4@independent.co",
             "createdAt": "2022-02-17T18:03:26Z"
-          }
-        },
-        {
-          "id": 6,
-          "desc": "Java",
-          "startAt": "2023-05-08T00:00:00.000Z",
-          "endAt": "2023-05-12T00:00:00.000Z",
-          "formateur": {
-            "id": 9,
-            "first_name": "Terrence",
-            "last_name": "Aireton",
-            "email": "tairetond@washington.edu",
-            "createdAt": "2023-07-09T22:05:51Z"
           }
         }
       ],
@@ -784,56 +1040,56 @@
         {
           "id": 1,
           "first_name": "Gloria",
-          "last_name": "McQuarrie",
+          "last_name": "MCQUARRIE",
           "email": "mderr0@npr.org",
           "createdAt": "2023-10-26T13:58:40Z"
         },
         {
           "id": 2,
           "first_name": "Glyn",
-          "last_name": "Grandin",
+          "last_name": "GRANDIN",
           "email": "ggrandin1@statcounter.com",
           "createdAt": "2023-10-26T13:58:40Z"
         },
         {
           "id": 3,
           "first_name": "Kimberlyn",
-          "last_name": "Delmage",
+          "last_name": "DELMAGE",
           "email": "kdelmage2@utexas.edu",
           "createdAt": "2023-02-11T20:27:04Z"
         },
         {
           "id": 4,
           "first_name": "Alie",
-          "last_name": "Fielders",
+          "last_name": "FIELDERS",
           "email": "afielders3@businessinsider.com",
           "createdAt": "2023-05-20T02:04:06Z"
         },
         {
           "id": 7,
           "first_name": "Chastity",
-          "last_name": "Servis",
+          "last_name": "SERVIS",
           "email": "cservis6@umich.edu",
           "createdAt": "2023-10-08T23:11:23Z"
         },
         {
           "id": 15,
           "first_name": "Pinchas",
-          "last_name": "Wainer",
+          "last_name": "WAINER",
           "email": "pwainere@paypal.com",
           "createdAt": "2023-12-14T00:28:23Z"
         },
         {
           "id": 17,
           "first_name": "Swen",
-          "last_name": "Rix",
+          "last_name": "RIX",
           "email": "srixg@w3.org",
           "createdAt": "2022-03-05T15:07:38Z"
         },
         {
           "id": 18,
           "first_name": "Nell",
-          "last_name": "Godbald",
+          "last_name": "GODBALD",
           "email": "ngodbaldh@wiley.com",
           "createdAt": "2023-11-19T16:59:01Z"
         }
@@ -841,7 +1097,7 @@
       "utilisateur": {
         "id": 11,
         "first_name": "Nara",
-        "last_name": "Tanier",
+        "last_name": "TANIER",
         "email": "nara.tanier@gmail.com",
         "position": "Cheffe de projet",
         "createdAt": "2023-03-15T13:21:58.584Z",
@@ -864,7 +1120,7 @@
       "formateur": {
         "id": 2,
         "first_name": "Leila",
-        "last_name": "Sandell",
+        "last_name": "SANDELL",
         "email": "lsandell4@independent.co",
         "createdAt": "2022-02-17T18:03:26Z"
       },
@@ -879,7 +1135,7 @@
           "formateur": {
             "id": 2,
             "first_name": "Leila",
-            "last_name": "Sandell",
+            "last_name": "SANDELL",
             "email": "lsandell4@independent.co",
             "createdAt": "2022-02-17T18:03:26Z"
           }
@@ -892,7 +1148,7 @@
           "formateur": {
             "id": 2,
             "first_name": "Leila",
-            "last_name": "Sandell",
+            "last_name": "SANDELL",
             "email": "lsandell4@independent.co",
             "createdAt": "2022-02-17T18:03:26Z"
           }
@@ -900,30 +1156,128 @@
       ],
       "stagiaires": [
         {
-          "id": 1,
-          "first_name": "Morie",
-          "last_name": "Derr",
-          "email": "mderr0@npr.org",
-          "createdAt": "2022-06-22T11:58:04Z"
-        },
-        {
           "id": 2,
           "first_name": "Glyn",
-          "last_name": "Grandin",
+          "last_name": "GRANDIN",
           "email": "ggrandin1@statcounter.com",
           "createdAt": "2023-10-26T13:58:40Z"
+        },
+        {
+          "id": 9,
+          "first_name": "Byrann",
+          "last_name": "PEPON",
+          "email": "bpepon8@jugem.jp",
+          "createdAt": "2022-04-11T15:47:51Z"
         }
       ],
       "utilisateur": {
         "id": 11,
         "first_name": "Nara",
-        "last_name": "Tanier",
+        "last_name": "TANIER",
         "email": "nara.tanier@gmail.com",
         "position": "Cheffe de projet",
         "createdAt": "2023-03-15T13:21:58.584Z",
         "adminRight": true
       },
       "createdAt": "2023-03-15T13:21:58.584Z"
+    },
+    {
+      "id": 4,
+      "type": "Promotion",
+      "description": "POEI Bidule",
+      "salle": {
+        "id": 10,
+        "capacity": 16,
+        "name": "McKinley",
+        "floor": "1er",
+        "indication": "utilize granular convergence",
+        "createdAt": "2022-09-09T10:01:08Z"
+      },
+      "formateur": {
+        "id": 16,
+        "first_name": "Théo",
+        "last_name": "GROS ZIZI",
+        "email": "theo.groszizi@grossteub.org",
+        "createdAt": "2023-03-17T10:29:06.869Z"
+      },
+      "createdAt": "2023-04-14T08:33:28.763Z",
+      "startAt": "2023-04-01T00:00:00.000Z",
+      "endAt": "2023-04-30T00:00:00.000Z",
+      "sessions": [
+        {
+          "id": 10,
+          "desc": "Java",
+          "startAt": "2023-04-03T00:00:00.000Z",
+          "endAt": "2023-04-04T00:00:00.000Z",
+          "formateur": {
+            "id": 9,
+            "first_name": "Terrence",
+            "last_name": "AIRETON",
+            "email": "tairetond@washington.edu",
+            "createdAt": "2023-07-09T22:05:51Z"
+          }
+        }
+      ],
+      "stagiaires": [
+        {
+          "id": 1,
+          "first_name": "Gloria",
+          "last_name": "MCQUARRIE",
+          "email": "mderr0@npr.org",
+          "createdAt": "2023-10-26T13:58:40Z"
+        },
+        {
+          "id": 8,
+          "first_name": "Kaycee",
+          "last_name": "MABLY",
+          "email": "kmably7@ycombinator.com",
+          "createdAt": "2023-03-20T21:09:40Z"
+        },
+        {
+          "id": 10,
+          "first_name": "Doll",
+          "last_name": "GIORIO",
+          "email": "dgiorio9@xrea.com",
+          "createdAt": "2022-09-23T16:23:24Z"
+        },
+        {
+          "id": 9,
+          "first_name": "Byrann",
+          "last_name": "PEPON",
+          "email": "bpepon8@jugem.jp",
+          "createdAt": "2022-04-11T15:47:51Z"
+        },
+        {
+          "id": 11,
+          "first_name": "Darcee",
+          "last_name": "MESSITT",
+          "email": "dmessitta@prnewswire.com",
+          "createdAt": "2023-06-09T13:25:39Z"
+        },
+        {
+          "id": 17,
+          "first_name": "Swen",
+          "last_name": "RIX",
+          "email": "srixg@w3.org",
+          "createdAt": "2022-03-05T15:07:38Z"
+        },
+        {
+          "id": 13,
+          "first_name": "Benjie",
+          "last_name": "JOSELEVITCH",
+          "email": "bjoselevitchc@youku.com",
+          "createdAt": "2022-06-07T15:03:54Z"
+        }
+      ],
+      "utilisateur": {
+        "id": 10,
+        "first_name": "Iris",
+        "last_name": "FLUTE",
+        "email": "iflute9@purevolume.com",
+        "position": "Junior Executive",
+        "createdAt": "2022-07-27T05:09:46Z",
+        "adminRight": false
+      }
     }
   ],
   "autres": [
@@ -938,14 +1292,14 @@
         "indication": "brand cutting-edge interfaces",
         "createdAt": "2022-05-29T12:03:59Z"
       },
-      "desc": "Ceci est un test de commentaire !",
+      "desc": "Ceci n'est pas une pipe",
       "createdAt": "2022-01-07T03:18:47Z",
       "startAt": "2023-05-12T00:00:00.000Z",
       "endAt": "2023-05-12T00:00:00.000Z",
       "utilisateur": {
         "id": 11,
         "first_name": "Nara",
-        "last_name": "Tanier",
+        "last_name": "TANIER",
         "email": "nara.tanier@gmail.com",
         "position": "Cheffe de projet",
         "createdAt": "2023-03-15T13:21:58.584Z",
@@ -970,7 +1324,7 @@
       "utilisateur": {
         "id": 11,
         "first_name": "Nara",
-        "last_name": "Tanier",
+        "last_name": "TANIER",
         "email": "nara.tanier@gmail.com",
         "position": "Cheffe de projet",
         "createdAt": "2023-03-15T13:21:58.584Z",
@@ -995,7 +1349,7 @@
       "utilisateur": {
         "id": 11,
         "first_name": "Nara",
-        "last_name": "Tanier",
+        "last_name": "TANIER",
         "email": "nara.tanier@gmail.com",
         "position": "Cheffe de projet",
         "createdAt": "2023-03-15T13:21:58.584Z",
@@ -1020,7 +1374,7 @@
       "utilisateur": {
         "id": 11,
         "first_name": "Nara",
-        "last_name": "Tanier",
+        "last_name": "TANIER",
         "email": "nara.tanier@gmail.com",
         "position": "Cheffe de projet",
         "createdAt": "2023-03-15T13:21:58.584Z",
@@ -1045,7 +1399,7 @@
       "utilisateur": {
         "id": 11,
         "first_name": "Nara",
-        "last_name": "Tanier",
+        "last_name": "TANIER",
         "email": "nara.tanier@gmail.com",
         "position": "Cheffe de projet",
         "createdAt": "2023-03-15T13:21:58.584Z",
@@ -1070,7 +1424,7 @@
       "utilisateur": {
         "id": 11,
         "first_name": "Nara",
-        "last_name": "Tanier",
+        "last_name": "TANIER",
         "email": "nara.tanier@gmail.com",
         "position": "Cheffe de projet",
         "createdAt": "2023-03-15T13:21:58.584Z",
