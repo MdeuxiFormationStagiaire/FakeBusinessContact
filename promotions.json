@@ -1,0 +1,333 @@
+[
+    {
+      "id": 1,
+      "type": "Promotion",
+      "description": "CDA Bagarre",
+      "salle": {
+        "id": 5,
+        "capacity": 17,
+        "name": "San Francisco",
+        "floor": "1er",
+        "indication": "brand cutting-edge interfaces",
+        "createdAt": "2022-05-29T12:03:59Z"
+      },
+      "formateur": {
+        "id": 9,
+        "first_name": "Terrence",
+        "last_name": "AIRETON",
+        "email": "tairetond@washington.edu",
+        "createdAt": "2023-07-09T22:05:51Z"
+      },
+      "startAt": "2022-03-24T05:17:01Z",
+      "endAt": "2022-03-31T00:00:00.000Z",
+      "sessions": [
+        {
+          "id": 1,
+          "desc": "HTML/CSS",
+          "startAt": "2022-03-24T05:17:01Z",
+          "endAt": "2022-03-29T05:17:01Z",
+          "formateur": {
+            "id": 2,
+            "first_name": "Leila",
+            "last_name": "SANDELL",
+            "email": "lsandell4@independent.co",
+            "createdAt": "2022-02-17T18:03:26Z"
+          }
+        },
+        {
+          "id": 2,
+          "desc": "HTML/CSS",
+          "startAt": "2022-03-24T05:17:01Z",
+          "endAt": "2022-03-29T05:17:01Z",
+          "formateur": {
+            "id": 2,
+            "first_name": "Leila",
+            "last_name": "SANDELL",
+            "email": "lsandell4@independent.co",
+            "createdAt": "2022-02-17T18:03:26Z"
+          }
+        },
+        {
+          "id": 3,
+          "desc": "HTML/CSS",
+          "startAt": "2022-03-24T05:17:01Z",
+          "endAt": "2022-03-29T05:17:01Z",
+          "formateur": {
+            "id": 2,
+            "first_name": "Leila",
+            "last_name": "SANDELL",
+            "email": "lsandell4@independent.co",
+            "createdAt": "2022-02-17T18:03:26Z"
+          }
+        },
+        {
+          "id": 4,
+          "desc": "HTML/CSS",
+          "startAt": "2022-03-24T05:17:01Z",
+          "endAt": "2022-03-29T05:17:01Z",
+          "formateur": {
+            "id": 2,
+            "first_name": "Leila",
+            "last_name": "SANDELL",
+            "email": "lsandell4@independent.co",
+            "createdAt": "2022-02-17T18:03:26Z"
+          }
+        },
+        {
+          "id": 5,
+          "desc": "HTML/CSS",
+          "startAt": "2023-03-24T00:00:00.000Z",
+          "endAt": "2023-03-29T00:00:00.000Z",
+          "formateur": {
+            "id": 2,
+            "first_name": "Leila",
+            "last_name": "SANDELL",
+            "email": "lsandell4@independent.co",
+            "createdAt": "2022-02-17T18:03:26Z"
+          }
+        }
+      ],
+      "stagiaires": [
+        {
+          "id": 1,
+          "first_name": "Gloria",
+          "last_name": "MCQUARRIE",
+          "email": "mderr0@npr.org",
+          "createdAt": "2023-10-26T13:58:40Z"
+        },
+        {
+          "id": 2,
+          "first_name": "Glyn",
+          "last_name": "GRANDIN",
+          "email": "ggrandin1@statcounter.com",
+          "createdAt": "2023-10-26T13:58:40Z"
+        },
+        {
+          "id": 3,
+          "first_name": "Kimberlyn",
+          "last_name": "DELMAGE",
+          "email": "kdelmage2@utexas.edu",
+          "createdAt": "2023-02-11T20:27:04Z"
+        },
+        {
+          "id": 4,
+          "first_name": "Alie",
+          "last_name": "FIELDERS",
+          "email": "afielders3@businessinsider.com",
+          "createdAt": "2023-05-20T02:04:06Z"
+        },
+        {
+          "id": 7,
+          "first_name": "Chastity",
+          "last_name": "SERVIS",
+          "email": "cservis6@umich.edu",
+          "createdAt": "2023-10-08T23:11:23Z"
+        },
+        {
+          "id": 15,
+          "first_name": "Pinchas",
+          "last_name": "WAINER",
+          "email": "pwainere@paypal.com",
+          "createdAt": "2023-12-14T00:28:23Z"
+        },
+        {
+          "id": 17,
+          "first_name": "Swen",
+          "last_name": "RIX",
+          "email": "srixg@w3.org",
+          "createdAt": "2022-03-05T15:07:38Z"
+        },
+        {
+          "id": 18,
+          "first_name": "Nell",
+          "last_name": "GODBALD",
+          "email": "ngodbaldh@wiley.com",
+          "createdAt": "2023-11-19T16:59:01Z"
+        }
+      ],
+      "utilisateur": {
+        "id": 11,
+        "first_name": "Nara",
+        "last_name": "TANIER",
+        "email": "nara.tanier@gmail.com",
+        "position": "Cheffe de projet",
+        "createdAt": "2023-03-15T13:21:58.584Z",
+        "adminRight": true
+      },
+      "createdAt": "2023-03-15T13:21:58.584Z"
+    },
+    {
+      "id": 2,
+      "type": "Promotion",
+      "description": "CDA",
+      "salle": {
+        "id": 1,
+        "capacity": "40",
+        "name": "La Laja",
+        "floor": "RDC",
+        "indication": "visualize intuitive action-items",
+        "createdAt": "2022-03-24T05:17:01Z"
+      },
+      "formateur": {
+        "id": 2,
+        "first_name": "Leila",
+        "last_name": "SANDELL",
+        "email": "lsandell4@independent.co",
+        "createdAt": "2022-02-17T18:03:26Z"
+      },
+      "startAt": "2022-03-24T05:17:01Z",
+      "endAt": "2022-03-24T05:17:01Z",
+      "sessions": [
+        {
+          "id": 1,
+          "desc": "HTML/CSS",
+          "startAt": "2022-03-24T05:17:01Z",
+          "endAt": "2022-03-29T05:17:01Z",
+          "formateur": {
+            "id": 2,
+            "first_name": "Leila",
+            "last_name": "SANDELL",
+            "email": "lsandell4@independent.co",
+            "createdAt": "2022-02-17T18:03:26Z"
+          }
+        },
+        {
+          "id": 2,
+          "desc": "HTML/CSS",
+          "startAt": "2022-03-24T05:17:01Z",
+          "endAt": "2022-03-29T05:17:01Z",
+          "formateur": {
+            "id": 2,
+            "first_name": "Leila",
+            "last_name": "SANDELL",
+            "email": "lsandell4@independent.co",
+            "createdAt": "2022-02-17T18:03:26Z"
+          }
+        }
+      ],
+      "stagiaires": [
+        {
+          "id": 2,
+          "first_name": "Glyn",
+          "last_name": "GRANDIN",
+          "email": "ggrandin1@statcounter.com",
+          "createdAt": "2023-10-26T13:58:40Z"
+        },
+        {
+          "id": 9,
+          "first_name": "Byrann",
+          "last_name": "PEPON",
+          "email": "bpepon8@jugem.jp",
+          "createdAt": "2022-04-11T15:47:51Z"
+        }
+      ],
+      "utilisateur": {
+        "id": 11,
+        "first_name": "Nara",
+        "last_name": "TANIER",
+        "email": "nara.tanier@gmail.com",
+        "position": "Cheffe de projet",
+        "createdAt": "2023-03-15T13:21:58.584Z",
+        "adminRight": true
+      },
+      "createdAt": "2023-03-15T13:21:58.584Z"
+    },
+    {
+      "id": 4,
+      "type": "Promotion",
+      "description": "POEI Bidule",
+      "salle": {
+        "id": 10,
+        "capacity": 16,
+        "name": "McKinley",
+        "floor": "1er",
+        "indication": "utilize granular convergence",
+        "createdAt": "2022-09-09T10:01:08Z"
+      },
+      "formateur": {
+        "id": 16,
+        "first_name": "Théo",
+        "last_name": "GROS ZIZI",
+        "email": "theo.groszizi@grossteub.org",
+        "createdAt": "2023-03-17T10:29:06.869Z"
+      },
+      "createdAt": "2023-04-14T08:33:28.763Z",
+      "startAt": "2023-04-01T00:00:00.000Z",
+      "endAt": "2023-04-30T00:00:00.000Z",
+      "sessions": [
+        {
+          "id": 10,
+          "desc": "Java",
+          "startAt": "2023-04-03T00:00:00.000Z",
+          "endAt": "2023-04-04T00:00:00.000Z",
+          "formateur": {
+            "id": 9,
+            "first_name": "Terrence",
+            "last_name": "AIRETON",
+            "email": "tairetond@washington.edu",
+            "createdAt": "2023-07-09T22:05:51Z"
+          }
+        }
+      ],
+      "stagiaires": [
+        {
+          "id": 1,
+          "first_name": "Gloria",
+          "last_name": "MCQUARRIE",
+          "email": "mderr0@npr.org",
+          "createdAt": "2023-10-26T13:58:40Z"
+        },
+        {
+          "id": 8,
+          "first_name": "Kaycee",
+          "last_name": "MABLY",
+          "email": "kmably7@ycombinator.com",
+          "createdAt": "2023-03-20T21:09:40Z"
+        },
+        {
+          "id": 10,
+          "first_name": "Doll",
+          "last_name": "GIORIO",
+          "email": "dgiorio9@xrea.com",
+          "createdAt": "2022-09-23T16:23:24Z"
+        },
+        {
+          "id": 9,
+          "first_name": "Byrann",
+          "last_name": "PEPON",
+          "email": "bpepon8@jugem.jp",
+          "createdAt": "2022-04-11T15:47:51Z"
+        },
+        {
+          "id": 11,
+          "first_name": "Darcee",
+          "last_name": "MESSITT",
+          "email": "dmessitta@prnewswire.com",
+          "createdAt": "2023-06-09T13:25:39Z"
+        },
+        {
+          "id": 17,
+          "first_name": "Swen",
+          "last_name": "RIX",
+          "email": "srixg@w3.org",
+          "createdAt": "2022-03-05T15:07:38Z"
+        },
+        {
+          "id": 13,
+          "first_name": "Benjie",
+          "last_name": "JOSELEVITCH",
+          "email": "bjoselevitchc@youku.com",
+          "createdAt": "2022-06-07T15:03:54Z"
+        }
+      ],
+      "utilisateur": {
+        "id": 10,
+        "first_name": "Iris",
+        "last_name": "FLUTE",
+        "email": "iflute9@purevolume.com",
+        "position": "Junior Executive",
+        "createdAt": "2022-07-27T05:09:46Z",
+        "adminRight": false
+      }
+    }
+]

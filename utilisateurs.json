@@ -1,0 +1,119 @@
+[
+    {
+      "id": 1,
+      "first_name": "Adrianna",
+      "last_name": "GANNICOTT",
+      "email": "agannicott0@slashdot.org",
+      "position": "Systems Manager",
+      "createdAt": "2022-02-05T17:23:24Z",
+      "adminRight": false
+    },
+    {
+      "id": 2,
+      "first_name": "Desi",
+      "last_name": "DELVES",
+      "email": "ddelves1@addthis.com",
+      "position": "Speech Pathologist",
+      "createdAt": "2022-01-07T03:18:47Z",
+      "adminRight": true
+    },
+    {
+      "id": 3,
+      "first_name": "Marylou",
+      "last_name": "HORELL",
+      "email": "mhorrell2@deliciousdays.com",
+      "position": "Quality Engineer",
+      "createdAt": "2022-07-10T00:59:17Z",
+      "adminRight": true
+    },
+    {
+      "id": 4,
+      "first_name": "Onfroi",
+      "last_name": "JAVES",
+      "email": "ojaves3@booking.com",
+      "position": "Project Manager",
+      "createdAt": "2022-08-13T05:56:26Z",
+      "adminRight": false
+    },
+    {
+      "id": 5,
+      "first_name": "Mary",
+      "last_name": "FITZSYMONDS",
+      "email": "mfitzsymonds4@squidoo.com",
+      "position": "Recruiting Manager",
+      "createdAt": "2022-09-18T21:23:02Z",
+      "adminRight": false
+    },
+    {
+      "id": 6,
+      "first_name": "Carlyle",
+      "last_name": "BLACKETT",
+      "email": "cblackett5@freewebs.com",
+      "position": "Recruiter",
+      "createdAt": "2022-01-26T14:26:51Z",
+      "adminRight": true
+    },
+    {
+      "id": 7,
+      "first_name": "Ulric",
+      "last_name": "ARKIN",
+      "email": "uarkin6@sciencedaily.com",
+      "position": "Dental Hygienist",
+      "createdAt": "2022-03-11T21:08:21Z",
+      "adminRight": false
+    },
+    {
+      "id": 8,
+      "first_name": "Betty",
+      "last_name": "RANSTEAD",
+      "email": "branstead7@examiner.com",
+      "position": "Executive Secretary",
+      "createdAt": "2022-03-23T10:08:11Z",
+      "adminRight": true
+    },
+    {
+      "id": 9,
+      "first_name": "Alard",
+      "last_name": "MERREDY",
+      "email": "amerredy8@squarespace.com",
+      "position": "Recruiter",
+      "createdAt": "2022-10-29T23:06:38Z",
+      "adminRight": false
+    },
+    {
+      "id": 10,
+      "first_name": "Iris",
+      "last_name": "FLUTE",
+      "email": "iflute9@purevolume.com",
+      "position": "Junior Executive",
+      "createdAt": "2022-07-27T05:09:46Z",
+      "adminRight": false
+    },
+    {
+      "id": 11,
+      "first_name": "Nara",
+      "last_name": "TANIER",
+      "email": "nara.tanier@gmail.com",
+      "position": "Cheffe de projet",
+      "createdAt": "2023-03-15T13:21:58.584Z",
+      "adminRight": false
+    },
+    {
+      "id": 12,
+      "first_name": "Sophie",
+      "last_name": "PACALA",
+      "email": "s.pacala@2itechacademy.com",
+      "position": "Pdg of the universe",
+      "createdAt": "2023-03-15T14:18:39.678Z",
+      "adminRight": true
+    },
+    {
+      "id": 13,
+      "first_name": "Jean",
+      "last_name": "DUPONT",
+      "email": "j.dupont@gmail.com",
+      "position": "Gentil",
+      "createdAt": "2023-03-29T10:10:30.119Z",
+      "adminRight": true
+    }
+]
