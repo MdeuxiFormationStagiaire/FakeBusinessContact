@@ -32,7 +32,7 @@ function App() {
       <BrowserRouter>
         <SideBar>
           <Routes>
-            <Route path='/' element={<HomePage/>}/>
+            <Route path='/home' element={<HomePage/>}/>
             <Route path='/reservations' element={<ReservationPage/>}/>
             <Route path='/reservations/promotions' element={<ReservationsPromotionsPage/>}/>
             <Route path='/reservations/promotions/:id' element={<ReservationsPromotionFichePage/>}/>
