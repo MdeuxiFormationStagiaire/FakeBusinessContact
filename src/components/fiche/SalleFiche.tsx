@@ -7,6 +7,7 @@ import { ModalStyle } from '../../assets/styles/components/modals/ModalStyle.css
 import DeleteConfirmation from '../modals/DeleteConfirmation'
 import updateLogo from '../../assets/img/modify.png'
 import deleteLogo from '../../assets/img/remove.png'
+import backLogo from '../../assets/img/left-arrow.png'
 import '../../assets/styles/components/fiches/SalleFiche.css'
 
 type SalleFicheProps = {
@@ -17,6 +18,7 @@ type SalleFicheProps = {
 const SalleFiche : React.FC<SalleFicheProps> = ({salles, onUpdateSalle}) => {
   
   const navigate = useNavigate();
+
   const { id } = useParams<{id : string}>();
 
   const [salle, setSalle] = useState<Salle>(salles[0])
@@ -24,6 +26,7 @@ const SalleFiche : React.FC<SalleFicheProps> = ({salles, onUpdateSalle}) => {
   const [backupSalle, setBackupSalle] = useState(salles[0])
 
   const [editMode, setEditMode] = useState(false)
+
   const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false)
 
   useEffect(() => {
@@ -141,8 +144,13 @@ const SalleFiche : React.FC<SalleFicheProps> = ({salles, onUpdateSalle}) => {
   return (
     <>
       <section className='buttonSectionSalles'>
-        <img src={updateLogo} alt="update" className='updateLogoFiche'  onClick={handleEditMode} onMouseEnter={() => handleButtonHover('hoveredUpdateSalles', true)} onMouseLeave={() => handleButtonHover('hoveredUpdateSalles', false)}/>
-        <img src={deleteLogo} alt="delete" className='deleteLogoFiche'  onClick={handleDelete} onMouseEnter={() => handleButtonHover('hoveredDeleteSalles', true)} onMouseLeave={() => handleButtonHover('hoveredDeleteSalles', false)}/>
+        {editMode ? 
+          (
+            <img src={backLogo} alt="update" className='updateLogoFiche'  onClick={handleEditMode}/>
+          ) : (
+            <img src={updateLogo} alt="update" className='updateLogoFiche'  onClick={handleEditMode}/>
+          )
+        }        <img src={deleteLogo} alt="delete" className='deleteLogoFiche'  onClick={handleDelete} onMouseEnter={() => handleButtonHover('hoveredDeleteSalles', true)} onMouseLeave={() => handleButtonHover('hoveredDeleteSalles', false)}/>
         <button type='button' className='addButtonBoxFicheSalles' onClick={handleAddButtonNav}>Ajouter</button>
       </section>
       <Modal
