@@ -89,84 +89,86 @@ const AddSalle : React.FC<addSalleProps> = ({addNewSalle, addNewSallesByImport})
 
   return (
     <>
-      <form className='addFormSectionSalles' onSubmit={(event) => handleSubmit(event)}>
-        <section className="addFicheSectionSalles">
-          <div className="inputDivBoxSalles">
-            <div className='inputDivSalles'>
-              <label htmlFor="name" className='addInputTitleSalles'>Nom :</label>
-              <input
-                type="text"
-                name="name"
-                id="name"
-                className='nameAddInputTextSalles'
-                value={salle.name}
-                onChange={handleInputChange}
-                required
-              />
-            </div>
-            <div className='inputDivSalles'>
-              <label htmlFor="capacity" className='addInputTitleSalles'>Capacité :</label>
-              <input
-                type="number"
-                name="capacity"
-                id="capacity"
-                className='capacityAddInputSalles'
-                value={salle.capacity}
-                onChange={handleInputChange}
-                min="1"
-                max="99"
-                required
-              />
-            </div>
-            <div className='inputDivSalles'>
-              <label htmlFor="indication" className='addInputTitleSalles'>Indications :</label>
-              <input
-                type="text"
-                name="indication"
-                id="indication"
-                className='indicationAddInputTextSalles'
-                value={salle.indication}
-                onChange={handleInputChange}
-                required
-              />
-            </div>
-            <div className='inputDivSalles'>
-              <label htmlFor="floor" className='addInputTitleSalles'>Etage :</label>
-              <select
-                  name="floor"
-                  value={salle.floor}
-                  onChange={handleSelectChange}
-                  className='floorAddInputTextSalles'
+      <section className='addFormsSectionSalles'>
+        <form className='addFormSectionSalles' onSubmit={(event) => handleSubmit(event)}>
+          <section className="addFicheSectionSalles">
+            <div className="inputDivBoxSalles">
+              <div className='inputDivSalles'>
+                <label htmlFor="name" className='addInputTitleSalles'>Nom :</label>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  className='nameAddInputTextSalles'
+                  value={salle.name}
+                  onChange={handleInputChange}
                   required
-                >
-                  <option value="RDC">RDC</option>
-                  <option value="1er">1er</option>
-                  <option value="2ème">2ème</option>
-                </select>
+                />
+              </div>
+              <div className='inputDivSalles'>
+                <label htmlFor="capacity" className='addInputTitleSalles'>Capacité :</label>
+                <input
+                  type="number"
+                  name="capacity"
+                  id="capacity"
+                  className='capacityAddInputSalles'
+                  value={salle.capacity}
+                  onChange={handleInputChange}
+                  min="1"
+                  max="99"
+                  required
+                />
+              </div>
+              <div className='inputDivSalles'>
+                <label htmlFor="indication" className='addInputTitleSalles'>Indications :</label>
+                <input
+                  type="text"
+                  name="indication"
+                  id="indication"
+                  className='indicationAddInputTextSalles'
+                  value={salle.indication}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+              <div className='inputDivSalles'>
+                <label htmlFor="floor" className='addInputTitleSalles'>Etage :</label>
+                <select
+                    name="floor"
+                    value={salle.floor}
+                    onChange={handleSelectChange}
+                    className='floorAddInputTextSalles'
+                    required
+                  >
+                    <option value="RDC">RDC</option>
+                    <option value="1er">1er</option>
+                    <option value="2ème">2ème</option>
+                  </select>
+              </div>
             </div>
-          </div>
-          <div className="buttonDivBoxSalles">
-            <button type='button' className='cancelButtonSalles' onClick={() => navigate(-1)}>Annuler</button>
-            <button type="submit" className='addFormButtonSalles'>Ajouter</button>
-          </div>
-        </section>
-      </form>
-      <form onSubmit={handleFileSubmit} className='addFormCSVFileSectionSalles'>
-          <div className='inputCSVDivSalles'>
-            <label htmlFor="file" className='addCSVFileTitleSalles'>Importation par fichier CSV :</label>
-            <input 
-              type="file" 
-              name="file" 
-              id="file" 
-              onChange={handleFileChange}
-              accept=".csv"
-              className='inputCSVFileSalles'
-            />
-          </div>
-          <div className="buttonFormCSVBoxSalles">
-            <button type="submit" className='addCSVFormButtonSalles'>Importer</button>
-          </div>
+            <div className="buttonDivBoxSalles">
+              <button type='button' className='cancelButtonSalles' onClick={() => navigate(-1)}>Annuler</button>
+              <button type="submit" className='addFormButtonSalles'>Ajouter</button>
+            </div>
+          </section>
         </form>
+        <form onSubmit={handleFileSubmit} className='addFormCSVFileSectionSalles'>
+            <div className='inputCSVDivSalles'>
+              <label htmlFor="file" className='addCSVFileTitleSalles'>Importation par fichier CSV :</label>
+              <input 
+                type="file" 
+                name="file" 
+                id="file" 
+                onChange={handleFileChange}
+                accept=".csv"
+                className='inputCSVFileSalles'
+              />
+            </div>
+            <div className="buttonFormCSVBoxSalles">
+              <button type="submit" className='addCSVFormButtonSalles'>Importer</button>
+            </div>
+          </form>
+      </section>
     </>
   );
 }
