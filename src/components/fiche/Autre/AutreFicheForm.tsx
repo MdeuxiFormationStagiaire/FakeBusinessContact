@@ -9,6 +9,7 @@ import { ModalStyle } from '../../../assets/styles/components/modals/ModalStyle.
 import DeleteConfirmation from '../../modals/DeleteConfirmation'
 import updateLogo from '../../../assets/img/modify.png'
 import deleteLogo from '../../../assets/img/remove.png'
+import backLogo from '../../../assets/img/left-arrow.png'
 import '../../../assets/styles/components/fiches/AutreFiche.css'
 
 type AutreFicheFormProps = {
@@ -48,6 +49,8 @@ const AutreFicheForm : React.FC<AutreFicheFormProps> = ({autre, onUpdateAutre}) 
         if (editMode == false) {
           setBackupAutre(currentAutre)
           setEditMode(true)
+        } else {
+            setEditMode(false)
         }
     };
 
@@ -159,8 +162,14 @@ const AutreFicheForm : React.FC<AutreFicheFormProps> = ({autre, onUpdateAutre}) 
   return (
     <>
         <section className='buttonSectionPromotions'>
-        <img src={updateLogo} alt="update" className='updateLogoFiche'  onClick={handleEditMode} onMouseEnter={() => handleButtonHover('hoveredUpdateFormateurs', true)} onMouseLeave={() => handleButtonHover('hoveredUpdateFormateurs', false)}/>
-        <img src={deleteLogo} alt="delete" className='deleteLogoFiche'  onClick={handleDelete} onMouseEnter={() => handleButtonHover('hoveredDeleteFormateurs', true)} onMouseLeave={() => handleButtonHover('hoveredDeleteFormateurs', false)}/>
+            {editMode ? 
+              (
+                <img src={backLogo} alt="update" className='updateLogoFiche'  onClick={handleEditMode}/>
+              ) : (
+                <img src={updateLogo} alt="update" className='updateLogoFiche'  onClick={handleEditMode}/>
+              )
+            }          
+            <img src={deleteLogo} alt="delete" className='deleteLogoFiche'  onClick={handleDelete} onMouseEnter={() => handleButtonHover('hoveredDeleteFormateurs', true)} onMouseLeave={() => handleButtonHover('hoveredDeleteFormateurs', false)}/>
         <button type='button' className='addButtonBoxFicheFormateurs' onClick={handleAddButtonNav}>Ajouter</button>
         </section>
         <Modal
