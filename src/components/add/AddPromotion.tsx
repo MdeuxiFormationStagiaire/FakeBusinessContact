@@ -47,9 +47,6 @@ const AddPromotion : React.FC<AddPromotionProps> = ({utilisateur, formateurs, sa
     utilisateur: utilisateur
   })
 
-  console.log(utilisateur);
-  
-
   useEffect(() => {
     getAllSessions()
   }, []);
@@ -217,6 +214,7 @@ const AddPromotion : React.FC<AddPromotionProps> = ({utilisateur, formateurs, sa
                   onChange={handleSelectChange}
                   className='inputFormPromotions'
                 >
+                  <option value=''>-- Formateurs --</option>
                   {formateurs.map((formateur) => (
                     <option key={formateur.id} value={formateur.last_name}>
                       {`${formateur.first_name} ${formateur.last_name}`}
@@ -225,28 +223,28 @@ const AddPromotion : React.FC<AddPromotionProps> = ({utilisateur, formateurs, sa
                 </select>
             </div>
           </section>
+          <section className='stagiairesSessionsForm'>
+            <div className='stagiairesSectionForm'>
+              <AddPromotionStagiaires
+                stagiaires={stagiaires}
+                onAddStagiaireSelect={handleAddStagiaireToPromotionFromSelect}
+                onDeleteStagiaire={handleDeleteStagiaireFromPromotion}
+                />
+            </div>
+            <div className='sessionsSectionForm'>
+              <AddPromotionSessions
+                sessions={sessions}
+                formateurs={formateurs}
+                onAddSession={handleAddSessionToPromotion}
+                onDeleteSession={handleDeleteSessionFromPromotion}
+                />
+            </div>
+          </section>
+          <section className="buttonDivBoxPromotions">
+            <button type='button' className='cancelButtonPromotions' onClick={() => navigate(-1)}>Annuler</button>
+            <button type="submit" className='addFormButtonPromotions'>Ajouter</button>
+          </section>
         </form>
-        <section className='stagiairesSessionsForm'>
-          <div className='stagiairesSectionForm'>
-            <AddPromotionStagiaires
-              stagiaires={stagiaires}
-              onAddStagiaireSelect={handleAddStagiaireToPromotionFromSelect}
-              onDeleteStagiaire={handleDeleteStagiaireFromPromotion}
-            />
-          </div>
-          <div className='sessionsSectionForm'>
-            <AddPromotionSessions
-              sessions={sessions}
-              formateurs={formateurs}
-              onAddSession={handleAddSessionToPromotion}
-              onDeleteSession={handleDeleteSessionFromPromotion}
-            />
-          </div>
-        </section>
-        <section className="buttonDivBoxPromotions">
-          <button type='button' className='cancelButtonPromotions' onClick={() => navigate(-1)}>Annuler</button>
-          <button type="submit" className='addFormButtonPromotions'>Ajouter</button>
-        </section>
       </section>
     </>
   )
