@@ -57,8 +57,29 @@ const ReservationsPromotionAddPage = () => {
     formateurService.findAllFormateurs().then(data => setFormateurs(data))
   }
 
+  const isOverlapping = (promotion1 : Promotion, promotion2 : Promotion) => {
+    if (promotion1.startAt >= promotion2.startAt && promotion1.startAt <= promotion2.endAt) {
+      return true;
+    } else if (promotion2.startAt >= promotion1.startAt && promotion2.startAt <= promotion1.endAt) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   const addNewPromotion = (promotion : Promotion) => {
-    promotionService.createPromotion(promotion).then(() => getAllPromotions())
+    const promotionsMemeSalle : Promotion[] = promotions.filter((p) => p.salle.name === promotion.salle.name);
+    const overlappingPromotion = promotionsMemeSalle.find((p) => isOverlapping(p, promotion));
+    if (overlappingPromotion) {
+      alert(`La promotion ${overlappingPromotion.description} (DD : ${formateDate(overlappingPromotion.startAt)} / DF : ${formateDate(overlappingPromotion.endAt)}) se chevauche avec la promotion que vous essayez de créer. Veuillez choisir une autre date.`);
+    } else {
+      promotionService.createPromotion(promotion).then(() => getAllPromotions());
+    }
+  };
+
+  const formateDate = (date : Date): string => {
+    const formatedDate : string = date.toLocaleString('fr-FR').slice(0, 10);
+    return formatedDate;
   }
  
   return (
