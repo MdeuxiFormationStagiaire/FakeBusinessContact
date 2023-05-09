@@ -10,10 +10,10 @@ export type Promotion = {
     description: string,
     salle : Salle,
     formateur: Formateur,
-    startAt: Date,
-    endAt: Date,
     sessions: Session[],
     stagiaires: Stagiaire[],
-    utilisateur: Utilisateur,
-    createdAt: Date
+    createdAt: Date,
+    startAt: Date,
+    endAt: Date,
+    utilisateur: Utilisateur
 }
