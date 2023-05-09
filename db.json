@@ -237,6 +237,13 @@
       "last_name": "MACHADO",
       "email": "juan.machado@labom2iformation.fr",
       "createdAt": "2023-04-19T09:44:09.105Z"
+    },
+    {
+      "id": 35,
+      "first_name": "Patrick",
+      "last_name": "CLÉMENT",
+      "email": "nara.tanier@gmail.com",
+      "createdAt": "2023-05-09T11:58:23.519Z"
     }
   ],
   "stagiaires": [
@@ -381,109 +388,102 @@
       "createdAt": "2023-04-14T12:14:06.278Z"
     },
     {
-      "id": 22,
-      "first_name": "Titouan",
-      "last_name": "ANDRITSOS",
-      "email": "titouan.andritsos@labom2iformation.fr",
-      "createdAt": "2023-04-19T09:41:00.084Z"
-    },
-    {
       "id": 23,
       "first_name": "Ngo",
       "last_name": "DUONG",
       "email": "ngo.duong@labom2iformation.fr",
-      "createdAt": "2023-04-19T09:41:00.084Z"
+      "createdAt": "2023-05-09T12:21:47.286Z"
     },
     {
       "id": 24,
       "first_name": "Hélène",
       "last_name": "DUBOURG",
       "email": "helene.dubourg@labom2iformation.fr",
-      "createdAt": "2023-04-19T09:41:00.084Z"
+      "createdAt": "2023-05-09T12:21:47.286Z"
     },
     {
       "id": 25,
       "first_name": "Mohamed achref",
       "last_name": "ISSAOUI M",
       "email": "mohamed-achref.issaoui@labom2iformation.fr",
-      "createdAt": "2023-04-19T09:41:00.084Z"
+      "createdAt": "2023-05-09T12:21:47.286Z"
     },
     {
       "id": 26,
       "first_name": "Delphine",
       "last_name": "MAURER",
       "email": "delphine.maurer@labom2iformation.fr",
-      "createdAt": "2023-04-19T09:41:00.084Z"
+      "createdAt": "2023-05-09T12:21:47.286Z"
     },
     {
       "id": 27,
       "first_name": "Olivia",
       "last_name": "PIGANI",
       "email": "olivia.pigani@labom2iformation.fr",
-      "createdAt": "2023-04-19T09:41:00.084Z"
+      "createdAt": "2023-05-09T12:21:47.286Z"
     },
     {
       "id": 28,
       "first_name": "Alexis",
       "last_name": "PORRAZ",
       "email": "alexis.porraz@labom2iformation.fr",
-      "createdAt": "2023-04-19T09:41:00.084Z"
+      "createdAt": "2023-05-09T12:21:47.286Z"
     },
     {
       "id": 29,
       "first_name": "Souleymane",
       "last_name": "RAKKASSY",
       "email": "souleymane.rakkassy@labom2iformation.fr",
-      "createdAt": "2023-04-19T09:41:00.084Z"
+      "createdAt": "2023-05-09T12:21:47.286Z"
     },
     {
       "id": 30,
       "first_name": "Dorian",
       "last_name": "TERNISIEN",
       "email": "dorian.ternisien@labom2iformation.fr",
-      "createdAt": "2023-04-19T09:41:00.084Z"
+      "createdAt": "2023-05-09T12:21:47.286Z"
     },
     {
       "id": 31,
       "first_name": "Mélanie",
       "last_name": "VAN DAELE",
       "email": "melanie.van-daele@labom2iformation.fr",
-      "createdAt": "2023-04-19T09:41:00.084Z"
+      "createdAt": "2023-05-09T12:21:47.286Z"
     },
     {
       "id": 32,
       "first_name": "Clément",
       "last_name": "VAUGOYEAU",
       "email": "clement.vaugoyeau@labom2iformation.fr",
-      "createdAt": "2023-04-19T09:41:00.084Z"
+      "createdAt": "2023-05-09T12:21:47.286Z"
     },
     {
       "id": 33,
       "first_name": "Mischa",
       "last_name": "FRANGEUL",
       "email": "mischa.frangeul@labom2iformation.fr",
-      "createdAt": "2023-04-19T09:41:00.084Z"
+      "createdAt": "2023-05-09T12:21:47.286Z"
     },
     {
       "id": 34,
       "first_name": "Nseya",
       "last_name": "MALUMBA",
       "email": "nseya.malumba@labom2iformation.fr",
-      "createdAt": "2023-04-19T09:41:00.084Z"
+      "createdAt": "2023-05-09T12:21:47.286Z"
     },
     {
       "id": 35,
       "first_name": "Antoine",
       "last_name": "DIAS",
       "email": "antoine.dias@labom2iformation.fr",
-      "createdAt": "2023-04-19T09:41:00.084Z"
+      "createdAt": "2023-05-09T12:21:47.286Z"
     },
     {
       "id": 36,
       "first_name": "Juan",
       "last_name": "MACHADO",
       "email": "juan.machado@labom2iformation.fr",
-      "createdAt": "2023-04-19T09:41:00.084Z"
+      "createdAt": "2023-05-09T12:21:47.286Z"
     }
   ],
   "salles": [
@@ -813,74 +813,18 @@
       "position": "Gentil",
       "createdAt": "2023-03-29T10:10:30.119Z",
       "adminRight": true
+    },
+    {
+      "id": 14,
+      "first_name": "Romain",
+      "last_name": "MONNIER",
+      "email": "prout@theobg.fr",
+      "position": "Bg",
+      "createdAt": "2023-05-09T11:44:13.261Z",
+      "adminRight": true
     }
   ],
   "sessions": [
-    {
-      "id": 1,
-      "desc": "HTML/CSS",
-      "startAt": "2022-03-24T05:17:01Z",
-      "endAt": "2022-03-29T05:17:01Z",
-      "formateur": {
-        "id": 2,
-        "first_name": "Leila",
-        "last_name": "SANDELL",
-        "email": "lsandell4@independent.co",
-        "createdAt": "2022-02-17T18:03:26Z"
-      }
-    },
-    {
-      "id": 2,
-      "desc": "HTML/CSS",
-      "startAt": "2022-03-24T05:17:01Z",
-      "endAt": "2022-03-29T05:17:01Z",
-      "formateur": {
-        "id": 2,
-        "first_name": "Leila",
-        "last_name": "SANDELL",
-        "email": "lsandell4@independent.co",
-        "createdAt": "2022-02-17T18:03:26Z"
-      }
-    },
-    {
-      "id": 3,
-      "desc": "HTML/CSS",
-      "startAt": "2022-03-24T05:17:01Z",
-      "endAt": "2022-03-29T05:17:01Z",
-      "formateur": {
-        "id": 2,
-        "first_name": "Leila",
-        "last_name": "SANDELL",
-        "email": "lsandell4@independent.co",
-        "createdAt": "2022-02-17T18:03:26Z"
-      }
-    },
-    {
-      "id": 4,
-      "desc": "HTML/CSS",
-      "startAt": "2022-03-24T05:17:01Z",
-      "endAt": "2022-03-29T05:17:01Z",
-      "formateur": {
-        "id": 2,
-        "first_name": "Leila",
-        "last_name": "SANDELL",
-        "email": "lsandell4@independent.co",
-        "createdAt": "2022-02-17T18:03:26Z"
-      }
-    },
-    {
-      "id": 5,
-      "desc": "HTML/CSS",
-      "startAt": "2022-03-24T05:17:01Z",
-      "endAt": "2022-03-29T05:17:01Z",
-      "formateur": {
-        "id": 2,
-        "first_name": "Leila",
-        "last_name": "SANDELL",
-        "email": "lsandell4@independent.co",
-        "createdAt": "2022-02-17T18:03:26Z"
-      }
-    },
     {
       "id": 6,
       "desc": "Java",
@@ -934,16 +878,29 @@
       }
     },
     {
-      "id": 10,
-      "desc": "Java",
-      "startAt": "2023-04-03T00:00:00.000Z",
-      "endAt": "2023-04-04T00:00:00.000Z",
+      "id": 11,
+      "desc": "HTML/CSS",
+      "startAt": "2023-05-22T00:00:00.000Z",
+      "endAt": "2023-05-26T00:00:00.000Z",
       "formateur": {
-        "id": 9,
-        "first_name": "Terrence",
-        "last_name": "AIRETON",
-        "email": "tairetond@washington.edu",
-        "createdAt": "2023-07-09T22:05:51Z"
+        "id": 4,
+        "first_name": "Bern",
+        "last_name": "BURNIP",
+        "email": "bburnip8@tuttocitta.it",
+        "createdAt": "2022-12-12T18:49:44Z"
+      }
+    },
+    {
+      "id": 12,
+      "desc": "Java",
+      "startAt": "2023-05-15T00:00:00.000Z",
+      "endAt": "2023-05-19T00:00:00.000Z",
+      "formateur": {
+        "id": 4,
+        "first_name": "Bern",
+        "last_name": "BURNIP",
+        "email": "bburnip8@tuttocitta.it",
+        "createdAt": "2022-12-12T18:49:44Z"
       }
     }
   ],
@@ -967,8 +924,8 @@
         "email": "tairetond@washington.edu",
         "createdAt": "2023-07-09T22:05:51Z"
       },
-      "startAt": "2022-03-24T05:17:01Z",
-      "endAt": "2022-03-31T00:00:00.000Z",
+      "startAt": "2023-05-09T00:00:00.000Z",
+      "endAt": "2024-05-09T00:00:00.000Z",
       "sessions": [
         {
           "id": 1,
@@ -1104,180 +1061,6 @@
         "adminRight": true
       },
       "createdAt": "2023-03-15T13:21:58.584Z"
-    },
-    {
-      "id": 2,
-      "type": "Promotion",
-      "description": "CDA",
-      "salle": {
-        "id": 1,
-        "capacity": "40",
-        "name": "La Laja",
-        "floor": "RDC",
-        "indication": "visualize intuitive action-items",
-        "createdAt": "2022-03-24T05:17:01Z"
-      },
-      "formateur": {
-        "id": 2,
-        "first_name": "Leila",
-        "last_name": "SANDELL",
-        "email": "lsandell4@independent.co",
-        "createdAt": "2022-02-17T18:03:26Z"
-      },
-      "startAt": "2022-03-24T05:17:01Z",
-      "endAt": "2022-03-24T05:17:01Z",
-      "sessions": [
-        {
-          "id": 1,
-          "desc": "HTML/CSS",
-          "startAt": "2022-03-24T05:17:01Z",
-          "endAt": "2022-03-29T05:17:01Z",
-          "formateur": {
-            "id": 2,
-            "first_name": "Leila",
-            "last_name": "SANDELL",
-            "email": "lsandell4@independent.co",
-            "createdAt": "2022-02-17T18:03:26Z"
-          }
-        },
-        {
-          "id": 2,
-          "desc": "HTML/CSS",
-          "startAt": "2022-03-24T05:17:01Z",
-          "endAt": "2022-03-29T05:17:01Z",
-          "formateur": {
-            "id": 2,
-            "first_name": "Leila",
-            "last_name": "SANDELL",
-            "email": "lsandell4@independent.co",
-            "createdAt": "2022-02-17T18:03:26Z"
-          }
-        }
-      ],
-      "stagiaires": [
-        {
-          "id": 2,
-          "first_name": "Glyn",
-          "last_name": "GRANDIN",
-          "email": "ggrandin1@statcounter.com",
-          "createdAt": "2023-10-26T13:58:40Z"
-        },
-        {
-          "id": 9,
-          "first_name": "Byrann",
-          "last_name": "PEPON",
-          "email": "bpepon8@jugem.jp",
-          "createdAt": "2022-04-11T15:47:51Z"
-        }
-      ],
-      "utilisateur": {
-        "id": 11,
-        "first_name": "Nara",
-        "last_name": "TANIER",
-        "email": "nara.tanier@gmail.com",
-        "position": "Cheffe de projet",
-        "createdAt": "2023-03-15T13:21:58.584Z",
-        "adminRight": true
-      },
-      "createdAt": "2023-03-15T13:21:58.584Z"
-    },
-    {
-      "id": 4,
-      "type": "Promotion",
-      "description": "POEI Bidule",
-      "salle": {
-        "id": 10,
-        "capacity": 16,
-        "name": "McKinley",
-        "floor": "1er",
-        "indication": "utilize granular convergence",
-        "createdAt": "2022-09-09T10:01:08Z"
-      },
-      "formateur": {
-        "id": 16,
-        "first_name": "Théo",
-        "last_name": "GROS ZIZI",
-        "email": "theo.groszizi@grossteub.org",
-        "createdAt": "2023-03-17T10:29:06.869Z"
-      },
-      "createdAt": "2023-04-14T08:33:28.763Z",
-      "startAt": "2023-04-01T00:00:00.000Z",
-      "endAt": "2023-04-30T00:00:00.000Z",
-      "sessions": [
-        {
-          "id": 10,
-          "desc": "Java",
-          "startAt": "2023-04-03T00:00:00.000Z",
-          "endAt": "2023-04-04T00:00:00.000Z",
-          "formateur": {
-            "id": 9,
-            "first_name": "Terrence",
-            "last_name": "AIRETON",
-            "email": "tairetond@washington.edu",
-            "createdAt": "2023-07-09T22:05:51Z"
-          }
-        }
-      ],
-      "stagiaires": [
-        {
-          "id": 1,
-          "first_name": "Gloria",
-          "last_name": "MCQUARRIE",
-          "email": "mderr0@npr.org",
-          "createdAt": "2023-10-26T13:58:40Z"
-        },
-        {
-          "id": 8,
-          "first_name": "Kaycee",
-          "last_name": "MABLY",
-          "email": "kmably7@ycombinator.com",
-          "createdAt": "2023-03-20T21:09:40Z"
-        },
-        {
-          "id": 10,
-          "first_name": "Doll",
-          "last_name": "GIORIO",
-          "email": "dgiorio9@xrea.com",
-          "createdAt": "2022-09-23T16:23:24Z"
-        },
-        {
-          "id": 9,
-          "first_name": "Byrann",
-          "last_name": "PEPON",
-          "email": "bpepon8@jugem.jp",
-          "createdAt": "2022-04-11T15:47:51Z"
-        },
-        {
-          "id": 11,
-          "first_name": "Darcee",
-          "last_name": "MESSITT",
-          "email": "dmessitta@prnewswire.com",
-          "createdAt": "2023-06-09T13:25:39Z"
-        },
-        {
-          "id": 17,
-          "first_name": "Swen",
-          "last_name": "RIX",
-          "email": "srixg@w3.org",
-          "createdAt": "2022-03-05T15:07:38Z"
-        },
-        {
-          "id": 13,
-          "first_name": "Benjie",
-          "last_name": "JOSELEVITCH",
-          "email": "bjoselevitchc@youku.com",
-          "createdAt": "2022-06-07T15:03:54Z"
-        }
-      ],
-      "utilisateur": {
-        "id": 10,
-        "first_name": "Iris",
-        "last_name": "FLUTE",
-        "email": "iflute9@purevolume.com",
-        "position": "Junior Executive",
-        "createdAt": "2022-07-27T05:09:46Z",
-        "adminRight": false
-      }
     }
   ],
   "autres": [
@@ -1429,6 +1212,31 @@
         "position": "Cheffe de projet",
         "createdAt": "2023-03-15T13:21:58.584Z",
         "adminRight": true
+      }
+    },
+    {
+      "id": 7,
+      "type": "Examen",
+      "salle": {
+        "id": 4,
+        "capacity": 19,
+        "name": "Żebbuġ",
+        "floor": "1er",
+        "indication": "whiteboard mission-critical e-markets",
+        "createdAt": "2022-07-02T01:40:22Z"
+      },
+      "desc": "Fghfghbgbdfvbd",
+      "createdAt": "2023-05-09T11:54:02.267Z",
+      "startAt": "2023-05-09T00:00:00.000Z",
+      "endAt": "2023-05-17T00:00:00.000Z",
+      "utilisateur": {
+        "id": 11,
+        "first_name": "Nara",
+        "last_name": "TANIER",
+        "email": "nara.tanier@gmail.com",
+        "position": "Cheffe de projet",
+        "createdAt": "2023-03-15T13:21:58.584Z",
+        "adminRight": false
       }
     }
   ]
