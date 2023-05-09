@@ -7,6 +7,7 @@ import DeleteConfirmation from '../modals/DeleteConfirmation';
 import Modal from 'react-modal';
 import updateLogo from '../../assets/img/modify.png'
 import deleteLogo from '../../assets/img/remove.png'
+import backLogo from '../../assets/img/left-arrow.png'
 import '../../assets/styles/components/fiches/StagiaireFiche.css'
 
 type stagiaireFicheProps = {
@@ -138,8 +139,14 @@ const StagiaireFiche : React.FC<stagiaireFicheProps> = ({stagiaires, onUpdateSta
   return (
     <>
       <section className='buttonSectionStagiaires'>
-        <img src={updateLogo} alt="update" className='updateLogoFiche'  onClick={handleEditMode} onMouseEnter={() => handleButtonHover('hoveredUpdateStagiaires', true)} onMouseLeave={() => handleButtonHover('hoveredUpdateStagiaires', false)}/>
-        <img src={deleteLogo} alt="delete" className='deleteLogoFiche'  onClick={handleDelete} onMouseEnter={() => handleButtonHover('hoveredDeleteStagiaires', true)} onMouseLeave={() => handleButtonHover('hoveredDeleteStagiaires', false)}/>
+          {editMode ? 
+            (
+              <img src={backLogo} alt="update" className='updateLogoFiche'  onClick={handleEditMode}/>
+            ) : (
+              <img src={updateLogo} alt="update" className='updateLogoFiche'  onClick={handleEditMode}/>
+            )
+          }
+          <img src={deleteLogo} alt="delete" className='deleteLogoFiche'  onClick={handleDelete} onMouseEnter={() => handleButtonHover('hoveredDeleteStagiaires', true)} onMouseLeave={() => handleButtonHover('hoveredDeleteStagiaires', false)}/>
         <button type='button' className='addButtonBoxFicheStagiaires' onClick={handleAddButtonNav}>Ajouter</button>
       </section>
       <Modal
