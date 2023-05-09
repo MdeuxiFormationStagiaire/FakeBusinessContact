@@ -76,7 +76,7 @@ const AddStagiaire : React.FC<addStagiaireProps> = ({addNewStagiaire, addNewStag
         },
         error : (error) => {
           console.log(error);
-          alert("Le fichier CSV est incorrect")
+          alert("Le fichier CSV est incorrect : " + error.message)
         }
       })
     }
@@ -84,7 +84,7 @@ const AddStagiaire : React.FC<addStagiaireProps> = ({addNewStagiaire, addNewStag
 
   return (
     <>
-      <section className='testSection'>
+      <section className='addFormsSectionStagiaires'>
         <form className='addFormSectionStagiaires' onSubmit={(event) => handleSubmit(event)}>
           <section className="addFicheSectionStagiaires">
             <div className="inputDivBoxStagiaires">
