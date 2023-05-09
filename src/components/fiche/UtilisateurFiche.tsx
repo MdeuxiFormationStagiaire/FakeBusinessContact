@@ -9,6 +9,7 @@ import trueLogo from '../../assets/img/accept.png'
 import falseLogo from '../../assets/img/multiply.png'
 import updateLogo from '../../assets/img/modify.png'
 import deleteLogo from '../../assets/img/remove.png'
+import backLogo from '../../assets/img/left-arrow.png'
 import '../../assets/styles/components/fiches/UtilisateurFiche.css'
 
 type UtilisateurFicheProps = {
@@ -19,6 +20,7 @@ type UtilisateurFicheProps = {
 const UtilisateurFiche : React.FC<UtilisateurFicheProps> = ({utilisateurs, onUpdateUtilisateur}) => {
     
   const navigate = useNavigate();
+
   const { id } = useParams<{id : string}>();
 
   const [utilisateur, setUtilisateur] = useState<Utilisateur>(utilisateurs[0])
@@ -145,8 +147,13 @@ const UtilisateurFiche : React.FC<UtilisateurFicheProps> = ({utilisateurs, onUpd
   return (
     <>
       <section className='buttonSectionUtilisateurs'>
-        <img src={updateLogo} alt="update" className='updateLogoFiche'  onClick={handleEditMode} onMouseEnter={() => handleButtonHover('hoveredUpdateUtilisateurs', true)} onMouseLeave={() => handleButtonHover('hoveredUpdateUtilisateurs', false)}/>
-        <img src={deleteLogo} alt="delete" className='deleteLogoFiche'  onClick={handleDelete} onMouseEnter={() => handleButtonHover('hoveredDeleteUtilisateurs', true)} onMouseLeave={() => handleButtonHover('hoveredDeleteUtilisateurs', false)}/>
+        {editMode ? 
+          (
+            <img src={backLogo} alt="update" className='updateLogoFiche'  onClick={handleEditMode}/>
+          ) : (
+            <img src={updateLogo} alt="update" className='updateLogoFiche'  onClick={handleEditMode}/>
+          )
+        }        <img src={deleteLogo} alt="delete" className='deleteLogoFiche'  onClick={handleDelete} onMouseEnter={() => handleButtonHover('hoveredDeleteUtilisateurs', true)} onMouseLeave={() => handleButtonHover('hoveredDeleteUtilisateurs', false)}/>
         <button type='button' className='addButtonBoxFicheUtilisateurs' onClick={handleAddButtonNav}>Ajouter</button>
       </section>
       <Modal
