@@ -1,11 +1,13 @@
+.addFormsSectionSalles {
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0;
+}
+
 .addFormSectionSalles {
     width: 100%;
-    height: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    gap: 10px;
+    height: 200px;
 }
 
 .buttonDivBoxSalles {
@@ -63,7 +65,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    background-color: #ef9b5297;
+    background-color: #ef9b52cb;
     border-radius: 10px;
     border: 3px solid #1C1D3B;
     width: 95%;
@@ -128,3 +130,58 @@
     text-align: center;
 }
 
+.addFormCSVFileSectionSalles {
+    height: 100%;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ef9b52cb;
+    border: 3px solid #1C1D3B;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    gap: 25px;
+}
+
+.addCSVFormButtonSalles {
+    border: none;
+    border-radius: 5px;
+    height: 50px;
+    width: 150px;
+    background-color: #90C99B;
+    color: #1C1D3B;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.addCSVFormButtonSalles:hover {
+    outline: 3px solid #1C1D3B;
+    border: none;
+    border-radius: 5px;
+    height: 50px;
+    width: 150px;
+    background-color: #90C99B;
+    color: #1C1D3B;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.addCSVFileTitleSalles {
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.inputCSVDivSalles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.inputCSVFileSalles {
+    direction: rtl;
+    margin-right: 45px;
+}

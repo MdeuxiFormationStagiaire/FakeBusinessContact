@@ -158,13 +158,6 @@
     font-size: 20px;
 }
 
-.testSection {
-    width: 95%;
-    display: flex;
-    justify-content: space-between;
-    margin: 30px 0
-}
-
 .inputCSVDivStagiaires {
     display: flex;
     flex-direction: column;
