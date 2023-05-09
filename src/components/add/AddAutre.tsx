@@ -16,7 +16,7 @@ const AddAutre : React.FC<AddAutreProps> = ({autres, utilisateur, salles, addNew
 
   const navigate = useNavigate();
 
-  const [newSalle, setNewSalle] = useState<Salle>(salles[0])
+  const [newSalle, setNewSalle] = useState<Salle>({ id: 0, name: '', capacity: 0, indication: '', floor: 'RDC', createdAt: new Date() })
 
   const [autre, setAutre] = useState<Autre>({
     id: 0, 
