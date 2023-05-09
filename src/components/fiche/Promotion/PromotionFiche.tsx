@@ -13,7 +13,7 @@ import { ModalStyle } from '../../../assets/styles/components/modals/ModalStyle.
 import DeleteConfirmation from '../../modals/DeleteConfirmation'
 import updateLogo from '../../../assets/img/modify.png'
 import deleteLogo from '../../../assets/img/remove.png'
-import validateLogo from '../../../assets/img/checked.png'
+import backLogo from '../../../assets/img/left-arrow.png'
 import '../../../assets/styles/components/fiches/PromotionFiche.css'
 import { useNavigate } from 'react-router-dom';
 
@@ -119,7 +119,11 @@ const PromotionFiche : React.FC<PromotionFicheProps> = ({idPromotion, onUpdatePr
     setShowDeleteConfirmation(false)
   };
 
-  const handleConfirmDelete = () => {
+  const handleConfirmDelete = async () => {
+    const sessionsList : Session[] = await sessionService.getSessionsByPromotion(idPromotion);
+    for (const session of sessionsList) {
+      await sessionService.deleteSession(session.id)
+    }
     promotionService
       .deletePromotion(idPromotion)
       .then(() => navigate('/reservations/promotions'))
@@ -149,7 +153,7 @@ const PromotionFiche : React.FC<PromotionFicheProps> = ({idPromotion, onUpdatePr
           <section className='buttonSectionPromotions'>
             {editMode ? 
               (
-                <img src={validateLogo} alt="update" className='updateLogoFiche'  onClick={handleEditMode}/>
+                <img src={backLogo} alt="update" className='updateLogoFiche'  onClick={handleEditMode}/>
               ) : (
                 <img src={updateLogo} alt="update" className='updateLogoFiche'  onClick={handleEditMode}/>
               )
