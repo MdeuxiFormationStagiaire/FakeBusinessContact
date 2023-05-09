@@ -8,6 +8,7 @@ import DeleteConfirmation from '../modals/DeleteConfirmation';
 import Modal from 'react-modal';
 import updateLogo from '../../assets/img/modify.png'
 import deleteLogo from '../../assets/img/remove.png'
+import backLogo from '../../assets/img/left-arrow.png'
 import '../../assets/styles/components/fiches/FormateurFiche.css'
 
 type formateurFicheProps = {
@@ -139,7 +140,13 @@ const FormateurFiche : React.FC<formateurFicheProps> = ({formateurs, onUpdateFor
   return (
     <>
       <section className='buttonSectionFormateurs'>
-        <img src={updateLogo} alt="update" className='updateLogoFiche'  onClick={handleEditMode} onMouseEnter={() => handleButtonHover('hoveredUpdateFormateurs', true)} onMouseLeave={() => handleButtonHover('hoveredUpdateFormateurs', false)}/>
+        {editMode ? 
+          (
+            <img src={backLogo} alt="update" className='updateLogoFiche'  onClick={handleEditMode}/>
+          ) : (
+            <img src={updateLogo} alt="update" className='updateLogoFiche'  onClick={handleEditMode}/>
+          )
+        }        
         <img src={deleteLogo} alt="delete" className='deleteLogoFiche'  onClick={handleDelete} onMouseEnter={() => handleButtonHover('hoveredDeleteFormateurs', true)} onMouseLeave={() => handleButtonHover('hoveredDeleteFormateurs', false)}/>
         <button type='button' className='addButtonBoxFicheFormateurs' onClick={handleAddButtonNav}>Ajouter</button>
       </section>
